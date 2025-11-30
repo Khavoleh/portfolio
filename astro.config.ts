@@ -10,7 +10,6 @@ const config: AstroUserConfig = {
         "img-src 'self'",
         "font-src 'self'",
         "connect-src 'self'",
-        "frame-ancestors 'none'",
         "form-action 'self'",
         "base-uri 'self'",
         "object-src 'none'",
