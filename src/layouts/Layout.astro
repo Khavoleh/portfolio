@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import Navbar from './Navbar.astro';
+import Footer from './Footer.astro';
 ---
 
 <html lang="en">
@@ -7,13 +9,20 @@ import '../styles/global.css';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
     <title>Astro Basics</title>
   </head>
-  <body>
-    <slot />
+  <body class="bg-white dark:bg-gray-900">
+    <Navbar />
+
+    <div class="pt-20">
+      <slot />
+    </div>
+
+    <Footer />
   </body>
 </html>
+
+<script is:inline src="/scripts/flowbite.min.js"></script>
 
 <style>
   html,

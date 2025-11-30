@@ -13,4 +13,7 @@ pnpm-lock.yaml
 yarn.lock
 package-lock.json
 
+# public folder
+/public
+
 README.md
