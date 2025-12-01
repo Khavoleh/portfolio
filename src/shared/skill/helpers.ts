@@ -1,4 +1,4 @@
-import { SKILL_TYPES } from '@shared/skill/constants.ts';
+import { SKILL_TYPES } from './constants.ts';
 
 export const getStyleClasses = (type: string): string => {
   switch (type) {
