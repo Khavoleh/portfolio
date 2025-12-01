@@ -1,12 +1,11 @@
 interface NavLink {
   href: string;
   label: string;
-  isActive: boolean;
 }
 
 export const NAVIGATION_LINKS: NavLink[] = [
-  { href: '/', label: 'Home', isActive: true },
-  { href: '#experience', label: 'Experience', isActive: false },
-  { href: '#projects', label: 'Projects', isActive: false },
-  { href: '#contact', label: 'Contact', isActive: false },
+  { href: '/', label: 'Home' },
+  { href: '/experience', label: 'Experience' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/contact', label: 'Contact' },
 ];
