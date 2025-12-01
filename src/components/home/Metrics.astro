@@ -3,10 +3,10 @@ import MetricBlock from '@shared/metric/MetricBlock.astro';
 import { METRICS } from './constants';
 ---
 
-<section class="background-default border-default mb-12 rounded-2xl border p-8 shadow-xl">
+<section class="mb-12 rounded-2xl">
   <h2 class="text-primary mb-8 text-center text-2xl font-bold">Impact & Expertise</h2>
 
-  <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4">
     {METRICS.map((metric) => <MetricBlock metric={metric} />)}
   </div>
 </section>
