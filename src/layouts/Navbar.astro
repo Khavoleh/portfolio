@@ -1,6 +1,7 @@
 ---
 import { NAVIGATION_LINKS } from './constants.ts';
 import type { NavLink } from './interfaces.ts';
+import BurgerIcon from './icons/burger.svg';
 
 const currentPath: string = Astro.url.pathname;
 ---
@@ -23,8 +24,9 @@ const currentPath: string = Astro.url.pathname;
         class="transition-default hover-default focus-default inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 md:hidden"
         aria-controls="navbar-default"
         aria-expanded="false"
+        aria-label="Open main menu"
       >
-        <img src="/icons/burger.svg" class="h-5 w-5" alt="Open main menu" />
+        <BurgerIcon class="h-5 w-5" />
       </button>
 
       <div class="hidden w-full md:block md:w-auto" id="navbar-default">

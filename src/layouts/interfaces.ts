@@ -4,5 +4,5 @@ export interface NavLink {
 }
 
 export interface SocialLink extends NavLink {
-  icon: string;
+  icon: any;
 }

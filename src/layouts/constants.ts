@@ -1,4 +1,7 @@
 import type { NavLink, SocialLink } from './interfaces.ts';
+import LinkedInIcon from './icons/linkedin.svg';
+import TelegramIcon from './icons/telegram.svg';
+import GitHubIcon from './icons/github.svg';
 
 export const NAVIGATION_LINKS: NavLink[] = [
   { href: '/', label: 'Home' },
@@ -7,10 +10,8 @@ export const NAVIGATION_LINKS: NavLink[] = [
   { href: '/contact', label: 'Contact' },
 ];
 
-const FOOTER_ICON_PATH = '/icons/footer/';
-
 export const SOCIAL_LINKS: SocialLink[] = [
-  { href: 'https://www.linkedin.com/in/khavol/', label: 'LinkedIn profile', icon: `${FOOTER_ICON_PATH}linkedin.svg` },
-  { href: 'https://t.me/khavol', label: 'Telegram messenger', icon: `${FOOTER_ICON_PATH}telegram.svg` },
-  { href: 'https://github.com/Khavoleh', label: 'GitHub account', icon: `${FOOTER_ICON_PATH}github.svg` },
+  { href: 'https://www.linkedin.com/in/khavol/', label: 'LinkedIn profile', icon: LinkedInIcon },
+  { href: 'https://t.me/khavol', label: 'Telegram messenger', icon: TelegramIcon },
+  { href: 'https://github.com/Khavoleh', label: 'GitHub account', icon: GitHubIcon },
 ];

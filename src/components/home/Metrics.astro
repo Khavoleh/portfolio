@@ -1,5 +1,6 @@
 ---
 import MetricBlock from '@shared/metric/MetricBlock.astro';
+import type { Metric } from '@shared/metric/interfaces.ts';
 import { METRICS } from './constants';
 ---
 
@@ -7,6 +8,6 @@ import { METRICS } from './constants';
   <h2 class="text-primary mb-8 text-center text-2xl font-bold">Impact & Expertise</h2>
 
   <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4">
-    {METRICS.map((metric) => <MetricBlock metric={metric} />)}
+    {METRICS.map((metric: Metric) => <MetricBlock metric={metric} />)}
   </div>
 </section>
