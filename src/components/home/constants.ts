@@ -5,6 +5,7 @@ import { SKILL_TYPES } from '@shared/skill/constants.ts';
 import viktoria from './images/viktoria-monastyrska.jpeg';
 import mykola from './images/mykola-synhalevych.jpeg';
 import pavlo from './images/pavlo-demskyi.png';
+import valerii from './images/valerii-inshyn.jpeg';
 
 export const SKILLS: Skill[] = [
   { name: '.NET', type: SKILL_TYPES.BACK_END },
@@ -46,5 +47,12 @@ export const REVIEWS: Review[] = [
     company: 'Bliscore Software',
     text: 'I worked with Oleh on the same project area, and his contributions were essential to the project’s success. He rebuilt a poorly structured backend architecture into a clean, efficient system that significantly reduced development and deployment time, while also providing strong input during planning and estimations. Alongside his technical expertise, he naturally took on leadership responsibilities, guiding teammates, resolving blockers, and communicating effectively with both customers and technical stakeholders.',
     image: pavlo,
+  },
+  {
+    name: 'Valerii Inshyn',
+    position: '.NET Developer',
+    company: 'Bliscore Software',
+    text: 'Working with Oleh on complex, high-impact features was consistently smooth and productive. He approaches problems calmly and methodically, takes full ownership of his tasks, and remains reliable even under pressure or during urgent production issues. His clear communication, professionalism, and collaborative attitude make him both a strong engineer and an excellent teammate.',
+    image: valerii,
   },
 ];
