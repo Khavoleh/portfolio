@@ -1,16 +1,20 @@
 ---
+import { Image } from 'astro:assets';
 import SkillBlock from '@shared/skill/SkillBlock.astro';
 import { SKILLS } from './constants';
+import photo from './images/me.jpg';
 ---
 
 <section class="mb-12 text-center">
   <div class="mb-8 flex flex-col items-center justify-center gap-8 md:flex-row">
     <div class="order-1 md:order-2">
       <div class="h-48 w-48 overflow-hidden rounded-full border-4 border-blue-500 shadow-2xl">
-        <img
-          src="/favicon.svg"
+        <Image
+          src={photo}
           alt="Oleh Khavar - Professional Headshot"
-          class="h-full w-full object-cover contrast-125 grayscale filter"
+          width={192}
+          height={192}
+          class="h-full w-full object-cover"
         />
       </div>
     </div>
