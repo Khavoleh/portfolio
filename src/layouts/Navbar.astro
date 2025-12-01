@@ -1,7 +1,8 @@
 ---
 import { NAVIGATION_LINKS } from './constants.ts';
+import type { NavLink } from './interfaces.ts';
 
-const currentPath = Astro.url.pathname;
+const currentPath: string = Astro.url.pathname;
 ---
 
 <nav
@@ -30,8 +31,8 @@ const currentPath = Astro.url.pathname;
         class="mt-4 flex flex-col rounded-lg border border-slate-200 bg-slate-50 p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-transparent md:p-0 rtl:space-x-reverse dark:border-slate-700 dark:bg-slate-800 md:dark:bg-transparent"
       >
         {
-          NAVIGATION_LINKS.map((link) => {
-            const isActive = currentPath === link.href;
+          NAVIGATION_LINKS.map((link: NavLink) => {
+            const isActive: boolean = currentPath === link.href;
 
             return (
               <li>

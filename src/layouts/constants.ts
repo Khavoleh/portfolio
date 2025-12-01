@@ -1,7 +1,4 @@
-interface NavLink {
-  href: string;
-  label: string;
-}
+import type { NavLink } from './interfaces.ts';
 
 export const NAVIGATION_LINKS: NavLink[] = [
   { href: '/', label: 'Home' },
