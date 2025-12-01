@@ -1,7 +1,92 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import Hero from '@components/home/Hero.astro';
 ---
 
 <Layout>
-  <div>Hello, world!</div>
+  <section class="flex min-h-screen items-center justify-center px-4 py-12">
+    <div class="mx-auto w-full max-w-6xl">
+      <Hero />
+
+      <!-- Key Metrics (Trust Bar) -->
+      <div class="background-default border-default mb-12 rounded-2xl border p-8 shadow-xl">
+        <h2 class="text-primary mb-8 text-center text-2xl font-bold">Impact & Expertise</h2>
+
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <!-- Metric 1 -->
+          <div
+            class="rounded-xl bg-slate-50 p-6 text-center transition-all duration-300 hover:shadow-lg dark:bg-slate-800"
+          >
+            <div class="mb-2 text-4xl font-bold text-blue-500 dark:text-blue-400">3+</div>
+            <div class="text-primary mb-1 text-sm font-semibold">Years</div>
+            <div class="text-secondary text-xs">Commercial Experience</div>
+          </div>
+
+          <!-- Metric 2 -->
+          <div
+            class="rounded-xl bg-slate-50 p-6 text-center transition-all duration-300 hover:shadow-lg dark:bg-slate-800"
+          >
+            <div class="mb-2 text-4xl font-bold text-blue-500 dark:text-blue-400">5x</div>
+            <div class="text-primary mb-1 text-sm font-semibold">Speed Boost</div>
+            <div class="text-secondary text-xs">Performance Gain</div>
+          </div>
+
+          <!-- Metric 3 -->
+          <div
+            class="rounded-xl bg-slate-50 p-6 text-center transition-all duration-300 hover:shadow-lg dark:bg-slate-800"
+          >
+            <div class="mb-2 text-4xl font-bold text-blue-500 dark:text-blue-400">6</div>
+            <div class="text-primary mb-1 text-sm font-semibold">Developers</div>
+            <div class="text-secondary text-xs">Team Leadership</div>
+          </div>
+
+          <!-- Metric 4 -->
+          <div
+            class="rounded-xl bg-slate-50 p-6 text-center transition-all duration-300 hover:shadow-lg dark:bg-slate-800"
+          >
+            <div class="mb-2 text-4xl font-bold text-blue-500 dark:text-blue-400">100%</div>
+            <div class="text-primary mb-1 text-sm font-semibold">Full-Cycle</div>
+            <div class="text-secondary text-xs">End-to-End Delivery</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Teaser / Quick Link Block -->
+      <div class="text-center">
+        <h2 class="text-primary mb-4 text-3xl font-bold">Selected Experience & Technical Focus</h2>
+        <p class="text-secondary mx-auto mb-8 max-w-3xl text-lg leading-relaxed">
+          My expertise spans <span class="font-semibold text-blue-500 dark:text-blue-400">architecture design</span>,
+          <span class="font-semibold text-blue-500 dark:text-blue-400">system optimization</span>, and
+          <span class="font-semibold text-blue-500 dark:text-blue-400">team delivery</span>. Review the case studies
+          below to see the process behind the code.
+        </p>
+
+        <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <a
+            href="/experience"
+            class="transition-default focus-default inline-flex transform items-center justify-center rounded-lg bg-blue-500 px-8 py-4 text-lg font-semibold text-white shadow-lg hover:-translate-y-1 hover:bg-blue-600 hover:shadow-xl active:bg-blue-700"
+          >
+            View Career Timeline
+            <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </a>
+
+          <a
+            href="/projects"
+            class="transition-default focus-default inline-flex transform items-center justify-center rounded-lg border-2 border-blue-500 px-8 py-4 text-lg font-semibold text-blue-500 shadow-lg hover:-translate-y-1 hover:bg-blue-500 hover:text-white hover:shadow-xl dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-slate-900"
+          >
+            Explore Open Source Projects
+            <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
