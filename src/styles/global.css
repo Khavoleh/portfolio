@@ -18,11 +18,15 @@
   }
 
   .hover-default {
-    @apply hover:bg-slate-100 dark:hover:bg-slate-800;
+    @apply hover:bg-slate-100 active:bg-slate-200 dark:hover:bg-slate-800 dark:active:bg-slate-900;
+  }
+
+  .text-hover {
+    @apply hover:text-blue-500 dark:hover:text-blue-300;
   }
 
   .focus-default {
-    @apply focus:ring-2 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-500;
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 dark:focus-visible:ring-blue-500;
   }
 
   .transition-default {
