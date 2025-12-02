@@ -1,0 +1,35 @@
+---
+import { SOCIAL_LINKS } from '@layouts/constants.ts';
+import type { SocialLink } from '@layouts/interfaces.ts';
+---
+
+<section class="mb-16">
+  <h2 class="text-primary mb-8 text-center text-3xl font-bold">Professional Presence</h2>
+
+  <div class="mx-auto flex max-w-2xl flex-wrap justify-center gap-6">
+    {
+      SOCIAL_LINKS.map((link: SocialLink) => (
+        <a
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="background-default border-default transition-default focus-default flex flex-col items-center rounded-xl border-2 p-8 shadow-lg hover:scale-105 hover:shadow-xl"
+          aria-label={`Visit my ${link.label}`}
+        >
+          <link.icon class="mb-4 h-16 w-16 text-blue-500 dark:text-blue-400" />
+          <span class="text-primary text-lg font-semibold">
+            {link.label.includes('LinkedIn') && 'LinkedIn'}
+            {link.label.includes('GitHub') && 'GitHub'}
+            {link.label.includes('Telegram') && 'Telegram'}
+          </span>
+        </a>
+      ))
+    }
+  </div>
+
+  <p class="text-secondary mx-auto mt-8 max-w-2xl text-center leading-relaxed">
+    <span class="font-semibold text-blue-500 dark:text-blue-400">LinkedIn</span> for professional validation and endorsements,
+    <span class="font-semibold text-blue-500 dark:text-blue-400">GitHub</span> to review my Forge Mock code, and
+    <span class="font-semibold text-blue-500 dark:text-blue-400">Telegram</span> for quick messaging.
+  </p>
+</section>
