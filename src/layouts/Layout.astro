@@ -13,10 +13,10 @@ import Footer from './Footer.astro';
     <title>Astro Basics</title>
     <ClientRouter />
   </head>
-  <body class="bg-slate-50 dark:bg-slate-900">
+  <body class="flex min-h-screen flex-col bg-slate-50 dark:bg-slate-900">
     <Navbar />
 
-    <div class="pt-20 pb-2">
+    <div class="flex-grow pt-20 pb-2">
       <slot />
     </div>
 
