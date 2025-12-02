@@ -3,6 +3,11 @@ import ReviewCard from '@shared/review/ReviewCard.astro';
 import { REVIEWS } from './constants';
 import LinkIcon from './icons/link.svg';
 import type { Review } from '@shared/review/interfaces.ts';
+import ArrowLeftIcon from './icons/arrow-left.svg';
+import ArrowRightIcon from './icons/arrow-right.svg';
+
+const buttonsClasses =
+  'border-default background-default transition-default focus-default pointer-events-auto inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border opacity-50 shadow-md hover:scale-110 hover:opacity-75 hover:shadow-lg active:scale-95';
 ---
 
 <section class="mb-12">
@@ -12,24 +17,28 @@ import type { Review } from '@shared/review/interfaces.ts';
   </div>
 
   <div id="default-carousel" class="relative w-full" data-carousel="static">
-    <div class="rounded-base relative overflow-hidden" style="min-height: 350px;">
+    <div
+      class="relative min-h-[570px] overflow-hidden rounded min-[550px]:min-h-[400px] md:min-h-[350px] lg:min-h-[320px]"
+    >
       {
         REVIEWS.map((review: Review) => (
           <div class="hidden duration-1000 ease-in-out" data-carousel-item>
-            <div class="absolute top-1/2 left-1/2 w-full max-w-4xl -translate-x-1/2 -translate-y-1/2 px-4">
-              <ReviewCard review={review} />
+            <div class="absolute inset-0 flex items-center justify-center px-2 py-4 sm:px-4 sm:py-6 md:py-8">
+              <div class="flex h-full w-full max-w-4xl items-center">
+                <ReviewCard review={review} />
+              </div>
             </div>
           </div>
         ))
       }
     </div>
 
-    <div class="absolute bottom-5 left-1/2 z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse">
+    <div class="absolute left-1/2 z-30 flex -translate-x-1/2 space-x-2 rtl:space-x-reverse">
       {
         REVIEWS.map((_, index: number) => (
           <button
             type="button"
-            class="rounded-base h-3 w-3 bg-gray-300 hover:bg-gray-400 dark:bg-gray-600 dark:hover:bg-gray-500"
+            class="transition-default focus-default hover-default h-3 w-3 rounded-lg bg-gray-300 dark:bg-gray-600"
             aria-current={index === 0 ? 'true' : 'false'}
             aria-label={`Navigate to slide ${index + 1}`}
             data-carousel-slide-to={index.toString()}
@@ -38,54 +47,17 @@ import type { Review } from '@shared/review/interfaces.ts';
       }
     </div>
 
-    <button
-      type="button"
-      class="group absolute start-0 top-0 z-30 flex h-full cursor-pointer items-center justify-center px-4 focus:outline-none"
-      data-carousel-prev
-    >
-      <span
-        class="rounded-base inline-flex h-10 w-10 items-center justify-center bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70"
-      >
-        <svg
-          class="h-5 w-5 text-white rtl:rotate-180"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          fill="none"
-          viewBox="0 0 24 24"
-          ><path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="m15 19-7-7 7-7"></path></svg
-        >
-        <span class="sr-only">Previous</span>
-      </span>
-    </button>
-    <button
-      type="button"
-      class="group absolute end-0 top-0 z-30 flex h-full cursor-pointer items-center justify-center px-4 focus:outline-none"
-      data-carousel-next
-    >
-      <span
-        class="rounded-base inline-flex h-10 w-10 items-center justify-center bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70"
-      >
-        <svg
-          class="h-5 w-5 text-white rtl:rotate-180"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          fill="none"
-          viewBox="0 0 24 24"
-          ><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"
-          ></path></svg
-        >
-        <span class="sr-only">Next</span>
-      </span>
-    </button>
+    <div class="pointer-events-none absolute start-0 top-0 z-30 flex h-full items-center justify-start px-4">
+      <button type="button" class={buttonsClasses} data-carousel-prev aria-label="Previous slide">
+        <ArrowLeftIcon class="text-primary" aria-hidden="true" />
+      </button>
+    </div>
+
+    <div class="pointer-events-none absolute end-0 top-0 z-30 flex h-full items-center justify-end px-4">
+      <button type="button" class={buttonsClasses} data-carousel-next aria-label="Next slide">
+        <ArrowRightIcon class="text-primary" aria-hidden="true" />
+      </button>
+    </div>
   </div>
 
   <div class="mt-8 text-center">
