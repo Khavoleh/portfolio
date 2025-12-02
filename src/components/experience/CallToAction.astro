@@ -1,5 +1,6 @@
 ---
 import { PAGE_URLS } from '@shared/constants.ts';
+import ViewCv from '@shared/view-cv/ViewCv.astro';
 ---
 
 <section class="mt-16 text-center">
@@ -13,12 +14,6 @@ import { PAGE_URLS } from '@shared/constants.ts';
       View Projects and Architectural Blueprints
     </a>
 
-    <a
-      href="/Oleh Khavar CV.pdf"
-      download
-      class="transition-default focus-default inline-flex transform items-center justify-center rounded-lg border-2 border-blue-500 px-8 py-4 text-lg font-semibold text-blue-500 shadow-lg hover:-translate-y-1 hover:bg-blue-500 hover:text-white hover:shadow-xl dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-slate-900"
-    >
-      Download Full CV
-    </a>
+    <ViewCv />
   </div>
 </section>
