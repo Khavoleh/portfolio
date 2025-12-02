@@ -1,13 +1,14 @@
+import { PAGE_URLS } from '@shared/constants.ts';
 import type { NavLink, SocialLink } from './interfaces.ts';
 import LinkedInIcon from './icons/linkedin.svg';
 import TelegramIcon from './icons/telegram.svg';
 import GitHubIcon from './icons/github.svg';
 
 export const NAVIGATION_LINKS: NavLink[] = [
-  { href: '/', label: 'Home' },
-  { href: '/experience', label: 'Experience' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/contact', label: 'Contact' },
+  { href: PAGE_URLS.HOME, label: 'Home' },
+  { href: PAGE_URLS.EXPERIENCE, label: 'Experience' },
+  { href: PAGE_URLS.PROJECTS, label: 'Projects' },
+  { href: PAGE_URLS.CONTACTS, label: 'Contacts' },
 ];
 
 export const SOCIAL_LINKS: SocialLink[] = [

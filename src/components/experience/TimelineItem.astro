@@ -13,7 +13,7 @@ const { experience, isLast = false } = Astro.props;
   <!-- Timeline Line -->
   {
     !isLast && (
-      <div class="absolute top-20 bottom-0 left-8 w-0.5 bg-gradient-to-b from-blue-500 to-blue-300 md:left-1/2 md:-ml-px dark:from-blue-400 dark:to-blue-600"></div>
+      <div class="absolute top-20 bottom-0 left-8 w-0.5 bg-gradient-to-b from-blue-500 to-blue-300 md:left-1/2 md:-ml-px dark:from-blue-400 dark:to-blue-600" />
     )
   }
 
@@ -29,7 +29,7 @@ const { experience, isLast = false } = Astro.props;
   <div class="ml-24 md:ml-0 md:w-full">
     <div class="mb-16 md:grid md:grid-cols-2 md:gap-8">
       <!-- Left side on desktop (right side content for odd items) -->
-      <div class={`md:text-right ${isLast ? '' : ''}`}>
+      <div class="md:text-right">
         <!-- Role & Company -->
         <div class="background-default border-default mb-6 rounded-2xl border-2 p-6 shadow-lg md:ml-auto md:max-w-lg">
           <div class="mb-3">

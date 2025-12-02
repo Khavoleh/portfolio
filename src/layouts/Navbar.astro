@@ -1,4 +1,5 @@
 ---
+import { PAGE_URLS } from '@shared/constants.ts';
 import { NAVIGATION_LINKS } from './constants.ts';
 import type { NavLink } from './interfaces.ts';
 import BurgerIcon from './icons/burger.svg';
@@ -10,7 +11,7 @@ const currentPath: string = Astro.url.pathname;
   <nav>
     <div class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
       <a
-        href="/"
+        href={PAGE_URLS.HOME}
         aria-label="Navigate to home page"
         class="transition-default focus-default flex items-center space-x-3 rounded-lg rtl:space-x-reverse"
       >
