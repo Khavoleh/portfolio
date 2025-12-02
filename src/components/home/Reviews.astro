@@ -5,8 +5,11 @@ import LinkIcon from './icons/link.svg';
 import type { Review } from '@shared/review/interfaces.ts';
 import ArrowLeftIcon from './icons/arrow-left.svg';
 import ArrowRightIcon from './icons/arrow-right.svg';
+import { shuffleArray } from '@components/home/helpers.ts';
 
-const buttonsClasses =
+const shuffledReviews: Review[] = shuffleArray(REVIEWS);
+
+const buttonsClasses: string =
   'border-default background-default transition-default focus-default pointer-events-auto inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border opacity-50 shadow-md hover:scale-110 hover:opacity-75 hover:shadow-lg active:scale-95';
 ---
 
@@ -21,7 +24,7 @@ const buttonsClasses =
       class="relative min-h-[570px] overflow-hidden rounded min-[550px]:min-h-[400px] md:min-h-[350px] lg:min-h-[320px]"
     >
       {
-        REVIEWS.map((review: Review) => (
+        shuffledReviews.map((review: Review) => (
           <div class="hidden duration-1000 ease-in-out" data-carousel-item>
             <div class="absolute inset-0 flex items-center justify-center px-2 py-4 sm:px-4 sm:py-6 md:py-8">
               <div class="flex h-full w-full max-w-4xl items-center">
@@ -35,11 +38,10 @@ const buttonsClasses =
 
     <div class="absolute left-1/2 z-30 flex -translate-x-1/2 space-x-2 rtl:space-x-reverse">
       {
-        REVIEWS.map((_, index: number) => (
+        shuffledReviews.map((_, index: number) => (
           <button
             type="button"
             class="transition-default focus-default hover-default h-3 w-3 rounded-lg bg-gray-300 dark:bg-gray-600"
-            aria-current={index === 0 ? 'true' : 'false'}
             aria-label={`Navigate to slide ${index + 1}`}
             data-carousel-slide-to={index.toString()}
           />
