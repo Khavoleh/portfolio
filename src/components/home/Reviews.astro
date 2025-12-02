@@ -2,6 +2,7 @@
 import ReviewCard from '@shared/review/ReviewCard.astro';
 import { REVIEWS } from './constants';
 import LinkIcon from './icons/link.svg';
+import type { Review } from '@shared/review/interfaces.ts';
 ---
 
 <section class="mb-12">
@@ -13,7 +14,7 @@ import LinkIcon from './icons/link.svg';
   <div id="default-carousel" class="relative w-full" data-carousel="static">
     <div class="rounded-base relative overflow-hidden" style="min-height: 350px;">
       {
-        REVIEWS.map((review) => (
+        REVIEWS.map((review: Review) => (
           <div class="hidden duration-1000 ease-in-out" data-carousel-item>
             <div class="absolute top-1/2 left-1/2 w-full max-w-4xl -translate-x-1/2 -translate-y-1/2 px-4">
               <ReviewCard review={review} />
@@ -25,12 +26,12 @@ import LinkIcon from './icons/link.svg';
 
     <div class="absolute bottom-5 left-1/2 z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse">
       {
-        REVIEWS.map((_, index) => (
+        REVIEWS.map((_, index: number) => (
           <button
             type="button"
             class="rounded-base h-3 w-3 bg-gray-300 hover:bg-gray-400 dark:bg-gray-600 dark:hover:bg-gray-500"
             aria-current={index === 0 ? 'true' : 'false'}
-            aria-label={`Slide ${index + 1}`}
+            aria-label={`Navigate to slide ${index + 1}`}
             data-carousel-slide-to={index.toString()}
           />
         ))
