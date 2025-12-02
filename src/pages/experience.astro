@@ -1,22 +1,15 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import ExperienceIntro from '@components/experience/ExperienceIntro.astro';
-import TimelineItem from '@components/experience/TimelineItem.astro';
+import TimelineCareer from '@components/experience/TimelineCareer.astro';
 import CallToAction from '@components/experience/CallToAction.astro';
-import { EXPERIENCE_DATA } from '@components/experience/constants';
 ---
 
 <Layout>
   <div class="mx-auto w-full max-w-6xl px-4 py-12">
     <ExperienceIntro />
 
-    <div class="relative">
-      {
-        EXPERIENCE_DATA.map((experience, index) => (
-          <TimelineItem experience={experience} isLast={index === EXPERIENCE_DATA.length - 1} />
-        ))
-      }
-    </div>
+    <TimelineCareer />
 
     <CallToAction />
   </div>

@@ -1,0 +1,63 @@
+---
+import type { ExperienceItem, ExperienceSection } from './interfaces.ts';
+import { EXPERIENCE_DATA } from './constants.ts';
+---
+
+<div class="relative">
+  {
+    EXPERIENCE_DATA.map((experience: ExperienceItem) => (
+      <div class="relative">
+        <div class="absolute top-20 bottom-0 left-8 w-0.5 bg-gradient-to-b from-blue-500 to-blue-300 md:left-1/2 md:-ml-px dark:from-blue-400 dark:to-blue-600" />
+
+        <div class="absolute top-8 left-8 -ml-3 md:left-1/2 md:-ml-4">
+          <div class="h-6 w-6 rounded-full border-4 border-blue-500 bg-white md:h-8 md:w-8 dark:border-blue-400 dark:bg-slate-900" />
+        </div>
+
+        <div class="ml-24 md:ml-0 md:w-full">
+          <div class="mb-16 md:grid md:grid-cols-2 md:gap-8">
+            <div class="md:text-right">
+              <div class="background-default border-default mb-6 rounded-2xl border-2 p-6 shadow-lg md:ml-auto md:max-w-lg">
+                <div class="mb-3">
+                  <h3 class="text-primary mb-2 text-2xl font-bold">{experience.role}</h3>
+                  <p class="text-lg font-semibold text-blue-500 dark:text-blue-400">{experience.company}</p>
+                  <p class="text-secondary mt-1 text-sm">{experience.period}</p>
+                </div>
+
+                <div class="mt-4 flex flex-wrap gap-2 md:justify-end">
+                  {experience.focus.map((tag: string) => (
+                    <span class="rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-700 dark:bg-blue-900 dark:text-blue-300">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-6">
+              {experience.sections.map((section: ExperienceSection) => (
+                <div class="background-default border-default rounded-2xl border-2 p-6 shadow-lg">
+                  <h4 class="text-primary mb-3 flex items-center text-xl font-bold">
+                    <span class="mr-2 text-2xl">{section.icon}</span>
+                    {section.title}
+                  </h4>
+                  {section.details.length === 1 ? (
+                    <p class="text-secondary leading-relaxed font-medium">{section.details[0]}</p>
+                  ) : (
+                    <ul class="text-secondary space-y-3">
+                      {section.details.map((detail: string) => (
+                        <li class="flex items-start">
+                          <span class="mt-1 mr-2 text-blue-500 dark:text-blue-400">-</span>
+                          <span class="leading-relaxed">{detail}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</div>
