@@ -1,7 +1,16 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import ProjectsIntro from '@components/projects/ProjectsIntro.astro';
+import ForgeMock from '@components/projects/ForgeMock.astro';
+import PortfolioShowcase from '@components/projects/PortfolioShowcase.astro';
 ---
 
 <Layout>
-  <div>Hello, projects!</div>
+  <div class="mx-auto w-full max-w-6xl px-4 py-12">
+    <ProjectsIntro />
+
+    <ForgeMock />
+
+    <PortfolioShowcase />
+  </div>
 </Layout>

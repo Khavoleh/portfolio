@@ -1,0 +1,128 @@
+---
+import SkillBlock from '@shared/skill/SkillBlock.astro';
+import type { Skill } from '@shared/skill/interfaces.ts';
+
+const techStack: Skill[] = [
+  { name: 'ASP.NET Web API', icon: '🔷' },
+  { name: 'Next.js', icon: '⚡' },
+  { name: 'Docker', icon: '🐳' },
+  { name: 'Redis', icon: '🔴' },
+  { name: 'Grafana', icon: '📊' },
+  { name: 'Prometheus', icon: '🔥' },
+];
+---
+
+<section class="background-default border-default mb-12 rounded-3xl border-2 p-8 shadow-2xl md:p-12">
+  <div class="mb-8">
+    <div class="mb-4 inline-block rounded-lg bg-blue-500 px-4 py-2 text-sm font-semibold text-white">
+      Featured Open Source Project
+    </div>
+    <h2 class="text-primary mb-4 text-3xl font-bold md:text-4xl">Forge Mock: API Simulation & Mock Data Platform</h2>
+    <p class="text-secondary text-lg leading-relaxed">
+      A comprehensive platform for decoupling front-end and back-end development teams while supporting integration
+      testing in distributed environments.
+    </p>
+  </div>
+
+  <div class="mb-8 grid gap-8 md:grid-cols-2">
+    <!-- The Challenge -->
+    <div class="background-default border-default rounded-2xl border-2 p-6 shadow-lg">
+      <h3 class="text-primary mb-3 flex items-center text-xl font-bold">
+        <span class="mr-3 text-2xl">🎯</span>
+        The Challenge
+      </h3>
+      <p class="text-secondary leading-relaxed">
+        Modern development teams need to work independently without waiting for API implementations. Integration tests
+        require realistic data scenarios, and distributed systems need reliable mocking infrastructure for local
+        development and CI/CD pipelines.
+      </p>
+    </div>
+
+    <!-- Technical Solution -->
+    <div class="background-default border-default rounded-2xl border-2 p-6 shadow-lg">
+      <h3 class="text-primary mb-3 flex items-center text-xl font-bold">
+        <span class="mr-3 text-2xl">🏗️</span>
+        Technical Solution & Architecture
+      </h3>
+      <p class="text-secondary leading-relaxed">
+        Multi-repository architecture leveraging Next.js for the UI layer, ASP.NET Web API for core mocking logic, and a
+        dedicated monitoring stack with Grafana and Prometheus. Containerized deployment ensures consistency across
+        environments.
+      </p>
+    </div>
+
+    <!-- Key Features -->
+    <div class="background-default border-default rounded-2xl border-2 p-6 shadow-lg">
+      <h3 class="text-primary mb-3 flex items-center text-xl font-bold">
+        <span class="mr-3 text-2xl">✨</span>
+        Key Features
+      </h3>
+      <ul class="text-secondary space-y-2 leading-relaxed">
+        <li class="flex items-start">
+          <span class="mt-1 mr-2 text-blue-500">▸</span>
+          <span>Customizable schema definitions for complex data structures</span>
+        </li>
+        <li class="flex items-start">
+          <span class="mt-1 mr-2 text-blue-500">▸</span>
+          <span>Static and dynamic API endpoint mocking with realistic responses</span>
+        </li>
+        <li class="flex items-start">
+          <span class="mt-1 mr-2 text-blue-500">▸</span>
+          <span>Real-time monitoring and observability with metrics collection</span>
+        </li>
+        <li class="flex items-start">
+          <span class="mt-1 mr-2 text-blue-500">▸</span>
+          <span>Redis-based caching for high-performance data generation</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Why It Matters -->
+    <div class="background-default border-default rounded-2xl border-2 p-6 shadow-lg">
+      <h3 class="text-primary mb-3 flex items-center text-xl font-bold">
+        <span class="mr-3 text-2xl">💼</span>
+        Why It Matters to Enterprise
+      </h3>
+      <p class="text-secondary leading-relaxed">
+        Addresses critical pain points in microservices architecture: parallel team development, integration testing
+        complexity, and local development environment setup. Demonstrates expertise in distributed systems design and
+        DevOps best practices.
+      </p>
+    </div>
+  </div>
+
+  <!-- Tech Stack -->
+  <div class="mb-8">
+    <h3 class="text-primary mb-4 text-xl font-bold">Primary Stack</h3>
+    <div class="flex flex-wrap gap-3">
+      {techStack.map((skill: Skill) => <SkillBlock skill={skill} />)}
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+    <a
+      href="https://github.com/khavol/forge-mock"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="transition-default focus-default inline-flex transform items-center justify-center rounded-lg bg-blue-500 px-8 py-4 text-lg font-semibold text-white shadow-lg hover:-translate-y-1 hover:bg-blue-600 hover:shadow-xl active:bg-blue-700"
+    >
+      <svg class="mr-2 h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+        <path
+          fill-rule="evenodd"
+          d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+          clip-rule="evenodd"></path>
+      </svg>
+      View Code on GitHub
+    </a>
+    <a
+      href="https://forge-mock-demo.vercel.app"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="transition-default focus-default inline-flex transform items-center justify-center rounded-lg border-2 border-blue-500 px-8 py-4 text-lg font-semibold text-blue-500 shadow-lg hover:-translate-y-1 hover:bg-blue-500 hover:text-white hover:shadow-xl dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-slate-900"
+    >
+      <span class="mr-2 text-xl">🚀</span>
+      View Live Demo
+    </a>
+  </div>
+</section>
