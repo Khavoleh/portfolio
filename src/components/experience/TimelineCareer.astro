@@ -1,6 +1,8 @@
 ---
 import type { ExperienceItem, ExperienceSection } from './interfaces.ts';
 import { EXPERIENCE_DATA } from './constants.ts';
+import type { Skill } from '@shared/skill/interfaces.ts';
+import SkillBlock from '@shared/skill/SkillBlock.astro';
 ---
 
 <div class="relative">
@@ -20,14 +22,13 @@ import { EXPERIENCE_DATA } from './constants.ts';
                 <div class="mb-3">
                   <h3 class="text-primary mb-2 text-2xl font-bold">{experience.role}</h3>
                   <p class="text-lg font-semibold text-blue-500 dark:text-blue-400">{experience.company}</p>
+                  <p class="text-primary font-semibold">{experience.sector}</p>
                   <p class="text-secondary mt-1 text-sm">{experience.period}</p>
                 </div>
 
-                <div class="mt-4 flex flex-wrap gap-2 md:justify-end">
-                  {experience.focus.map((tag: string) => (
-                    <span class="rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-700 dark:bg-blue-900 dark:text-blue-300">
-                      {tag}
-                    </span>
+                <div class="flex flex-wrap justify-end gap-3">
+                  {experience.skills.map((skill: Skill) => (
+                    <SkillBlock skill={skill} />
                   ))}
                 </div>
               </div>
@@ -37,21 +38,10 @@ import { EXPERIENCE_DATA } from './constants.ts';
               {experience.sections.map((section: ExperienceSection) => (
                 <div class="background-default border-default rounded-2xl border-2 p-6 shadow-lg">
                   <h4 class="text-primary mb-3 flex items-center text-xl font-bold">
-                    <span class="mr-2 text-2xl">{section.icon}</span>
+                    <section.icon class="mr-2 text-2xl" />
                     {section.title}
                   </h4>
-                  {section.details.length === 1 ? (
-                    <p class="text-secondary leading-relaxed font-medium">{section.details[0]}</p>
-                  ) : (
-                    <ul class="text-secondary space-y-3">
-                      {section.details.map((detail: string) => (
-                        <li class="flex items-start">
-                          <span class="mt-1 mr-2 text-blue-500 dark:text-blue-400">-</span>
-                          <span class="leading-relaxed">{detail}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                  <p class="text-secondary leading-relaxed font-medium">{section.details}</p>
                 </div>
               ))}
             </div>

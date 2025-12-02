@@ -1,105 +1,89 @@
 import type { ExperienceItem } from './interfaces.ts';
+import { SKILL_TYPES } from '@shared/skill/constants.ts';
+import ArchitectureIcon from './icons/architecture.svg';
+import GrowUpIcon from './icons/grow-up.svg';
+import TeamIcon from './icons/team.svg';
+import LightBulbIcon from './icons/light-bulb.svg';
+import SprintIcon from './icons/sprint.svg';
+import CiCdIcon from './icons/ci-cd.svg';
 
 export const EXPERIENCE_DATA: ExperienceItem[] = [
   {
-    role: 'Full-Stack .NET Developer & Team Lead',
-    company: 'Bliscore Software (Telecommunications Analytics Project)',
-    period: '01/2023 – Current',
+    role: 'Full-Stack .NET/React Developer',
+    company: 'Bliscore Software',
+    sector: 'Telecommunications Analytics Project',
+    period: '07/2024 - 11/2025',
+    skills: [
+      { name: '.NET', type: SKILL_TYPES.BACK_END },
+      { name: 'C#', type: SKILL_TYPES.BACK_END },
+      { name: 'ASP.NET Web API', type: SKILL_TYPES.BACK_END },
+      { name: 'EF Core', type: SKILL_TYPES.BACK_END },
+      { name: 'React', type: SKILL_TYPES.FRONT_END },
+      { name: 'Next.js', type: SKILL_TYPES.FRONT_END },
+      { name: 'JavaScript', type: SKILL_TYPES.FRONT_END },
+      { name: 'React Query', type: SKILL_TYPES.FRONT_END },
+      { name: 'Kendo UI', type: SKILL_TYPES.FRONT_END },
+      { name: 'MS SQL Server', type: SKILL_TYPES.DATABASE },
+      { name: 'Azure DevOps', type: SKILL_TYPES.DEV_OPS },
+    ],
     sections: [
       {
-        title: 'Optimizing Analytical System Performance',
-        icon: '🎯',
-        details: [
-          'The existing call analytics system suffered from slow data rendering. Initial Power BI dashboards lacked flexibility, and underlying SQL queries were inefficient.',
-        ],
+        title: 'Call Analysis Platform Architecture',
+        icon: ArchitectureIcon,
+        details:
+          "I actively participated in the design and implementation of a new, scalable microservice architecture for the call analysis platform. This strategic decision significantly improved the platform's ability to handle large data volumes and simplified the integration of new analytical features.",
       },
       {
-        title: 'Architecture Redesign and Data Optimization',
-        icon: '🔧',
-        details: [
-          'Data Access Layer (DAL) Refactoring: Switched to Dapper and Native SQL for performance-critical operations (over EF Core) for granular query control.',
-          'Caching Strategy: Implemented Redis caching for frequently accessed datasets, drastically reducing the load on MS SQL Server.',
-          'AI Integration: Implemented API integrations for AI-driven chatbots and real-time speaker emotion analysis.',
-        ],
+        title: '5x+ Dashboard Optimization',
+        icon: GrowUpIcon,
+        details:
+          'I performed a complete migration of visualizations from Power BI to native charting components while simultaneously optimizing the database structure. This involved redesigning data retrieval using optimized, native SQL queries, which drastically improved query execution speed and reduced server load. Through front-end rendering optimizations, we achieved an overall 5x+ increase in dashboard responsiveness and efficiency.',
       },
       {
-        title: 'UI Performance and UX',
-        icon: '🎨',
-        details: [
-          'UI Migration: Replaced Power BI with custom React/Kendo UI components for optimization control and tailored rendering.',
-          'State Management: Utilized Redux/Zustand for efficient state handling, ensuring a fast, modern user experience.',
-        ],
+        title: 'Leadership & Workflow Organization',
+        icon: TeamIcon,
+        details:
+          'I successfully led a team of up to 6 developers, ensuring clear organization of the workflow and strict adherence to project timelines. My responsibilities included writing detailed technical documentation and business requirements, which guaranteed the timely and high-quality delivery of the final product features.',
       },
-      {
-        title: 'Team & Process Management',
-        icon: '👥',
-        details: [
-          'Led a team of up to 6 developers: Introduced Scrum methodologies, conducted technical workshops, and established rigorous code review standards. Actively mentored junior staff on best practices.',
-        ],
-      },
-      {
-        title: 'Measurable Results',
-        icon: '📈',
-        details: [
-          'Achieved a 5x acceleration in the loading and rendering of key analytical dashboards. Improved delivery timelines through more accurate planning and collaboration.',
-        ],
-      },
-      {
-        title: 'Key Technologies',
-        icon: '⚙️',
-        details: ['C#, ASP.NET Web API, Redis, Dapper, React, Redux, Zustand, MS SQL Server'],
-      },
-    ],
-    focus: [
-      'Leadership + Seniority',
-      'Scaling & Bottlenecks',
-      'Technical Depth (Backend/DB)',
-      'Full Stack Impact (React/UX)',
-      'Soft Skills',
-      'Impact (Metrics)',
     ],
   },
   {
-    role: 'Full-Stack .NET Developer',
-    company: 'Lviv Polytechnic National University (Internal Workflow Automation System)',
-    period: '09/2021 – 06/2025',
+    role: 'Full-Stack .NET/Angular Developer',
+    company: 'Lviv Polytechnic National University',
+    sector: 'Internal Workflow Automation System',
+    period: '12/2023 - 06/2025',
+    skills: [
+      { name: '.NET', type: SKILL_TYPES.BACK_END },
+      { name: 'C#', type: SKILL_TYPES.BACK_END },
+      { name: 'ASP.NET Web API', type: SKILL_TYPES.BACK_END },
+      { name: 'Dapper', type: SKILL_TYPES.BACK_END },
+      { name: 'Angular', type: SKILL_TYPES.FRONT_END },
+      { name: 'TypeScript', type: SKILL_TYPES.FRONT_END },
+      { name: 'Angular Material', type: SKILL_TYPES.FRONT_END },
+      { name: 'MS SQL Server', type: SKILL_TYPES.DATABASE },
+      { name: 'Azure DevOps', type: SKILL_TYPES.DEV_OPS },
+      { name: 'Azure Pipelines', type: SKILL_TYPES.DEV_OPS },
+      { name: 'Docker', type: SKILL_TYPES.DEV_OPS },
+    ],
     sections: [
       {
-        title: 'Digitization of Document Flow',
-        icon: '🎯',
-        details: [
-          'The existing administrative processes (e.g., student clearance forms) were paper-based, slow, and highly inefficient, requiring a reliable digital solution.',
-        ],
+        title: 'Ground-Up Scalable System Architecture',
+        icon: LightBulbIcon,
+        details:
+          'I designed the entire architecture for a new information system from scratch, prioritizing scalability and long-term maintainability. This ensures the system can efficiently handle growing user load and simplifies the future integration of new functional modules.',
       },
       {
-        title: 'Architecture & Security Implementation',
-        icon: '🔧',
-        details: [
-          'Backend Architecture: Designed and implemented a clean, multi-layered (Clean/Onion Architecture) solution using ASP.NET Web API and EF Core.',
-          'Security: Implemented a robust authentication system using JWT and Role-Based Access Control (RBAC).',
-          'DevOps: Established full CI/CD pipeline using Docker and Azure Pipelines for automated build and deployment.',
-        ],
+        title: 'Scrum Framework Implementation',
+        icon: SprintIcon,
+        details:
+          'I initiated the adoption of the Scrum framework and actively facilitated its use within the development team. This led to a significant improvement in feature delivery efficiency and enhanced internal team communication.',
       },
       {
-        title: 'Client-Side Development',
-        icon: '🎨',
-        details: [
-          'Developed a comprehensive client interface using Angular to provide an effective and intuitive user experience for both students and administrative staff.',
-        ],
-      },
-      {
-        title: 'Implementation Results',
-        icon: '📈',
-        details: [
-          'Successfully launched the automation system, replacing manual paper trails and significantly accelerating administrative workflows across the university.',
-        ],
-      },
-      {
-        title: 'Key Technologies',
-        icon: '⚙️',
-        details: ['C#, ASP.NET Web API, Angular, EF Core, JWT, Docker, Azure Pipelines, MS SQL Server'],
+        title: 'Full CI/CD Setup',
+        icon: CiCdIcon,
+        details:
+          'Established the complete Continuous Integration/Continuous Delivery (CI/CD) infrastructure, leveraging Docker for containerization and Azure Pipelines for process automation. This enabled fast, reliable, and seamless code deployment across all environments.',
       },
     ],
-    focus: ['Zero-to-One Ownership', 'System Creation', 'DevOps & Clean Arch', 'E2E Skills', 'Reliability'],
   },
 ];

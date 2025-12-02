@@ -16,7 +16,6 @@ export const SKILLS: Skill[] = [
   { name: 'Next.js', type: SKILL_TYPES.FRONT_END },
   { name: 'MS SQL Server', type: SKILL_TYPES.DATABASE },
   { name: 'Docker', type: SKILL_TYPES.DEV_OPS },
-  { name: 'Azure DevOps', type: SKILL_TYPES.DEV_OPS },
 ];
 
 export const METRICS: Metric[] = [
