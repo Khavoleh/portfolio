@@ -1,85 +1,16 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import NotFound from '@components/not-found/NotFound.astro';
+import Joke from '@components/not-found/Joke.astro';
+import BackButtons from '@components/not-found/BackButtons.astro';
 ---
 
 <Layout>
-  <div class="mx-auto w-full max-w-4xl px-4 py-12">
-    <section class="flex min-h-[70vh] flex-col items-center justify-center text-center">
-      <div class="mb-8">
-        <h1
-          class="animate-bounce-slow text-[8rem] leading-none font-extrabold text-blue-500 sm:text-[12rem] md:text-[16rem] lg:text-[20rem] xl:text-[24rem] dark:text-blue-400"
-        >
-          404
-        </h1>
-      </div>
+  <div class="my-8 flex min-h-[70vh] flex-col items-center justify-center text-center">
+    <NotFound />
 
-      <div class="mb-6">
-        <h2 class="text-primary mb-4 text-3xl font-bold md:text-4xl">Oops! This Page Got Lost in the Cloud ☁️</h2>
-        <p class="text-secondary mx-auto max-w-2xl text-lg leading-relaxed md:text-xl">
-          Looks like this page took an unexpected <span class="font-semibold text-blue-500 dark:text-blue-400"
-            >null reference</span
-          > exception.
-          <br />
-          Even the best <span class="font-semibold text-blue-500 dark:text-blue-400">try-catch</span> blocks couldn't save
-          it! 🐛
-        </p>
-      </div>
+    <Joke />
 
-      <div class="background-default border-default mb-8 rounded-lg border p-6 shadow-lg">
-        <p class="text-secondary mb-2 text-sm italic">
-          Error Code: <span class="font-mono font-semibold text-red-500">ENOENT</span>
-        </p>
-        <p class="text-secondary text-sm italic">
-          Status: <span class="font-mono font-semibold text-orange-500">HttpStatusCode.NotFound</span>
-        </p>
-        <p class="text-secondary mt-4 text-base">
-          💡 <span class="font-semibold">Pro tip:</span> Have you tried turning it off and on again?
-        </p>
-      </div>
-
-      <div class="flex flex-col gap-4 sm:flex-row">
-        <a
-          href="/"
-          class="focus-default transition-default inline-flex items-center justify-center gap-2 rounded-lg bg-blue-500 px-8 py-4 text-lg font-semibold text-white shadow-lg hover:bg-blue-600 hover:shadow-xl active:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-500 dark:active:bg-blue-700"
-        >
-          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-            ></path>
-          </svg>
-          <span>Back to Home</span>
-        </a>
-
-        <button
-          onclick="window.history.back()"
-          class="focus-default transition-default hover-default border-default inline-flex items-center justify-center gap-2 rounded-lg border-2 border-blue-500 bg-transparent px-8 py-4 text-lg font-semibold text-blue-500 shadow-lg hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-slate-800"
-        >
-          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"
-            ></path>
-          </svg>
-          <span>Go Back</span>
-        </button>
-      </div>
-    </section>
+    <BackButtons />
   </div>
 </Layout>
-
-<style>
-  @keyframes bounce-slow {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-  }
-
-  .animate-bounce-slow {
-    animation: bounce-slow 3s ease-in-out infinite;
-  }
-</style>
