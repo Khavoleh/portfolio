@@ -1,25 +1,14 @@
-commit_msg=$(cat "$1")
+COMMIT_MSG_FILE="$1"
+COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
 
-if ! echo "$commit_msg" | grep -qE '^(major|minor|feat): '; then
-  echo "❌ Error: Commit message must start with 'major:', 'minor:', or 'feat:'"
-  echo "Format: <type>: <message>"
-  echo "  - major: [commit text] - for major version (Vx.0.0)"
-  echo "  - feat: [commit text] - for patch version (V0.x.0)"
-  echo "  - minor: [commit text] - for minor version (V0.0.x)"
+if ! echo "$COMMIT_MSG" | grep -qE "^(major:|minor:|patch:)"
+then
+  echo "--- 🚨 Invalid Commit Message 🚨 ---"
+  echo "Your commit message must start with one of the following prefixes (case-sensitive):"
+  echo "  major: [commit text] (for Vx.0.0 bump)"
+  echo "  minor: [commit text] (for V0.x.0 bump)"
+  echo "  patch: [commit text] (for V0.0.x bump)"
+  echo ""
+  echo "Example: major: Initial release of the feature X"
   exit 1
 fi
-
-# If package.json is staged, amend the pending commit to include it.
-# git diff --cached --name-only lists staged files.
-if git diff --cached --name-only | grep -q '^package.json$'; then
-  echo "ℹ️ package.json is staged — amending commit to include version bump"
-  # Ensure package.json is added (defensive), then amend commit without changing message.
-  git add package.json
-  # Amend commit and skip hooks to avoid recursion
-  git commit --amend --no-edit --no-verify || {
-    echo "❌ Error: failed to amend commit to include package.json"
-    exit 1
-  }
-fi
-
-exit 0

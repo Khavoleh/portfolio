@@ -1,1 +1,13 @@
 pnpm lint && pnpm prettier
+
+COMMIT_MSG_FILE=$(git rev-parse --git-dir)/COMMIT_EDITMSG
+
+node .husky/update-version.js "$COMMIT_MSG_FILE"
+
+if git status --porcelain | grep -q "package.json"
+then
+  git add package.json
+  echo "✅ Staged updated package.json with new version."
+else
+  echo "ℹ️ package.json not modified, skipping stage."
+fi

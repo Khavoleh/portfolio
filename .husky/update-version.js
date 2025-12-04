@@ -1,59 +1,69 @@
 import { readFileSync, writeFileSync } from 'node:fs';
-import { execSync } from 'node:child_process';
+import path from 'node:path';
 
 function getType() {
   const commitMsgFile = process.argv[2];
+
   if (!commitMsgFile) {
-    console.error('No commit message file provided');
+    console.error('Error: Commit message file path not provided. This script must be run from a pre-commit hook.');
     return null;
   }
 
-  const msg = readFileSync(commitMsgFile, 'utf8').trim();
+  try {
+    const msg = readFileSync(commitMsgFile, 'utf8').trim();
 
-  if (msg.startsWith('major:')) return 'major';
-  if (msg.startsWith('feat:')) return 'patch';
-  if (msg.startsWith('minor:')) return 'minor';
-  return null;
+    if (msg.startsWith('major:')) return 'major';
+    if (msg.startsWith('minor:')) return 'minor';
+    if (msg.startsWith('patch:')) return 'patch';
+
+    console.log(
+      'ℹ️ Commit message does not match versioning prefixes (major:, minor:, patch:, feat:). Skipping version bump.'
+    );
+    return null;
+  } catch (error) {
+    console.error(`Error reading commit message file (${commitMsgFile}): ${error.message}`);
+    process.exit(1);
+  }
 }
 
-const type = getType();
-if (!type) {
-  console.error('No valid prefix found in commit message.');
-  process.exit(1);
+function main() {
+  const type = getType();
+  if (!type) {
+    return;
+  }
+
+  const pkgPath = path.resolve('./package.json');
+  let pkg;
+
+  pkg = JSON.parse(readFileSync(pkgPath, 'utf8'));
+
+  let [major, minor, patch] = pkg.version.split('.').map(Number);
+
+  switch (type) {
+    case 'major':
+      major++;
+      minor = 0;
+      patch = 0;
+      break;
+    case 'minor':
+      minor++;
+      patch = 0;
+      break;
+    case 'patch':
+      patch++;
+      break;
+  }
+
+  const oldVersion = pkg.version;
+  pkg.version = `${major}.${minor}.${patch}`;
+
+  try {
+    writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n');
+    console.log(`✅ Version bumped: ${oldVersion} → ${pkg.version} (Triggered by ${type} commit).`);
+  } catch (e) {
+    console.error(`Error: Failed to write new version to package.json: ${e.message}`);
+    process.exit(1);
+  }
 }
 
-const pkgPath = './package.json';
-const pkg = JSON.parse(readFileSync(pkgPath, 'utf8'));
-
-let [major, patch, minor] = pkg.version.split('.').map(Number);
-
-switch (type) {
-  case 'major':
-    major++;
-    patch = 0;
-    minor = 0;
-    break;
-  case 'patch':
-    patch++;
-    minor = 0;
-    break;
-  case 'minor':
-    minor++;
-    break;
-}
-
-const oldVersion = pkg.version;
-pkg.version = `${major}.${patch}.${minor}`;
-
-writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n');
-
-// Ensure git add runs and any error surfaces
-try {
-  execSync('git add package.json', { stdio: 'inherit' });
-} catch (err) {
-  console.error('Failed to git add package.json', err);
-  process.exit(1);
-}
-
-console.log(`✅ Version bumped: ${oldVersion} → ${pkg.version}`);
-process.exit(0);
+main();
