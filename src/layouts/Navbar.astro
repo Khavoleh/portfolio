@@ -1,9 +1,10 @@
 ---
 import { PAGE_URLS } from '@shared/constants.ts';
+import type { NavLink } from '@shared/interfaces.ts';
 import LogoIcon from '@assets/logo.svg';
 import { NAVIGATION_LINKS } from './constants.ts';
-import type { NavLink } from './interfaces.ts';
 import BurgerIcon from './icons/burger.svg';
+import ThemeSelector from './ThemeSelector.astro';
 
 const currentPath: string = Astro.url.pathname;
 ---
@@ -20,16 +21,20 @@ const currentPath: string = Astro.url.pathname;
         <span class="text-primary self-center text-2xl font-semibold whitespace-nowrap">Oleh Khavar</span>
       </a>
 
-      <button
-        data-collapse-toggle="navbar-default"
-        type="button"
-        class="transition-default hover-default focus-default inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 md:hidden"
-        aria-controls="navbar-default"
-        aria-expanded="false"
-        aria-label="Open main menu"
-      >
-        <BurgerIcon class="h-5 w-5" />
-      </button>
+      <div class="flex items-center gap-2">
+        <ThemeSelector />
+
+        <button
+          data-collapse-toggle="navbar-default"
+          type="button"
+          class="transition-default hover-default focus-default inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 md:hidden"
+          aria-controls="navbar-default"
+          aria-expanded="false"
+          aria-label="Open main menu"
+        >
+          <BurgerIcon class="h-5 w-5" />
+        </button>
+      </div>
 
       <div class="hidden w-full md:block md:w-auto" id="navbar-default">
         <ul

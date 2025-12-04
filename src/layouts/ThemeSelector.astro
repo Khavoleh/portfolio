@@ -1,0 +1,95 @@
+---
+import SunIcon from './icons/sun.svg';
+import MoonIcon from './icons/moon.svg';
+import ComputerIcon from './icons/computer.svg';
+import { THEMES } from './constants.ts';
+---
+
+<button
+  data-dropdown-toggle="theme-dropdown"
+  type="button"
+  class="transition-default hover-default focus-default inline-flex h-10 w-10 items-center justify-center rounded-lg p-2"
+  aria-label="Toggle theme"
+>
+  <SunIcon id="theme-icon-light" class="hidden h-5 w-5" />
+  <MoonIcon id="theme-icon-dark" class="hidden h-5 w-5" />
+  <ComputerIcon id="theme-icon-system" class="h-5 w-5" />
+</button>
+
+<div
+  id="theme-dropdown"
+  class="z-10 hidden w-28 rounded-lg border border-slate-200 bg-slate-50 shadow-lg dark:border-slate-700 dark:bg-slate-800"
+>
+  <ul class="p-2 text-sm font-medium text-slate-700 dark:text-slate-200" aria-labelledby="theme-toggle">
+    {
+      THEMES.map((theme) => (
+        <li>
+          <button
+            data-theme={theme.id}
+            class="transition-default inline-flex w-full items-center gap-2 rounded p-2 text-left hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-slate-100"
+          >
+            <theme.icon class="h-4 w-4" />
+            <span>{theme.title}</span>
+          </button>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<script is:inline>
+  const updateThemeIcon = (theme) => {
+    const lightIcon = document.getElementById('theme-icon-light');
+    const darkIcon = document.getElementById('theme-icon-dark');
+    const systemIcon = document.getElementById('theme-icon-system');
+
+    if (lightIcon && darkIcon && systemIcon) {
+      const themeManager = window.__themeManager;
+      if (!themeManager) return;
+
+      lightIcon.classList.add('hidden');
+      darkIcon.classList.add('hidden');
+      systemIcon.classList.add('hidden');
+
+      if (theme === themeManager.THEME_OPTIONS.LIGHT) {
+        lightIcon.classList.remove('hidden');
+      } else if (theme === themeManager.THEME_OPTIONS.DARK) {
+        darkIcon.classList.remove('hidden');
+      } else {
+        systemIcon.classList.remove('hidden');
+      }
+    }
+  };
+
+  const initThemeSelector = () => {
+    const themeManager = window.__themeManager;
+    if (!themeManager) {
+      console.warn('Theme manager not found. Make sure Layout.astro is loaded.');
+      return;
+    }
+
+    const currentTheme = themeManager.getTheme();
+    updateThemeIcon(currentTheme);
+
+    const themeButtons = document.querySelectorAll('[data-theme]');
+
+    themeButtons.forEach((button) => {
+      const newButton = button.cloneNode(true);
+      button.parentNode?.replaceChild(newButton, button);
+
+      newButton.addEventListener('click', () => {
+        const theme = newButton.getAttribute('data-theme');
+        if (theme) {
+          themeManager.setTheme(theme);
+          updateThemeIcon(theme);
+        }
+      });
+    });
+  };
+
+  document.addEventListener('astro:page-load', () => {
+    if (typeof window !== 'undefined') {
+      initThemeSelector();
+    }
+  });
+</script>

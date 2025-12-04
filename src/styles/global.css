@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer utilities {
   .text-primary {
     @apply text-slate-800 dark:text-slate-50;
