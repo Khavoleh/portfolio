@@ -10,7 +10,7 @@ const { skills } = Astro.props;
 
 <div class="mb-8">
   <h3 class="text-primary mb-4 text-xl font-bold">Technical Stack</h3>
-  <div class="flex flex-wrap gap-3">
+  <div class="flex flex-wrap justify-center gap-3">
     {skills.map((skill: Skill) => <SkillBlock skill={skill} />)}
   </div>
 </div>
