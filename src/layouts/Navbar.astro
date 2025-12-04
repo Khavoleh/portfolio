@@ -1,5 +1,6 @@
 ---
 import { PAGE_URLS } from '@shared/constants.ts';
+import LogoIcon from '@assets/logo.svg';
 import { NAVIGATION_LINKS } from './constants.ts';
 import type { NavLink } from './interfaces.ts';
 import BurgerIcon from './icons/burger.svg';
@@ -15,7 +16,7 @@ const currentPath: string = Astro.url.pathname;
         aria-label="Navigate to home page"
         class="transition-default focus-default flex items-center space-x-3 rounded-lg rtl:space-x-reverse"
       >
-        <img src="/favicon.svg" class="h-8" alt="Logo" />
+        <LogoIcon class="h-8" />
         <span class="text-primary self-center text-2xl font-semibold whitespace-nowrap">Oleh Khavar</span>
       </a>
 

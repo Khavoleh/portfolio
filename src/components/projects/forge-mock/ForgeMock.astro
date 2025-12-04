@@ -5,10 +5,11 @@ import TechStack from '../components/TechStack.astro';
 import GitHubButton from '../components/GitHubButton.astro';
 import type { ProjectSection } from '../interfaces.ts';
 import { FORGE_MOCK } from './constants.ts';
+import ForgeMockIcon from './icons/forge-mock.svg';
 ---
 
 <section class="background-default border-default mb-12 rounded-3xl border-2 p-8 shadow-2xl md:p-12">
-  <Title title={FORGE_MOCK.title} description={FORGE_MOCK.description} />
+  <Title title={FORGE_MOCK.title} description={FORGE_MOCK.description} Icon={ForgeMockIcon} />
 
   <div class="mb-8 grid gap-8 md:grid-cols-2">
     {
