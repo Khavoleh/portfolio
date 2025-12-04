@@ -20,7 +20,7 @@ import SkillBlock from '@shared/skill/SkillBlock.astro';
             <div class="md:text-right">
               <div class="background-default border-default mb-6 rounded-2xl border-2 p-6 shadow-lg md:ml-auto md:max-w-lg">
                 <div class="mb-3">
-                  <h3 class="text-primary mb-2 text-2xl font-bold">{experience.role}</h3>
+                  <h2 class="text-primary mb-2 text-2xl font-bold">{experience.role}</h2>
                   <p class="text-lg font-semibold text-blue-500 dark:text-blue-400">{experience.company}</p>
                   <p class="text-primary font-semibold">{experience.sector}</p>
                   <p class="text-secondary mt-1 text-sm">{experience.period}</p>
@@ -37,10 +37,10 @@ import SkillBlock from '@shared/skill/SkillBlock.astro';
             <div class="space-y-6">
               {experience.sections.map((section: ExperienceSection) => (
                 <div class="background-default border-default rounded-2xl border-2 p-6 shadow-lg">
-                  <h4 class="text-primary mb-3 flex items-center text-xl font-bold">
+                  <h3 class="text-primary mb-3 flex items-center text-xl font-bold">
                     <section.icon class="mr-2 shrink-0 text-2xl" />
                     {section.title}
-                  </h4>
+                  </h3>
                   <p class="text-secondary leading-relaxed font-medium">{section.details}</p>
                 </div>
               ))}

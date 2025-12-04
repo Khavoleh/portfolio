@@ -5,7 +5,7 @@ export const getStyleClasses = (type: string): string => {
     case SKILL_TYPES.FRONT_END:
       return 'border-2 border-blue-500 text-blue-500 dark:border-blue-400 dark:text-blue-400';
     case SKILL_TYPES.BACK_END:
-      return 'bg-blue-500 font-medium text-white';
+      return 'bg-blue-600 font-medium text-white';
     case SKILL_TYPES.DATABASE:
       return 'bg-slate-700 text-white shadow-lg dark:bg-slate-600';
     case SKILL_TYPES.DEV_OPS:
