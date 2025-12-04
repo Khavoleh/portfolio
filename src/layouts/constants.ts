@@ -1,8 +1,8 @@
 import { PAGE_URLS } from '@shared/constants.ts';
 import type { NavLink, SocialLink } from './interfaces.ts';
+import GitHubIcon from '@assets/github.svg';
 import LinkedInIcon from './icons/linkedin.svg';
 import TelegramIcon from './icons/telegram.svg';
-import GitHubIcon from './icons/github.svg';
 
 export const NAVIGATION_LINKS: NavLink[] = [
   { href: PAGE_URLS.HOME, label: 'Home' },
