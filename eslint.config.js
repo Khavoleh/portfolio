@@ -44,7 +44,7 @@ const config = [
   },
 
   {
-    ignores: ['dist/**', '**/*.d.ts', 'node_modules/**', '.idea/**', '.astro/**', 'public/**'],
+    ignores: ['dist/**', '**/*.d.ts', 'node_modules/**', '.idea/**', '.astro/**', 'public/**', '.husky/**'],
   },
 ];
 

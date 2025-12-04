@@ -1,0 +1,20 @@
+commit_msg=$(cat "$1")
+
+if ! echo "$commit_msg" | grep -qE '^(major|minor|feat): '; then
+  echo "❌ Error: Commit message must start with 'major:', 'minor:', or 'feat:'"
+  echo "Format: <type>: <message>"
+  echo "  - major: [commit text] - for major version (Vx.0.0)"
+  echo "  - feat: [commit text] - for patch version (V0.x.0)"
+  echo "  - minor: [commit text] - for minor version (V0.0.x)"
+  exit 1
+fi
+
+node .husky/update-version.js "$1"
+
+if [ $? -ne 0 ]; then
+  echo "❌ Error: Failed to update version in package.json"
+  exit 1
+fi
+
+echo "✅ Commit message validated and version updated successfully"
+

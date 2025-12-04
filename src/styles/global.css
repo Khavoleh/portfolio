@@ -26,7 +26,7 @@
   }
 
   .focus-default {
-    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-100 dark:focus-visible:ring-blue-500 dark:focus-visible:ring-offset-slate-900 rounded-lg;
+    @apply rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-100 dark:focus-visible:ring-blue-500 dark:focus-visible:ring-offset-slate-900;
   }
 
   .transition-default {
