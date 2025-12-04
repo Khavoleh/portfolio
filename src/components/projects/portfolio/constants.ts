@@ -28,7 +28,7 @@ export const PORTFOLIO: ProjectItem = {
       title: 'Key Features',
       icon: StarsIcon,
       details: [
-        'Dark mode/theme switch with system preference detection',
+        'Dark/light mode switch with system preference detection',
         'Component-driven architecture with reusable blocks',
         'I18N with 2 languages support',
         'Fully responsive design',
