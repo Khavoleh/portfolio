@@ -20,12 +20,9 @@ const { Icon, title, details } = Astro.props;
     details.length === 1 ? (
       <p class="text-secondary leading-relaxed">{details[0]}</p>
     ) : (
-      <ul class="text-secondary space-y-2 leading-relaxed">
+      <ul class="text-secondary list-inside list-disc space-y-1 leading-relaxed marker:text-blue-500">
         {details.map((detail: string) => (
-          <li class="flex items-start">
-            <span class="mr-2 text-blue-500">▸</span>
-            <span>{detail}</span>
-          </li>
+          <li>{detail}</li>
         ))}
       </ul>
     )
