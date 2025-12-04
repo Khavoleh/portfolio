@@ -1,6 +1,6 @@
 ---
-import { SOCIAL_LINKS } from '@layouts/constants.ts';
-import type { SocialLink } from '@layouts/interfaces.ts';
+import type { SocialLink } from '@shared/interfaces.ts';
+import { SOCIAL_LINKS } from './constants.ts';
 ---
 
 <section class="mb-16">
@@ -17,11 +17,7 @@ import type { SocialLink } from '@layouts/interfaces.ts';
           aria-label={`Visit my ${link.label}`}
         >
           <link.icon class="mb-4 h-16 w-16 text-blue-500 dark:text-blue-400" />
-          <span class="text-primary text-lg font-semibold">
-            {link.label.includes('LinkedIn') && 'LinkedIn'}
-            {link.label.includes('GitHub') && 'GitHub'}
-            {link.label.includes('Telegram') && 'Telegram'}
-          </span>
+          <span class="text-primary text-lg font-semibold">{link.label}</span>
         </a>
       ))
     }
@@ -29,7 +25,7 @@ import type { SocialLink } from '@layouts/interfaces.ts';
 
   <p class="text-secondary mx-auto mt-8 max-w-2xl text-center leading-relaxed">
     <span class="font-semibold text-blue-500 dark:text-blue-400">LinkedIn</span> for professional validation and endorsements,
-    <span class="font-semibold text-blue-500 dark:text-blue-400">GitHub</span> to review my Forge Mock code, and
+    <span class="font-semibold text-blue-500 dark:text-blue-400">GitHub</span> to review my projects' code, and
     <span class="font-semibold text-blue-500 dark:text-blue-400">Telegram</span> for quick messaging.
   </p>
 </section>

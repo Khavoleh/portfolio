@@ -1,29 +1,22 @@
 ---
-import cv from '@shared/view-cv/Oleh Khavar CV.pdf';
+import ViewCv from '@shared/view-cv/ViewCv.astro';
+import { PAGE_URLS } from '@shared/constants.ts';
 ---
 
 <section class="text-center">
   <h2 class="text-primary mb-4 text-2xl font-bold">Quick Access</h2>
   <p class="text-secondary mx-auto mb-8 max-w-2xl leading-relaxed">
-    Download my full PDF CV for detailed information about my experience, or explore my career timeline to see the
-    complete journey.
+    View my CV for detailed information about my experience, or explore my career timeline to see the complete journey.
   </p>
 
   <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
-    <a
-      href={cv}
-      class="transition-default focus-default inline-flex transform items-center justify-center rounded-lg bg-blue-500 px-8 py-4 text-lg font-semibold text-white shadow-lg hover:-translate-y-1 hover:bg-blue-600 hover:shadow-xl active:bg-blue-700"
-      target="_blank"
-      download
-    >
-      Download Full PDF CV
-    </a>
+    <ViewCv />
 
     <a
-      href="/experience"
+      href={PAGE_URLS.PROJECTS}
       class="transition-default focus-default inline-flex transform items-center justify-center rounded-lg border-2 border-blue-500 px-8 py-4 text-lg font-semibold text-blue-500 shadow-lg hover:-translate-y-1 hover:bg-blue-500 hover:text-white hover:shadow-xl dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-slate-900"
     >
-      Back to Experience Timeline
+      Back to Career Timeline
     </a>
   </div>
 </section>

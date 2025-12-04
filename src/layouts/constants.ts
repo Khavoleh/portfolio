@@ -1,5 +1,5 @@
-import { PAGE_URLS } from '@shared/constants.ts';
-import type { NavLink, SocialLink } from './interfaces.ts';
+import { PAGE_URLS, SOCIALS } from '@shared/constants.ts';
+import type { NavLink, SocialLink } from '@shared/interfaces.ts';
 import GitHubIcon from '@assets/github.svg';
 import LinkedInIcon from './icons/linkedin.svg';
 import TelegramIcon from './icons/telegram.svg';
@@ -12,7 +12,7 @@ export const NAVIGATION_LINKS: NavLink[] = [
 ];
 
 export const SOCIAL_LINKS: SocialLink[] = [
-  { href: 'https://www.linkedin.com/in/khavol/', label: 'LinkedIn profile', icon: LinkedInIcon },
-  { href: 'https://t.me/khavol', label: 'Telegram messenger', icon: TelegramIcon },
-  { href: 'https://github.com/Khavoleh', label: 'GitHub account', icon: GitHubIcon },
+  { href: SOCIALS.LINKEDIN, label: 'LinkedIn profile', icon: LinkedInIcon },
+  { href: SOCIALS.TELEGRAM, label: 'Telegram messenger', icon: TelegramIcon },
+  { href: SOCIALS.GITHUB, label: 'GitHub account', icon: GitHubIcon },
 ];

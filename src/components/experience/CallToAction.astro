@@ -7,13 +7,13 @@ import ViewCv from '@shared/view-cv/ViewCv.astro';
   <h2 class="text-primary mb-6 text-3xl font-bold">Ready to see these principles in action in open source code?</h2>
 
   <div class="flex flex-col items-center justify-center gap-4 md:flex-row">
+    <ViewCv />
+
     <a
       href={PAGE_URLS.PROJECTS}
-      class="transition-default focus-default inline-flex transform items-center justify-center rounded-lg bg-blue-500 px-8 py-4 text-lg font-semibold text-white shadow-lg hover:-translate-y-1 hover:bg-blue-600 hover:shadow-xl active:bg-blue-700"
+      class="transition-default focus-default inline-flex transform items-center justify-center rounded-lg border-2 border-blue-500 px-8 py-4 text-lg font-semibold text-blue-500 shadow-lg hover:-translate-y-1 hover:bg-blue-500 hover:text-white hover:shadow-xl dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-slate-900"
     >
       View Projects
     </a>
-
-    <ViewCv />
   </div>
 </section>
