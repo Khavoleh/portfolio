@@ -16,9 +16,7 @@ function getType() {
     if (msg.startsWith('minor:')) return 'minor';
     if (msg.startsWith('patch:')) return 'patch';
 
-    console.log(
-      'ℹ️ Commit message does not match versioning prefixes (major:, minor:, patch:, feat:). Skipping version bump.'
-    );
+    console.log('Commit message does not match versioning prefixes (major:, minor:, patch:). Skipping version bump.');
     return null;
   } catch (error) {
     console.error(`Error reading commit message file (${commitMsgFile}): ${error.message}`);
