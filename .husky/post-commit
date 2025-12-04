@@ -1,0 +1,7 @@
+# Check if package.json was modified by the version update
+if git diff --name-only | grep -q "package.json"
+then
+  echo "📦 Amending commit with updated package.json..."
+  git add package.json
+  git commit --amend --no-edit --no-verify
+fi

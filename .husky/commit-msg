@@ -12,3 +12,5 @@ then
   echo "Example: major: Initial release of the feature X"
   exit 1
 fi
+
+node .husky/update-version.js "$COMMIT_MSG_FILE"
