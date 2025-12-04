@@ -11,8 +11,8 @@ function getType() {
   const msg = readFileSync(commitMsgFile, 'utf8').trim();
 
   if (msg.startsWith('major:')) return 'major';
-  if (msg.startsWith('minor:')) return 'minor';
   if (msg.startsWith('feat:')) return 'patch';
+  if (msg.startsWith('minor:')) return 'minor';
   return null;
 }
 
@@ -43,11 +43,10 @@ switch (type) {
 }
 
 const oldVersion = pkg.version;
-pkg.version = `${major}.${minor}.${patch}`;
+pkg.version = `${major}.${patch}.${minor}`;
 
 writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n');
 
-// Stage the updated package.json
 execSync('git add package.json');
 
 console.log(`✅ Version bumped: ${oldVersion} → ${pkg.version}`);
