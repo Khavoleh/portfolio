@@ -1,7 +1,7 @@
 import { PAGE_URLS, SOCIALS } from '@shared/constants.ts';
 import type { NavLink, SocialLink } from '@shared/interfaces.ts';
 import GitHubIcon from '@assets/github.svg';
-import LinkedInIcon from './icons/linkedin.svg';
+import LinkedInIcon from '@assets/linkedin.svg';
 import TelegramIcon from './icons/telegram.svg';
 
 export const NAVIGATION_LINKS: NavLink[] = [
