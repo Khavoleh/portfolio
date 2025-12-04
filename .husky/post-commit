@@ -1,0 +1,14 @@
+. "$(dirname -- "$0")/_/husky.sh"
+
+commit_msg=$(git log -1 --pretty=%B)
+
+if echo "$commit_msg" | grep -qE '^(major|minor|feat): '; then
+  # Check if package.json has uncommitted changes
+  if git diff HEAD --name-only | grep -q "package.json"; then
+    echo "📦 Adding updated package.json to commit..."
+    git add package.json
+    git commit --amend --no-edit --no-verify
+    echo "✅ Version update committed"
+  fi
+fi
+
