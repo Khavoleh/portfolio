@@ -21,7 +21,7 @@ export const PORTFOLIO: ProjectItem = {
       title: 'Technical Approach',
       icon: SettingsIcon,
       details: [
-        'Built with Astro for zero client-side JavaScript. Utilized Vercel for hosting and Continuous Delivery with automatic deployments. Styled with Tailwind CSS and Flowbite components for rapid, consistent UI development.',
+        'Built with Astro for low-count client-side JavaScript. Utilized Vercel for hosting and Continuous Delivery with automatic deployments. Styled with Tailwind CSS and Flowbite components for rapid, consistent UI development.',
       ],
     },
     {
@@ -30,7 +30,7 @@ export const PORTFOLIO: ProjectItem = {
       details: [
         'Dark/light mode switch with system preference detection',
         'Component-driven architecture with reusable blocks',
-        'I18N with 2 languages support',
+        'Internationalization with 2 languages support',
         'Fully responsive design',
       ],
     },
