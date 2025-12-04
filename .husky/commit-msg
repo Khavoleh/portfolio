@@ -1,16 +1,4 @@
 COMMIT_MSG_FILE="$1"
 COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
 
-if ! echo "$COMMIT_MSG" | grep -qE "^(major:|minor:|patch:)"
-then
-  echo "--- 🚨 Invalid Commit Message 🚨 ---"
-  echo "Your commit message must start with one of the following prefixes (case-sensitive):"
-  echo "  major: [commit text] (for Vx.0.0 bump)"
-  echo "  minor: [commit text] (for V0.x.0 bump)"
-  echo "  patch: [commit text] (for V0.0.x bump)"
-  echo ""
-  echo "Example: major: Initial release of the feature X"
-  exit 1
-fi
-
 node .husky/update-version.js "$COMMIT_MSG_FILE"
