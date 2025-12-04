@@ -2,7 +2,6 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { execSync } from 'node:child_process';
 
 function getType() {
-  // Get commit message file path from command line argument
   const commitMsgFile = process.argv[2];
   if (!commitMsgFile) {
     console.error('No commit message file provided');
