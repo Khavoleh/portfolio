@@ -1,0 +1,33 @@
+---
+import type { SvgComponent } from 'astro/types';
+
+interface Props {
+  Icon: SvgComponent;
+  title: string;
+  details: string[];
+}
+
+const { Icon, title, details } = Astro.props;
+---
+
+<div class="background-default border-default rounded-2xl border-2 p-6 shadow-lg">
+  <h3 class="text-primary mb-3 flex items-center text-xl font-bold">
+    <Icon class="mr-3" />
+    {title}
+  </h3>
+
+  {
+    details.length === 1 ? (
+      <p class="text-secondary leading-relaxed">{details[0]}</p>
+    ) : (
+      <ul class="text-secondary space-y-2 leading-relaxed">
+        {details.map((detail: string) => (
+          <li class="flex items-start">
+            <span class="mr-2 text-blue-500">▸</span>
+            <span>{detail}</span>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</div>

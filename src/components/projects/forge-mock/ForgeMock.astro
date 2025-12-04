@@ -1,54 +1,23 @@
 ---
-import SkillBlock from '@shared/skill/SkillBlock.astro';
-import type { Skill } from '@shared/skill/interfaces.ts';
-import type { ProjectItem, ProjectSection } from './interfaces.ts';
-import { PROJECTS } from './constants.ts';
+import Title from '../components/Title.astro';
+import Section from '../components/Section.astro';
+import TechStack from '../components/TechStack.astro';
+import type { ProjectSection } from '../interfaces.ts';
+import { FORGE_MOCK } from './constants.ts';
 ---
 
 <section class="background-default border-default mb-12 rounded-3xl border-2 p-8 shadow-2xl md:p-12">
-  {
-    PROJECTS.map((item: ProjectItem) => (
-      <>
-        <div class="mb-8">
-          <h2 class="text-primary mb-4 text-3xl font-bold md:text-4xl">{item.title}</h2>
-          <p class="text-secondary text-lg leading-relaxed">{item.description}</p>
-        </div>
+  <Title title={FORGE_MOCK.title} description={FORGE_MOCK.description} />
 
-        <div class="mb-8 grid gap-8 md:grid-cols-2">
-          {item.sections.map((section: ProjectSection) => (
-            <div class="background-default border-default rounded-2xl border-2 p-6 shadow-lg">
-              <h3 class="text-primary mb-3 flex items-center text-xl font-bold">
-                <section.icon class="mr-3" />
-                {section.title}
-              </h3>
+  <div class="mb-8 grid gap-8 md:grid-cols-2">
+    {
+      FORGE_MOCK.sections.map((section: ProjectSection) => (
+        <Section Icon={section.icon} title={section.title} details={section.details} />
+      ))
+    }
+  </div>
 
-              {section.details.length === 1 ? (
-                <p class="text-secondary leading-relaxed">{section.details[0]}</p>
-              ) : (
-                <ul class="text-secondary space-y-2 leading-relaxed">
-                  {section.details.map((detail: string) => (
-                    <li class="flex items-start">
-                      <span class="mr-2 text-blue-500">▸</span>
-                      <span>{detail}</span>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          ))}
-        </div>
-
-        <div class="mb-8">
-          <h3 class="text-primary mb-4 text-xl font-bold">Primary Stack</h3>
-          <div class="flex flex-wrap gap-3">
-            {item.skills.map((skill: Skill) => (
-              <SkillBlock skill={skill} />
-            ))}
-          </div>
-        </div>
-      </>
-    ))
-  }
+  <TechStack skills={FORGE_MOCK.skills} />
 
   <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
     <a
