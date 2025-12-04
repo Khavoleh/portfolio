@@ -25,7 +25,7 @@ if (!type) {
 const pkgPath = './package.json';
 const pkg = JSON.parse(readFileSync(pkgPath, 'utf8'));
 
-let [major, minor, patch] = pkg.version.split('.').map(Number);
+let [major, patch, minor] = pkg.version.split('.').map(Number);
 
 switch (type) {
   case 'major':
@@ -33,19 +33,21 @@ switch (type) {
     minor = 0;
     patch = 0;
     break;
-  case 'minor':
-    minor++;
-    patch = 0;
-    break;
   case 'patch':
     patch++;
+    minor = 0;
+    break;
+  case 'minor':
+    minor++;
     break;
 }
 
+const oldVersion = pkg.version;
 pkg.version = `${major}.${minor}.${patch}`;
 
 writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n');
 
+// Stage the updated package.json
 execSync('git add package.json');
 
-console.log(`✅ Version bumped to ${pkg.version}`);
+console.log(`✅ Version bumped: ${oldVersion} → ${pkg.version}`);

@@ -12,9 +12,7 @@ fi
 node .husky/update-version.js "$1"
 
 if [ $? -ne 0 ]; then
-  echo "❌ Error: Failed to update version in package.json"
+  echo "❌ Error: Failed to update version"
   exit 1
 fi
-
-echo "✅ Commit message validated and version updated successfully"
 
