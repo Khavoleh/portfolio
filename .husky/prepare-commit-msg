@@ -1,7 +1,7 @@
 commit_msg=$(cat "$1")
 
 if echo "$commit_msg" | grep -qE '^(major|minor|feat): '; then
-  echo "📝 Validating commit message format..."
+  echo "📝 Updating version..."
 
   node .husky/update-version.js "$1"
 
@@ -9,7 +9,5 @@ if echo "$commit_msg" | grep -qE '^(major|minor|feat): '; then
     echo "❌ Error: Failed to update version in package.json"
     exit 1
   fi
-
-  echo "✅ Version updated successfully"
 fi
 

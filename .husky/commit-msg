@@ -9,10 +9,17 @@ if ! echo "$commit_msg" | grep -qE '^(major|minor|feat): '; then
   exit 1
 fi
 
-node .husky/update-version.js "$1"
-
-if [ $? -ne 0 ]; then
-  echo "❌ Error: Failed to update version"
-  exit 1
+# If package.json is staged, amend the pending commit to include it.
+# git diff --cached --name-only lists staged files.
+if git diff --cached --name-only | grep -q '^package.json$'; then
+  echo "ℹ️ package.json is staged — amending commit to include version bump"
+  # Ensure package.json is added (defensive), then amend commit without changing message.
+  git add package.json
+  # Amend commit and skip hooks to avoid recursion
+  git commit --amend --no-edit --no-verify || {
+    echo "❌ Error: failed to amend commit to include package.json"
+    exit 1
+  }
 fi
 
+exit 0

@@ -30,8 +30,8 @@ let [major, patch, minor] = pkg.version.split('.').map(Number);
 switch (type) {
   case 'major':
     major++;
-    minor = 0;
     patch = 0;
+    minor = 0;
     break;
   case 'patch':
     patch++;
@@ -47,6 +47,13 @@ pkg.version = `${major}.${patch}.${minor}`;
 
 writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n');
 
-execSync('git add package.json');
+// Ensure git add runs and any error surfaces
+try {
+  execSync('git add package.json', { stdio: 'inherit' });
+} catch (err) {
+  console.error('Failed to git add package.json', err);
+  process.exit(1);
+}
 
 console.log(`✅ Version bumped: ${oldVersion} → ${pkg.version}`);
+process.exit(0);
