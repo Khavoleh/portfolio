@@ -3,6 +3,7 @@ import path from 'node:path';
 
 function getType() {
   const commitMsgFile = process.argv[2];
+  console.log(commitMsgFile);
 
   if (!commitMsgFile) {
     console.error('Error: Commit message file path not provided. This script must be run from a pre-commit hook.');
@@ -52,8 +53,14 @@ function main() {
       break;
   }
 
+  console.log(pkg.version);
+  console.log(type);
+
   const oldVersion = pkg.version;
   pkg.version = `${major}.${minor}.${patch}`;
+
+  console.log(pkg.version);
+  console.log(pkg.version);
 
   try {
     writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n');

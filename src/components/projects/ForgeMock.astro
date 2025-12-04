@@ -1,105 +1,55 @@
 ---
 import SkillBlock from '@shared/skill/SkillBlock.astro';
 import type { Skill } from '@shared/skill/interfaces.ts';
-
-const techStack: Skill[] = [
-  { name: 'ASP.NET Web API', icon: '🔷' },
-  { name: 'Next.js', icon: '⚡' },
-  { name: 'Docker', icon: '🐳' },
-  { name: 'Redis', icon: '🔴' },
-  { name: 'Grafana', icon: '📊' },
-  { name: 'Prometheus', icon: '🔥' },
-];
+import type { ProjectItem, ProjectSection } from './interfaces.ts';
+import { PROJECTS } from './constants.ts';
 ---
 
 <section class="background-default border-default mb-12 rounded-3xl border-2 p-8 shadow-2xl md:p-12">
-  <div class="mb-8">
-    <div class="mb-4 inline-block rounded-lg bg-blue-500 px-4 py-2 text-sm font-semibold text-white">
-      Featured Open Source Project
-    </div>
-    <h2 class="text-primary mb-4 text-3xl font-bold md:text-4xl">Forge Mock: API Simulation & Mock Data Platform</h2>
-    <p class="text-secondary text-lg leading-relaxed">
-      A comprehensive platform for decoupling front-end and back-end development teams while supporting integration
-      testing in distributed environments.
-    </p>
-  </div>
+  {
+    PROJECTS.map((item: ProjectItem) => (
+      <>
+        <div class="mb-8">
+          <h2 class="text-primary mb-4 text-3xl font-bold md:text-4xl">{item.title}</h2>
+          <p class="text-secondary text-lg leading-relaxed">{item.description}</p>
+        </div>
 
-  <div class="mb-8 grid gap-8 md:grid-cols-2">
-    <!-- The Challenge -->
-    <div class="background-default border-default rounded-2xl border-2 p-6 shadow-lg">
-      <h3 class="text-primary mb-3 flex items-center text-xl font-bold">
-        <span class="mr-3 text-2xl">🎯</span>
-        The Challenge
-      </h3>
-      <p class="text-secondary leading-relaxed">
-        Modern development teams need to work independently without waiting for API implementations. Integration tests
-        require realistic data scenarios, and distributed systems need reliable mocking infrastructure for local
-        development and CI/CD pipelines.
-      </p>
-    </div>
+        <div class="mb-8 grid gap-8 md:grid-cols-2">
+          {item.sections.map((section: ProjectSection) => (
+            <div class="background-default border-default rounded-2xl border-2 p-6 shadow-lg">
+              <h3 class="text-primary mb-3 flex items-center text-xl font-bold">
+                <section.icon class="mr-3" />
+                {section.title}
+              </h3>
 
-    <!-- Technical Solution -->
-    <div class="background-default border-default rounded-2xl border-2 p-6 shadow-lg">
-      <h3 class="text-primary mb-3 flex items-center text-xl font-bold">
-        <span class="mr-3 text-2xl">🏗️</span>
-        Technical Solution & Architecture
-      </h3>
-      <p class="text-secondary leading-relaxed">
-        Multi-repository architecture leveraging Next.js for the UI layer, ASP.NET Web API for core mocking logic, and a
-        dedicated monitoring stack with Grafana and Prometheus. Containerized deployment ensures consistency across
-        environments.
-      </p>
-    </div>
+              {section.details.length === 1 ? (
+                <p class="text-secondary leading-relaxed">{section.details[0]}</p>
+              ) : (
+                <ul class="text-secondary space-y-2 leading-relaxed">
+                  {section.details.map((detail: string) => (
+                    <li class="flex items-start">
+                      <span class="mr-2 text-blue-500">▸</span>
+                      <span>{detail}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ))}
+        </div>
 
-    <!-- Key Features -->
-    <div class="background-default border-default rounded-2xl border-2 p-6 shadow-lg">
-      <h3 class="text-primary mb-3 flex items-center text-xl font-bold">
-        <span class="mr-3 text-2xl">✨</span>
-        Key Features
-      </h3>
-      <ul class="text-secondary space-y-2 leading-relaxed">
-        <li class="flex items-start">
-          <span class="mt-1 mr-2 text-blue-500">▸</span>
-          <span>Customizable schema definitions for complex data structures</span>
-        </li>
-        <li class="flex items-start">
-          <span class="mt-1 mr-2 text-blue-500">▸</span>
-          <span>Static and dynamic API endpoint mocking with realistic responses</span>
-        </li>
-        <li class="flex items-start">
-          <span class="mt-1 mr-2 text-blue-500">▸</span>
-          <span>Real-time monitoring and observability with metrics collection</span>
-        </li>
-        <li class="flex items-start">
-          <span class="mt-1 mr-2 text-blue-500">▸</span>
-          <span>Redis-based caching for high-performance data generation</span>
-        </li>
-      </ul>
-    </div>
+        <div class="mb-8">
+          <h3 class="text-primary mb-4 text-xl font-bold">Primary Stack</h3>
+          <div class="flex flex-wrap gap-3">
+            {item.skills.map((skill: Skill) => (
+              <SkillBlock skill={skill} />
+            ))}
+          </div>
+        </div>
+      </>
+    ))
+  }
 
-    <!-- Why It Matters -->
-    <div class="background-default border-default rounded-2xl border-2 p-6 shadow-lg">
-      <h3 class="text-primary mb-3 flex items-center text-xl font-bold">
-        <span class="mr-3 text-2xl">💼</span>
-        Why It Matters to Enterprise
-      </h3>
-      <p class="text-secondary leading-relaxed">
-        Addresses critical pain points in microservices architecture: parallel team development, integration testing
-        complexity, and local development environment setup. Demonstrates expertise in distributed systems design and
-        DevOps best practices.
-      </p>
-    </div>
-  </div>
-
-  <!-- Tech Stack -->
-  <div class="mb-8">
-    <h3 class="text-primary mb-4 text-xl font-bold">Primary Stack</h3>
-    <div class="flex flex-wrap gap-3">
-      {techStack.map((skill: Skill) => <SkillBlock skill={skill} />)}
-    </div>
-  </div>
-
-  <!-- CTA -->
   <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
     <a
       href="https://github.com/khavol/forge-mock"
@@ -122,7 +72,7 @@ const techStack: Skill[] = [
       class="transition-default focus-default inline-flex transform items-center justify-center rounded-lg border-2 border-blue-500 px-8 py-4 text-lg font-semibold text-blue-500 shadow-lg hover:-translate-y-1 hover:bg-blue-500 hover:text-white hover:shadow-xl dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-slate-900"
     >
       <span class="mr-2 text-xl">🚀</span>
-      View Live Demo
+      View Live Demo (Architectural Setup)
     </a>
   </div>
 </section>
