@@ -26,7 +26,7 @@ import SkillBlock from '@shared/skill/SkillBlock.astro';
                   <p class="text-secondary mt-1 text-sm">{experience.period}</p>
                 </div>
 
-                <div class="flex flex-wrap justify-end gap-3">
+                <div class="flex flex-wrap justify-start gap-3 md:justify-end">
                   {experience.skills.map((skill: Skill) => (
                     <SkillBlock skill={skill} />
                   ))}
@@ -38,7 +38,7 @@ import SkillBlock from '@shared/skill/SkillBlock.astro';
               {experience.sections.map((section: ExperienceSection) => (
                 <div class="background-default border-default rounded-2xl border-2 p-6 shadow-lg">
                   <h4 class="text-primary mb-3 flex items-center text-xl font-bold">
-                    <section.icon class="mr-2 text-2xl" />
+                    <section.icon class="mr-2 shrink-0 text-2xl" />
                     {section.title}
                   </h4>
                   <p class="text-secondary leading-relaxed font-medium">{section.details}</p>
