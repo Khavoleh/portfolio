@@ -1,5 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import { SOCIALS } from '@shared/constants';
 ---
 
 <Layout>
@@ -79,9 +80,14 @@ import Layout from '@layouts/Layout.astro';
 
         <section class="mb-8">
           <h2 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">6. Contact</h2>
+          <p class="mb-4 text-gray-600 dark:text-gray-300">
+            Although we do not collect personal data, if you believe that any personal information or image belonging to
+            you has been inadvertently included on this website, or if you have any questions about this Privacy Policy,
+            you have the right to request its removal.
+          </p>
           <p class="text-gray-600 dark:text-gray-300">
-            If you have any questions about this Privacy Policy, please contact me via email at:
-            <span class="font-semibold text-gray-900 dark:text-white">olehkhavar@gmail.com</span>
+            Please contact me directly via email at:
+            <a href=`mailto:${SOCIALS.EMAIL}` class="font-semibold text-gray-900 dark:text-white">{SOCIALS.EMAIL}</a>
           </p>
         </section>
       </div>
