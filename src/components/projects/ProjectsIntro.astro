@@ -1,5 +1,5 @@
 ---
-
+import { PAGE_URLS } from '@shared/constants.ts';
 ---
 
 <section class="mb-12 text-center">
@@ -10,8 +10,9 @@
 
   <p class="text-secondary mx-auto max-w-4xl text-lg leading-relaxed md:text-xl">
     While my professional experience is detailed in the
-    <a href="/experience" class="font-semibold text-blue-500 hover:underline dark:text-blue-400">Career Timeline</a>,
-    this section provides an in-depth view of my technical ownership and architectural decisions across my personal and
-    open-source projects.
+    <a href={PAGE_URLS.EXPERIENCE} class="transition-default text-hover text-blue-500 dark:text-blue-400">
+      Career Timeline</a
+    >, this section provides an in-depth view of my technical ownership and architectural decisions across my personal
+    and open-source projects.
   </p>
 </section>
