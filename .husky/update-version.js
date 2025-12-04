@@ -1,9 +1,18 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 
+const VERSION_TYPES = {
+  MAJOR: 'major',
+  MINOR: 'minor',
+  PATCH: 'patch',
+};
+
+function getMessageStart(message, type) {
+  return message.startsWith(`${type}: `);
+}
+
 function getType() {
   const commitMsgFile = process.argv[2];
-  console.log(commitMsgFile);
 
   if (!commitMsgFile) {
     console.error('Error: Commit message file path not provided. This script must be run from a pre-commit hook.');
@@ -13,14 +22,15 @@ function getType() {
   try {
     const msg = readFileSync(commitMsgFile, 'utf8').trim();
 
-    if (msg.startsWith('major:')) return 'major';
-    if (msg.startsWith('minor:')) return 'minor';
-    if (msg.startsWith('patch:')) return 'patch';
+    if (getMessageStart(msg, VERSION_TYPES.MAJOR)) return VERSION_TYPES.MAJOR;
+    if (getMessageStart(msg, VERSION_TYPES.MINOR)) return VERSION_TYPES.MINOR;
+    if (getMessageStart(msg, VERSION_TYPES.PATCH)) return VERSION_TYPES.PATCH;
 
     console.log('Commit message does not match versioning prefixes (major:, minor:, patch:). Skipping version bump.');
     return null;
   } catch (error) {
-    console.error(`Error reading commit message file (${commitMsgFile}): ${error.message}`);
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    console.error(`Error reading commit message file (${commitMsgFile}): ${errorMessage}`);
     process.exit(1);
   }
 }
@@ -39,34 +49,29 @@ function main() {
   let [major, minor, patch] = pkg.version.split('.').map(Number);
 
   switch (type) {
-    case 'major':
+    case VERSION_TYPES.MAJOR:
       major++;
       minor = 0;
       patch = 0;
       break;
-    case 'minor':
+    case VERSION_TYPES.MINOR:
       minor++;
       patch = 0;
       break;
-    case 'patch':
+    case VERSION_TYPES.PATCH:
       patch++;
       break;
   }
 
-  console.log(pkg.version);
-  console.log(type);
-
   const oldVersion = pkg.version;
   pkg.version = `${major}.${minor}.${patch}`;
-
-  console.log(pkg.version);
-  console.log(pkg.version);
 
   try {
     writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n');
     console.log(`✅ Version bumped: ${oldVersion} → ${pkg.version} (Triggered by ${type} commit).`);
   } catch (e) {
-    console.error(`Error: Failed to write new version to package.json: ${e.message}`);
+    const errorMessage = e instanceof Error ? e.message : String(e);
+    console.error(`Error: Failed to write new version to package.json: ${errorMessage}`);
     process.exit(1);
   }
 }
