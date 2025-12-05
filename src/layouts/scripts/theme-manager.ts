@@ -1,7 +1,7 @@
 const updateThemeIcon = (theme: string): void => {
-  const lightIcon = document.getElementById('theme-icon-light');
-  const darkIcon = document.getElementById('theme-icon-dark');
-  const systemIcon = document.getElementById('theme-icon-system');
+  const lightIcon: HTMLElement | null = document.getElementById('theme-icon-light');
+  const darkIcon: HTMLElement | null = document.getElementById('theme-icon-dark');
+  const systemIcon: HTMLElement | null = document.getElementById('theme-icon-system');
 
   if (lightIcon && darkIcon && systemIcon) {
     const themeManager = window.__themeManager;
@@ -24,21 +24,20 @@ const updateThemeIcon = (theme: string): void => {
 const initThemeSelector = (): void => {
   const themeManager = window.__themeManager;
   if (!themeManager) {
-    console.warn('Theme manager not found. Make sure Layout.astro is loaded.');
     return;
   }
 
   const currentTheme = themeManager.getTheme();
   updateThemeIcon(currentTheme);
 
-  const themeButtons = document.querySelectorAll('[data-theme]');
+  const themeButtons: NodeListOf<Element> = document.querySelectorAll('[data-theme]');
 
-  themeButtons.forEach((button) => {
+  themeButtons.forEach((button: Element): void => {
     const newButton = button.cloneNode(true) as HTMLElement;
     button.parentNode?.replaceChild(newButton, button);
 
-    newButton.addEventListener('click', () => {
-      const theme = newButton.dataset.theme;
+    newButton.addEventListener('click', (): void => {
+      const theme: string | undefined = newButton.dataset.theme;
       if (theme) {
         themeManager.setTheme(theme);
         updateThemeIcon(theme);
