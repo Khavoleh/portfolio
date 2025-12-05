@@ -3,6 +3,7 @@ import '../styles/global.css';
 import { ClientRouter } from 'astro:transitions';
 import Navbar from './Navbar.astro';
 import Footer from './Footer.astro';
+import themeInitScript from './scripts/theme-init.js?raw';
 ---
 
 <html lang="en">
@@ -12,62 +13,7 @@ import Footer from './Footer.astro';
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Astro Basics</title>
     <ClientRouter />
-
-    <script is:inline>
-      (function () {
-        const THEME_OPTIONS = {
-          LIGHT: 'light',
-          DARK: 'dark',
-          SYSTEM: 'system',
-        };
-        const LOCAL_STORAGE_KEY = 'theme';
-
-        const getTheme = () => {
-          if (typeof localStorage !== 'undefined') {
-            return localStorage.getItem(LOCAL_STORAGE_KEY) || THEME_OPTIONS.SYSTEM;
-          }
-          return THEME_OPTIONS.SYSTEM;
-        };
-
-        const applyTheme = (theme) => {
-          if (theme === THEME_OPTIONS.SYSTEM) {
-            const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            if (isDark) {
-              document.documentElement.classList.add(THEME_OPTIONS.DARK);
-            } else {
-              document.documentElement.classList.remove(THEME_OPTIONS.DARK);
-            }
-          } else if (theme === THEME_OPTIONS.DARK) {
-            document.documentElement.classList.add(THEME_OPTIONS.DARK);
-          } else {
-            document.documentElement.classList.remove(THEME_OPTIONS.DARK);
-          }
-        };
-
-        const setTheme = (theme) => {
-          applyTheme(theme);
-          if (typeof localStorage !== 'undefined') {
-            localStorage.setItem(LOCAL_STORAGE_KEY, theme);
-          }
-        };
-
-        window.__themeManager = {
-          THEME_OPTIONS,
-          LOCAL_STORAGE_KEY,
-          getTheme,
-          setTheme,
-          applyTheme,
-        };
-
-        const currentTheme = getTheme();
-        applyTheme(currentTheme);
-
-        document.addEventListener('astro:page-load', () => {
-          const savedTheme = getTheme();
-          applyTheme(savedTheme);
-        });
-      })();
-    </script>
+    <script is:inline set:html={themeInitScript} />
   </head>
   <body class="flex min-h-screen flex-col bg-slate-50 dark:bg-slate-900">
     <Navbar />
@@ -80,22 +26,8 @@ import Footer from './Footer.astro';
   </body>
 </html>
 
-<script is:inline src="/scripts/flowbite.min.js"></script>
-
-<script>
-  declare global {
-    interface Window {
-      initFlowbite?: () => void;
-    }
-  }
-
-  // Flowbite initialization after page navigation
-  document.addEventListener('astro:page-load', () => {
-    if (typeof window !== 'undefined' && window.initFlowbite) {
-      window.initFlowbite();
-    }
-  });
-</script>
+<script src="./scripts/flowbite.min.js"></script>
+<script src="./scripts/flowbite-init.ts"></script>
 
 <style>
   html,
