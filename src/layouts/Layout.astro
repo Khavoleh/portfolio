@@ -13,6 +13,7 @@ import themeInitScript from './scripts/theme-init.js?raw';
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Astro Basics</title>
     <ClientRouter />
+    <script is:inline set:html={themeInitScript} />
   </head>
   <body class="flex min-h-screen flex-col bg-slate-50 dark:bg-slate-900">
     <Navbar />
@@ -25,7 +26,6 @@ import themeInitScript from './scripts/theme-init.js?raw';
   </body>
 </html>
 
-<script is:inline set:html={themeInitScript} />
 <script src="./scripts/flowbite.min.js"></script>
 <script src="./scripts/flowbite-init.ts"></script>
 
