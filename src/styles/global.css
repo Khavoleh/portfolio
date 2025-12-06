@@ -3,8 +3,8 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 .disable-hover-transitions * {
-    pointer-events: none !important;
-    transition: none !important;
+  pointer-events: none !important;
+  transition: none !important;
 }
 
 @layer utilities {
