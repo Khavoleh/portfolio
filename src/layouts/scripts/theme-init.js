@@ -68,6 +68,7 @@
 
   const initThemeSelector = () => {
     const currentTheme = getTheme();
+    applyTheme(currentTheme);
     updateThemeIcon(currentTheme);
 
     const themeButtons = document.querySelectorAll('[data-theme]');
@@ -85,9 +86,6 @@
       });
     });
   };
-
-  const currentTheme = getTheme();
-  applyTheme(currentTheme);
 
   document.addEventListener('astro:page-load', () => {
     if (typeof globalThis !== 'undefined') {
