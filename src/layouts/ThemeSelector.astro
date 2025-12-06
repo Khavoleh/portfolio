@@ -1,34 +1,38 @@
 ---
-import SunIcon from './icons/sun.svg';
-import MoonIcon from './icons/moon.svg';
-import ComputerIcon from './icons/computer.svg';
+import type { Theme } from './interfaces.ts';
 import { THEMES } from './constants.ts';
+
+interface Props {
+  idSuffix: string;
+  classesSize: number;
+}
+
+const { idSuffix, classesSize } = Astro.props;
+const dropdownId = `theme-dropdown-${idSuffix}`;
 ---
 
 <button
-  data-dropdown-toggle="theme-dropdown"
+  data-dropdown-toggle={dropdownId}
   type="button"
-  class="transition-default hover-default focus-default inline-flex h-10 w-10 items-center justify-center rounded-lg p-2"
+  class=`transition-default hover-default focus-default inline-flex h-${classesSize} w-${classesSize} items-center justify-center rounded-lg`
   aria-label="Toggle theme"
 >
-  <SunIcon id="theme-icon-light" class="hidden h-5 w-5" />
-  <MoonIcon id="theme-icon-dark" class="hidden h-5 w-5" />
-  <ComputerIcon id="theme-icon-system" class="hidden h-5 w-5" />
+  {THEMES.map((theme: Theme) => <theme.icon id={`theme-icon-${theme.id}-${idSuffix}`} class="hidden h-6 w-6" />)}
 </button>
 
 <div
-  id="theme-dropdown"
+  id={dropdownId}
   class="z-10 hidden w-28 rounded-lg border border-slate-200 bg-slate-50 shadow-lg dark:border-slate-700 dark:bg-slate-800"
 >
   <ul class="p-2 text-sm font-medium text-slate-700 dark:text-slate-200" aria-labelledby="theme-toggle">
     {
-      THEMES.map((theme) => (
+      THEMES.map((theme: Theme) => (
         <li>
           <button
             data-theme={theme.id}
-            class="transition-default inline-flex w-full items-center gap-2 rounded p-2 text-left hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-slate-100"
+            class="transition-default focus-default inline-flex w-full items-center gap-2 rounded p-2 text-left hover:bg-slate-100 dark:hover:bg-slate-700"
           >
-            <theme.icon class="h-4 w-4" />
+            <theme.icon class="h-5 w-5" />
             <span>{theme.title}</span>
           </button>
         </li>

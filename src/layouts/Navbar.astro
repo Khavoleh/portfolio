@@ -15,14 +15,18 @@ const currentPath: string = Astro.url.pathname;
       <a
         href={PAGE_URLS.HOME}
         aria-label="Navigate to home page"
-        class="transition-default focus-default flex items-center space-x-3 rounded-lg rtl:space-x-reverse"
+        class="transition-default focus-default flex items-center rounded-lg rtl:space-x-reverse"
       >
         <LogoIcon class="h-8" />
-        <span class="text-primary self-center text-2xl font-semibold whitespace-nowrap">Oleh Khavar</span>
+        <span class="text-primary ml-3 hidden self-center text-2xl font-semibold whitespace-nowrap md:block">
+          Oleh Khavar
+        </span>
       </a>
 
-      <div class="flex items-center gap-2">
-        <ThemeSelector />
+      <div class="flex items-center gap-4">
+        <div class="flex items-center md:hidden">
+          <ThemeSelector idSuffix="mobile" classesSize={10} />
+        </div>
 
         <button
           data-collapse-toggle="navbar-default"
@@ -62,6 +66,9 @@ const currentPath: string = Astro.url.pathname;
               );
             })
           }
+          <li class="hidden items-center md:flex">
+            <ThemeSelector idSuffix="desktop" classesSize={6} />
+          </li>
         </ul>
       </div>
     </div>

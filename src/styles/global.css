@@ -2,6 +2,11 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+.disable-hover-transitions * {
+    pointer-events: none !important;
+    transition: none !important;
+}
+
 @layer utilities {
   .text-primary {
     @apply text-slate-800 dark:text-slate-50;
