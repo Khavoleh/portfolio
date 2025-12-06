@@ -10,7 +10,7 @@ import { SOCIALS } from '@shared/constants';
 
       <div class="prose dark:prose-invert max-w-none">
         <p class="mb-6 text-gray-600 dark:text-gray-300">
-          <strong>Last updated: December 4, 2025</strong>
+          <strong>Last updated: December 6, 2025</strong>
         </p>
 
         <section class="mb-8">
@@ -28,8 +28,9 @@ import { SOCIALS } from '@shared/constants';
             There are no account creation features or contact forms that store data.
           </p>
           <p class="mb-4 text-gray-600 dark:text-gray-300">
-            However, to improve the website experience, we collect automated <strong>Usage Data</strong> via Vercel Web Analytics.
-            This includes:
+            However, we store certain preferences on your device for functional purposes and collect automated
+            <strong>Usage Data</strong>
+            via Vercel Web Analytics. This includes:
           </p>
           <ul class="mb-4 list-inside list-disc space-y-2 text-gray-600 dark:text-gray-300">
             <li>
@@ -60,10 +61,19 @@ import { SOCIALS } from '@shared/constants';
         <section class="mb-8">
           <h2 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">4. Cookies and Tracking</h2>
           <p class="mb-4 text-gray-600 dark:text-gray-300">
-            This website uses <strong>Vercel Web Analytics</strong>, which is a privacy-first analytics tool.
+            This website uses <strong>Local Storage for functionality</strong> and <strong>Vercel Web Analytics</strong> for
+            usage monitoring.
           </p>
           <ul class="mb-4 list-inside list-disc space-y-2 text-gray-600 dark:text-gray-300">
-            <li><strong>No Cookies:</strong> This tool does not place cookies on your device.</li>
+            <li>
+              <strong>Local Storage:</strong> We use your browser's Local Storage to save your site theme preference. This
+              is a non-tracking, functional storage mechanism, and the data is never sent to our servers.
+            </li>
+            <li>
+              <strong>No Tracking Cookies:</strong> The Vercel Analytics tool we use <strong
+                >does not place cookies</strong
+              > on your device for tracking purposes.
+            </li>
             <li>
               <strong>No Persistent IP Storage:</strong> Your IP address is not stored. It is used temporarily to determine
               a unique visitor hash (for counting visitors) and is discarded shortly after.
@@ -84,7 +94,8 @@ import { SOCIALS } from '@shared/constants';
         </section>
 
         <section class="mb-8">
-          <h2 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">6. Contact</h2>
+          <h2 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">6. Contact and Your Rights</h2>
+          {/* Updated heading */}
           <p class="mb-4 text-gray-600 dark:text-gray-300">
             Although we do not collect personal data, if you believe that any personal information or image belonging to
             you has been inadvertently included on this website, or if you have any questions about this Privacy Policy,
@@ -92,7 +103,7 @@ import { SOCIALS } from '@shared/constants';
           </p>
           <p class="text-gray-600 dark:text-gray-300">
             Please contact me directly via email at:
-            <a href=`mailto:${SOCIALS.EMAIL}` class="font-semibold text-gray-900 dark:text-white">{SOCIALS.EMAIL}</a>
+            <a href={`mailto:${SOCIALS.EMAIL}`} class="font-semibold text-gray-900 dark:text-white">{SOCIALS.EMAIL}</a>
           </p>
         </section>
       </div>
