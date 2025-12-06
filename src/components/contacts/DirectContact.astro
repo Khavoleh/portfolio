@@ -5,7 +5,7 @@ import MessengerIcon from './icons/messenger.svg';
 import GeolocationIcon from './icons/geolocation.svg';
 import { getUkraineTimezone } from './helpers.ts';
 
-const iconClasses = 'mb-4 h-12 w-12 text-blue-500 dark:text-blue-400';
+const iconClasses = 'mb-4 h-12 w-12 text-blue-600 dark:text-blue-400';
 const contactInformationClasses =
   'background-default border-default flex flex-col items-center rounded-xl border-2 p-6 text-center shadow-lg transition-transform hover:scale-105 w-64';
 ---
@@ -17,7 +17,7 @@ const contactInformationClasses =
     <div class={contactInformationClasses}>
       <EmailIcon class={iconClasses} />
       <h3 class="text-primary mb-2 text-xl font-semibold">Email</h3>
-      <a href=`mailto:${SOCIALS.EMAIL}` class="text-hover transition-default text-blue-500 dark:text-blue-400">
+      <a href=`mailto:${SOCIALS.EMAIL}` class="text-hover transition-default text-blue-600 dark:text-blue-400">
         {SOCIALS.EMAIL}
       </a>
     </div>
@@ -29,7 +29,7 @@ const contactInformationClasses =
         href={SOCIALS.TELEGRAM}
         target="_blank"
         rel="noopener noreferrer"
-        class="text-hover transition-default text-blue-500 dark:text-blue-400"
+        class="text-hover transition-default text-blue-600 dark:text-blue-400"
       >
         @khavol
       </a>

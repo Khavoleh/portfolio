@@ -20,7 +20,7 @@ const { Icon, title, details } = Astro.props;
     details.length === 1 ? (
       <p class="text-secondary leading-relaxed">{details[0]}</p>
     ) : (
-      <ul class="text-secondary list-inside list-disc space-y-1 leading-relaxed marker:text-blue-500">
+      <ul class="text-secondary list-inside list-disc space-y-1 leading-relaxed marker:text-blue-600 dark:marker:text-blue-400">
         {details.map((detail: string) => (
           <li>{detail}</li>
         ))}
