@@ -87,6 +87,8 @@
     });
   };
 
+  initThemeSelector();
+
   document.addEventListener('astro:page-load', () => {
     if (typeof globalThis !== 'undefined') {
       initThemeSelector();
