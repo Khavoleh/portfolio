@@ -14,7 +14,7 @@ const dropdownId = `theme-dropdown-${idSuffix}`;
 <button
   data-dropdown-toggle={dropdownId}
   type="button"
-  class=`transition-default hover-default focus-default inline-flex h-${classesSize} w-${classesSize} items-center justify-center rounded-lg`
+  class=`transition-default hover-default focus-default inline-flex h-${classesSize} w-${classesSize} items-center justify-center rounded-lg cursor-pointer`
   aria-label="Toggle theme"
 >
   {THEMES.map((theme: Theme) => <theme.icon id={`theme-icon-${theme.id}-${idSuffix}`} class="hidden h-6 w-6" />)}
