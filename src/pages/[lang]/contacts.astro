@@ -1,9 +1,12 @@
 ---
+import { getLanguageStaticPaths } from '@shared/helpers.ts';
 import Layout from '@layouts/Layout.astro';
 import ContactIntro from '@components/contacts/ContactIntro.astro';
 import DirectContact from '@components/contacts/DirectContact.astro';
 import SocialLinks from '@components/contacts/SocialLinks.astro';
 import CallToAction from '@components/contacts/CallToAction.astro';
+
+export const getStaticPaths = getLanguageStaticPaths;
 ---
 
 <Layout>

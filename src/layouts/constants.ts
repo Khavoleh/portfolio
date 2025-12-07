@@ -11,10 +11,10 @@ import FlagUkIcon from './icons/flag-uk.svg';
 import type { Theme, Language } from './interfaces.ts';
 
 export const NAVIGATION_LINKS: NavLink[] = [
-  { href: PAGE_URLS.HOME, label: 'Home' },
-  { href: PAGE_URLS.EXPERIENCE, label: 'Experience' },
-  { href: PAGE_URLS.PROJECTS, label: 'Projects' },
-  { href: PAGE_URLS.CONTACTS, label: 'Contacts' },
+  { href: PAGE_URLS.HOME, label: 'home' },
+  { href: PAGE_URLS.EXPERIENCE, label: 'experience' },
+  { href: PAGE_URLS.PROJECTS, label: 'projects' },
+  { href: PAGE_URLS.CONTACTS, label: 'contacts' },
 ];
 
 export const SOCIAL_LINKS: SocialLink[] = [
@@ -30,9 +30,9 @@ const THEME_OPTIONS = {
 };
 
 export const THEMES: Theme[] = [
-  { id: THEME_OPTIONS.LIGHT, title: 'Light', icon: SunIcon },
-  { id: THEME_OPTIONS.DARK, title: 'Dark', icon: MoonIcon },
-  { id: THEME_OPTIONS.SYSTEM, title: 'System', icon: ComputerIcon },
+  { id: THEME_OPTIONS.LIGHT, icon: SunIcon },
+  { id: THEME_OPTIONS.DARK, icon: MoonIcon },
+  { id: THEME_OPTIONS.SYSTEM, icon: ComputerIcon },
 ];
 
 export const LANGUAGES_CONFIG: Language[] = [

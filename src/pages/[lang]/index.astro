@@ -1,9 +1,12 @@
 ---
+import { getLanguageStaticPaths } from '@shared/helpers.ts';
 import Layout from '@layouts/Layout.astro';
 import Hero from '@components/home/Hero.astro';
 import Metrics from '@components/home/Metrics.astro';
 import Reviews from '@components/home/Reviews.astro';
 import Goal from '@components/home/Goal.astro';
+
+export const getStaticPaths = getLanguageStaticPaths;
 ---
 
 <Layout>

@@ -1,14 +1,17 @@
 ---
 import { PAGE_URLS } from '@shared/constants.ts';
 import type { SocialLink } from '@shared/interfaces.ts';
-import { getLanguageUrl } from '@shared/helpers.ts';
+import { getLanguageUrl, useTranslations } from '@shared/helpers.ts';
 import { SOCIAL_LINKS } from './constants.ts';
+import { FOOTER_TRANSLATIONS } from './translations.ts';
+
+const t = useTranslations(Astro.url, FOOTER_TRANSLATIONS);
 ---
 
 <footer class="border-default border-t bg-slate-50 dark:bg-slate-950">
   <div class="mx-auto w-full max-w-screen-xl p-4 py-4 lg:py-6">
     <div class="flex flex-col items-center justify-between gap-4 md:flex-row">
-      <span class="text-secondary text-center text-sm md:text-left"> © 2025 Oleh Khavar. All Rights Reserved. </span>
+      <span class="text-secondary text-center text-sm md:text-left"> © 2025 {t('copyright')} </span>
 
       <ul class="text-secondary flex flex-wrap items-center justify-center gap-4 text-sm font-medium md:gap-6">
         <li>
@@ -16,12 +19,15 @@ import { SOCIAL_LINKS } from './constants.ts';
             href={getLanguageUrl(Astro.url, PAGE_URLS.PRIVACY_POLICY)}
             class="transition-default focus-default text-hover"
           >
-            Privacy Policy
+            {t('privacy.policy')}
           </a>
         </li>
         <li>
-          <a href={PAGE_URLS.TERMS_AND_CONDITIONS} class="transition-default focus-default text-hover">
-            Terms & Conditions
+          <a
+            href={getLanguageUrl(Astro.url, PAGE_URLS.TERMS_AND_CONDITIONS)}
+            class="transition-default focus-default text-hover"
+          >
+            {t('terms.and.conditions')}
           </a>
         </li>
       </ul>
@@ -33,7 +39,7 @@ import { SOCIAL_LINKS } from './constants.ts';
               <a
                 href={link.href}
                 class="transition-default focus-default inline-block"
-                aria-label={`Navigate to ${link.label}`}
+                aria-label={`${t('navigate.to')} ${link.label}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >

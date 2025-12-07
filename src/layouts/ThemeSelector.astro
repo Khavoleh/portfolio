@@ -1,6 +1,8 @@
 ---
 import type { Theme } from './interfaces.ts';
 import { THEMES } from './constants.ts';
+import { useTranslations } from '@shared/helpers.ts';
+import { NAVBAR_TRANSLATIONS } from '@layouts/translations.ts';
 
 interface Props {
   idSuffix: string;
@@ -9,20 +11,22 @@ interface Props {
 
 const { idSuffix, classesSize } = Astro.props;
 const dropdownId = `theme-dropdown-${idSuffix}`;
+
+const t = useTranslations(Astro.url, NAVBAR_TRANSLATIONS);
 ---
 
 <button
   data-dropdown-toggle={dropdownId}
   type="button"
   class=`transition-default hover-default focus-default inline-flex h-${classesSize} w-${classesSize} items-center justify-center rounded-lg cursor-pointer`
-  aria-label="Toggle theme"
+  aria-label={t('toggle.theme')}
 >
   {THEMES.map((theme: Theme) => <theme.icon id={`theme-icon-${theme.id}-${idSuffix}`} class="hidden h-6 w-6" />)}
 </button>
 
 <div
   id={dropdownId}
-  class="z-10 hidden w-28 rounded-lg border border-slate-200 bg-slate-50 shadow-lg dark:border-slate-700 dark:bg-slate-800"
+  class="z-10 hidden w-32 rounded-lg border border-slate-200 bg-slate-50 shadow-lg dark:border-slate-700 dark:bg-slate-800"
 >
   <ul class="p-2 text-sm font-medium text-slate-700 dark:text-slate-200" aria-labelledby="theme-toggle">
     {
@@ -33,7 +37,7 @@ const dropdownId = `theme-dropdown-${idSuffix}`;
             class="transition-default focus-default inline-flex w-full items-center gap-2 rounded p-2 text-left hover:bg-slate-100 dark:hover:bg-slate-700"
           >
             <theme.icon class="h-5 w-5" />
-            <span>{theme.title}</span>
+            <span>{t(theme.id)}</span>
           </button>
         </li>
       ))

@@ -1,8 +1,11 @@
 ---
+import { getLanguageStaticPaths } from '@shared/helpers.ts';
 import Layout from '@layouts/Layout.astro';
 import ExperienceIntro from '@components/experience/ExperienceIntro.astro';
 import TimelineCareer from '@components/experience/TimelineCareer.astro';
 import CallToAction from '@components/experience/CallToAction.astro';
+
+export const getStaticPaths = getLanguageStaticPaths;
 ---
 
 <Layout>

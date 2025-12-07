@@ -1,6 +1,9 @@
 ---
+import { getLanguageStaticPaths } from '@shared/helpers.ts';
 import Layout from '@layouts/Layout.astro';
 import { SOCIALS } from '@shared/constants.ts';
+
+export const getStaticPaths = getLanguageStaticPaths;
 ---
 
 <Layout>
