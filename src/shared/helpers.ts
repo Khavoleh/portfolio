@@ -12,7 +12,10 @@ const getLangFromUrl = (url: URL, translations: Translations): keyof Translation
 export const getLanguageUrl = (url: URL, path: string): string => {
   const [, language] = url.pathname.split('/');
 
-  return `/${language}${path}`;
+  const validLanguages = Object.values(LANGUAGES_SHORT);
+  const selectedLanguage = validLanguages.includes(language) ? language : DEFAULT_LANGUAGE;
+
+  return `/${selectedLanguage}${path}`;
 };
 
 export const useTranslations = (url: URL, translations: Translations) => {
