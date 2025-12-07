@@ -5,9 +5,10 @@ import Navbar from './Navbar.astro';
 import Footer from './Footer.astro';
 import themeInitScript from './scripts/theme-init.js?raw';
 import languageInitScript from './scripts/language-init.js?raw';
+import { getCurrentLang } from './helpers.ts';
 ---
 
-<html lang="en">
+<html lang={getCurrentLang(Astro.url)}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
