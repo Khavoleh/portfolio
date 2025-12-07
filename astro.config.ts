@@ -4,7 +4,7 @@ import tailwind from '@tailwindcss/vite';
 import type { AstroUserConfig } from 'astro';
 
 const config: AstroUserConfig = {
-  site: 'https://khavol.com/',
+  site: 'https://www.khavol.com/',
   integrations: [sitemap()],
   experimental: {
     csp: {
