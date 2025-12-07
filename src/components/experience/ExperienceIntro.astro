@@ -1,18 +1,17 @@
 ---
-const highlightClasses: string = 'font-semibold text-blue-600 dark:text-blue-400';
+import { useTranslations } from '@shared/helpers.ts';
+import { EXPERIENCE_INTRO_TRANSLATIONS } from './translations.ts';
+
+const t = useTranslations(Astro.url, EXPERIENCE_INTRO_TRANSLATIONS);
 ---
 
 <section class="mb-16 text-center">
   <h1 class="text-primary mb-6 text-4xl leading-tight font-bold md:text-5xl lg:text-6xl">
-    <span class="text-blue-600 dark:text-blue-400">3+ Years</span> of End-to-End Development:
+    <span class="text-blue-600 dark:text-blue-400">{t('intro.title.years')}</span>
+    {t('intro.title.subtitle')}
     <br />
-    <span class="font-extrabold text-blue-600 dark:text-blue-300">Architecture, Optimization, and Leadership</span>
+    <span class="font-extrabold text-blue-600 dark:text-blue-300">{t('intro.title.highlight')}</span>
   </h1>
 
-  <p class="text-secondary mx-auto max-w-4xl text-lg leading-relaxed md:text-xl">
-    I convert <span class={highlightClasses}>complex business requirements</span> into robust, high-performance .NET systems.
-    Each role detailed below outlines the challenges, the
-    <span class={highlightClasses}>architectural patterns chosen </span>, and the
-    <span class={highlightClasses}>measurable results</span> of my work.
-  </p>
+  <p class="text-secondary mx-auto max-w-4xl text-lg leading-relaxed md:text-xl" set:html={t('intro.description')} />
 </section>
