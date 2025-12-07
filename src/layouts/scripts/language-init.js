@@ -6,7 +6,6 @@ const LANGUAGES = {
 const DEFAULT_LANGUAGE = LANGUAGES.EN;
 const LANGUAGE_KEY = 'preferred-language';
 
-// Only redirect if we're on the root path without a language prefix
 const currentPath = window.location.pathname;
 const isRootPath = currentPath === '/' || currentPath === '';
 

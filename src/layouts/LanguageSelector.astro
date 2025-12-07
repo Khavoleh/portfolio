@@ -1,7 +1,7 @@
 ---
 import type { Language } from './interfaces.ts';
 import { LANGUAGES_CONFIG } from './constants.ts';
-import { DEFAULT_LANGUAGE } from '@shared/constants.ts';
+import { getCurrentLang, getLanguageUrl } from './helpers.ts';
 
 interface Props {
   idSuffix: string;
@@ -10,43 +10,7 @@ interface Props {
 
 const { idSuffix, classesSize } = Astro.props;
 const dropdownId = `language-dropdown-${idSuffix}`;
-
-// Extract current language from URL path
-const getCurrentLang = (pathname: string): string => {
-  const pathParts = pathname.split('/').filter(Boolean);
-  const firstPart = pathParts[0];
-
-  // Check if first part is a language code
-  const langCodes = LANGUAGES_CONFIG.map((l) => l.code);
-  if (firstPart && langCodes.includes(firstPart)) {
-    return firstPart;
-  }
-
-  return DEFAULT_LANGUAGE;
-};
-
-const currentLang = getCurrentLang(Astro.url.pathname);
-
-const getLanguageUrl = (targetLang: string): string => {
-  const pathname = Astro.url.pathname;
-  const pathParts = pathname.split('/').filter(Boolean);
-
-  // Check if first part is a language code
-  const langCodes = LANGUAGES_CONFIG.map((l) => l.code);
-  const hasLangPrefix = pathParts[0] && langCodes.includes(pathParts[0]);
-
-  if (hasLangPrefix) {
-    // Replace existing language prefix
-    pathParts[0] = targetLang;
-    return `/${pathParts.join('/')}`;
-  } else {
-    // Add language prefix
-    if (pathParts.length === 0) {
-      return `/${targetLang}/`;
-    }
-    return `/${targetLang}/${pathParts.join('/')}`;
-  }
-};
+const currentLang = getCurrentLang(Astro.url);
 ---
 
 <button
@@ -74,7 +38,7 @@ const getLanguageUrl = (targetLang: string): string => {
       LANGUAGES_CONFIG.map((lang: Language) => (
         <li>
           <a
-            href={getLanguageUrl(lang.code)}
+            href={getLanguageUrl(Astro.url, lang.code)}
             data-language={lang.code}
             class="transition-default focus-default inline-flex w-full items-center gap-2 rounded p-2 text-left hover:bg-slate-100 dark:hover:bg-slate-700"
           >

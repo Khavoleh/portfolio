@@ -16,7 +16,7 @@ const currentPath: string = Astro.url.pathname;
 <header class="border-default fixed start-0 top-0 z-100 w-full border-b bg-slate-50 dark:bg-slate-900">
   <nav class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
     <a
-      href={PAGE_URLS.HOME}
+      href={getLanguageUrl(Astro.url, PAGE_URLS.HOME)}
       aria-label="Navigate to home page"
       class="transition-default focus-default flex items-center rounded-lg rtl:space-x-reverse"
     >
@@ -50,7 +50,7 @@ const currentPath: string = Astro.url.pathname;
       >
         {
           NAVIGATION_LINKS.map((link: NavLink) => {
-            const isActive: boolean = currentPath === link.href;
+            const isActive: boolean = currentPath === getLanguageUrl(Astro.url, link.href);
 
             return (
               <li>

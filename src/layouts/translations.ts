@@ -31,6 +31,15 @@ export const NAVBAR_TRANSLATIONS: Translations = {
   },
 };
 
+export const LANGUAGE_TRANSLATIONS: Translations = {
+  en: {
+    change_language: 'Change language',
+  },
+  uk: {
+    change_language: 'Змінити мову',
+  },
+};
+
 export const FOOTER_TRANSLATIONS: Translations = {
   en: {
     copyright: 'Oleh Khavar. All Rights Reserved.',
