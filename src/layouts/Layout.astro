@@ -3,9 +3,18 @@ import '../styles/global.css';
 import { ClientRouter } from 'astro:transitions';
 import Navbar from './Navbar.astro';
 import Footer from './Footer.astro';
+import SEO from './SEO.astro';
 import themeInitScript from './scripts/theme-init.js?raw';
 import languageInitScript from './scripts/language-init.js?raw';
 import { getCurrentLang } from './helpers.ts';
+
+export interface Props {
+  title: string;
+  description: string;
+  noindex?: boolean;
+}
+
+const { title, description, noindex } = Astro.props;
 ---
 
 <html lang={getCurrentLang(Astro.url)}>
@@ -13,7 +22,7 @@ import { getCurrentLang } from './helpers.ts';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Astro Basics</title>
+    <SEO title={title} description={description} noindex={noindex} />
     <ClientRouter />
     <script is:inline set:html={themeInitScript} />
     <script is:inline set:html={languageInitScript} />

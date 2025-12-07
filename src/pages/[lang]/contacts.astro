@@ -1,15 +1,18 @@
 ---
-import { getLanguageStaticPaths } from '@shared/helpers.ts';
+import { getLanguageStaticPaths, useTranslations } from '@shared/helpers.ts';
 import Layout from '@layouts/Layout.astro';
 import ContactIntro from '@components/contacts/ContactIntro.astro';
 import DirectContact from '@components/contacts/DirectContact.astro';
 import SocialLinks from '@components/contacts/SocialLinks.astro';
 import CallToAction from '@components/contacts/CallToAction.astro';
+import { SEO_TRANSLATIONS } from '@layouts/translations.ts';
 
 export const getStaticPaths = getLanguageStaticPaths;
+
+const t = useTranslations(Astro.url, SEO_TRANSLATIONS);
 ---
 
-<Layout>
+<Layout title={t('contacts_title')} description={t('contacts_description')}>
   <div class="mx-auto w-full max-w-6xl px-4 py-12">
     <ContactIntro />
 

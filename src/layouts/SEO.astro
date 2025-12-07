@@ -1,0 +1,52 @@
+---
+import { DEFAULT_LANGUAGE } from '@shared/constants.ts';
+import { useTranslations } from '@shared/helpers.ts';
+import { SEO_TRANSLATIONS } from '@layouts/translations.ts';
+import { getCurrentLang } from './helpers.ts';
+
+export interface Props {
+  title: string;
+  description: string;
+  noindex?: boolean;
+}
+
+const { title, description, noindex = false } = Astro.props;
+
+const t = useTranslations(Astro.url, SEO_TRANSLATIONS);
+
+const currentLang = getCurrentLang(Astro.url);
+const siteName = t('site_name');
+const author = t('author_name');
+const twitterHandle = '@Khavol';
+
+const imageURL = new URL('/favicon.svg', Astro.url).href;
+const imageAlt = t('logo_alt');
+
+const robotsContent = [noindex ? 'noindex' : 'index', 'follow'].join(', ');
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="author" content={author} />
+<link rel="canonical" href={Astro.url.href} />
+
+<meta name="robots" content={robotsContent} />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url.href} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={imageURL} />
+<meta property="og:image:alt" content={imageAlt} />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:locale" content={currentLang === DEFAULT_LANGUAGE ? 'en_US' : 'uk_UA'} />
+
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url.href} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={imageURL} />
+<meta property="twitter:image:alt" content={imageAlt} />
+<meta property="twitter:creator" content={twitterHandle} />
+
+<meta name="format-detection" content="telephone=no" />

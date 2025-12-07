@@ -3,9 +3,13 @@ import Layout from '@layouts/Layout.astro';
 import NotFound from '@components/not-found/NotFound.astro';
 import Joke from '@components/not-found/Joke.astro';
 import BackButtons from '@components/not-found/BackButtons.astro';
+import { useTranslations } from '@shared/helpers.ts';
+import { SEO_TRANSLATIONS } from '@layouts/translations.ts';
+
+const t = useTranslations(Astro.url, SEO_TRANSLATIONS);
 ---
 
-<Layout>
+<Layout title={t('notfound_title')} description={t('notfound_description')} noindex={true}>
   <div class="my-8 flex min-h-[70vh] flex-col items-center justify-center text-center">
     <NotFound />
 

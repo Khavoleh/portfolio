@@ -1,6 +1,8 @@
 ---
 import type { Language } from './interfaces.ts';
+import { useTranslations } from '@shared/helpers.ts';
 import { LANGUAGES_CONFIG } from './constants.ts';
+import { LANGUAGE_TRANSLATIONS } from './translations.ts';
 import { getCurrentLang, getLanguageUrl } from './helpers.ts';
 
 interface Props {
@@ -11,13 +13,15 @@ interface Props {
 const { idSuffix, classesSize } = Astro.props;
 const dropdownId = `language-dropdown-${idSuffix}`;
 const currentLang = getCurrentLang(Astro.url);
+
+const t = useTranslations(Astro.url, LANGUAGE_TRANSLATIONS);
 ---
 
 <button
   data-dropdown-toggle={dropdownId}
   type="button"
   class=`transition-default hover-default focus-default inline-flex h-${classesSize} w-${classesSize} items-center justify-center rounded-lg cursor-pointer`
-  aria-label="Change language"
+  aria-label={t('change_language')}
 >
   {
     LANGUAGES_CONFIG.map((lang: Language) => (

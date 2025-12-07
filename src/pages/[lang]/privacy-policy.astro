@@ -1,6 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import { getLanguageStaticPaths } from '@shared/helpers.ts';
+import { getLanguageStaticPaths, useTranslations } from '@shared/helpers.ts';
 import Heading from '@components/privacy-policy/Heading.astro';
 import LastUpdated from '@components/privacy-policy/LastUpdated.astro';
 import IntroSection from '@components/privacy-policy/IntroSection.astro';
@@ -9,11 +9,14 @@ import DataUseSection from '@components/privacy-policy/DataUseSection.astro';
 import CookiesSection from '@components/privacy-policy/CookiesSection.astro';
 import ExternalLinksSection from '@components/privacy-policy/ExternalLinksSection.astro';
 import ContactSection from '@components/privacy-policy/ContactSection.astro';
+import { SEO_TRANSLATIONS } from '@layouts/translations.ts';
 
 export const getStaticPaths = getLanguageStaticPaths;
+
+const t = useTranslations(Astro.url, SEO_TRANSLATIONS);
 ---
 
-<Layout>
+<Layout title={t('privacy_title')} description={t('privacy_description')}>
   <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
     <div class="rounded-lg bg-white p-8 shadow-lg dark:bg-gray-800">
       <Heading />

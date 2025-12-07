@@ -1,6 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import { getLanguageStaticPaths } from '@shared/helpers.ts';
+import { getLanguageStaticPaths, useTranslations } from '@shared/helpers.ts';
 import Heading from '@components/terms-and-conditions/Heading.astro';
 import LastUpdated from '@components/terms-and-conditions/LastUpdated.astro';
 import AcceptanceSection from '@components/terms-and-conditions/AcceptanceSection.astro';
@@ -9,11 +9,14 @@ import DisclaimersSection from '@components/terms-and-conditions/DisclaimersSect
 import ExternalLinksSection from '@components/terms-and-conditions/ExternalLinksSection.astro';
 import GoverningLawSection from '@components/terms-and-conditions/GoverningLawSection.astro';
 import ContactSection from '@components/terms-and-conditions/ContactSection.astro';
+import { SEO_TRANSLATIONS } from '@layouts/translations.ts';
 
 export const getStaticPaths = getLanguageStaticPaths;
+
+const t = useTranslations(Astro.url, SEO_TRANSLATIONS);
 ---
 
-<Layout>
+<Layout title={t('terms_title')} description={t('terms_description')}>
   <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
     <div class="rounded-lg bg-white p-8 shadow-lg dark:bg-gray-800">
       <Heading />

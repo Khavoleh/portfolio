@@ -1,14 +1,17 @@
 ---
-import { getLanguageStaticPaths } from '@shared/helpers.ts';
+import { getLanguageStaticPaths, useTranslations } from '@shared/helpers.ts';
 import Layout from '@layouts/Layout.astro';
 import ProjectsIntro from '@components/projects/ProjectsIntro.astro';
 import Portfolio from '@components/projects/portfolio/Portfolio.astro';
 import ForgeMock from '@components/projects/forge-mock/ForgeMock.astro';
+import { SEO_TRANSLATIONS } from '@layouts/translations.ts';
 
 export const getStaticPaths = getLanguageStaticPaths;
+
+const t = useTranslations(Astro.url, SEO_TRANSLATIONS);
 ---
 
-<Layout>
+<Layout title={t('projects_title')} description={t('projects_description')}>
   <div class="mx-auto w-full max-w-6xl px-4 py-12">
     <ProjectsIntro />
 
