@@ -1,11 +1,14 @@
 ---
 import GitHubIcon from '@assets/github.svg';
+import { useTranslations } from '@shared/helpers.ts';
+import { PROJECT_COMPONENTS_TRANSLATIONS } from '../translations.ts';
 
 interface Props {
   url: string;
 }
 
 const { url } = Astro.props;
+const t = useTranslations(Astro.url, PROJECT_COMPONENTS_TRANSLATIONS);
 ---
 
 <div class="flex justify-center">
@@ -16,6 +19,6 @@ const { url } = Astro.props;
     class="transition-default focus-default inline-flex transform items-center justify-center rounded-lg bg-blue-600 px-8 py-4 text-lg font-semibold text-white shadow-lg hover:-translate-y-1 hover:bg-blue-600 hover:shadow-xl active:bg-blue-700"
   >
     <GitHubIcon class="mr-2 h-6 w-6" fill="white" />
-    View Code on GitHub
+    {t('components.github.button')}
   </a>
 </div>

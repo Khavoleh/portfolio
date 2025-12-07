@@ -6,34 +6,38 @@ import TechStack from '../components/TechStack.astro';
 import GitHubButton from '../components/GitHubButton.astro';
 import type { ProjectSection } from '../interfaces.ts';
 import { PORTFOLIO, PERFORMANCE_METRICS } from './constants.ts';
+import { useTranslations } from '@shared/helpers.ts';
+import { PORTFOLIO_PROJECT_TRANSLATIONS } from '../translations.ts';
+
+const t = useTranslations(Astro.url, PORTFOLIO_PROJECT_TRANSLATIONS);
 ---
 
 <section class="background-default border-default mb-12 rounded-3xl border-2 p-8 shadow-2xl md:p-12">
-  <Title title={PORTFOLIO.title} description={PORTFOLIO.description} Icon={LogoIcon} />
+  <Title title={t(PORTFOLIO.title)} description={t(PORTFOLIO.description)} Icon={LogoIcon} />
 
   <div class="mb-8 grid gap-8 md:grid-cols-2">
     {
       PORTFOLIO.sections.map((section: ProjectSection) => (
-        <Section Icon={section.icon} title={section.title} details={section.details} />
+        <Section Icon={section.icon} title={t(section.title)} details={section.details.map((d) => t(d))} />
       ))
     }
   </div>
 
   <div class="mb-8">
-    <h3 class="text-primary mb-4 text-xl font-bold">Lighthouse Performance Proof</h3>
+    <h3 class="text-primary mb-4 text-xl font-bold">{t('portfolio.performance.title')}</h3>
     <div class="background-default border-default rounded-2xl border-2 p-6 shadow-lg">
       <div class="grid grid-cols-2 gap-6 md:grid-cols-4">
         {
           PERFORMANCE_METRICS.map((metric: string) => (
             <div class="text-center">
               <p class="mb-2 text-4xl font-bold text-green-700 dark:text-green-500">100</p>
-              <p class="text-secondary text-sm font-semibold">{metric}</p>
+              <p class="text-secondary text-sm font-semibold">{t(metric)}</p>
             </div>
           ))
         }
       </div>
       <p class="text-secondary mt-4 text-center text-sm italic">
-        Perfect Lighthouse scores across all categories (Desktop & Mobile)
+        {t('portfolio.performance.note')}
       </p>
     </div>
   </div>

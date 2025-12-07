@@ -6,40 +6,33 @@ import StarsIcon from '../icons/stars.svg';
 import BusinessIcon from '../icons/business.svg';
 
 export const PORTFOLIO: ProjectItem = {
-  title: 'Portfolio',
-  description:
-    'A highly accessible, professional portfolio showcasing commitment to Core Web Vitals and superior web performance.',
+  title: 'portfolio.title',
+  description: 'portfolio.description',
   sections: [
     {
-      title: 'The Goal',
+      title: 'portfolio.section.0.title',
       icon: TargetIcon,
-      details: [
-        'A portfolio that practices what I preach: optimal performance, accessibility, and modern development practices. The site needed to load instantly, work perfectly for all users, and demonstrate expertise in contemporary front-end tooling.',
-      ],
+      details: ['portfolio.section.0.details.0'],
     },
     {
-      title: 'Technical Approach',
+      title: 'portfolio.section.1.title',
       icon: SettingsIcon,
-      details: [
-        'Built with Astro for low-count client-side JavaScript. Utilized Vercel for hosting and Continuous Delivery with automatic deployments. Styled with Tailwind CSS and Flowbite components for rapid, consistent UI development.',
-      ],
+      details: ['portfolio.section.1.details.0'],
     },
     {
-      title: 'Key Features',
+      title: 'portfolio.section.2.title',
       icon: StarsIcon,
       details: [
-        'Dark/light mode switch with system preference detection',
-        'Component-driven architecture with reusable blocks',
-        'Internationalization with 2 languages support',
-        'Fully responsive design',
+        'portfolio.section.2.details.0',
+        'portfolio.section.2.details.1',
+        'portfolio.section.2.details.2',
+        'portfolio.section.2.details.3',
       ],
     },
     {
-      title: 'Why It Matters to Enterprise',
+      title: 'portfolio.section.3.title',
       icon: BusinessIcon,
-      details: [
-        'Demonstrates up-to-date knowledge of modern front-end performance optimization, familiarity with contemporary deployment practices, and commitment to UI/UX best practices.',
-      ],
+      details: ['portfolio.section.3.details.0'],
     },
   ],
   skills: [
@@ -52,4 +45,9 @@ export const PORTFOLIO: ProjectItem = {
   ],
 };
 
-export const PERFORMANCE_METRICS: string[] = ['Performance', 'Accessibility', 'Best Practices', 'SEO'];
+export const PERFORMANCE_METRICS: string[] = [
+  'portfolio.performance.metrics.0',
+  'portfolio.performance.metrics.1',
+  'portfolio.performance.metrics.2',
+  'portfolio.performance.metrics.3',
+];

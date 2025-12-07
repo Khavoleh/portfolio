@@ -6,15 +6,19 @@ import GitHubButton from '../components/GitHubButton.astro';
 import type { ProjectSection } from '../interfaces.ts';
 import { FORGE_MOCK } from './constants.ts';
 import ForgeMockIcon from './icons/forge-mock.svg';
+import { useTranslations } from '@shared/helpers.ts';
+import { FORGE_MOCK_PROJECT_TRANSLATIONS } from '../translations.ts';
+
+const t = useTranslations(Astro.url, FORGE_MOCK_PROJECT_TRANSLATIONS);
 ---
 
 <section class="background-default border-default mb-12 rounded-3xl border-2 p-8 shadow-2xl md:p-12">
-  <Title title={FORGE_MOCK.title} description={FORGE_MOCK.description} Icon={ForgeMockIcon} />
+  <Title title={t(FORGE_MOCK.title)} description={t(FORGE_MOCK.description)} Icon={ForgeMockIcon} />
 
   <div class="mb-8 grid gap-8 md:grid-cols-2">
     {
       FORGE_MOCK.sections.map((section: ProjectSection) => (
-        <Section Icon={section.icon} title={section.title} details={section.details} />
+        <Section Icon={section.icon} title={t(section.title)} details={section.details.map((d) => t(d))} />
       ))
     }
   </div>

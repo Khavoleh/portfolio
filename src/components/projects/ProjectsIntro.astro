@@ -1,12 +1,15 @@
+---
+import { useTranslations } from '@shared/helpers.ts';
+import { PROJECTS_INTRO_TRANSLATIONS } from './translations.ts';
+
+const t = useTranslations(Astro.url, PROJECTS_INTRO_TRANSLATIONS);
+---
+
 <section class="mb-12 text-center">
   <h1 class="text-primary mb-6 text-4xl leading-tight font-bold md:text-5xl lg:text-6xl">
-    Technical Blueprints: <span class="text-blue-600 dark:text-blue-400">Open Source, Architecture</span>, and
-    <span class="text-blue-600 dark:text-blue-300">Full-Stack Implementation</span>
+    <span class="text-blue-600 dark:text-blue-400">{t('intro.title.highlight1')}</span>{t('intro.title.and')}
+    <span class="text-blue-600 dark:text-blue-300">{t('intro.title.highlight2')}</span>
   </h1>
 
-  <p class="text-secondary mx-auto max-w-4xl text-lg leading-relaxed md:text-xl">
-    While my professional experience is detailed in the
-    <span class="text-blue-600 dark:text-blue-400"> Career Timeline</span>, this section provides an in-depth view of my
-    technical ownership and architectural decisions across my personal and open-source projects.
-  </p>
+  <p class="text-secondary mx-auto max-w-4xl text-lg leading-relaxed md:text-xl" set:html={t('intro.description')} />
 </section>
