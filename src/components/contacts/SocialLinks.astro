@@ -1,10 +1,14 @@
 ---
 import type { SocialLink } from '@shared/interfaces.ts';
 import { SOCIAL_LINKS } from './constants.ts';
+import { useTranslations } from '@shared/helpers.ts';
+import { SOCIAL_LINKS_TRANSLATIONS } from './translations.ts';
+
+const t = useTranslations(Astro.url, SOCIAL_LINKS_TRANSLATIONS);
 ---
 
 <section class="mb-16">
-  <h2 class="text-primary mb-8 text-center text-3xl font-bold">Professional Presence</h2>
+  <h2 class="text-primary mb-8 text-center text-3xl font-bold">{t('socialLinks.title')}</h2>
 
   <div class="mx-auto flex max-w-2xl flex-wrap justify-center gap-6">
     {
@@ -14,7 +18,7 @@ import { SOCIAL_LINKS } from './constants.ts';
           target="_blank"
           rel="noopener noreferrer"
           class="background-default border-default transition-default focus-default flex flex-col items-center rounded-xl border-2 p-8 shadow-lg hover:scale-105 hover:shadow-xl"
-          aria-label={`Visit my ${link.label}`}
+          aria-label={t(`socialLinks.aria.${link.label.toLowerCase()}`)}
         >
           <link.icon class="mb-4 h-16 w-16 text-blue-600 dark:text-blue-400" />
           <span class="text-primary text-lg font-semibold">{link.label}</span>
@@ -23,9 +27,8 @@ import { SOCIAL_LINKS } from './constants.ts';
     }
   </div>
 
-  <p class="text-secondary mx-auto mt-8 max-w-2xl text-center leading-relaxed">
-    <span class="font-semibold text-blue-600 dark:text-blue-400">LinkedIn</span> for professional validation and endorsements,
-    <span class="font-semibold text-blue-600 dark:text-blue-400">GitHub</span> to review my projects' code, and
-    <span class="font-semibold text-blue-600 dark:text-blue-400">Telegram</span> for quick messaging.
-  </p>
+  <p
+    class="text-secondary mx-auto mt-8 max-w-2xl text-center leading-relaxed"
+    set:html={t('socialLinks.description')}
+  />
 </section>

@@ -1,22 +1,26 @@
 ---
 import ViewCv from '@shared/view-cv/ViewCv.astro';
 import { PAGE_URLS } from '@shared/constants.ts';
+import { getLanguageUrl, useTranslations } from '@shared/helpers.ts';
+import { CALL_TO_ACTION_TRANSLATIONS } from './translations.ts';
+
+const t = useTranslations(Astro.url, CALL_TO_ACTION_TRANSLATIONS);
 ---
 
 <section class="text-center">
-  <h2 class="text-primary mb-4 text-2xl font-bold">Quick Access</h2>
+  <h2 class="text-primary mb-4 text-2xl font-bold">{t('cta.title')}</h2>
   <p class="text-secondary mx-auto mb-8 max-w-2xl leading-relaxed">
-    View my CV for detailed information about my experience, or explore my career timeline to see the complete journey.
+    {t('cta.description')}
   </p>
 
   <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
     <ViewCv />
 
     <a
-      href={PAGE_URLS.EXPERIENCE}
+      href={getLanguageUrl(Astro.url, PAGE_URLS.EXPERIENCE)}
       class="transition-default focus-default inline-flex transform items-center justify-center rounded-lg border-2 border-blue-500 px-8 py-4 text-lg font-semibold text-blue-600 shadow-lg hover:-translate-y-1 hover:bg-blue-500 hover:text-white hover:shadow-xl dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-slate-900"
     >
-      Back to Career Timeline
+      {t('cta.button.experience')}
     </a>
   </div>
 </section>

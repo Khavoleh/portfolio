@@ -1,14 +1,13 @@
 ---
-const highlightClasses: string = 'font-semibold text-blue-600 dark:text-blue-400';
+import { useTranslations } from '@shared/helpers.ts';
+import { CONTACT_INTRO_TRANSLATIONS } from './translations.ts';
+
+const t = useTranslations(Astro.url, CONTACT_INTRO_TRANSLATIONS);
 ---
 
 <section class="mb-12 text-center">
   <h1 class="text-primary mb-6 text-4xl font-bold md:text-5xl lg:text-6xl">
-    Let's Connect and Discuss Scalable Solutions
+    {t('intro.title')}
   </h1>
-  <p class="text-secondary mx-auto max-w-3xl text-lg leading-relaxed md:text-xl">
-    Whether you're interested in a <span class={highlightClasses}>full-time role</span>, a
-    <span class={highlightClasses}>consulting partnership</span>, or just want to discuss
-    <span class={highlightClasses}>architecture</span>, here are the best ways to get in touch.
-  </p>
+  <p class="text-secondary mx-auto max-w-3xl text-lg leading-relaxed md:text-xl" set:html={t('intro.description')} />
 </section>
