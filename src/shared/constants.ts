@@ -1,3 +1,15 @@
+export const LANGUAGES = {
+  EN: 'English',
+  UK: 'Українська',
+};
+
+export const LANGUAGES_SHORT = {
+  EN: 'en',
+  UK: 'uk',
+};
+
+export const DEFAULT_LANGUAGE = LANGUAGES_SHORT.EN;
+
 export const PAGE_URLS = {
   HOME: '/',
   EXPERIENCE: '/experience/',

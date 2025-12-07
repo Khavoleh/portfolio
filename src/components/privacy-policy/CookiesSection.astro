@@ -1,0 +1,17 @@
+---
+import { useTranslations } from '@shared/helpers.ts';
+import { PRIVACY_POLICY_TRANSLATIONS } from './translations.ts';
+
+const t = useTranslations(Astro.url, PRIVACY_POLICY_TRANSLATIONS);
+---
+
+<section class="mb-8">
+  <h2 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">{t('privacy.cookies.title')}</h2>
+  <p class="mb-4 text-gray-600 dark:text-gray-300" set:html={t('privacy.cookies.text')} />
+  <ul class="mb-4 list-inside list-disc space-y-2 text-gray-600 dark:text-gray-300">
+    <li set:html={t('privacy.cookies.local')} />
+    <li set:html={t('privacy.cookies.no_cookies')} />
+    <li set:html={t('privacy.cookies.no_ip')} />
+    <li set:html={t('privacy.cookies.no_cross')} />
+  </ul>
+</section>

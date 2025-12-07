@@ -1,7 +1,8 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import { useTranslations } from '@shared/helpers.ts';
-import { PRIVACY_POLICY_TRANSLATIONS } from '@components/privacy-policy/translations.ts';
+import { getLanguageStaticPaths } from '@shared/helpers.ts';
+import Heading from '@components/privacy-policy/Heading.astro';
+import LastUpdated from '@components/privacy-policy/LastUpdated.astro';
 import IntroSection from '@components/privacy-policy/IntroSection.astro';
 import DataCollectionSection from '@components/privacy-policy/DataCollectionSection.astro';
 import DataUseSection from '@components/privacy-policy/DataUseSection.astro';
@@ -9,17 +10,16 @@ import CookiesSection from '@components/privacy-policy/CookiesSection.astro';
 import ExternalLinksSection from '@components/privacy-policy/ExternalLinksSection.astro';
 import ContactSection from '@components/privacy-policy/ContactSection.astro';
 
-const t = useTranslations(Astro.url, PRIVACY_POLICY_TRANSLATIONS);
+export const getStaticPaths = getLanguageStaticPaths;
 ---
 
 <Layout>
   <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
     <div class="rounded-lg bg-white p-8 shadow-lg dark:bg-gray-800">
-      <h1 class="mb-8 text-4xl font-bold text-gray-900 dark:text-white">{t('privacy.title')}</h1>
+      <Heading />
 
       <div class="prose dark:prose-invert max-w-none">
-        <p class="mb-6 text-gray-600 dark:text-gray-300" set:html={t('privacy.updated')} />
-
+        <LastUpdated />
         <IntroSection />
         <DataCollectionSection />
         <DataUseSection />

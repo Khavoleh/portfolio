@@ -1,6 +1,7 @@
 ---
 import { PAGE_URLS } from '@shared/constants.ts';
 import type { SocialLink } from '@shared/interfaces.ts';
+import { getLanguageUrl } from '@shared/helpers.ts';
 import { SOCIAL_LINKS } from './constants.ts';
 ---
 
@@ -11,7 +12,12 @@ import { SOCIAL_LINKS } from './constants.ts';
 
       <ul class="text-secondary flex flex-wrap items-center justify-center gap-4 text-sm font-medium md:gap-6">
         <li>
-          <a href={PAGE_URLS.PRIVACY_POLICY} class="transition-default focus-default text-hover">Privacy Policy</a>
+          <a
+            href={getLanguageUrl(Astro.url, PAGE_URLS.PRIVACY_POLICY)}
+            class="transition-default focus-default text-hover"
+          >
+            Privacy Policy
+          </a>
         </li>
         <li>
           <a href={PAGE_URLS.TERMS_AND_CONDITIONS} class="transition-default focus-default text-hover">
