@@ -3,7 +3,7 @@ import type { Translations } from '@shared/interfaces.ts';
 export const PRIVACY_POLICY_TRANSLATIONS: Translations = {
   en: {
     'privacy.title': 'Privacy Policy',
-    'privacy.updated': '<strong>Last updated: December 6, 2025</strong>',
+    'privacy.updated': '<strong>Last updated: December 7, 2025</strong>',
 
     'privacy.intro.title': '1. Introduction',
     'privacy.intro.text':
@@ -30,7 +30,7 @@ export const PRIVACY_POLICY_TRANSLATIONS: Translations = {
     'privacy.cookies.text':
       'This website uses <strong>Local Storage for functionality</strong> and <strong>Vercel Web Analytics</strong> for usage monitoring.',
     'privacy.cookies.local':
-      "<strong>Local Storage:</strong> We use your browser's Local Storage to save your site theme preference. This is a non-tracking, functional storage mechanism, and the data is never sent to our servers.",
+      "<strong>Local Storage:</strong> We use your browser's Local Storage to save your site theme and language preference. This is a non-tracking, functional storage mechanism, and the data is never sent to our servers.",
     'privacy.cookies.no_cookies':
       '<strong>No Tracking Cookies:</strong> The Vercel Analytics tool we use <strong>does not place cookies</strong> on your device for tracking purposes.',
     'privacy.cookies.no_ip':
@@ -49,7 +49,7 @@ export const PRIVACY_POLICY_TRANSLATIONS: Translations = {
   },
   uk: {
     'privacy.title': 'Політика конфіденційності',
-    'privacy.updated': '<strong>Останнє оновлення: 6 грудня 2025 р.</strong>',
+    'privacy.updated': '<strong>Останнє оновлення: 7 грудня 2025 р.</strong>',
 
     'privacy.intro.title': '1. Вступ',
     'privacy.intro.text':
@@ -77,7 +77,7 @@ export const PRIVACY_POLICY_TRANSLATIONS: Translations = {
     'privacy.cookies.text':
       'Цей веб-сайт використовує <strong>локальне сховище для забезпечення функціональності</strong> та <strong>Vercel Web Analytics</strong> для моніторингу використання.',
     'privacy.cookies.local':
-      '<strong>Локальне сховище:</strong> ми використовуємо локальне сховище вашого браузера для збереження налаштувань теми. Це функціональний механізм зберігання, що не відстежує, і дані ніколи не надсилаються на наші сервери.',
+      '<strong>Локальне сховище:</strong> ми використовуємо локальне сховище вашого браузера для збереження налаштувань теми та мови. Це функціональний механізм зберігання, що не відстежує, і дані ніколи не надсилаються на наші сервери.',
     'privacy.cookies.no_cookies':
       '<strong>Відсутність файлів cookie для відстеження:</strong>  інструмент Vercel Analytics, який ми використовуємо, <strong>не розміщує файли cookie</strong> на вашому пристрої з метою відстеження',
     'privacy.cookies.no_ip':
