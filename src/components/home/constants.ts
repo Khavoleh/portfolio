@@ -19,39 +19,39 @@ export const SKILLS: Skill[] = [
 ];
 
 export const METRICS: Metric[] = [
-  { value: '3+', name: 'Years', description: 'Commercial Experience' },
-  { value: '5x', name: 'Speed Boost', description: 'Performance Gain' },
-  { value: '6', name: 'Developers', description: 'Team Leadership' },
-  { value: '100%', name: 'Full-Cycle', description: 'End-to-End Delivery' },
+  { value: '3+', name: 'metrics.0.name', description: 'metrics.0.description' },
+  { value: '5x', name: 'metrics.1.name', description: 'metrics.1.description' },
+  { value: '6', name: 'metrics.2.name', description: 'metrics.2.description' },
+  { value: '100%', name: 'metrics.3.name', description: 'metrics.3.description' },
 ];
 
 export const REVIEWS: Review[] = [
   {
-    name: 'Viktoria Monastyrska',
-    position: 'Front-End Developer',
+    name: 'reviews.0.name',
+    position: 'reviews.0.position',
     company: 'Bliscore Software',
-    text: 'Working with Oleh was a great experience - he consistently demonstrated deep full-stack expertise and an exceptional understanding of system architecture. He quickly identifies weak spots, proposes meaningful improvements, and delivers clear guidance on backend design, data flow, and performance. Beyond his technical strengths, he shows mature leadership qualities, excellent communication, and reliably supports both teammates and cross-team collaboration.',
+    text: 'reviews.0.text',
     image: viktoria,
   },
   {
-    name: 'Mykola Synhalevych',
-    position: 'Front-End Developer',
+    name: 'reviews.1.name',
+    position: 'reviews.1.position',
     company: 'Bliscore Software',
-    text: 'I worked with Oleh for over a year and can confidently say he is one of the most skilled and well-rounded full-stack developers on our team. He tackled the most complex tasks, led critical refactoring that significantly improved our architecture, and actively contributed to reviews, estimations, and mentoring. Alongside his technical excellence, he demonstrated strong leadership, clear communication, and a supportive attitude that made collaboration highly effective.',
+    text: 'reviews.1.text',
     image: mykola,
   },
   {
-    name: 'Paul Demskyi',
-    position: 'Full Stack Developer',
+    name: 'reviews.2.name',
+    position: 'reviews.2.position',
     company: 'Bliscore Software',
-    text: 'I worked with Oleh on the same project area, and his contributions were essential to the project’s success. He rebuilt a poorly structured backend architecture into a clean, efficient system that significantly reduced development and deployment time, while also providing strong input during planning and estimations. Alongside his technical expertise, he naturally took on leadership responsibilities, guiding teammates, resolving blockers, and communicating effectively with both customers and technical stakeholders.',
+    text: 'reviews.2.text',
     image: pavlo,
   },
   {
-    name: 'Valerii Inshyn',
-    position: '.NET Developer',
+    name: 'reviews.3.name',
+    position: 'reviews.3.position',
     company: 'Bliscore Software',
-    text: 'Working with Oleh on complex, high-impact features was consistently smooth and productive. He approaches problems calmly and methodically, takes full ownership of his tasks, and remains reliable even under pressure or during urgent production issues. His clear communication, professionalism, and collaborative attitude make him both a strong engineer and an excellent teammate.',
+    text: 'reviews.3.text',
     image: valerii,
   },
 ];

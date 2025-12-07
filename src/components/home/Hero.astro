@@ -2,37 +2,33 @@
 import { Image } from 'astro:assets';
 import type { Skill } from '@shared/skill/interfaces.ts';
 import SkillBlock from '@shared/skill/SkillBlock.astro';
+import { useTranslations } from '@shared/helpers.ts';
+import { HERO_TRANSLATIONS } from './translations.ts';
 import { SKILLS } from './constants';
 import photo from './images/me.jpg';
+
+const t = useTranslations(Astro.url, HERO_TRANSLATIONS);
 ---
 
 <section class="mb-12 text-center">
   <div class="mb-8 flex flex-col items-center justify-center gap-8 md:flex-row">
     <div class="order-1 md:order-2">
       <div class="h-48 w-48 overflow-hidden rounded-full border-4 border-blue-500 shadow-2xl">
-        <Image
-          src={photo}
-          alt="Oleh Khavar - Professional Headshot"
-          width={192}
-          height={192}
-          class="h-full w-full object-cover"
-        />
+        <Image src={photo} alt={t('hero.image.alt')} width={192} height={192} class="h-full w-full object-cover" />
       </div>
     </div>
 
     <div class="order-2 flex-1 text-center md:order-1 md:text-right">
       <h1 class="text-primary mb-6 text-4xl leading-tight font-bold md:text-5xl lg:text-6xl">
-        Oleh Khavar
+        {t('hero.name')}
         <br />
-        <span class="text-blue-600 dark:text-blue-400">Full-Stack .NET Engineer</span> building
-        <span class="font-extrabold text-blue-600 dark:text-blue-300">Scalable Enterprise Systems</span>
+        <span set:html={t('hero.title')} />
       </h1>
 
-      <p class="text-secondary mx-auto max-w-2xl text-lg leading-relaxed md:mr-0 md:ml-auto md:text-xl">
-        I transform complex business challenges into clean, maintainable
-        <span class="font-semibold text-blue-600 dark:text-blue-400">architecture</span> using C#, ASP.NET, and modern front-end
-        frameworks.
-      </p>
+      <p
+        class="text-secondary mx-auto max-w-2xl text-lg leading-relaxed md:mr-0 md:ml-auto md:text-xl"
+        set:html={t('hero.description')}
+      />
     </div>
   </div>
 

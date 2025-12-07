@@ -1,13 +1,23 @@
 ---
 import MetricBlock from '@shared/metric/MetricBlock.astro';
 import type { Metric } from '@shared/metric/interfaces.ts';
+import { useTranslations } from '@shared/helpers.ts';
+import { METRICS_TRANSLATIONS } from './translations.ts';
 import { METRICS } from './constants';
+
+const t = useTranslations(Astro.url, METRICS_TRANSLATIONS);
+
+const translatedMetrics: Metric[] = METRICS.map((metric) => ({
+  ...metric,
+  name: t(metric.name),
+  description: t(metric.description),
+}));
 ---
 
 <section class="mb-12 rounded-2xl">
-  <h2 class="text-primary mb-8 text-center text-2xl font-bold">Impact & Expertise</h2>
+  <h2 class="text-primary mb-8 text-center text-2xl font-bold">{t('metrics.title')}</h2>
 
   <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4">
-    {METRICS.map((metric: Metric) => <MetricBlock metric={metric} />)}
+    {translatedMetrics.map((metric: Metric) => <MetricBlock metric={metric} />)}
   </div>
 </section>

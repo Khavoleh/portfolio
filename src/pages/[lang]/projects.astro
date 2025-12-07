@@ -1,8 +1,11 @@
 ---
+import { getLanguageStaticPaths } from '@shared/helpers.ts';
 import Layout from '@layouts/Layout.astro';
 import ProjectsIntro from '@components/projects/ProjectsIntro.astro';
 import Portfolio from '@components/projects/portfolio/Portfolio.astro';
 import ForgeMock from '@components/projects/forge-mock/ForgeMock.astro';
+
+export const getStaticPaths = getLanguageStaticPaths;
 ---
 
 <Layout>

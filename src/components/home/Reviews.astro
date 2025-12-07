@@ -6,8 +6,19 @@ import type { Review } from '@shared/review/interfaces.ts';
 import ArrowLeftIcon from './icons/arrow-left.svg';
 import ArrowRightIcon from './icons/arrow-right.svg';
 import { shuffleArray } from '@components/home/helpers.ts';
+import { useTranslations } from '@shared/helpers.ts';
+import { REVIEWS_TRANSLATIONS } from './translations.ts';
 
-const shuffledReviews: Review[] = shuffleArray(REVIEWS);
+const t = useTranslations(Astro.url, REVIEWS_TRANSLATIONS);
+
+const translatedReviews: Review[] = REVIEWS.map((review) => ({
+  ...review,
+  name: t(review.name),
+  position: t(review.position),
+  text: t(review.text),
+}));
+
+const shuffledReviews: Review[] = shuffleArray(translatedReviews);
 
 const buttonsClasses: string =
   'border-default background-default transition-default focus-default pointer-events-auto inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border opacity-50 shadow-md hover:scale-110 hover:opacity-75 hover:shadow-lg active:scale-95';
@@ -15,13 +26,13 @@ const buttonsClasses: string =
 
 <section class="mb-12">
   <div class="mb-8 text-center">
-    <h2 class="text-primary mb-4 text-3xl font-bold">Professional Recommendations</h2>
-    <p class="text-secondary mx-auto max-w-2xl text-lg">What colleagues say about working with me</p>
+    <h2 class="text-primary mb-4 text-3xl font-bold">{t('reviews.title')}</h2>
+    <p class="text-secondary mx-auto max-w-2xl text-lg">{t('reviews.subtitle')}</p>
   </div>
 
   <div id="default-carousel" class="relative w-full" data-carousel="static">
     <div
-      class="relative min-h-[570px] overflow-hidden rounded min-[550px]:min-h-[400px] md:min-h-[350px] lg:min-h-[320px]"
+      class="relative min-h-[620px] overflow-hidden rounded min-[580px]:min-h-[430px] md:min-h-[380px] lg:min-h-[350px]"
     >
       {
         shuffledReviews.map((review: Review) => (
@@ -42,7 +53,7 @@ const buttonsClasses: string =
           <button
             type="button"
             class="transition-default border-default focus-default h-4 w-4 rounded-lg border"
-            aria-label={`Navigate to slide ${index + 1}`}
+            aria-label={`${t('reviews.slide.aria')} ${index + 1}`}
             data-carousel-slide-to={index.toString()}
           />
         ))
@@ -50,13 +61,13 @@ const buttonsClasses: string =
     </div>
 
     <div class="pointer-events-none absolute start-0 top-0 z-30 flex h-full items-center justify-start px-4">
-      <button type="button" class={buttonsClasses} data-carousel-prev aria-label="Previous slide">
+      <button type="button" class={buttonsClasses} data-carousel-prev aria-label={t('reviews.button.previous')}>
         <ArrowLeftIcon class="text-primary" aria-hidden="true" />
       </button>
     </div>
 
     <div class="pointer-events-none absolute end-0 top-0 z-30 flex h-full items-center justify-end px-4">
-      <button type="button" class={buttonsClasses} data-carousel-next aria-label="Next slide">
+      <button type="button" class={buttonsClasses} data-carousel-next aria-label={t('reviews.button.next')}>
         <ArrowRightIcon class="text-primary" aria-hidden="true" />
       </button>
     </div>
@@ -69,7 +80,7 @@ const buttonsClasses: string =
       rel="noopener noreferrer"
       class="transition-default focus-default inline-flex items-center gap-2 font-semibold text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
     >
-      View all recommendations on LinkedIn
+      {t('reviews.linkedin.link')}
       <LinkIcon class="h-4 w-4" />
     </a>
   </div>

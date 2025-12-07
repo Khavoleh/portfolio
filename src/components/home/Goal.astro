@@ -1,29 +1,27 @@
 ---
-const highlightClasses: string = 'font-semibold text-blue-600 dark:text-blue-400';
+import { useTranslations } from '@shared/helpers.ts';
+import { GOAL_TRANSLATIONS } from './translations.ts';
+
+const t = useTranslations(Astro.url, GOAL_TRANSLATIONS);
 ---
 
 <section class="text-center">
-  <h2 class="text-primary mb-4 text-3xl font-bold">Selected Experience & Technical Focus</h2>
-  <p class="text-secondary mx-auto mb-8 max-w-3xl text-lg leading-relaxed">
-    My expertise spans <span class={highlightClasses}>architecture design</span>,
-    <span class={highlightClasses}>system optimization</span>, and
-    <span class={highlightClasses}>team delivery</span>. Review the case studies below to see the process behind the
-    code.
-  </p>
+  <h2 class="text-primary mb-4 text-3xl font-bold">{t('goal.title')}</h2>
+  <p class="text-secondary mx-auto mb-8 max-w-3xl text-lg leading-relaxed" set:html={t('goal.description')} />
 
   <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
     <a
       href="/[lang]/experience"
       class="transition-default focus-default inline-flex transform items-center justify-center rounded-lg bg-blue-600 px-8 py-4 text-lg font-semibold text-white shadow-lg hover:-translate-y-1 hover:bg-blue-600 hover:shadow-xl active:bg-blue-700"
     >
-      View Career Timeline
+      {t('goal.button.experience')}
     </a>
 
     <a
       href="/[lang]/projects"
       class="transition-default focus-default inline-flex transform items-center justify-center rounded-lg border-2 border-blue-500 px-8 py-4 text-lg font-semibold text-blue-600 shadow-lg hover:-translate-y-1 hover:bg-blue-500 hover:text-white hover:shadow-xl dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-slate-900"
     >
-      Explore Open Source Projects
+      {t('goal.button.projects')}
     </a>
   </div>
 </section>
