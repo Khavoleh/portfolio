@@ -1,4 +1,4 @@
-# Oleh Khavar | Full-Stack .NET Engineer Portfolio
+# Oleh Khavar | Full-Stack .NET Developer Portfolio
 
 ## 🔗 Live Website
 **[https://www.khavol.com/](https://www.khavol.com/)**
