@@ -4,6 +4,7 @@ import { ClientRouter } from 'astro:transitions';
 import Navbar from './Navbar.astro';
 import Footer from './Footer.astro';
 import themeInitScript from './scripts/theme-init.js?raw';
+import languageInitScript from './scripts/language-init.js?raw';
 ---
 
 <html lang="en">
@@ -14,6 +15,7 @@ import themeInitScript from './scripts/theme-init.js?raw';
     <title>Astro Basics</title>
     <ClientRouter />
     <script is:inline set:html={themeInitScript} />
+    <script is:inline set:html={languageInitScript} />
   </head>
   <body class="flex min-h-screen flex-col bg-slate-50 dark:bg-slate-900">
     <Navbar />

@@ -1,0 +1,88 @@
+---
+import type { Language } from './interfaces.ts';
+import { LANGUAGES_CONFIG } from './constants.ts';
+import { DEFAULT_LANGUAGE } from '@shared/constants.ts';
+
+interface Props {
+  idSuffix: string;
+  classesSize: number;
+}
+
+const { idSuffix, classesSize } = Astro.props;
+const dropdownId = `language-dropdown-${idSuffix}`;
+
+// Extract current language from URL path
+const getCurrentLang = (pathname: string): string => {
+  const pathParts = pathname.split('/').filter(Boolean);
+  const firstPart = pathParts[0];
+
+  // Check if first part is a language code
+  const langCodes = LANGUAGES_CONFIG.map((l) => l.code);
+  if (firstPart && langCodes.includes(firstPart)) {
+    return firstPart;
+  }
+
+  return DEFAULT_LANGUAGE;
+};
+
+const currentLang = getCurrentLang(Astro.url.pathname);
+
+const getLanguageUrl = (targetLang: string): string => {
+  const pathname = Astro.url.pathname;
+  const pathParts = pathname.split('/').filter(Boolean);
+
+  // Check if first part is a language code
+  const langCodes = LANGUAGES_CONFIG.map((l) => l.code);
+  const hasLangPrefix = pathParts[0] && langCodes.includes(pathParts[0]);
+
+  if (hasLangPrefix) {
+    // Replace existing language prefix
+    pathParts[0] = targetLang;
+    return `/${pathParts.join('/')}`;
+  } else {
+    // Add language prefix
+    if (pathParts.length === 0) {
+      return `/${targetLang}/`;
+    }
+    return `/${targetLang}/${pathParts.join('/')}`;
+  }
+};
+---
+
+<button
+  data-dropdown-toggle={dropdownId}
+  type="button"
+  class=`transition-default hover-default focus-default inline-flex h-${classesSize} w-${classesSize} items-center justify-center rounded-lg cursor-pointer`
+  aria-label="Change language"
+>
+  {
+    LANGUAGES_CONFIG.map((lang: Language) => (
+      <lang.icon
+        id={`language-icon-${lang.code}-${idSuffix}`}
+        class:list={['h-6 w-6', { hidden: lang.code !== currentLang }]}
+      />
+    ))
+  }
+</button>
+
+<div
+  id={dropdownId}
+  class="z-10 hidden w-36 rounded-lg border border-slate-200 bg-slate-50 shadow-lg dark:border-slate-700 dark:bg-slate-800"
+>
+  <ul class="p-2 text-sm font-medium text-slate-700 dark:text-slate-200" aria-labelledby="language-toggle">
+    {
+      LANGUAGES_CONFIG.map((lang: Language) => (
+        <li>
+          <a
+            href={getLanguageUrl(lang.code)}
+            data-language={lang.code}
+            class="transition-default focus-default inline-flex w-full items-center gap-2 rounded p-2 text-left hover:bg-slate-100 dark:hover:bg-slate-700"
+          >
+            <lang.icon class="h-5 w-5" />
+            <span>{lang.name}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>

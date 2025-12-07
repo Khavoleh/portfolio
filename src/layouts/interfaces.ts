@@ -5,3 +5,9 @@ export interface Theme {
   title: string;
   icon: SvgComponent;
 }
+
+export interface Language {
+  code: string;
+  name: string;
+  icon: SvgComponent;
+}
