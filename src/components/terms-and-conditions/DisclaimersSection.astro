@@ -1,0 +1,15 @@
+---
+import { useTranslations } from '@shared/helpers.ts';
+import { TERMS_AND_CONDITIONS_TRANSLATIONS } from './translations.ts';
+
+const t = useTranslations(Astro.url, TERMS_AND_CONDITIONS_TRANSLATIONS);
+---
+
+<section class="mb-8">
+  <h2 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">{t('terms.disclaimers.title')}</h2>
+  <p class="mb-4 text-gray-600 dark:text-gray-300" set:html={t('terms.disclaimers.text')} />
+  <ul class="mb-4 list-inside list-disc space-y-2 text-gray-600 dark:text-gray-300">
+    <li set:html={t('terms.disclaimers.informational')} />
+    <li set:html={t('terms.disclaimers.no_guarantee')} />
+  </ul>
+</section>

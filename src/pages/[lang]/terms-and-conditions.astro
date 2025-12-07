@@ -1,7 +1,14 @@
 ---
-import { getLanguageStaticPaths } from '@shared/helpers.ts';
 import Layout from '@layouts/Layout.astro';
-import { SOCIALS } from '@shared/constants.ts';
+import { getLanguageStaticPaths } from '@shared/helpers.ts';
+import Heading from '@components/terms-and-conditions/Heading.astro';
+import LastUpdated from '@components/terms-and-conditions/LastUpdated.astro';
+import AcceptanceSection from '@components/terms-and-conditions/AcceptanceSection.astro';
+import IntellectualPropertySection from '@components/terms-and-conditions/IntellectualPropertySection.astro';
+import DisclaimersSection from '@components/terms-and-conditions/DisclaimersSection.astro';
+import ExternalLinksSection from '@components/terms-and-conditions/ExternalLinksSection.astro';
+import GoverningLawSection from '@components/terms-and-conditions/GoverningLawSection.astro';
+import ContactSection from '@components/terms-and-conditions/ContactSection.astro';
 
 export const getStaticPaths = getLanguageStaticPaths;
 ---
@@ -9,97 +16,16 @@ export const getStaticPaths = getLanguageStaticPaths;
 <Layout>
   <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
     <div class="rounded-lg bg-white p-8 shadow-lg dark:bg-gray-800">
-      <h1 class="mb-8 text-4xl font-bold text-gray-900 dark:text-white">Terms & Conditions</h1>
+      <Heading />
 
       <div class="prose dark:prose-invert max-w-none">
-        <p class="mb-6 text-gray-600 dark:text-gray-300">
-          <strong>Last updated: December 4, 2025</strong>
-        </p>
-
-        <section class="mb-8">
-          <h2 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">1. Acceptance of Terms</h2>
-          <p class="mb-4 text-gray-600 dark:text-gray-300">
-            By accessing or using this portfolio website (the "Service"), you agree to be bound by these Terms and
-            Conditions ("Terms"). If you disagree with any part of the terms, then you may not access the Service. This
-            website is purely for showcasing portfolio work and is not an offer for services.
-          </p>
-        </section>
-
-        <section class="mb-8">
-          <h2 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">2. Intellectual Property Rights</h2>
-          <p class="mb-4 text-gray-600 dark:text-gray-300">
-            All content on this website, including but not limited to text, design, graphics, images, and the
-            compilation thereof, are the property of the site owner and protected by copyright and intellectual property
-            laws.
-          </p>
-          <ul class="mb-4 list-inside list-disc space-y-2 text-gray-600 dark:text-gray-300">
-            <li>
-              <strong>Code Snippets & Technical Content:</strong> You are permitted to view and use any code snippets provided
-              for personal, educational, or informational purposes, provided you include appropriate attribution. This code
-              is provided <strong>AS IS</strong>.
-            </li>
-            <li>
-              <strong>Restrictions:</strong> You may not use the website's images, personal photographs, or the site owner's
-              name, or claim any content on this website as your own. You may not use any content for unlawful or malicious
-              purposes.
-            </li>
-          </ul>
-        </section>
-
-        <section class="mb-8">
-          <h2 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">
-            3. Disclaimers and Limitation of Liability
-          </h2>
-          <p class="mb-4 text-gray-600 dark:text-gray-300">
-            The Service and all content (including code and advice) are provided on an "AS IS" and "AS AVAILABLE" basis.
-            Your use of the Service is at your sole risk.
-          </p>
-          <ul class="mb-4 list-inside list-disc space-y-2 text-gray-600 dark:text-gray-300">
-            <li>
-              <strong>Informational Use:</strong> All information and content, particularly technical material, is for
-              <strong>educational and informational purposes only</strong>
-              and does not constitute professional advice or a warranty of any kind.
-            </li>
-            <li>
-              <strong>No Guarantee:</strong> We do not warrant that the Service will be uninterrupted, secure, or error-free.
-              The site owner shall not be liable for any direct, indirect, incidental, special, consequential, or punitive
-              damages, including lost profits, resulting from your use or inability to use the Service or the code provided.
-            </li>
-          </ul>
-        </section>
-
-        <section class="mb-8">
-          <h2 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">
-            4. Links to Other Websites (Project Demos)
-          </h2>
-          <p class="mb-4 text-gray-600 dark:text-gray-300">
-            Our Service contains links to third-party websites or services (such as GitHub, LinkedIn, and external
-            project demos) that are not owned or controlled by us.
-          </p>
-          <p class="mb-4 text-gray-600 dark:text-gray-300">
-            We have no control over, and assume no responsibility for, the content, privacy policies, or practices of
-            any third-party websites or services. You further acknowledge and agree that we shall not be responsible or
-            liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection
-            with the use of or reliance on any such content, goods, or services available on or through any such
-            websites or services.
-          </p>
-        </section>
-
-        <section class="mb-8">
-          <h2 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">5. Governing Law</h2>
-          <p class="mb-4 text-gray-600 dark:text-gray-300">
-            These Terms shall be governed and construed in accordance with the laws of Ukraine, without regard to its
-            conflict of law provisions.
-          </p>
-        </section>
-
-        <section class="mb-8">
-          <h2 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">6. Contact</h2>
-          <p class="text-gray-600 dark:text-gray-300">
-            If you have any questions about these Terms, please contact me via email at:
-            <a href=`mailto:${SOCIALS.EMAIL}` class="font-semibold text-gray-900 dark:text-white">{SOCIALS.EMAIL}</a>
-          </p>
-        </section>
+        <LastUpdated />
+        <AcceptanceSection />
+        <IntellectualPropertySection />
+        <DisclaimersSection />
+        <ExternalLinksSection />
+        <GoverningLawSection />
+        <ContactSection />
       </div>
     </div>
   </div>

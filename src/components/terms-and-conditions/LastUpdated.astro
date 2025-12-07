@@ -1,0 +1,8 @@
+---
+import { useTranslations } from '@shared/helpers.ts';
+import { TERMS_AND_CONDITIONS_TRANSLATIONS } from './translations.ts';
+
+const t = useTranslations(Astro.url, TERMS_AND_CONDITIONS_TRANSLATIONS);
+---
+
+<p class="mb-6 text-gray-600 dark:text-gray-300" set:html={t('terms.updated')} />
