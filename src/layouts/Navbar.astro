@@ -1,7 +1,7 @@
 ---
 import { PAGE_URLS } from '@shared/constants.ts';
 import type { NavLink } from '@shared/interfaces.ts';
-import { useTranslations } from '@shared/helpers.ts';
+import { getLanguageUrl, useTranslations } from '@shared/helpers.ts';
 import LogoIcon from '@assets/logo.svg';
 import { NAVIGATION_LINKS } from './constants.ts';
 import { NAVBAR_TRANSLATIONS } from './translations.ts';
@@ -55,7 +55,7 @@ const currentPath: string = Astro.url.pathname;
             return (
               <li>
                 <a
-                  href={link.href}
+                  href={getLanguageUrl(Astro.url, link.href)}
                   class={
                     isActive
                       ? 'transition-default focus-default block rounded bg-blue-600 px-3 py-2 text-slate-50 md:bg-transparent md:p-0 md:text-blue-600 md:dark:text-blue-300'

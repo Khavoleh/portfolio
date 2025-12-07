@@ -1,6 +1,7 @@
 ---
-import { useTranslations } from '@shared/helpers.ts';
+import { getLanguageUrl, useTranslations } from '@shared/helpers.ts';
 import { GOAL_TRANSLATIONS } from './translations.ts';
+import { PAGE_URLS } from '@shared/constants.ts';
 
 const t = useTranslations(Astro.url, GOAL_TRANSLATIONS);
 ---
@@ -11,14 +12,14 @@ const t = useTranslations(Astro.url, GOAL_TRANSLATIONS);
 
   <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
     <a
-      href="/[lang]/experience"
+      href={getLanguageUrl(Astro.url, PAGE_URLS.EXPERIENCE)}
       class="transition-default focus-default inline-flex transform items-center justify-center rounded-lg bg-blue-600 px-8 py-4 text-lg font-semibold text-white shadow-lg hover:-translate-y-1 hover:bg-blue-600 hover:shadow-xl active:bg-blue-700"
     >
       {t('goal.button.experience')}
     </a>
 
     <a
-      href="/[lang]/projects"
+      href={getLanguageUrl(Astro.url, PAGE_URLS.PROJECTS)}
       class="transition-default focus-default inline-flex transform items-center justify-center rounded-lg border-2 border-blue-500 px-8 py-4 text-lg font-semibold text-blue-600 shadow-lg hover:-translate-y-1 hover:bg-blue-500 hover:text-white hover:shadow-xl dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-slate-900"
     >
       {t('goal.button.projects')}
