@@ -39,4 +39,31 @@
   .transition-default {
     @apply transition-all duration-300;
   }
+
+  .scrollbar-styled {
+    scrollbar-width: thin;
+    scrollbar-color: #94a3b8 #f1f5f9;
+  }
+
+  .dark .scrollbar-styled {
+    scrollbar-color: #475569 #1e293b;
+  }
+
+  .scrollbar-styled::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .scrollbar-styled::-webkit-scrollbar-track {
+    @apply bg-slate-100 dark:bg-slate-800;
+    border-radius: 4px;
+  }
+
+  .scrollbar-styled::-webkit-scrollbar-thumb {
+    @apply bg-slate-400 dark:bg-slate-600;
+    border-radius: 4px;
+  }
+
+  .scrollbar-styled::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-500 dark:bg-slate-500;
+  }
 }
