@@ -37,7 +37,7 @@ export const SOCIAL_LINKS_TRANSLATIONS: Translations = {
     'socialLinks.aria.github': 'Visit my GitHub',
   },
   uk: {
-    'socialLinks.title': 'Професійна присутність',
+    'socialLinks.title': 'Професійна діяльність',
     'socialLinks.description':
       '<span class="font-semibold text-blue-600 dark:text-blue-400">LinkedIn</span> для професійної оцінки та рекомендацій, <span class="font-semibold text-blue-600 dark:text-blue-400">GitHub</span> для перегляду коду моїх проєктів та <span class="font-semibold text-blue-600 dark:text-blue-400">Telegram</span> для швидкого обміну повідомленнями.',
     'socialLinks.aria.linkedin': 'Відвідати мій LinkedIn',
