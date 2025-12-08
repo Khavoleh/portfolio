@@ -24,12 +24,12 @@ The website is structured to provide a clear and organized view of my profession
 This section details the technologies and tools used both to **build this website** and the core technologies I specialize in and feature in my **projects**.
 
 ### 🌐 Portfolio Website Stack
-| Category          | Technology       | Description |
-|:------------------|:-----------------| :--- |
+| Category          | Technology       | Description                                                                          |
+|:------------------|:-----------------|:-------------------------------------------------------------------------------------|
 | **Framework**     | **Astro**        | Modern static site builder for fast performance and a component-driven architecture. |
-| **UI Components** | **Flowbite**     | Clean, responsive design. |
-| **Styling**       | **Tailwind CSS** | Clean, responsive design. |
-| **Deployment**    | **Vercel**       | Platform used for continuous integration and hosting. |
+| **UI Components** | **Flowbite**     | Tailwind-based component library.                                                                                     |
+| **Styling**       | **Tailwind CSS** | Clean, responsive design.                                                            |
+| **Deployment**    | **Vercel**       | Platform used for continuous integration and hosting.                                |
 
 ### 🚀 Core Expertise (Featured in Projects)
 | Category | Technologies Featured                                                 |
