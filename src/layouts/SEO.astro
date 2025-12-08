@@ -19,7 +19,7 @@ const siteName = t('site_name');
 const author = t('author_name');
 const twitterHandle = '@Khavol';
 
-const imageURL = new URL('/favicon.svg', Astro.url).href;
+const imageURL = new URL('/og.png', Astro.url).href;
 const imageAlt = t('logo_alt');
 
 const robotsContent = [noindex ? 'noindex' : 'index', 'follow'].join(', ');
