@@ -5,7 +5,7 @@ export const HERO_TRANSLATIONS: Translations = {
     'hero.image.alt': 'Oleh Khavar - Professional Headshot',
     'hero.name': 'Oleh Khavar',
     'hero.title':
-      '<span class="text-blue-600 dark:text-blue-400">Full-Stack .NET Engineer</span> building <span class="font-extrabold text-blue-600 dark:text-blue-300">Scalable Enterprise Systems</span>',
+      '<span class="text-blue-600 dark:text-blue-400">Full-Stack .NET Engineer</span> <br /> building <span class="font-extrabold text-blue-600 dark:text-blue-300">Scalable Enterprise Systems</span>',
     'hero.description':
       'I transform complex business challenges into clean, maintainable <span class="font-semibold text-blue-600 dark:text-blue-400">architecture</span> using C#, ASP.NET, and modern front-end frameworks.',
   },
@@ -13,7 +13,7 @@ export const HERO_TRANSLATIONS: Translations = {
     'hero.image.alt': 'Олег Хавар - Професійне фото',
     'hero.name': 'Олег Хавар',
     'hero.title':
-      '<span class="text-blue-600 dark:text-blue-400">Full-Stack .NET інженер</span> створюю <span class="font-extrabold text-blue-600 dark:text-blue-300">масштабовані корпоративні системи</span>',
+      '<span class="text-blue-600 dark:text-blue-400">Full-Stack .NET інженер</span> <br /> створюю <span class="font-extrabold text-blue-600 dark:text-blue-300">масштабовані корпоративні системи</span>',
     'hero.description':
       'Я перетворюю складні бізнес-завдання на чітку, зручну в обслуговуванні <span class="font-semibold text-blue-600 dark:text-blue-400">архітектуру</span>, використовуючи C#, ASP.NET та сучасні фронт-енд фреймворки.',
   },
