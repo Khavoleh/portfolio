@@ -9,7 +9,7 @@ export const CONTACT_INTRO_TRANSLATIONS: Translations = {
   uk: {
     'intro.title': "Давайте зв'яжемося і обговоримо масштабовані рішення",
     'intro.description':
-      'Якщо ви зацікавлені в <span class="font-semibold text-blue-600 dark:text-blue-400">роботі на повну ставку</span>, <span class="font-semibold text-blue-600 dark:text-blue-400">партнерстві</span>або просто хочете обговорити <span class="font-semibold text-blue-600 dark:text-blue-400">архітектуру</span>, ось найкращі способи зв\'язатися зі мною.',
+      'Якщо ви зацікавлені в <span class="font-semibold text-blue-600 dark:text-blue-400">роботі на повну ставку</span>, <span class="font-semibold text-blue-600 dark:text-blue-400">партнерстві</span> або просто хочете обговорити <span class="font-semibold text-blue-600 dark:text-blue-400">архітектуру</span>, ось найкращі способи зв\'язатися зі мною.',
   },
 };
 
