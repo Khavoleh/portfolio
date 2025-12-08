@@ -26,8 +26,6 @@ const { title, description, noindex } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <SEO title={title} description={description} noindex={noindex} />
     <ClientRouter />
-    <Analytics />
-    <SpeedInsights />
     <script is:inline set:html={themeInitScript} />
     <script is:inline set:html={languageInitScript} />
   </head>
@@ -42,6 +40,8 @@ const { title, description, noindex } = Astro.props;
   </body>
 </html>
 
+<Analytics />
+<SpeedInsights />
 <script src="./scripts/flowbite.min.js"></script>
 <script src="./scripts/flowbite-init.ts"></script>
 
