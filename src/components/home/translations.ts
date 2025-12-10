@@ -4,7 +4,7 @@ export const HERO_TRANSLATIONS: Translations = {
   en: {
     'hero.image.alt': 'Oleh Khavar - Professional Headshot',
     'hero.name': 'Oleh Khavar',
-    'hero.title': '<span class="text-blue-600 dark:text-blue-400">Full-Stack .NET Engineer</span>',
+    'hero.title': '<span class="text-blue-600 dark:text-blue-400">Full-Stack .NET Developer</span>',
     'hero.subtitle':
       'Building <span class="font-extrabold text-blue-600 dark:text-blue-300">Scalable Enterprise Systems</span>',
     'hero.description':
@@ -13,7 +13,7 @@ export const HERO_TRANSLATIONS: Translations = {
   uk: {
     'hero.image.alt': 'Олег Хавар - Професійне фото',
     'hero.name': 'Олег Хавар',
-    'hero.title': '<span class="text-blue-600 dark:text-blue-400">Full-Stack .NET інженер</span>',
+    'hero.title': '<span class="text-blue-600 dark:text-blue-400">Full-Stack .NET розробник</span>',
     'hero.subtitle':
       'Створюю <span class="font-extrabold text-blue-600 dark:text-blue-300">масштабовані корпоративні системи</span>',
     'hero.description':
