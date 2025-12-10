@@ -48,7 +48,7 @@ export const REVIEWS_TRANSLATIONS: Translations = {
   en: {
     'reviews.title': 'Professional Recommendations',
     'reviews.subtitle': 'What colleagues say about working with me',
-    'reviews.linkedin.link': 'View all recommendations on LinkedIn',
+    'reviews.linkedin.link': 'All recommendations on LinkedIn',
     'reviews.slide.aria': 'Navigate to slide',
     'reviews.button.previous': 'Previous slide',
     'reviews.button.next': 'Next slide',
@@ -72,7 +72,7 @@ export const REVIEWS_TRANSLATIONS: Translations = {
   uk: {
     'reviews.title': 'Професійні рекомендації',
     'reviews.subtitle': 'Що колеги говорять про роботу зі мною',
-    'reviews.linkedin.link': 'Переглянути всі рекомендації в LinkedIn',
+    'reviews.linkedin.link': 'Усі рекомендації в LinkedIn',
     'reviews.slide.aria': 'Перейти до слайду',
     'reviews.button.previous': 'Попередній слайд',
     'reviews.button.next': 'Наступний слайд',
@@ -101,13 +101,13 @@ export const GOAL_TRANSLATIONS: Translations = {
     'goal.description':
       'My expertise spans <span class="font-semibold text-blue-600 dark:text-blue-400">architecture design</span>, <span class="font-semibold text-blue-600 dark:text-blue-400">system optimization</span>, and <span class="font-semibold text-blue-600 dark:text-blue-400">team delivery</span>. Review the case studies below to see the process behind the code.',
     'goal.button.experience': 'View Career Timeline',
-    'goal.button.projects': 'Explore Open Source Projects',
+    'goal.button.projects': 'Explore Projects',
   },
   uk: {
     'goal.title': 'Обраний досвід та технічний фокус',
     'goal.description':
       'Моя експертиза охоплює <span class="font-semibold text-blue-600 dark:text-blue-400">проєктування архітектури</span>, <span class="font-semibold text-blue-600 dark:text-blue-400">оптимізацію систем</span> та <span class="font-semibold text-blue-600 dark:text-blue-400">роботу в команді</span>. Ознайомтеся з наведеними нижче прикладами, щоб побачити процес, що стоїть за кодом.',
     'goal.button.experience': 'Переглянути досвід',
-    'goal.button.projects': 'Дослідити проєкти з відкритим кодом',
+    'goal.button.projects': 'Дослідити проєкти',
   },
 };
