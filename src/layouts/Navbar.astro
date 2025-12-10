@@ -26,11 +26,9 @@ const currentPath: string = Astro.url.pathname;
       </span>
     </a>
 
-    <div class="flex items-center gap-4">
-      <div class="flex items-center gap-3 md:hidden">
-        <LanguageSelector idSuffix="mobile" classesSize={10} />
-        <ThemeSelector idSuffix="mobile" classesSize={10} />
-      </div>
+    <div class="flex items-center gap-3 md:hidden">
+      <LanguageSelector idSuffix="mobile" classesSize={10} />
+      <ThemeSelector idSuffix="mobile" classesSize={10} />
 
       <button
         data-collapse-toggle="navbar-default"
