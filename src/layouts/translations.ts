@@ -2,7 +2,7 @@ import type { Translations } from '@shared/interfaces.ts';
 
 export const SEO_TRANSLATIONS: Translations = {
   en: {
-    home_title: 'Portfolio | Oleh ',
+    home_title: 'Portfolio | Oleh Khavar',
     home_description:
       'Welcome to the portfolio of Oleh Khavar, a Full Stack Developer specializing in modern web technologies including .NET, React, Next.js, TypeScript, and cloud solutions. Explore my projects and experience.',
 
