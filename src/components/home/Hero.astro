@@ -1,38 +1,33 @@
 ---
 import { Image } from 'astro:assets';
-import type { Skill } from '@shared/skill/interfaces.ts';
-import SkillBlock from '@shared/skill/SkillBlock.astro';
 import { useTranslations } from '@shared/helpers.ts';
 import { HERO_TRANSLATIONS } from './translations.ts';
-import { SKILLS } from './constants';
 import photo from './images/me.jpg';
 
 const t = useTranslations(Astro.url, HERO_TRANSLATIONS);
 ---
 
-<section class="mb-12 text-center">
-  <div class="mb-8 flex flex-col items-center justify-center gap-8 md:flex-row">
-    <div class="order-1 md:order-2">
-      <div class="h-48 w-48 overflow-hidden rounded-full border-4 border-blue-500 shadow-2xl">
+<section class="mb-16">
+  <div class="flex flex-col items-center justify-center gap-12 lg:flex-row lg:items-center lg:gap-16">
+    <div class="flex flex-col items-center text-center lg:pr-8">
+      <div class="mb-4 h-48 w-48 overflow-hidden rounded-full border-4 border-blue-500 shadow-2xl">
         <Image src={photo} alt={t('hero.image.alt')} width={192} height={192} class="h-full w-full object-cover" />
       </div>
+      <h1 class="text-primary text-3xl font-bold md:text-center md:text-4xl">{t('hero.name')}</h1>
+      <p class="text-secondary text-lg font-medium md:text-center md:text-xl" set:html={t('hero.title')} />
     </div>
 
-    <div class="order-2 flex-1 text-center md:order-1 md:text-right">
-      <h1 class="text-primary mb-6 text-4xl leading-tight font-bold md:text-5xl lg:text-6xl">
-        {t('hero.name')}
-        <br />
-        <span set:html={t('hero.title')} />
-      </h1>
+    <div
+      class="hidden h-auto w-px self-stretch bg-gradient-to-b from-transparent via-gray-400 to-transparent lg:block dark:via-gray-600"
+    >
+    </div>
 
-      <p
-        class="text-secondary mx-auto max-w-2xl text-lg leading-relaxed md:mr-0 md:ml-auto md:text-xl"
-        set:html={t('hero.description')}
+    <div class="max-w-2xl flex-1 text-center lg:pl-8 lg:text-left">
+      <h2
+        class="text-primary mb-6 text-2xl leading-tight font-bold md:text-3xl lg:text-4xl"
+        set:html={t('hero.subtitle')}
       />
+      <p class="text-secondary text-lg leading-relaxed md:text-xl" set:html={t('hero.description')} />
     </div>
-  </div>
-
-  <div class="mb-12 flex flex-wrap justify-center gap-3">
-    {SKILLS.map((skill: Skill) => <SkillBlock skill={skill} />)}
   </div>
 </section>

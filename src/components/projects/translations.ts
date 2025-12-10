@@ -118,10 +118,10 @@ export const FORGE_MOCK_PROJECT_TRANSLATIONS: Translations = {
 export const PROJECT_COMPONENTS_TRANSLATIONS: Translations = {
   en: {
     'components.techStack.title': 'Technical Stack',
-    'components.github.button': 'View Code on GitHub',
+    'components.github.button': 'Source Code',
   },
   uk: {
     'components.techStack.title': 'Використані технології',
-    'components.github.button': 'Переглянути код на GitHub',
+    'components.github.button': 'Вихідний код',
   },
 };
