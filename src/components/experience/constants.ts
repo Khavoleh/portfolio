@@ -6,8 +6,31 @@ import TeamIcon from './icons/team.svg';
 import LightBulbIcon from './icons/light-bulb.svg';
 import SprintIcon from './icons/sprint.svg';
 import CiCdIcon from './icons/ci-cd.svg';
+import StudyIcon from './icons/study.svg';
 
 export const EXPERIENCE_DATA: ExperienceItem[] = [
+  {
+    role: 'experience.2.role',
+    company: 'experience.2.company',
+    sector: 'experience.2.sector',
+    period: '12/2025 - Present',
+    skills: [
+      { name: '.NET', type: SKILL_TYPES.BACK_END },
+      { name: 'C#', type: SKILL_TYPES.BACK_END },
+      { name: 'ASP.NET Web API', type: SKILL_TYPES.BACK_END },
+      { name: 'EF Core', type: SKILL_TYPES.BACK_END },
+      { name: 'MongoDB', type: SKILL_TYPES.DATABASE },
+      { name: 'Azure Cloud', type: SKILL_TYPES.DEV_OPS },
+      { name: 'Docker', type: SKILL_TYPES.DEV_OPS },
+    ],
+    sections: [
+      {
+        title: 'experience.2.section.0.title',
+        icon: StudyIcon,
+        details: 'experience.2.section.0.details',
+      },
+    ],
+  },
   {
     role: 'experience.0.role',
     company: 'experience.0.company',
