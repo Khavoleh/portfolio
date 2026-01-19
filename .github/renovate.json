@@ -1,7 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:best-practices"],
-  "schedule": ["Schedule daily before 3 AM"],
+  "schedule": ["before 3am"],
   "timezone": "Europe/Kyiv",
   "packageRules": [
     {
@@ -23,6 +23,6 @@
   "ignoreTests": false,
   "lockFileMaintenance": {
     "enabled": true,
-    "schedule": ["Schedule daily before 3 AM"]
+    "schedule": ["before 3am"]
   }
 }
