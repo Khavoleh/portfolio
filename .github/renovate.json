@@ -1,0 +1,28 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:best-practices"],
+  "schedule": ["before 3am"],
+  "timezone": "Europe/Kyiv",
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch"
+    },
+    {
+      "matchUpdateTypes": ["major"],
+      "groupName": "all major dependencies",
+      "groupSlug": "all-major"
+    }
+  ],
+  "rangeStrategy": "bump",
+  "semanticCommits": "enabled",
+  "labels": ["dependencies"],
+  "prConcurrentLimit": 3,
+  "prCreation": "immediate",
+  "ignoreTests": false,
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["before 3am"]
+  }
+}
