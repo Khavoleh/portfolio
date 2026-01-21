@@ -13,7 +13,7 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     role: 'experience.2.role',
     company: 'experience.2.company',
     sector: 'experience.2.sector',
-    period: '12/2025 - Present',
+    period: 'experience.2.period',
     skills: [
       { name: '.NET', type: SKILL_TYPES.BACK_END },
       { name: 'C#', type: SKILL_TYPES.BACK_END },
@@ -32,10 +32,10 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     ],
   },
   {
-    role: 'experience.0.role',
-    company: 'experience.0.company',
-    sector: 'experience.0.sector',
-    period: '07/2024 - 11/2025',
+    role: 'experience.1.role',
+    company: 'experience.1.company',
+    sector: 'experience.1.sector',
+    period: 'experience.1.period',
     skills: [
       { name: '.NET', type: SKILL_TYPES.BACK_END },
       { name: 'C#', type: SKILL_TYPES.BACK_END },
@@ -51,27 +51,27 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     ],
     sections: [
       {
-        title: 'experience.0.section.0.title',
+        title: 'experience.1.section.0.title',
         icon: ArchitectureIcon,
-        details: 'experience.0.section.0.details',
+        details: 'experience.1.section.0.details',
       },
       {
-        title: 'experience.0.section.1.title',
+        title: 'experience.1.section.1.title',
         icon: GrowUpIcon,
-        details: 'experience.0.section.1.details',
+        details: 'experience.1.section.1.details',
       },
       {
-        title: 'experience.0.section.2.title',
+        title: 'experience.1.section.2.title',
         icon: TeamIcon,
-        details: 'experience.0.section.2.details',
+        details: 'experience.1.section.2.details',
       },
     ],
   },
   {
-    role: 'experience.1.role',
-    company: 'experience.1.company',
-    sector: 'experience.1.sector',
-    period: '12/2023 - 06/2025',
+    role: 'experience.0.role',
+    company: 'experience.0.company',
+    sector: 'experience.0.sector',
+    period: 'experience.0.period',
     skills: [
       { name: '.NET', type: SKILL_TYPES.BACK_END },
       { name: 'C#', type: SKILL_TYPES.BACK_END },
@@ -87,19 +87,19 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     ],
     sections: [
       {
-        title: 'experience.1.section.0.title',
+        title: 'experience.0.section.0.title',
         icon: LightBulbIcon,
-        details: 'experience.1.section.0.details',
+        details: 'experience.0.section.0.details',
       },
       {
-        title: 'experience.1.section.1.title',
+        title: 'experience.0.section.1.title',
         icon: SprintIcon,
-        details: 'experience.1.section.1.details',
+        details: 'experience.0.section.1.details',
       },
       {
-        title: 'experience.1.section.2.title',
+        title: 'experience.0.section.2.title',
         icon: CiCdIcon,
-        details: 'experience.1.section.2.details',
+        details: 'experience.0.section.2.details',
       },
     ],
   },
