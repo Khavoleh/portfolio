@@ -14,7 +14,7 @@ const currentPath: string = Astro.url.pathname;
 ---
 
 <header class="border-default fixed start-0 top-0 z-100 w-full border-b bg-slate-50 dark:bg-slate-900">
-  <nav class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
+  <nav class="mx-auto flex max-w-7xl flex-wrap items-center justify-between p-4">
     <a
       href={getLanguageUrl(Astro.url, PAGE_URLS.HOME)}
       aria-label="Navigate to home page"
@@ -68,7 +68,7 @@ const currentPath: string = Astro.url.pathname;
             );
           })
         }
-        <li class="hidden items-center gap-3 md:flex">
+        <li class="hidden items-center gap-6 md:flex">
           <LanguageSelector idSuffix="desktop" classesSize={6} />
           <ThemeSelector idSuffix="desktop" classesSize={6} />
         </li>
