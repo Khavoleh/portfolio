@@ -20,7 +20,10 @@ const t = useTranslations(Astro.url, DIRECT_CONTACT_TRANSLATIONS);
     <div class={contactInformationClasses}>
       <EmailIcon class={iconClasses} />
       <h3 class="text-primary mb-2 text-xl font-semibold">{t('directContact.email.title')}</h3>
-      <a href=`mailto:${SOCIALS.EMAIL}` class="text-hover transition-default text-blue-600 dark:text-blue-400">
+      <a
+        href=`mailto:${SOCIALS.EMAIL}`
+        class="text-hover focus-default transition-default text-blue-600 dark:text-blue-400"
+      >
         {SOCIALS.EMAIL}
       </a>
     </div>
@@ -32,7 +35,7 @@ const t = useTranslations(Astro.url, DIRECT_CONTACT_TRANSLATIONS);
         href={SOCIALS.TELEGRAM}
         target="_blank"
         rel="noopener noreferrer"
-        class="text-hover transition-default text-blue-600 dark:text-blue-400"
+        class="text-hover focus-default transition-default text-blue-600 dark:text-blue-400"
       >
         @khavol
       </a>
