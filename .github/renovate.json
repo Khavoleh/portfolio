@@ -3,7 +3,6 @@
   "extends": ["config:best-practices"],
   "schedule": ["before 3am"],
   "timezone": "Europe/Kyiv",
-  "enabledManagers": ["pnpm", "github-actions"],
   "packageRules": [
     {
       "matchUpdateTypes": ["major", "minor", "patch", "pin", "digest"],
