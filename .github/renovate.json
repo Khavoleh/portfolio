@@ -3,16 +3,12 @@
   "extends": ["config:best-practices"],
   "schedule": ["before 3am"],
   "timezone": "Europe/Kyiv",
+  "enabledManagers": ["pnpm", "github-actions"],
   "packageRules": [
     {
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "groupName": "all non-major dependencies",
-      "groupSlug": "all-minor-patch"
-    },
-    {
-      "matchUpdateTypes": ["major"],
-      "groupName": "all major dependencies",
-      "groupSlug": "all-major"
+      "matchUpdateTypes": ["major", "minor", "patch", "pin", "digest"],
+      "groupName": "all dependencies",
+      "groupSlug": "all-patch"
     }
   ],
   "rangeStrategy": "bump",
