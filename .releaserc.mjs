@@ -1,5 +1,6 @@
 export default {
   branches: ['main'],
+  tagFormat: 'v${version}',
   plugins: [
     [
       '@semantic-release/commit-analyzer',
@@ -28,7 +29,13 @@ export default {
         changelogFile: 'CHANGELOG.md',
       },
     ],
-    '@semantic-release/npm',
+    [
+      '@semantic-release/npm',
+      {
+        npmPublish: false,
+      },
+    ],
     '@semantic-release/github',
+    '@semantic-release/git',
   ],
 };
