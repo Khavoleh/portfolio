@@ -1,4 +1,4 @@
-name: Portfolio PR
+name: Pull Request
 
 permissions:
   contents: read
