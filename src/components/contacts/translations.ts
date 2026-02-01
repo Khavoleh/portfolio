@@ -4,12 +4,12 @@ export const CONTACT_INTRO_TRANSLATIONS: Translations = {
   en: {
     'intro.title': "Let's Connect and Discuss Scalable Solutions",
     'intro.description':
-      'Whether you\'re interested in a <span class="font-semibold text-blue-600 dark:text-blue-400">full-time role</span>, a <span class="font-semibold text-blue-600 dark:text-blue-400">consulting partnership</span>, or just want to discuss <span class="font-semibold text-blue-600 dark:text-blue-400">architecture</span>, here are the best ways to get in touch.',
+      'Whether you\'re interested in a <span class="font-semibold text-primary">full-time role</span>, a <span class="font-semibold text-primary">consulting partnership</span>, or just want to discuss <span class="font-semibold text-primary">architecture</span>, here are the best ways to get in touch.',
   },
   uk: {
     'intro.title': "Давайте зв'яжемося і обговоримо масштабовані рішення",
     'intro.description':
-      'Якщо ви зацікавлені в <span class="font-semibold text-blue-600 dark:text-blue-400">роботі на повну ставку</span>, <span class="font-semibold text-blue-600 dark:text-blue-400">партнерстві</span> або просто хочете обговорити <span class="font-semibold text-blue-600 dark:text-blue-400">архітектуру</span>, ось найкращі способи зв\'язатися зі мною.',
+      'Якщо ви зацікавлені в <span class="font-semibold text-primary">роботі на повну ставку</span>, <span class="font-semibold text-primary">партнерстві</span> або просто хочете обговорити <span class="font-semibold text-primary">архітектуру</span>, ось найкращі способи зв\'язатися зі мною.',
   },
 };
 
@@ -32,14 +32,14 @@ export const SOCIAL_LINKS_TRANSLATIONS: Translations = {
   en: {
     'socialLinks.title': 'Professional Presence',
     'socialLinks.description':
-      '<span class="font-semibold text-blue-600 dark:text-blue-400">LinkedIn</span> for professional validation and endorsements, <span class="font-semibold text-blue-600 dark:text-blue-400">GitHub</span> to review my projects\' code, and <span class="font-semibold text-blue-600 dark:text-blue-400">Telegram</span> for quick messaging.',
+      '<span class="font-semibold text-primary">LinkedIn</span> for professional validation and endorsements, <span class="font-semibold text-primary">GitHub</span> to review my projects\' code, and <span class="font-semibold text-primary">Telegram</span> for quick messaging.',
     'socialLinks.aria.linkedin': 'Visit my LinkedIn',
     'socialLinks.aria.github': 'Visit my GitHub',
   },
   uk: {
     'socialLinks.title': 'Професійна діяльність',
     'socialLinks.description':
-      '<span class="font-semibold text-blue-600 dark:text-blue-400">LinkedIn</span> для професійної оцінки та рекомендацій, <span class="font-semibold text-blue-600 dark:text-blue-400">GitHub</span> для перегляду коду моїх проєктів та <span class="font-semibold text-blue-600 dark:text-blue-400">Telegram</span> для швидкого обміну повідомленнями.',
+      '<span class="font-semibold text-primary">LinkedIn</span> для професійної оцінки та рекомендацій, <span class="font-semibold text-primary">GitHub</span> для перегляду коду моїх проєктів та <span class="font-semibold text-primary">Telegram</span> для швидкого обміну повідомленнями.',
     'socialLinks.aria.linkedin': 'Відвідати мій LinkedIn',
     'socialLinks.aria.github': 'Відвідати мій GitHub',
   },

@@ -12,7 +12,7 @@ import { PORTFOLIO_PROJECT_TRANSLATIONS } from '../translations.ts';
 const t = useTranslations(Astro.url, PORTFOLIO_PROJECT_TRANSLATIONS);
 ---
 
-<section class="background-default border-default mb-12 rounded-3xl border-2 p-8 shadow-2xl md:p-12">
+<section class="card bg-base-200 border-base-300 mb-12 border p-8 shadow-2xl md:p-12">
   <Title title={t(PORTFOLIO.title)} description={t(PORTFOLIO.description)} Icon={LogoIcon} />
 
   <div class="mb-8 grid gap-8 md:grid-cols-2">
@@ -24,19 +24,19 @@ const t = useTranslations(Astro.url, PORTFOLIO_PROJECT_TRANSLATIONS);
   </div>
 
   <div class="mb-8">
-    <h3 class="text-primary mb-4 text-center text-xl font-bold">{t('portfolio.performance.title')}</h3>
+    <h3 class="text-base-content mb-4 text-center text-xl font-bold">{t('portfolio.performance.title')}</h3>
     <div class="p-6">
       <div class="grid grid-cols-2 gap-6 md:grid-cols-4">
         {
           PERFORMANCE_METRICS.map((metric: string) => (
             <div class="text-center">
-              <p class="mb-2 text-4xl font-bold text-green-700 dark:text-green-500">100</p>
-              <p class="text-secondary text-sm font-semibold">{t(metric)}</p>
+              <p class="text-success mb-2 text-4xl font-bold">100</p>
+              <p class="text-base-content/80 text-sm font-semibold">{t(metric)}</p>
             </div>
           ))
         }
       </div>
-      <p class="text-secondary mt-4 text-center text-sm italic">
+      <p class="text-base-content/70 mt-4 text-center text-sm italic">
         {t('portfolio.performance.note')}
       </p>
     </div>

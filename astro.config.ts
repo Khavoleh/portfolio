@@ -10,7 +10,7 @@ const config: AstroUserConfig = {
     csp: {
       directives: [
         "default-src 'self'",
-        "img-src 'self'",
+        "img-src 'self' data:",
         "font-src 'self'",
         "connect-src 'self'",
         "form-action 'self'",

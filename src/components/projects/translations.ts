@@ -6,14 +6,14 @@ export const PROJECTS_INTRO_TRANSLATIONS: Translations = {
     'intro.title.and': ', and',
     'intro.title.highlight2': 'Full-Stack Implementation',
     'intro.description':
-      'While my professional experience is detailed in the <span class="text-blue-600 dark:text-blue-400">Career Timeline</span>, this section provides an in-depth view of my technical ownership and architectural decisions across my personal and open-source projects.',
+      'While my professional experience is detailed in the <span class="text-primary">Career Timeline</span>, this section provides an in-depth view of my technical ownership and architectural decisions across my personal and open-source projects.',
   },
   uk: {
     'intro.title.highlight1': 'Відкритий код, архітектура',
     'intro.title.and': ' і',
     'intro.title.highlight2': 'Full-Stack реалізація',
     'intro.description':
-      'Хоча мій професійний досвід детально описаний на сторінці <span class="text-blue-600 dark:text-blue-400">Досвід</span>, цей розділ надає детальний огляд моїх технічних рішень та архітектурних рішень у моїх особистих та відкритих проектах.',
+      'Хоча мій професійний досвід детально описаний на сторінці <span class="text-primary">Досвід</span>, цей розділ надає детальний огляд моїх технічних рішень та архітектурних рішень у моїх особистих та відкритих проектах.',
   },
 };
 
@@ -27,7 +27,7 @@ export const PORTFOLIO_PROJECT_TRANSLATIONS: Translations = {
       'A portfolio that practices what I preach: optimal performance, accessibility, and modern development practices. The site needed to load instantly, work perfectly for all users, and demonstrate expertise in contemporary front-end tooling.',
     'portfolio.section.1.title': 'Technical Approach',
     'portfolio.section.1.details.0':
-      'Built with Astro for low-count client-side JavaScript. Utilized Vercel for hosting and Continuous Delivery with automatic deployments. Styled with Tailwind CSS and Flowbite components for rapid, consistent UI development.',
+      'Built with Astro for low-count client-side JavaScript. Utilized Vercel for hosting and Continuous Delivery with automatic deployments. Styled with Tailwind CSS and DaisyUI components for rapid, consistent UI development with minimal JavaScript.',
     'portfolio.section.2.title': 'Key Features',
     'portfolio.section.2.details.0': 'Dark/light mode switch with system preference detection',
     'portfolio.section.2.details.1': 'Component-driven architecture with reusable blocks',
@@ -52,7 +52,7 @@ export const PORTFOLIO_PROJECT_TRANSLATIONS: Translations = {
       'Портфоліо, яке втілює те, про що я говорю: оптимальна продуктивність, доступність та сучасні практики розробки. Сайт мав миттєво завантажуватися, бездоганно працювати для всіх користувачів та демонструвати досвід у використанні сучасних інструментів фронтенд-розробки.',
     'portfolio.section.1.title': 'Технічний підхід',
     'portfolio.section.1.details.0':
-      'Створено за допомогою Astro для JavaScript з малою кількістю клієнтських операцій. Використано Vercel для хостингу та безперервної доставки з автоматичним розгортанням. Стилізовано за допомогою Tailwind CSS та компонентів Flowbite для швидкої та послідовної розробки інтерфейсу користувача.',
+      'Створено за допомогою Astro для JavaScript з малою кількістю клієнтських операцій. Використано Vercel для хостингу та безперервної доставки з автоматичним розгортанням. Стилізовано за допомогою Tailwind CSS та компонентів DaisyUI для швидкої та послідовної розробки інтерфейсу користувача з мінімальним використанням JavaScript.',
     'portfolio.section.2.title': 'Ключові функції',
     'portfolio.section.2.details.0': 'Перемикач темної/світлої теми з визначенням системних налаштувань',
     'portfolio.section.2.details.1': 'Компонентна архітектура з повторно використовуваними блоками',

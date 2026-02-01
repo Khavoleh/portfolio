@@ -29,12 +29,12 @@ const { title, description, noindex } = Astro.props;
     <script is:inline set:html={themeInitScript} />
     <script is:inline set:html={languageInitScript} />
   </head>
-  <body class="flex min-h-screen flex-col bg-slate-50 dark:bg-slate-900">
+  <body class="bg-base-100 text-base-content flex min-h-screen flex-col">
     <Navbar />
 
-    <div class="flex-grow pt-20 pb-2">
+    <main class="grow pt-20 pb-2">
       <slot />
-    </div>
+    </main>
 
     <Footer />
   </body>
@@ -42,14 +42,3 @@ const { title, description, noindex } = Astro.props;
 
 <Analytics />
 <SpeedInsights />
-<script src="./scripts/flowbite.min.js"></script>
-<script src="./scripts/flowbite-init.ts"></script>
-
-<style>
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-  }
-</style>

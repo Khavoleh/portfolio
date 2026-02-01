@@ -5,4 +5,4 @@ import { PRIVACY_POLICY_TRANSLATIONS } from './translations.ts';
 const t = useTranslations(Astro.url, PRIVACY_POLICY_TRANSLATIONS);
 ---
 
-<p class="mb-6 text-gray-600 dark:text-gray-300" set:html={t('privacy.updated')} />
+<p class="text-base-content/80 mb-6" set:html={t('privacy.updated')} />

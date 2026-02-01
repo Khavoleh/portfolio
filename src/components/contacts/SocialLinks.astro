@@ -8,7 +8,7 @@ const t = useTranslations(Astro.url, SOCIAL_LINKS_TRANSLATIONS);
 ---
 
 <section class="mb-16">
-  <h2 class="text-primary mb-8 text-center text-3xl font-bold">{t('socialLinks.title')}</h2>
+  <h2 class="text-base-content mb-8 text-center text-3xl font-bold">{t('socialLinks.title')}</h2>
 
   <div class="mx-auto flex max-w-2xl flex-wrap justify-center gap-6">
     {
@@ -17,18 +17,18 @@ const t = useTranslations(Astro.url, SOCIAL_LINKS_TRANSLATIONS);
           href={link.href}
           target="_blank"
           rel="noopener noreferrer"
-          class="background-default border-default transition-default focus-default flex flex-col items-center rounded-xl border-2 p-8 shadow-lg hover:scale-105 hover:shadow-xl"
+          class="card bg-base-200 border-base-300 focus-ring flex flex-col items-center border p-8 shadow-lg transition-all duration-200 hover:scale-105 hover:shadow-xl"
           aria-label={t(`socialLinks.aria.${link.label.toLowerCase()}`)}
         >
-          <link.icon class="mb-4 h-16 w-16 text-blue-600 dark:text-blue-400" />
-          <span class="text-primary text-lg font-semibold">{link.label}</span>
+          <link.icon class="text-primary mb-4 h-16 w-16" />
+          <span class="text-base-content text-lg font-semibold">{link.label}</span>
         </a>
       ))
     }
   </div>
 
   <p
-    class="text-secondary mx-auto mt-8 max-w-2xl text-center leading-relaxed"
+    class="text-base-content mx-auto mt-8 max-w-2xl text-center leading-relaxed"
     set:html={t('socialLinks.description')}
   />
 </section>

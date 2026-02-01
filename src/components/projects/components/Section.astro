@@ -10,17 +10,17 @@ interface Props {
 const { Icon, title, details } = Astro.props;
 ---
 
-<div class="background-default border-default rounded-2xl border-2 p-6 shadow-lg">
-  <h3 class="text-primary mb-3 flex items-center text-xl font-bold">
+<div class="card bg-base-200 border-base-300 border p-6 shadow-lg">
+  <h3 class="text-base-content mb-3 flex items-center text-xl font-bold">
     <Icon class="mr-3 shrink-0" />
     {title}
   </h3>
 
   {
     details.length === 1 ? (
-      <p class="text-secondary leading-relaxed">{details[0]}</p>
+      <p class="text-base-content leading-relaxed">{details[0]}</p>
     ) : (
-      <ul class="text-secondary list-inside list-disc space-y-1 leading-relaxed marker:text-blue-600 dark:marker:text-blue-400">
+      <ul class="text-base-content marker:text-primary list-inside list-disc space-y-1 leading-relaxed">
         {details.map((detail: string) => (
           <li>{detail}</li>
         ))}

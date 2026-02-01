@@ -23,6 +23,7 @@ export default {
       },
     ],
     '@semantic-release/release-notes-generator',
+    '@semantic-release/changelog',
     [
       '@semantic-release/npm',
       {
@@ -30,5 +31,6 @@ export default {
       },
     ],
     '@semantic-release/git',
+    '@semantic-release/github',
   ],
 };

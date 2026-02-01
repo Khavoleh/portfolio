@@ -10,24 +10,23 @@ const t = useTranslations(Astro.url, HERO_TRANSLATIONS);
 <section class="mb-16">
   <div class="flex flex-col items-center justify-center gap-12 lg:flex-row lg:items-center lg:gap-16">
     <div class="flex flex-col items-center text-center lg:pr-8">
-      <div class="mb-4 h-48 w-48 overflow-hidden rounded-full border-4 border-blue-500 shadow-2xl">
-        <Image src={photo} alt={t('hero.image.alt')} width={192} height={192} class="h-full w-full object-cover" />
+      <div class="avatar mb-4">
+        <div class="ring-primary ring-offset-base-100 w-48 rounded-full ring ring-offset-2">
+          <Image src={photo} alt={t('hero.image.alt')} width={192} height={192} class="rounded-full" />
+        </div>
       </div>
-      <h1 class="text-primary text-3xl font-bold md:text-center md:text-4xl">{t('hero.name')}</h1>
-      <p class="text-secondary text-lg font-medium md:text-center md:text-xl" set:html={t('hero.title')} />
+      <h1 class="text-base-content text-3xl font-bold md:text-center md:text-4xl">{t('hero.name')}</h1>
+      <p class="text-base-content/70 text-lg font-medium md:text-center md:text-xl" set:html={t('hero.title')} />
     </div>
 
-    <div
-      class="hidden h-auto w-px self-stretch bg-gradient-to-b from-transparent via-gray-400 to-transparent lg:block dark:via-gray-600"
-    >
-    </div>
+    <div class="divider divider-horizontal hidden lg:flex"></div>
 
     <div class="max-w-2xl flex-1 text-center lg:pl-8 lg:text-left">
       <h2
-        class="text-primary mb-6 text-2xl leading-tight font-bold md:text-3xl lg:text-4xl"
+        class="text-base-content mb-6 text-2xl leading-tight font-bold md:text-3xl lg:text-4xl"
         set:html={t('hero.subtitle')}
       />
-      <p class="text-secondary text-lg leading-relaxed md:text-xl" set:html={t('hero.description')} />
+      <p class="text-base-content text-lg leading-relaxed md:text-xl" set:html={t('hero.description')} />
     </div>
   </div>
 </section>
