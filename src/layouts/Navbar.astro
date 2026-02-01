@@ -21,7 +21,7 @@ const currentPath: string = Astro.url.pathname;
       aria-label={t('menu')}
       aria-expanded="false"
       aria-controls="mobile-drawer"
-      onclick="document.getElementById('mobile-drawer').checked = true; setTimeout(() => document.getElementById('drawer-close-btn')?.focus(), 100);"
+      onclick="document.getElementById('mobile-drawer').checked = true; this.setAttribute('aria-expanded', 'true'); setTimeout(() => document.getElementById('drawer-close-btn')?.focus(), 100);"
     >
       <BurgerIcon class="h-5 w-5" />
     </button>
@@ -76,6 +76,7 @@ const currentPath: string = Astro.url.pathname;
 
 <div class="drawer md:hidden">
   <input id="mobile-drawer" type="checkbox" class="drawer-toggle" />
+  <div class="drawer-content"></div>
   <div class="drawer-side z-150">
     <label for="mobile-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
     <div class="menu bg-base-200 min-h-full w-80 p-4">
