@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/Khavoleh/portfolio/compare/v1.1.0...v1.1.1) (2026-02-01)
+
+
+### Bug Fixes
+
+* **deps:** pin dependencies ([2f47e8d](https://github.com/Khavoleh/portfolio/commit/2f47e8d93e268718dd6888a461913d2d6a55748c))
+
 # [1.1.0](https://github.com/Khavoleh/portfolio/compare/v1.0.4...v1.1.0) (2026-02-01)
 
 
