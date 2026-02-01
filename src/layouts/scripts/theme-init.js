@@ -20,14 +20,14 @@
     if (theme === THEME_OPTIONS.SYSTEM) {
       const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       if (isDark) {
-        document.documentElement.classList.add(THEME_OPTIONS.DARK);
+        document.documentElement.setAttribute('data-theme', 'portfolio-dark');
       } else {
-        document.documentElement.classList.remove(THEME_OPTIONS.DARK);
+        document.documentElement.setAttribute('data-theme', 'portfolio-light');
       }
     } else if (theme === THEME_OPTIONS.DARK) {
-      document.documentElement.classList.add(THEME_OPTIONS.DARK);
+      document.documentElement.setAttribute('data-theme', 'portfolio-dark');
     } else {
-      document.documentElement.classList.remove(THEME_OPTIONS.DARK);
+      document.documentElement.setAttribute('data-theme', 'portfolio-light');
     }
 
     setTimeout(() => {
@@ -71,14 +71,14 @@
     applyTheme(currentTheme);
     updateThemeIcon(currentTheme);
 
-    const themeButtons = document.querySelectorAll('[data-theme]');
+    const themeButtons = document.querySelectorAll('[data-set-theme]');
 
     themeButtons.forEach((button) => {
       const newButton = button.cloneNode(true);
       button.parentNode?.replaceChild(newButton, button);
 
       newButton.addEventListener('click', () => {
-        const theme = newButton.dataset.theme;
+        const theme = newButton.dataset.setTheme;
         if (theme) {
           setTheme(theme);
           updateThemeIcon(theme);

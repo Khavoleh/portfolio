@@ -13,34 +13,30 @@ const t = useTranslations(Astro.url, NAVBAR_TRANSLATIONS);
 const currentPath: string = Astro.url.pathname;
 ---
 
-<header class="border-default fixed start-0 top-0 z-100 w-full border-b bg-slate-50 dark:bg-slate-900">
-  <nav class="mx-auto flex max-w-7xl flex-wrap items-center justify-between p-4">
+<header class="navbar border-base-300 bg-base-100 fixed start-0 top-0 z-100 border-b px-4">
+  <div class="navbar-start">
+    <button
+      type="button"
+      class="btn btn-ghost btn-square focus-ring md:hidden"
+      aria-label={t('menu')}
+      aria-expanded="false"
+      aria-controls="mobile-drawer"
+      onclick="document.getElementById('mobile-drawer').checked = true; setTimeout(() => document.getElementById('drawer-close-btn')?.focus(), 100);"
+    >
+      <BurgerIcon class="h-5 w-5" />
+    </button>
+
     <a
       href={getLanguageUrl(Astro.url, PAGE_URLS.HOME)}
       aria-label="Navigate to home page"
-      class="transition-default focus-default flex items-center rounded-lg rtl:space-x-reverse"
+      class="btn btn-ghost focus-ring hidden gap-2 px-2 md:flex"
     >
       <LogoIcon class="h-8" />
-      <span class="text-primary ml-3 hidden self-center text-2xl font-semibold whitespace-nowrap md:block">
-        {t('name')}
-      </span>
+      <span class="text-xl font-semibold">{t('name')}</span>
     </a>
 
-    <div class="flex items-center gap-3 md:hidden">
-      <LanguageSelector idSuffix="mobile" classesSize={10} />
-      <ThemeSelector idSuffix="mobile" classesSize={10} />
-
-      <label
-        for="mobile-drawer"
-        class="transition-default hover-default focus-default inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg p-2 md:hidden"
-        aria-label={t('menu')}
-      >
-        <BurgerIcon class="h-5 w-5" />
-      </label>
-    </div>
-
-    <div class="hidden w-full md:block md:w-auto">
-      <ul class="flex flex-row items-center space-x-8 font-medium rtl:space-x-reverse">
+    <nav class="hidden md:flex">
+      <ul class="menu menu-horizontal flex-nowrap gap-1 px-1 text-base">
         {
           NAVIGATION_LINKS.map((link: NavLink) => {
             const isActive: boolean = currentPath === getLanguageUrl(Astro.url, link.href);
@@ -49,11 +45,7 @@ const currentPath: string = Astro.url.pathname;
               <li>
                 <a
                   href={getLanguageUrl(Astro.url, link.href)}
-                  class={
-                    isActive
-                      ? 'transition-default focus-default block rounded p-0 text-blue-600 md:dark:text-blue-300'
-                      : 'transition-default focus-default text-primary text-hover block rounded p-0 hover:bg-transparent'
-                  }
+                  class:list={['focus-ring px-4 py-2 whitespace-nowrap', isActive && 'active text-primary']}
                   aria-label={`${t('navigate.to')} ${t(link.label)} ${t('page')}`}
                   aria-current={isActive ? 'page' : undefined}
                 >
@@ -63,42 +55,68 @@ const currentPath: string = Astro.url.pathname;
             );
           })
         }
-        <li class="flex items-center gap-6">
-          <LanguageSelector idSuffix="desktop" classesSize={6} />
-          <ThemeSelector idSuffix="desktop" classesSize={6} />
-        </li>
       </ul>
-    </div>
-  </nav>
+    </nav>
+  </div>
+
+  <div class="navbar-end flex gap-4">
+    <LanguageSelector idSuffix="desktop" />
+    <ThemeSelector idSuffix="desktop" />
+
+    <a
+      href={getLanguageUrl(Astro.url, PAGE_URLS.HOME)}
+      aria-label="Navigate to home page"
+      class="btn btn-ghost focus-ring gap-2 px-2 md:hidden"
+    >
+      <span class="hidden text-xl font-semibold md:inline">{t('name')}</span>
+      <LogoIcon class="h-8" />
+    </a>
+  </div>
 </header>
 
-<div class="drawer drawer-end md:hidden">
+<div class="drawer md:hidden">
   <input id="mobile-drawer" type="checkbox" class="drawer-toggle" />
   <div class="drawer-side z-150">
     <label for="mobile-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
-    <ul class="menu bg-base-200 min-h-full w-80 p-4">
-      <li class="menu-title mb-4 flex flex-row items-center justify-between">
-        <span>{t('menu')}</span>
-        <label for="mobile-drawer" class="btn btn-sm btn-circle btn-ghost" aria-label={t('close')}> ✕ </label>
-      </li>
-      {
-        NAVIGATION_LINKS.map((link: NavLink) => {
-          const isActive: boolean = currentPath === getLanguageUrl(Astro.url, link.href);
+    <div id="drawer-content" class="menu bg-base-200 min-h-full w-80 p-4">
+      <div class="mb-4 flex items-center justify-between">
+        <span class="text-lg font-semibold">{t('menu')}</span>
+        <button
+          id="drawer-close-btn"
+          type="button"
+          class="btn btn-ghost btn-sm btn-circle focus-ring"
+          aria-label={t('close')}
+          onclick="document.getElementById('mobile-drawer').checked = false;"
+        >
+          ✕
+        </button>
+      </div>
+      <ul class="space-y-1 text-lg">
+        {
+          NAVIGATION_LINKS.map((link: NavLink, index: number) => {
+            const isActive: boolean = currentPath === getLanguageUrl(Astro.url, link.href);
+            const isLast: boolean = index === NAVIGATION_LINKS.length - 1;
 
-          return (
-            <li>
-              <a
-                href={getLanguageUrl(Astro.url, link.href)}
-                class={isActive ? 'active' : ''}
-                aria-label={`${t('navigate.to')} ${t(link.label)} ${t('page')}`}
-                aria-current={isActive ? 'page' : undefined}
-              >
-                {t(link.label)}
-              </a>
-            </li>
-          );
-        })
-      }
-    </ul>
+            return (
+              <li>
+                <a
+                  href={getLanguageUrl(Astro.url, link.href)}
+                  class:list={['focus-ring', isActive && 'active text-primary']}
+                  aria-label={`${t('navigate.to')} ${t(link.label)} ${t('page')}`}
+                  aria-current={isActive ? 'page' : undefined}
+                  onkeydown={
+                    isLast
+                      ? "if(event.key === 'Tab' && !event.shiftKey) { event.preventDefault(); document.getElementById('drawer-close-btn')?.focus(); }"
+                      : undefined
+                  }
+                >
+                  {t(link.label)}
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
   </div>
 </div>

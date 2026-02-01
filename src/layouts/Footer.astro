@@ -9,47 +9,42 @@ const t = useTranslations(Astro.url, FOOTER_TRANSLATIONS);
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="border-default border-t bg-slate-50 dark:bg-slate-950">
-  <div class="mx-auto w-full max-w-screen-xl p-4 py-4 lg:py-6">
-    <div class="flex flex-col items-center justify-between gap-4 md:flex-row">
-      <span class="text-secondary text-center text-sm md:text-left"> © {currentYear} {t('copyright')} </span>
+<footer class="border-base-300 bg-base-100 border-t">
+  <div class="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-4 p-4 md:flex-row lg:py-6">
+    <span class="text-base-content/70 text-center text-sm md:text-left">
+      © {currentYear}
+      {t('copyright')}
+    </span>
 
-      <ul class="text-secondary flex flex-wrap items-center justify-center gap-4 text-sm font-medium md:gap-6">
-        <li>
-          <a
-            href={getLanguageUrl(Astro.url, PAGE_URLS.PRIVACY_POLICY)}
-            class="transition-default focus-default text-hover"
-          >
-            {t('privacy.policy')}
-          </a>
-        </li>
-        <li>
-          <a
-            href={getLanguageUrl(Astro.url, PAGE_URLS.TERMS_AND_CONDITIONS)}
-            class="transition-default focus-default text-hover"
-          >
-            {t('terms.and.conditions')}
-          </a>
-        </li>
-      </ul>
+    <nav class="flex flex-wrap items-center justify-center gap-4 text-sm font-medium md:gap-6">
+      <a
+        href={getLanguageUrl(Astro.url, PAGE_URLS.PRIVACY_POLICY)}
+        class="focus-ring text-base-content/70 hover:text-base-content rounded"
+      >
+        {t('privacy.policy')}
+      </a>
+      <a
+        href={getLanguageUrl(Astro.url, PAGE_URLS.TERMS_AND_CONDITIONS)}
+        class="focus-ring text-base-content/70 hover:text-base-content rounded"
+      >
+        {t('terms.and.conditions')}
+      </a>
+    </nav>
 
-      <ul class="flex justify-center gap-5">
-        {
-          SOCIAL_LINKS.map((link: SocialLink) => (
-            <li>
-              <a
-                href={link.href}
-                class="transition-default focus-default inline-block"
-                aria-label={`${t('navigate.to')} ${link.label}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <link.icon class="h-6 w-6 text-gray-700 transition hover:text-gray-900" />
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
+    <nav class="flex justify-center gap-5">
+      {
+        SOCIAL_LINKS.map((link: SocialLink) => (
+          <a
+            href={link.href}
+            class="focus-ring text-base-content/70 hover:text-base-content rounded"
+            aria-label={`${t('navigate.to')} ${link.label}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <link.icon class="h-6 w-6" />
+          </a>
+        ))
+      }
+    </nav>
   </div>
 </footer>

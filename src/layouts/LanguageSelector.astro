@@ -7,12 +7,10 @@ import { getCurrentLang, getLanguageUrl } from './helpers.ts';
 
 interface Props {
   idSuffix: string;
-  classesSize: number;
 }
 
-const { idSuffix, classesSize } = Astro.props;
+const { idSuffix } = Astro.props;
 const currentLang = getCurrentLang(Astro.url);
-
 const t = useTranslations(Astro.url, LANGUAGE_TRANSLATIONS);
 ---
 
@@ -20,7 +18,7 @@ const t = useTranslations(Astro.url, LANGUAGE_TRANSLATIONS);
   <button
     tabindex="0"
     type="button"
-    class=`text-primary transition-default hover-default focus-default inline-flex h-${classesSize} w-${classesSize} items-center justify-center rounded-lg cursor-pointer`
+    class="btn btn-ghost btn-square focus-ring"
     aria-label={t('change_language')}
     aria-haspopup="true"
   >
@@ -34,18 +32,11 @@ const t = useTranslations(Astro.url, LANGUAGE_TRANSLATIONS);
     }
   </button>
 
-  <ul
-    role="menu"
-    class="dropdown-content menu z-50 mt-2 w-36 rounded-lg border border-slate-200 bg-slate-50 p-2 shadow-lg dark:border-slate-700 dark:bg-slate-800"
-  >
+  <ul role="menu" class="dropdown-content menu rounded-box bg-base-200 z-50 mt-2 w-36 p-2 shadow-lg">
     {
       LANGUAGES_CONFIG.map((lang: Language) => (
         <li role="menuitem">
-          <a
-            href={getLanguageUrl(Astro.url, lang.code)}
-            data-language={lang.code}
-            class="transition-default focus-default inline-flex w-full items-center gap-2 rounded-lg p-2 text-left text-sm font-medium text-slate-700 hover:bg-slate-100 active:bg-slate-200 dark:text-slate-200 dark:hover:bg-slate-700 dark:active:bg-slate-600"
-          >
+          <a href={getLanguageUrl(Astro.url, lang.code)} data-language={lang.code}>
             <lang.icon class="h-5 w-5" />
             <span>{lang.name}</span>
           </a>

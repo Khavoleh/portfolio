@@ -6,11 +6,9 @@ import { NAVBAR_TRANSLATIONS } from '@layouts/translations.ts';
 
 interface Props {
   idSuffix: string;
-  classesSize: number;
 }
 
-const { idSuffix, classesSize } = Astro.props;
-
+const { idSuffix } = Astro.props;
 const t = useTranslations(Astro.url, NAVBAR_TRANSLATIONS);
 ---
 
@@ -18,23 +16,21 @@ const t = useTranslations(Astro.url, NAVBAR_TRANSLATIONS);
   <button
     tabindex="0"
     type="button"
-    class=`text-primary transition-default hover-default focus-default inline-flex h-${classesSize} w-${classesSize} items-center justify-center rounded-lg cursor-pointer`
+    class="btn btn-ghost btn-square focus-ring"
     aria-label={t('toggle.theme')}
     aria-haspopup="true"
   >
     {THEMES.map((theme: Theme) => <theme.icon id={`theme-icon-${theme.id}-${idSuffix}`} class="hidden h-6 w-6" />)}
   </button>
 
-  <ul
-    role="menu"
-    class="dropdown-content menu z-50 mt-2 w-32 rounded-lg border border-slate-200 bg-slate-50 p-2 shadow-lg dark:border-slate-700 dark:bg-slate-800"
-  >
+  <ul role="menu" class="dropdown-content menu rounded-box bg-base-200 z-50 mt-2 w-32 p-2 shadow-lg">
     {
       THEMES.map((theme: Theme) => (
         <li role="menuitem">
           <button
-            data-theme={theme.id}
-            class="transition-default focus-default inline-flex w-full items-center gap-2 rounded-lg p-2 text-left text-sm font-medium text-slate-700 hover:bg-slate-100 active:bg-slate-200 dark:text-slate-200 dark:hover:bg-slate-700 dark:active:bg-slate-600"
+            type="button"
+            data-set-theme={theme.id}
+            class="text-base-content rounded-field hover:bg-base-300 active:bg-base-300 focus:bg-base-300 flex w-full cursor-pointer items-center gap-2 border-none bg-transparent px-3 py-1.5 text-left text-sm outline-none"
           >
             <theme.icon class="h-5 w-5" />
             <span>{t(theme.id)}</span>
