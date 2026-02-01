@@ -11,40 +11,40 @@ interface Props {
 }
 
 const { idSuffix, classesSize } = Astro.props;
-const dropdownId = `language-dropdown-${idSuffix}`;
 const currentLang = getCurrentLang(Astro.url);
 
 const t = useTranslations(Astro.url, LANGUAGE_TRANSLATIONS);
 ---
 
-<button
-  data-dropdown-toggle={dropdownId}
-  type="button"
-  class=`transition-default hover-default focus-default inline-flex h-${classesSize} w-${classesSize} items-center justify-center rounded-lg cursor-pointer`
-  aria-label={t('change_language')}
->
-  {
-    LANGUAGES_CONFIG.map((lang: Language) => (
-      <lang.icon
-        id={`language-icon-${lang.code}-${idSuffix}`}
-        class:list={['h-6 w-6', { hidden: lang.code !== currentLang }]}
-      />
-    ))
-  }
-</button>
-
-<div
-  id={dropdownId}
-  class="z-10 hidden w-36 rounded-lg border border-slate-200 bg-slate-50 shadow-lg dark:border-slate-700 dark:bg-slate-800"
->
-  <ul class="p-2 text-sm font-medium text-slate-700 dark:text-slate-200" aria-labelledby="language-toggle">
+<div class="dropdown dropdown-end">
+  <button
+    tabindex="0"
+    type="button"
+    class=`text-primary transition-default hover-default focus-default inline-flex h-${classesSize} w-${classesSize} items-center justify-center rounded-lg cursor-pointer`
+    aria-label={t('change_language')}
+    aria-haspopup="true"
+  >
     {
       LANGUAGES_CONFIG.map((lang: Language) => (
-        <li>
+        <lang.icon
+          id={`language-icon-${lang.code}-${idSuffix}`}
+          class:list={['h-6 w-6', { hidden: lang.code !== currentLang }]}
+        />
+      ))
+    }
+  </button>
+
+  <ul
+    role="menu"
+    class="dropdown-content menu z-50 mt-2 w-36 rounded-lg border border-slate-200 bg-slate-50 p-2 shadow-lg dark:border-slate-700 dark:bg-slate-800"
+  >
+    {
+      LANGUAGES_CONFIG.map((lang: Language) => (
+        <li role="menuitem">
           <a
             href={getLanguageUrl(Astro.url, lang.code)}
             data-language={lang.code}
-            class="transition-default focus-default inline-flex w-full items-center gap-2 rounded p-2 text-left hover:bg-slate-100 dark:hover:bg-slate-700"
+            class="transition-default focus-default inline-flex w-full items-center gap-2 rounded-lg p-2 text-left text-sm font-medium text-slate-700 hover:bg-slate-100 active:bg-slate-200 dark:text-slate-200 dark:hover:bg-slate-700 dark:active:bg-slate-600"
           >
             <lang.icon class="h-5 w-5" />
             <span>{lang.name}</span>
