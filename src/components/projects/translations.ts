@@ -6,14 +6,14 @@ export const PROJECTS_INTRO_TRANSLATIONS: Translations = {
     'intro.title.and': ', and',
     'intro.title.highlight2': 'Full-Stack Implementation',
     'intro.description':
-      'While my professional experience is detailed in the <span class="text-blue-600 dark:text-blue-400">Career Timeline</span>, this section provides an in-depth view of my technical ownership and architectural decisions across my personal and open-source projects.',
+      'While my professional experience is detailed in the <span class="text-primary">Career Timeline</span>, this section provides an in-depth view of my technical ownership and architectural decisions across my personal and open-source projects.',
   },
   uk: {
     'intro.title.highlight1': 'Відкритий код, архітектура',
     'intro.title.and': ' і',
     'intro.title.highlight2': 'Full-Stack реалізація',
     'intro.description':
-      'Хоча мій професійний досвід детально описаний на сторінці <span class="text-blue-600 dark:text-blue-400">Досвід</span>, цей розділ надає детальний огляд моїх технічних рішень та архітектурних рішень у моїх особистих та відкритих проектах.',
+      'Хоча мій професійний досвід детально описаний на сторінці <span class="text-primary">Досвід</span>, цей розділ надає детальний огляд моїх технічних рішень та архітектурних рішень у моїх особистих та відкритих проектах.',
   },
 };
 

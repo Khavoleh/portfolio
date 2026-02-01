@@ -6,7 +6,7 @@ const t = useTranslations(Astro.url, TERMS_AND_CONDITIONS_TRANSLATIONS);
 ---
 
 <section class="mb-8">
-  <h2 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">{t('terms.links.title')}</h2>
-  <p class="mb-4 text-gray-600 dark:text-gray-300" set:html={t('terms.links.text1')} />
-  <p class="mb-4 text-gray-600 dark:text-gray-300" set:html={t('terms.links.text2')} />
+  <h2 class="text-base-content mb-4 text-2xl font-semibold">{t('terms.links.title')}</h2>
+  <p class="text-base-content/80 mb-4" set:html={t('terms.links.text1')} />
+  <p class="text-base-content/80 mb-4" set:html={t('terms.links.text2')} />
 </section>

@@ -27,7 +27,7 @@ This section details the technologies and tools used both to **build this websit
 | Category          | Technology       | Description                                                                          |
 |:------------------|:-----------------|:-------------------------------------------------------------------------------------|
 | **Framework**     | **Astro**        | Modern static site builder for fast performance and a component-driven architecture. |
-| **UI Components** | **Flowbite**     | Tailwind-based component library.                                                                                     |
+| **UI Components** | **DaisyUI**     | Tailwind-based component library.                                                                                     |
 | **Styling**       | **Tailwind CSS** | Clean, responsive design.                                                            |
 | **Deployment**    | **Vercel**       | Platform used for continuous integration and hosting.                                |
 

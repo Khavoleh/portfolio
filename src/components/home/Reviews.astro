@@ -21,8 +21,8 @@ const shuffledReviews: Review[] = shuffleArray(translatedReviews);
 
 <section class="mt-12">
   <div class="mb-8 text-center">
-    <h2 class="text-primary mb-4 text-3xl font-bold">{t('reviews.title')}</h2>
-    <p class="text-secondary mx-auto max-w-2xl text-lg">{t('reviews.subtitle')}</p>
+    <h2 class="text-base-content mb-4 text-3xl font-bold">{t('reviews.title')}</h2>
+    <p class="text-base-content mx-auto max-w-2xl text-lg">{t('reviews.subtitle')}</p>
   </div>
 
   <div class="mx-auto w-full max-w-4xl">
@@ -34,20 +34,20 @@ const shuffledReviews: Review[] = shuffleArray(translatedReviews);
 
           return (
             <div id={`review-${index}`} class="carousel-item relative w-full scroll-mx-0">
-              <div class="w-full px-4">
+              <div class="w-full">
                 <ReviewCard review={review} />
               </div>
-              <div class="absolute top-1/2 right-5 left-5 flex -translate-y-1/2 transform justify-between">
+              <div class="absolute top-1/2 right-2 left-2 flex -translate-y-1/2 transform justify-between">
                 <button
                   data-target={`review-${prevIndex}`}
-                  class="btn btn-circle review-nav-btn"
+                  class="btn btn-circle review-nav-btn focus-ring bg-base-100/50 hover:bg-base-100/80 border-none"
                   aria-label={t('reviews.button.previous')}
                 >
                   ❮
                 </button>
                 <button
                   data-target={`review-${nextIndex}`}
-                  class="btn btn-circle review-nav-btn"
+                  class="btn btn-circle review-nav-btn focus-ring bg-base-100/50 hover:bg-base-100/80 border-none"
                   aria-label={t('reviews.button.next')}
                 >
                   ❯
@@ -65,7 +65,7 @@ const shuffledReviews: Review[] = shuffleArray(translatedReviews);
       href="https://www.linkedin.com/in/khavol/"
       target="_blank"
       rel="noopener noreferrer"
-      class="link link-primary inline-flex items-center gap-2 font-semibold"
+      class="link link-primary focus-ring inline-flex items-center gap-2 rounded font-semibold transition-all duration-200"
     >
       {t('reviews.linkedin.link')}
       <LinkIcon class="h-4 w-4" />
