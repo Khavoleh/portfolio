@@ -41,6 +41,10 @@ const config = [
         project: './tsconfig.json',
       },
     },
+    rules: {
+      'astro/jsx-a11y/no-noninteractive-element-interactions': 'off',
+      'astro/jsx-a11y/no-noninteractive-tabindex': 'off',
+    },
   },
 
   {

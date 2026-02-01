@@ -6,6 +6,7 @@ import SpeedInsights from '@vercel/speed-insights/astro';
 import Navbar from './Navbar.astro';
 import Footer from './Footer.astro';
 import SEO from './SEO.astro';
+import DrawerSidebar from './DrawerSidebar.astro';
 import themeInitScript from './scripts/theme-init.js?raw';
 import languageInitScript from './scripts/language-init.js?raw';
 import { getCurrentLang } from './helpers.ts';
@@ -29,14 +30,18 @@ const { title, description, noindex } = Astro.props;
     <script is:inline set:html={themeInitScript} />
     <script is:inline set:html={languageInitScript} />
   </head>
-  <body class="bg-base-100 text-base-content flex min-h-screen flex-col">
-    <Navbar />
-
-    <main class="grow pt-20 pb-2">
-      <slot />
-    </main>
-
-    <Footer />
+  <body class="bg-base-100 text-base-content">
+    <div class="drawer">
+      <input id="mobile-drawer" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content flex min-h-screen flex-col">
+        <Navbar />
+        <main class="grow pt-20 pb-2">
+          <slot />
+        </main>
+        <Footer />
+      </div>
+      <DrawerSidebar />
+    </div>
   </body>
 </html>
 

@@ -15,16 +15,17 @@ const currentPath: string = Astro.url.pathname;
 
 <header class="navbar border-base-300 bg-base-100 fixed start-0 top-0 z-100 border-b px-4">
   <div class="navbar-start">
-    <button
-      type="button"
-      class="btn btn-ghost btn-square focus-ring md:hidden"
+    <label
+      id="mobile-drawer-burger"
+      for="mobile-drawer"
+      class="btn btn-ghost btn-square focus-ring drawer-button md:hidden"
       aria-label={t('menu')}
-      aria-expanded="false"
-      aria-controls="mobile-drawer"
-      onclick="document.getElementById('mobile-drawer').checked = true; this.setAttribute('aria-expanded', 'true'); setTimeout(() => document.getElementById('drawer-close-btn')?.focus(), 100);"
+      tabindex="0"
+      onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); setTimeout(() => document.getElementById('drawer-close-btn')?.focus(), 100); }"
+      onclick="setTimeout(() => document.getElementById('drawer-close-btn')?.focus(), 100);"
     >
       <BurgerIcon class="h-5 w-5" />
-    </button>
+    </label>
 
     <a
       href={getLanguageUrl(Astro.url, PAGE_URLS.HOME)}
@@ -73,51 +74,3 @@ const currentPath: string = Astro.url.pathname;
     </a>
   </div>
 </header>
-
-<div class="drawer md:hidden">
-  <input id="mobile-drawer" type="checkbox" class="drawer-toggle" />
-  <div class="drawer-content"></div>
-  <div class="drawer-side z-150">
-    <label for="mobile-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
-    <div class="menu bg-base-200 min-h-full w-80 p-4">
-      <div class="mb-4 flex items-center justify-between">
-        <span class="text-lg font-semibold">{t('menu')}</span>
-        <button
-          id="drawer-close-btn"
-          type="button"
-          class="btn btn-ghost btn-sm btn-circle focus-ring"
-          aria-label={t('close')}
-          onclick="document.getElementById('mobile-drawer').checked = false;"
-        >
-          ✕
-        </button>
-      </div>
-      <ul class="space-y-1 text-lg">
-        {
-          NAVIGATION_LINKS.map((link: NavLink, index: number) => {
-            const isActive: boolean = currentPath === getLanguageUrl(Astro.url, link.href);
-            const isLast: boolean = index === NAVIGATION_LINKS.length - 1;
-
-            return (
-              <li>
-                <a
-                  href={getLanguageUrl(Astro.url, link.href)}
-                  class:list={['focus-ring', isActive && 'active text-primary']}
-                  aria-label={`${t('navigate.to')} ${t(link.label)} ${t('page')}`}
-                  aria-current={isActive ? 'page' : undefined}
-                  onkeydown={
-                    isLast
-                      ? "if(event.key === 'Tab' && !event.shiftKey) { event.preventDefault(); document.getElementById('drawer-close-btn')?.focus(); }"
-                      : undefined
-                  }
-                >
-                  {t(link.label)}
-                </a>
-              </li>
-            );
-          })
-        }
-      </ul>
-    </div>
-  </div>
-</div>
