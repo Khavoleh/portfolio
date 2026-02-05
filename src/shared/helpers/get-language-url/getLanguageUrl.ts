@@ -1,4 +1,4 @@
-import { DEFAULT_LANGUAGE, LANGUAGES_SHORT } from '../../constants';
+import { DEFAULT_LANGUAGE, LANGUAGES_SHORT } from '@shared/constants/index';
 
 export const getLanguageUrl = (url: URL, path: string): string => {
   const [, language] = url.pathname.split('/');

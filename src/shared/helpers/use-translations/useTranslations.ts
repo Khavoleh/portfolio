@@ -1,4 +1,4 @@
-import { DEFAULT_LANGUAGE } from '../../constants';
+import { DEFAULT_LANGUAGE } from '@shared/constants/index';
 import type { Translations } from '../../interfaces';
 
 const getLangFromUrl = (url: URL, translations: Translations): keyof Translations => {

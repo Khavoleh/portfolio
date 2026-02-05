@@ -4,7 +4,7 @@ import Joke from '@components/not-found/Joke.astro';
 import NotFound from '@components/not-found/NotFound.astro';
 import Layout from '@layouts/Layout.astro';
 import { SEO_TRANSLATIONS } from '@layouts/translations.ts';
-import { useTranslations } from '@shared/helpers';
+import { useTranslations } from '@shared/helpers/index';
 
 const t = useTranslations(Astro.url, SEO_TRANSLATIONS);
 ---
