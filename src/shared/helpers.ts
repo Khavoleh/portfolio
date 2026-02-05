@@ -1,5 +1,5 @@
+import { DEFAULT_LANGUAGE, LANGUAGES_SHORT } from './constants.ts';
 import type { Translations } from './interfaces.ts';
-import { LANGUAGES_SHORT, DEFAULT_LANGUAGE } from './constants.ts';
 
 const getLangFromUrl = (url: URL, translations: Translations): keyof Translations => {
   const [, language] = url.pathname.split('/');

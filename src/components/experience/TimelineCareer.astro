@@ -1,9 +1,9 @@
 ---
-import type { ExperienceItem, ExperienceSection } from './interfaces.ts';
-import { EXPERIENCE_DATA } from './constants.ts';
+import { useTranslations } from '@shared/helpers.ts';
 import type { Skill } from '@shared/skill/interfaces.ts';
 import SkillBlock from '@shared/skill/SkillBlock.astro';
-import { useTranslations } from '@shared/helpers.ts';
+import { EXPERIENCE_DATA } from './constants.ts';
+import type { ExperienceItem, ExperienceSection } from './interfaces.ts';
 import { EXPERIENCE_DATA_TRANSLATIONS } from './translations.ts';
 
 const t = useTranslations(Astro.url, EXPERIENCE_DATA_TRANSLATIONS);

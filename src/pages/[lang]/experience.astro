@@ -1,10 +1,10 @@
 ---
-import { getLanguageStaticPaths, useTranslations } from '@shared/helpers.ts';
-import Layout from '@layouts/Layout.astro';
+import CallToAction from '@components/experience/CallToAction.astro';
 import ExperienceIntro from '@components/experience/ExperienceIntro.astro';
 import TimelineCareer from '@components/experience/TimelineCareer.astro';
-import CallToAction from '@components/experience/CallToAction.astro';
+import Layout from '@layouts/Layout.astro';
 import { SEO_TRANSLATIONS } from '@layouts/translations.ts';
+import { getLanguageStaticPaths, useTranslations } from '@shared/helpers.ts';
 
 export const getStaticPaths = getLanguageStaticPaths;
 

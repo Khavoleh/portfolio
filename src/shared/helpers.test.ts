@@ -1,5 +1,5 @@
-import { describe, it, expect } from 'vitest';
-import { useTranslations, getLanguageUrl, getLanguageStaticPaths } from './helpers';
+import { describe, expect, it } from 'vitest';
+import { getLanguageStaticPaths, getLanguageUrl, useTranslations } from './helpers';
 import type { Translations } from './interfaces';
 
 const mockTranslations: Translations = {

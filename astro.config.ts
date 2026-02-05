@@ -1,7 +1,7 @@
-import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@tailwindcss/vite';
 import type { AstroUserConfig } from 'astro';
+import { defineConfig } from 'astro/config';
 
 const config: AstroUserConfig = {
   site: 'https://www.khavol.com/',

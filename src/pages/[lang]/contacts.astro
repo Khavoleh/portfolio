@@ -1,11 +1,11 @@
 ---
-import { getLanguageStaticPaths, useTranslations } from '@shared/helpers.ts';
-import Layout from '@layouts/Layout.astro';
+import CallToAction from '@components/contacts/CallToAction.astro';
 import ContactIntro from '@components/contacts/ContactIntro.astro';
 import DirectContact from '@components/contacts/DirectContact.astro';
 import SocialLinks from '@components/contacts/SocialLinks.astro';
-import CallToAction from '@components/contacts/CallToAction.astro';
+import Layout from '@layouts/Layout.astro';
 import { SEO_TRANSLATIONS } from '@layouts/translations.ts';
+import { getLanguageStaticPaths, useTranslations } from '@shared/helpers.ts';
 
 export const getStaticPaths = getLanguageStaticPaths;
 

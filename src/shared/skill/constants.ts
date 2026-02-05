@@ -3,5 +3,4 @@ export const SKILL_TYPES = {
   BACK_END: 'back-end',
   DATABASE: 'database',
   DEV_OPS: 'dev-ops',
-  OTHER: 'other',
 };

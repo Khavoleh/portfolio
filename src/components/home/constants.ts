@@ -1,9 +1,9 @@
 import type { Metric } from '@shared/metric/interfaces.ts';
 import type { Review } from '@shared/review/interfaces.ts';
-import viktoria from './images/viktoria-monastyrska.jpeg';
 import mykola from './images/mykola-synhalevych.jpeg';
 import pavlo from './images/pavlo-demskyi.png';
 import valerii from './images/valerii-inshyn.jpeg';
+import viktoria from './images/viktoria-monastyrska.jpeg';
 
 export const METRICS: Metric[] = [
   { value: '3+', name: 'metrics.0.name', description: 'metrics.0.description' },

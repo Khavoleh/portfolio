@@ -1,10 +1,10 @@
 ---
-import Layout from '@layouts/Layout.astro';
-import NotFound from '@components/not-found/NotFound.astro';
-import Joke from '@components/not-found/Joke.astro';
 import BackButtons from '@components/not-found/BackButtons.astro';
-import { useTranslations } from '@shared/helpers.ts';
+import Joke from '@components/not-found/Joke.astro';
+import NotFound from '@components/not-found/NotFound.astro';
+import Layout from '@layouts/Layout.astro';
 import { SEO_TRANSLATIONS } from '@layouts/translations.ts';
+import { useTranslations } from '@shared/helpers.ts';
 
 const t = useTranslations(Astro.url, SEO_TRANSLATIONS);
 ---
