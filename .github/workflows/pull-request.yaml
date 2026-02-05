@@ -22,7 +22,7 @@ jobs:
       - name: Setup
         uses: ./.github/shared/setup
 
-      - name: Run ESLint
+      - name: Run Biome
         run: pnpm lint
 
       - name: Run Prettier
