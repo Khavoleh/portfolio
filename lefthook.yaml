@@ -1,6 +1,9 @@
 pre-commit:
   parallel: true
   commands:
+    gitleaks:
+      glob: '*.{js,ts,json,py,go,yml,md}'
+      run: gitleaks protect --redact --verbose
     branch-name:
       run: |
         branch_name=$(git symbolic-ref --short HEAD)
