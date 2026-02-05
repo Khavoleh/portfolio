@@ -1,6 +1,11 @@
 @import 'tailwindcss';
 @plugin 'daisyui';
 
+:root {
+  --transition-slow: 0.7s;
+  --transition-fast: 0.3s;
+}
+
 @plugin 'daisyui/theme' {
   name: 'portfolio-light';
   default: false;
@@ -65,17 +70,23 @@
   --color-error-content: oklch(15% 0.05 25);
 }
 
+:root,
+[data-theme='portfolio-dark'],
+[data-theme='portfolio-light'] {
+  --icon-color: var(--color-primary);
+}
+
 body,
 * {
   transition:
-    color 0.7s,
-    background 0.7s,
-    border-color 0.7s;
+    color var(--transition-slow),
+    background var(--transition-slow),
+    border-color var(--transition-slow);
 }
 
 .focus-ring {
   outline: none;
-  transition: all 0.3s ease;
+  transition: all var(--transition-fast) ease;
 }
 
 .focus-ring:focus {
@@ -87,7 +98,7 @@ body,
 
 .focus-ring-inset {
   outline: none;
-  transition: all 0.3s ease;
+  transition: all var(--transition-fast) ease;
 }
 
 .focus-ring-inset:focus {
