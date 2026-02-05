@@ -1,6 +1,6 @@
 import GitHubIcon from '@assets/github.svg';
 import LinkedInIcon from '@assets/linkedin.svg';
-import { SOCIALS } from '@shared/constants.ts';
+import { SOCIALS } from '@shared/constants';
 import type { SocialLink } from '@shared/interfaces.ts';
 
 export const SOCIAL_LINKS: SocialLink[] = [

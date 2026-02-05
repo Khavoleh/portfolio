@@ -1,6 +1,6 @@
 import GitHubIcon from '@assets/github.svg';
 import LinkedInIcon from '@assets/linkedin.svg';
-import { LANGUAGES, LANGUAGES_SHORT, PAGE_URLS, SOCIALS } from '@shared/constants.ts';
+import { LANGUAGES, LANGUAGES_SHORT, PAGE_URLS, SOCIALS } from '@shared/constants';
 import type { NavLink, SocialLink } from '@shared/interfaces.ts';
 import ComputerIcon from './icons/computer.svg';
 import FlagEnIcon from './icons/flag-en.svg';
