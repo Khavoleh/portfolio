@@ -20,7 +20,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: ['javascript', 'typescript', 'yaml']
+        language: ['javascript', 'typescript', 'actions']
 
     steps:
       - name: Checkout code
