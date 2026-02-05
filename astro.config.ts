@@ -20,6 +20,12 @@ const config: AstroUserConfig = {
     },
   },
   vite: {
+    server: {
+      https: {
+        key: './localhost-key.pem',
+        cert: './localhost.pem',
+      },
+    },
     plugins: [tailwind()],
   },
 };
