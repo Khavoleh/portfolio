@@ -1,5 +1,5 @@
+import type { Translations } from '@shared/interfaces';
 import { describe, expect, it } from 'vitest';
-import type { Translations } from '../../interfaces';
 import { useTranslations } from './useTranslations';
 
 const MOCK_TRANSLATIONS: Translations = {

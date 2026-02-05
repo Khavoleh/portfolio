@@ -1,4 +1,4 @@
-import { DEFAULT_LANGUAGE } from '@shared/constants/index';
+import { DEFAULT_LANGUAGE } from '@shared/constants';
 import { LANGUAGES_CONFIG } from './constants.ts';
 
 export const getCurrentLang = (url: URL): string => {

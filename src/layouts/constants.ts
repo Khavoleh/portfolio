@@ -1,7 +1,7 @@
 import GitHubIcon from '@assets/github.svg';
 import LinkedInIcon from '@assets/linkedin.svg';
-import { LANGUAGES, LANGUAGES_SHORT, PAGE_URLS, SOCIALS } from '@shared/constants/index';
-import type { NavLink, SocialLink } from '@shared/interfaces.ts';
+import { LANGUAGES, LANGUAGES_SHORT, PAGE_URLS, SOCIALS } from '@shared/constants';
+import type { NavLink, SocialLink } from '@shared/interfaces';
 import ComputerIcon from './icons/computer.svg';
 import FlagEnIcon from './icons/flag-en.svg';
 import FlagUkIcon from './icons/flag-uk.svg';

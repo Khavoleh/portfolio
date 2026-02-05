@@ -1,5 +1,5 @@
-import { DEFAULT_LANGUAGE } from '@shared/constants/index';
-import type { Translations } from '../../interfaces';
+import { DEFAULT_LANGUAGE } from '@shared/constants';
+import type { Translations } from '@shared/interfaces';
 
 const getLangFromUrl = (url: URL, translations: Translations): keyof Translations => {
   const [, language] = url.pathname.split('/');

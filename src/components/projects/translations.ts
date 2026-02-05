@@ -1,4 +1,4 @@
-import type { Translations } from '@shared/interfaces.ts';
+import type { Translations } from '@shared/interfaces';
 
 export const PROJECTS_INTRO_TRANSLATIONS: Translations = {
   en: {

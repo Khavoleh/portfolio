@@ -1,4 +1,4 @@
-import type { Translations } from '@shared/interfaces.ts';
+import type { Translations } from '@shared/interfaces';
 
 export const HERO_TRANSLATIONS: Translations = {
   en: {
