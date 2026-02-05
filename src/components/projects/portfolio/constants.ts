@@ -1,9 +1,9 @@
-import type { ProjectItem } from '../interfaces.ts';
 import { SKILL_TYPES } from '@shared/skill/constants.ts';
-import TargetIcon from '../icons/target.svg';
+import BusinessIcon from '../icons/business.svg';
 import SettingsIcon from '../icons/settings.svg';
 import StarsIcon from '../icons/stars.svg';
-import BusinessIcon from '../icons/business.svg';
+import TargetIcon from '../icons/target.svg';
+import type { ProjectItem } from '../interfaces.ts';
 
 export const PORTFOLIO: ProjectItem = {
   title: 'portfolio.title',

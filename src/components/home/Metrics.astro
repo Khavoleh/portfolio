@@ -1,9 +1,9 @@
 ---
-import MetricBlock from '@shared/metric/MetricBlock.astro';
-import type { Metric } from '@shared/metric/interfaces.ts';
 import { useTranslations } from '@shared/helpers.ts';
-import { METRICS_TRANSLATIONS } from './translations.ts';
+import type { Metric } from '@shared/metric/interfaces.ts';
+import MetricBlock from '@shared/metric/MetricBlock.astro';
 import { METRICS } from './constants';
+import { METRICS_TRANSLATIONS } from './translations.ts';
 
 const t = useTranslations(Astro.url, METRICS_TRANSLATIONS);
 

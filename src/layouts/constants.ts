@@ -1,14 +1,14 @@
-import { PAGE_URLS, SOCIALS, LANGUAGES, LANGUAGES_SHORT } from '@shared/constants.ts';
-import type { NavLink, SocialLink } from '@shared/interfaces.ts';
 import GitHubIcon from '@assets/github.svg';
 import LinkedInIcon from '@assets/linkedin.svg';
-import TelegramIcon from './icons/telegram.svg';
-import SunIcon from './icons/sun.svg';
-import MoonIcon from './icons/moon.svg';
+import { LANGUAGES, LANGUAGES_SHORT, PAGE_URLS, SOCIALS } from '@shared/constants.ts';
+import type { NavLink, SocialLink } from '@shared/interfaces.ts';
 import ComputerIcon from './icons/computer.svg';
 import FlagEnIcon from './icons/flag-en.svg';
 import FlagUkIcon from './icons/flag-uk.svg';
-import type { Theme, Language } from './interfaces.ts';
+import MoonIcon from './icons/moon.svg';
+import SunIcon from './icons/sun.svg';
+import TelegramIcon from './icons/telegram.svg';
+import type { Language, Theme } from './interfaces.ts';
 
 export const NAVIGATION_LINKS: NavLink[] = [
   { href: PAGE_URLS.HOME, label: 'home' },

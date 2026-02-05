@@ -1,13 +1,13 @@
 ---
 import LogoIcon from '@assets/logo.svg';
-import Title from '../components/Title.astro';
+import { useTranslations } from '@shared/helpers.ts';
+import GitHubButton from '../components/GitHubButton.astro';
 import Section from '../components/Section.astro';
 import TechStack from '../components/TechStack.astro';
-import GitHubButton from '../components/GitHubButton.astro';
+import Title from '../components/Title.astro';
 import type { ProjectSection } from '../interfaces.ts';
-import { PORTFOLIO, PERFORMANCE_METRICS } from './constants.ts';
-import { useTranslations } from '@shared/helpers.ts';
 import { PORTFOLIO_PROJECT_TRANSLATIONS } from '../translations.ts';
+import { PERFORMANCE_METRICS, PORTFOLIO } from './constants.ts';
 
 const t = useTranslations(Astro.url, PORTFOLIO_PROJECT_TRANSLATIONS);
 ---
