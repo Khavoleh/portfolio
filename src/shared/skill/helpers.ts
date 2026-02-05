@@ -10,7 +10,6 @@ export const getStyleClasses = (type: string): string => {
       return 'bg-slate-700 text-white shadow-lg dark:bg-slate-600';
     case SKILL_TYPES.DEV_OPS:
       return 'bg-purple-600 text-white shadow-lg dark:bg-purple-700';
-    case SKILL_TYPES.OTHER:
     default:
       return 'border-2 border-gray-400 text-gray-600 dark:border-gray-500 dark:text-gray-400';
   }
