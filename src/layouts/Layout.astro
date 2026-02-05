@@ -30,12 +30,12 @@ const { title, description, noindex } = Astro.props;
     <script is:inline set:html={themeInitScript} />
     <script is:inline set:html={languageInitScript} />
   </head>
-  <body class="bg-base-100 text-base-content">
+  <body class="bg-base-100 text-base-content transition-bg transition-colors">
     <div class="drawer">
       <input id="mobile-drawer" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content flex min-h-screen flex-col">
         <Navbar />
-        <main class="grow pt-20 pb-2">
+        <main class="transition-bg grow pt-20 pb-2 transition-colors">
           <slot />
         </main>
         <Footer />

@@ -65,14 +65,17 @@
   --color-error-content: oklch(15% 0.05 25);
 }
 
-.disable-hover-transitions * {
-  pointer-events: none !important;
-  transition: none !important;
+body,
+* {
+  transition:
+    color 0.7s,
+    background 0.7s,
+    border-color 0.7s;
 }
 
 .focus-ring {
   outline: none;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .focus-ring:focus {
@@ -84,7 +87,7 @@
 
 .focus-ring-inset {
   outline: none;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .focus-ring-inset:focus {

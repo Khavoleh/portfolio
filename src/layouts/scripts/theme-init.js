@@ -15,8 +15,6 @@
   };
 
   const applyTheme = (theme) => {
-    document.documentElement.classList.add('disable-hover-transitions');
-
     if (theme === THEME_OPTIONS.SYSTEM) {
       const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       if (isDark) {
@@ -29,10 +27,6 @@
     } else {
       document.documentElement.setAttribute('data-theme', 'portfolio-light');
     }
-
-    setTimeout(() => {
-      document.documentElement.classList.remove('disable-hover-transitions');
-    }, 100);
   };
 
   const setTheme = (theme) => {
