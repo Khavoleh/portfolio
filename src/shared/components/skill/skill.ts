@@ -1,4 +1,4 @@
-import type { SKILL_TYPES } from './constants.ts';
+import type { SKILL_TYPES } from './skill-types.ts';
 
 export interface Skill {
   name: string;

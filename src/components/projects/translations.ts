@@ -1,6 +1,6 @@
-import type { Translations } from '@shared/interfaces.ts';
+import type { I18N } from '@shared/interfaces';
 
-export const PROJECTS_INTRO_TRANSLATIONS: Translations = {
+export const PROJECTS_INTRO_TRANSLATIONS: I18N = {
   en: {
     'intro.title.highlight1': 'Open Source, Architecture',
     'intro.title.and': ', and',
@@ -17,7 +17,7 @@ export const PROJECTS_INTRO_TRANSLATIONS: Translations = {
   },
 };
 
-export const PORTFOLIO_PROJECT_TRANSLATIONS: Translations = {
+export const PORTFOLIO_PROJECT_TRANSLATIONS: I18N = {
   en: {
     'portfolio.title': 'Portfolio',
     'portfolio.description':
@@ -71,7 +71,7 @@ export const PORTFOLIO_PROJECT_TRANSLATIONS: Translations = {
   },
 };
 
-export const FORGE_MOCK_PROJECT_TRANSLATIONS: Translations = {
+export const FORGE_MOCK_PROJECT_TRANSLATIONS: I18N = {
   en: {
     'forgeMock.title': 'Forge Mock: Mock Data Platform (Architectural POC)',
     'forgeMock.description':
@@ -115,7 +115,7 @@ export const FORGE_MOCK_PROJECT_TRANSLATIONS: Translations = {
   },
 };
 
-export const PROJECT_COMPONENTS_TRANSLATIONS: Translations = {
+export const PROJECT_COMPONENTS_TRANSLATIONS: I18N = {
   en: {
     'components.techStack.title': 'Technical Stack',
     'components.github.button': 'Source Code',

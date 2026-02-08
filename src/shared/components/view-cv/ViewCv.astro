@@ -1,0 +1,14 @@
+---
+import { useTranslations } from '@shared/helpers';
+import { VIEW_CV_I18N } from './view_cv_i18n.ts';
+
+const t = useTranslations(Astro.url, VIEW_CV_I18N);
+---
+
+<a
+  href="/Oleh Khavar CV.pdf"
+  class="btn btn-lg focus-ring bg-blue-600 text-white shadow-lg hover:bg-blue-700"
+  target="_blank"
+>
+  {t('title')}
+</a>

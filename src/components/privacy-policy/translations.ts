@@ -1,6 +1,6 @@
-import type { Translations } from '@shared/interfaces.ts';
+import type { I18N } from '@shared/interfaces';
 
-export const PRIVACY_POLICY_TRANSLATIONS: Translations = {
+export const PRIVACY_POLICY_TRANSLATIONS: I18N = {
   en: {
     'privacy.title': 'Privacy Policy',
     'privacy.updated': '<strong>Last updated: December 7, 2025</strong>',
