@@ -1,9 +1,18 @@
 pre-commit:
-  parallel: true
   commands:
     gitleaks:
       glob: '*.{js,ts,json,py,go,yml,md}'
       run: gitleaks protect --redact --verbose
+
+pre-push:
+  parallel: true
+  commands:
+    lint:
+      run: pnpm lint
+    build:
+      run: pnpm build
+    test:
+      run: pnpm test
     branch-name:
       run: |
         branch_name=$(git symbolic-ref --short HEAD)
@@ -11,5 +20,3 @@ pre-commit:
           echo "Branch name '$branch_name' does not match the required pattern: [id]/[task-name] (e.g., 100/configure-github)"
           exit 1
         fi
-    lint:
-      run: pnpm lint
