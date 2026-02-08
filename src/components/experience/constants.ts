@@ -1,4 +1,4 @@
-import { SKILL_TYPES } from '@shared/skill/constants.ts';
+import { SKILL_TYPES } from '@shared/components';
 import ArchitectureIcon from './icons/architecture.svg';
 import CiCdIcon from './icons/ci-cd.svg';
 import GrowUpIcon from './icons/grow-up.svg';

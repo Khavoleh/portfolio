@@ -1,5 +1,4 @@
-import type { Metric } from '@shared/metric/interfaces.ts';
-import type { Review } from '@shared/review/interfaces.ts';
+import type { Metric, Review } from '@shared/components';
 import mykola from './images/mykola-synhalevych.jpeg';
 import pavlo from './images/pavlo-demskyi.png';
 import valerii from './images/valerii-inshyn.jpeg';

@@ -1,4 +1,4 @@
-import type { Skill } from '@shared/skill/interfaces.ts';
+import type { Skill } from '@shared/components';
 import type { SvgComponent } from 'astro/types';
 
 export interface ProjectSection {
