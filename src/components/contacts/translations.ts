@@ -1,6 +1,6 @@
-import type { Translations } from '@shared/interfaces';
+import type { I18N } from '@shared/interfaces';
 
-export const CONTACT_INTRO_TRANSLATIONS: Translations = {
+export const CONTACT_INTRO_TRANSLATIONS: I18N = {
   en: {
     'intro.title': "Let's Connect and Discuss Scalable Solutions",
     'intro.description':
@@ -13,7 +13,7 @@ export const CONTACT_INTRO_TRANSLATIONS: Translations = {
   },
 };
 
-export const DIRECT_CONTACT_TRANSLATIONS: Translations = {
+export const DIRECT_CONTACT_TRANSLATIONS: I18N = {
   en: {
     'directContact.title': 'Direct Contact Information',
     'directContact.email.title': 'Email',
@@ -28,7 +28,7 @@ export const DIRECT_CONTACT_TRANSLATIONS: Translations = {
   },
 };
 
-export const SOCIAL_LINKS_TRANSLATIONS: Translations = {
+export const SOCIAL_LINKS_TRANSLATIONS: I18N = {
   en: {
     'socialLinks.title': 'Professional Presence',
     'socialLinks.description':
@@ -45,7 +45,7 @@ export const SOCIAL_LINKS_TRANSLATIONS: Translations = {
   },
 };
 
-export const CALL_TO_ACTION_TRANSLATIONS: Translations = {
+export const CALL_TO_ACTION_TRANSLATIONS: I18N = {
   en: {
     'cta.title': 'Quick Access',
     'cta.description':

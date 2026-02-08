@@ -1,6 +1,6 @@
-import type { Translations } from '@shared/interfaces';
+import type { I18N } from '@shared/interfaces';
 
-export const TERMS_AND_CONDITIONS_TRANSLATIONS: Translations = {
+export const TERMS_AND_CONDITIONS_TRANSLATIONS: I18N = {
   en: {
     'terms.title': 'Terms & Conditions',
     'terms.updated': '<strong>Last updated: December 4, 2025</strong>',

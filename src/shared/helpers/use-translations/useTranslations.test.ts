@@ -1,8 +1,8 @@
-import type { Translations } from '@shared/interfaces';
+import type { I18N } from '@shared/interfaces';
 import { describe, expect, it } from 'vitest';
 import { useTranslations } from './useTranslations';
 
-const MOCK_TRANSLATIONS: Translations = {
+const MOCK_TRANSLATIONS: I18N = {
   en: {
     greeting: 'Hello',
     welcome: 'Welcome to the site',
@@ -15,7 +15,7 @@ const MOCK_TRANSLATIONS: Translations = {
   },
 };
 
-const PARTIAL_TRANSLATIONS: Translations = {
+const PARTIAL_TRANSLATIONS: I18N = {
   en: {
     title: 'Title',
     description: 'Description',
@@ -102,7 +102,7 @@ describe('useTranslations', () => {
 
   describe('Edge cases', () => {
     it('should handle empty translations object', () => {
-      const emptyTranslations: Translations = {
+      const emptyTranslations: I18N = {
         en: {},
         uk: {},
       };

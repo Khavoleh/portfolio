@@ -1,6 +1,6 @@
-import type { Translations } from '@shared/interfaces';
+import type { I18N } from '@shared/interfaces';
 
-export const VIEW_CV_I18N: Translations = {
+export const VIEW_CV_I18N: I18N = {
   en: {
     title: 'View CV',
   },

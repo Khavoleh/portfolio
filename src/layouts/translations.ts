@@ -1,6 +1,6 @@
-import type { Translations } from '@shared/interfaces';
+import type { I18N } from '@shared/interfaces';
 
-export const SEO_TRANSLATIONS: Translations = {
+export const SEO_TRANSLATIONS: I18N = {
   en: {
     home_title: 'Portfolio | Oleh Khavar',
     home_description:
@@ -69,7 +69,7 @@ export const SEO_TRANSLATIONS: Translations = {
   },
 };
 
-export const NAVBAR_TRANSLATIONS: Translations = {
+export const NAVBAR_TRANSLATIONS: I18N = {
   en: {
     name: 'Oleh Khavar',
     home: 'Home',
@@ -102,7 +102,7 @@ export const NAVBAR_TRANSLATIONS: Translations = {
   },
 };
 
-export const LANGUAGE_TRANSLATIONS: Translations = {
+export const LANGUAGE_TRANSLATIONS: I18N = {
   en: {
     change_language: 'Change language',
   },
@@ -111,7 +111,7 @@ export const LANGUAGE_TRANSLATIONS: Translations = {
   },
 };
 
-export const FOOTER_TRANSLATIONS: Translations = {
+export const FOOTER_TRANSLATIONS: I18N = {
   en: {
     copyright: 'Oleh Khavar. All Rights Reserved.',
     'privacy.policy': 'Privacy Policy',

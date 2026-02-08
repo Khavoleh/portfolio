@@ -1,7 +1,7 @@
 import { DEFAULT_LANGUAGE } from '@shared/constants';
-import type { Translations } from '@shared/interfaces';
+import type { I18N } from '@shared/interfaces';
 
-const getLangFromUrl = (url: URL, translations: Translations): keyof Translations => {
+const getLangFromUrl = (url: URL, translations: I18N): keyof Translations => {
   const [, language] = url.pathname.split('/');
 
   if (language in translations) return language as keyof Translations;
@@ -9,7 +9,7 @@ const getLangFromUrl = (url: URL, translations: Translations): keyof Translation
   return DEFAULT_LANGUAGE as keyof Translations;
 };
 
-export const useTranslations = (url: URL, translations: Translations) => {
+export const useTranslations = (url: URL, translations: I18N) => {
   const language: keyof Translations = getLangFromUrl(url, translations);
 
   return (key: string): string => {
