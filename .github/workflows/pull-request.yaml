@@ -41,3 +41,31 @@ jobs:
 
       - name: Run tests
         run: pnpm test
+
+  build:
+    name: Build Project
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+
+      - name: Setup
+        uses: ./.github/shared/setup
+
+      - name: Run build
+        run: pnpm build
+
+  check-types:
+    name: Check Types
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+
+      - name: Setup
+        uses: ./.github/shared/setup
+
+      - name: Run type checks
+        run: pnpm astro check

@@ -9,6 +9,10 @@ pre-push:
   commands:
     lint:
       run: pnpm lint
+    prettier:
+      run: pnpm prettier --check .
+    check-types:
+      run: pnpm astro check
     build:
       run: pnpm build
     test:
