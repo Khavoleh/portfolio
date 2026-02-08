@@ -11,7 +11,7 @@ const t = useI18n(Astro.url, LANGUAGE_TRANSLATIONS);
 ---
 
 <div class="dropdown dropdown-end">
-  <button class="btn btn-ghost btn-square focus-ring" aria-label={t('change.language')}>
+  <button class="btn btn-neutral btn-circle focus-ring shadow" aria-label={t('change.language')}>
     {
       LANGUAGES_CONFIG.map((lang: Language) => (
         <lang.icon id={`language-icon-${lang.code}`} class:list={['h-6 w-6', { hidden: lang.code !== currentLang }]} />
