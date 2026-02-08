@@ -6,8 +6,8 @@ import SpeedInsights from '@vercel/speed-insights/astro';
 import DrawerSidebar from './components/DrawerSidebar.astro';
 import Footer from './components/footer/Footer.astro';
 import Navbar from './components/Navbar.astro';
-import SEO from './components/SEO.astro';
-import { getCurrentLang } from './helpers';
+import Seo from './components/seo/Seo.astro';
+import { getCurrentLanguage } from './helpers';
 import languageInitScript from './scripts/language-init.js?raw';
 import themeInitScript from './scripts/theme-init.js?raw';
 
@@ -20,12 +20,12 @@ export interface Props {
 const { title, description, noindex } = Astro.props;
 ---
 
-<html lang={getCurrentLang(Astro.url)}>
+<html lang={getCurrentLanguage(Astro.url)}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <SEO title={title} description={description} noindex={noindex} />
+    <Seo title={title} description={description} noindex={noindex} />
     <ClientRouter />
     <script is:inline set:html={themeInitScript} />
     <script is:inline set:html={languageInitScript} />

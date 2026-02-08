@@ -4,11 +4,11 @@ import ProjectsIntro from '@components/projects/ProjectsIntro.astro';
 import Portfolio from '@components/projects/portfolio/Portfolio.astro';
 import { Layout } from '@layout';
 import { getLanguageStaticPaths, useI18n } from '@shared/helpers';
-import { SEO_TRANSLATIONS } from 'src/layout/translations';
+import { SEO_I18N } from '@shared/i18n';
 
 export const getStaticPaths = getLanguageStaticPaths;
 
-const t = useI18n(Astro.url, SEO_TRANSLATIONS);
+const t = useI18n(Astro.url, SEO_I18N);
 ---
 
 <Layout title={t('projects_title')} description={t('projects_description')}>

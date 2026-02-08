@@ -1,8 +1,8 @@
 ---
 import { DEFAULT_LANGUAGE } from '@shared/constants';
 import { useI18n } from '@shared/helpers';
-import { getCurrentLang } from '../helpers';
-import { SEO_TRANSLATIONS } from '../translations';
+import { getCurrentLanguage } from '../../helpers';
+import { BASE_SEO_I18N } from './base-seo-i18n';
 
 export interface Props {
   title: string;
@@ -12,9 +12,9 @@ export interface Props {
 
 const { title, description, noindex = false } = Astro.props;
 
-const t = useI18n(Astro.url, SEO_TRANSLATIONS);
+const t = useI18n(Astro.url, BASE_SEO_I18N);
 
-const currentLang = getCurrentLang(Astro.url);
+const currentLang = getCurrentLanguage(Astro.url);
 const siteName = t('site_name');
 const author = t('author_name');
 const twitterHandle = '@Khavol';

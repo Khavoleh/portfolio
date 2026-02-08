@@ -1,7 +1,8 @@
 ---
 import { useI18n } from '@shared/helpers';
 import { LANGUAGES_CONFIG } from '../constants';
-import { getCurrentLang, getLanguageUrl } from '../helpers';
+import { getLanguageUrl } from '../getLanguageUrl';
+import { getCurrentLanguage } from '../helpers';
 import type { Language } from '../interfaces';
 import { LANGUAGE_TRANSLATIONS } from '../translations';
 
@@ -10,7 +11,7 @@ interface Props {
 }
 
 const { idSuffix } = Astro.props;
-const currentLang = getCurrentLang(Astro.url);
+const currentLang = getCurrentLanguage(Astro.url);
 const t = useI18n(Astro.url, LANGUAGE_TRANSLATIONS);
 ---
 

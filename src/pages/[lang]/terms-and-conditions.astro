@@ -9,11 +9,11 @@ import IntellectualPropertySection from '@components/terms-and-conditions/Intell
 import LastUpdated from '@components/terms-and-conditions/LastUpdated.astro';
 import { Layout } from '@layout';
 import { getLanguageStaticPaths, useI18n } from '@shared/helpers';
-import { SEO_TRANSLATIONS } from 'src/layout/translations';
+import { SEO_I18N } from '@shared/i18n';
 
 export const getStaticPaths = getLanguageStaticPaths;
 
-const t = useI18n(Astro.url, SEO_TRANSLATIONS);
+const t = useI18n(Astro.url, SEO_I18N);
 ---
 
 <Layout title={t('terms_title')} description={t('terms_description')}>
