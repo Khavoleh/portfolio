@@ -3,9 +3,9 @@ import CallToAction from '@components/contacts/CallToAction.astro';
 import ContactIntro from '@components/contacts/ContactIntro.astro';
 import DirectContact from '@components/contacts/DirectContact.astro';
 import SocialLinks from '@components/contacts/SocialLinks.astro';
-import Layout from '@layouts/Layout.astro';
-import { SEO_TRANSLATIONS } from '@layouts/translations.ts';
+import Layout from '@layout/Layout.astro';
 import { getLanguageStaticPaths, useI18n } from '@shared/helpers';
+import { SEO_TRANSLATIONS } from 'src/layout/translations';
 
 export const getStaticPaths = getLanguageStaticPaths;
 

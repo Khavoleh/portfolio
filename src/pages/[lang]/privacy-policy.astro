@@ -7,9 +7,9 @@ import ExternalLinksSection from '@components/privacy-policy/ExternalLinksSectio
 import Heading from '@components/privacy-policy/Heading.astro';
 import IntroSection from '@components/privacy-policy/IntroSection.astro';
 import LastUpdated from '@components/privacy-policy/LastUpdated.astro';
-import Layout from '@layouts/Layout.astro';
-import { SEO_TRANSLATIONS } from '@layouts/translations.ts';
+import Layout from '@layout/Layout.astro';
 import { getLanguageStaticPaths, useI18n } from '@shared/helpers';
+import { SEO_TRANSLATIONS } from 'src/layout/translations';
 
 export const getStaticPaths = getLanguageStaticPaths;
 

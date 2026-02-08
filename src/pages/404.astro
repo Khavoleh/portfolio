@@ -2,9 +2,9 @@
 import BackButtons from '@components/not-found/BackButtons.astro';
 import Joke from '@components/not-found/Joke.astro';
 import NotFound from '@components/not-found/NotFound.astro';
-import Layout from '@layouts/Layout.astro';
-import { SEO_TRANSLATIONS } from '@layouts/translations.ts';
+import Layout from '@layout/Layout.astro';
 import { useI18n } from '@shared/helpers';
+import { SEO_TRANSLATIONS } from 'src/layout/translations';
 
 const t = useI18n(Astro.url, SEO_TRANSLATIONS);
 ---

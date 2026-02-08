@@ -7,9 +7,9 @@ import GoverningLawSection from '@components/terms-and-conditions/GoverningLawSe
 import Heading from '@components/terms-and-conditions/Heading.astro';
 import IntellectualPropertySection from '@components/terms-and-conditions/IntellectualPropertySection.astro';
 import LastUpdated from '@components/terms-and-conditions/LastUpdated.astro';
-import Layout from '@layouts/Layout.astro';
-import { SEO_TRANSLATIONS } from '@layouts/translations.ts';
+import Layout from '@layout/Layout.astro';
 import { getLanguageStaticPaths, useI18n } from '@shared/helpers';
+import { SEO_TRANSLATIONS } from 'src/layout/translations';
 
 export const getStaticPaths = getLanguageStaticPaths;
 
