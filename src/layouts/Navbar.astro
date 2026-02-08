@@ -1,7 +1,7 @@
 ---
 import LogoIcon from '@assets/logo.svg';
 import { PAGE_URLS } from '@shared/constants';
-import { getLanguageUrl, useTranslations } from '@shared/helpers';
+import { getLanguageUrl, useI18n } from '@shared/helpers';
 import type { NavLink } from '@shared/interfaces';
 import { NAVIGATION_LINKS } from './constants.ts';
 import BurgerIcon from './icons/burger.svg';
@@ -9,7 +9,7 @@ import LanguageSelector from './LanguageSelector.astro';
 import ThemeSelector from './ThemeSelector.astro';
 import { NAVBAR_TRANSLATIONS } from './translations.ts';
 
-const t = useTranslations(Astro.url, NAVBAR_TRANSLATIONS);
+const t = useI18n(Astro.url, NAVBAR_TRANSLATIONS);
 const currentPath: string = Astro.url.pathname;
 ---
 

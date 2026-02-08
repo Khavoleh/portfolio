@@ -1,5 +1,5 @@
 ---
-import { useTranslations } from '@shared/helpers';
+import { useI18n } from '@shared/helpers';
 import GitHubButton from '../components/GitHubButton.astro';
 import Section from '../components/Section.astro';
 import TechStack from '../components/TechStack.astro';
@@ -9,7 +9,7 @@ import { FORGE_MOCK_PROJECT_TRANSLATIONS } from '../translations.ts';
 import { FORGE_MOCK } from './constants.ts';
 import ForgeMockIcon from './icons/forge-mock.svg';
 
-const t = useTranslations(Astro.url, FORGE_MOCK_PROJECT_TRANSLATIONS);
+const t = useI18n(Astro.url, FORGE_MOCK_PROJECT_TRANSLATIONS);
 ---
 
 <section class="card bg-base-200 border-base-300 mb-12 border p-8 shadow-2xl md:p-12">

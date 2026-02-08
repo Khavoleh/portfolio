@@ -1,9 +1,9 @@
 ---
 import { PAGE_URLS } from '@shared/constants';
-import { getLanguageUrl, useTranslations } from '@shared/helpers';
+import { getLanguageUrl, useI18n } from '@shared/helpers';
 import { GOAL_TRANSLATIONS } from './translations.ts';
 
-const t = useTranslations(Astro.url, GOAL_TRANSLATIONS);
+const t = useI18n(Astro.url, GOAL_TRANSLATIONS);
 ---
 
 <section class="text-center">

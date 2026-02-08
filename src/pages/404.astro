@@ -4,9 +4,9 @@ import Joke from '@components/not-found/Joke.astro';
 import NotFound from '@components/not-found/NotFound.astro';
 import Layout from '@layouts/Layout.astro';
 import { SEO_TRANSLATIONS } from '@layouts/translations.ts';
-import { useTranslations } from '@shared/helpers';
+import { useI18n } from '@shared/helpers';
 
-const t = useTranslations(Astro.url, SEO_TRANSLATIONS);
+const t = useI18n(Astro.url, SEO_TRANSLATIONS);
 ---
 
 <Layout title={t('notfound_title')} description={t('notfound_description')} noindex={true}>

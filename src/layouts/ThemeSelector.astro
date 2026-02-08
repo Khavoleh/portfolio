@@ -1,6 +1,6 @@
 ---
 import { NAVBAR_TRANSLATIONS } from '@layouts/translations.ts';
-import { useTranslations } from '@shared/helpers';
+import { useI18n } from '@shared/helpers';
 import { THEMES } from './constants.ts';
 import type { Theme } from './interfaces.ts';
 
@@ -9,7 +9,7 @@ interface Props {
 }
 
 const { idSuffix } = Astro.props;
-const t = useTranslations(Astro.url, NAVBAR_TRANSLATIONS);
+const t = useI18n(Astro.url, NAVBAR_TRANSLATIONS);
 ---
 
 <div class="dropdown dropdown-end">

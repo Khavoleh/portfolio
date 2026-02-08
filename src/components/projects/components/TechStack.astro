@@ -1,7 +1,7 @@
 ---
 import type { Skill } from '@shared/components';
 import { SkillBlock } from '@shared/components';
-import { useTranslations } from '@shared/helpers';
+import { useI18n } from '@shared/helpers';
 import { PROJECT_COMPONENTS_TRANSLATIONS } from '../translations.ts';
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 }
 
 const { skills } = Astro.props;
-const t = useTranslations(Astro.url, PROJECT_COMPONENTS_TRANSLATIONS);
+const t = useI18n(Astro.url, PROJECT_COMPONENTS_TRANSLATIONS);
 ---
 
 <div class="mb-8">

@@ -1,11 +1,11 @@
 ---
-import { useTranslations } from '@shared/helpers';
+import { useI18n } from '@shared/helpers';
 import type { Metric } from './components/metric/interfaces';
 import MetricBlock from './components/metric/MetricBlock.astro';
 import { METRICS } from './constants';
 import { METRICS_TRANSLATIONS } from './translations.ts';
 
-const t = useTranslations(Astro.url, METRICS_TRANSLATIONS);
+const t = useI18n(Astro.url, METRICS_TRANSLATIONS);
 
 const translatedMetrics: Metric[] = METRICS.map((metric) => ({
   ...metric,

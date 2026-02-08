@@ -1,10 +1,10 @@
 ---
-import { useTranslations } from '@shared/helpers';
+import { useI18n } from '@shared/helpers';
 import type { SocialLink } from '@shared/interfaces';
 import { SOCIAL_LINKS } from './constants.ts';
 import { SOCIAL_LINKS_TRANSLATIONS } from './translations.ts';
 
-const t = useTranslations(Astro.url, SOCIAL_LINKS_TRANSLATIONS);
+const t = useI18n(Astro.url, SOCIAL_LINKS_TRANSLATIONS);
 ---
 
 <section class="mb-16">

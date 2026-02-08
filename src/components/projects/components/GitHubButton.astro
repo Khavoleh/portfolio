@@ -1,6 +1,6 @@
 ---
 import GitHubIcon from '@assets/github.svg';
-import { useTranslations } from '@shared/helpers';
+import { useI18n } from '@shared/helpers';
 import { PROJECT_COMPONENTS_TRANSLATIONS } from '../translations.ts';
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 }
 
 const { url } = Astro.props;
-const t = useTranslations(Astro.url, PROJECT_COMPONENTS_TRANSLATIONS);
+const t = useI18n(Astro.url, PROJECT_COMPONENTS_TRANSLATIONS);
 ---
 
 <div class="flex justify-center">

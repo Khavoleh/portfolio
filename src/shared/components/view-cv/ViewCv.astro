@@ -1,8 +1,8 @@
 ---
-import { useTranslations } from '@shared/helpers';
+import { useI18n } from '@shared/helpers';
 import { VIEW_CV_I18N } from './view_cv_i18n.ts';
 
-const t = useTranslations(Astro.url, VIEW_CV_I18N);
+const t = useI18n(Astro.url, VIEW_CV_I18N);
 ---
 
 <a
