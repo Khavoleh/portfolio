@@ -1,8 +1,8 @@
 ---
 import { getLanguageUrl, useI18n } from '@shared/helpers';
 import type { NavLink } from '@shared/interfaces';
-import { NAVIGATION_LINKS } from './constants.ts';
-import { NAVBAR_TRANSLATIONS } from './translations.ts';
+import { NAVIGATION_LINKS } from '../constants.ts';
+import { NAVBAR_TRANSLATIONS } from '../translations.ts';
 
 const t = useI18n(Astro.url, NAVBAR_TRANSLATIONS);
 const currentPath: string = Astro.url.pathname;

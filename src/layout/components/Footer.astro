@@ -2,8 +2,8 @@
 import { PAGE_URLS } from '@shared/constants';
 import { getLanguageUrl, useI18n } from '@shared/helpers';
 import type { SocialLink } from '@shared/interfaces';
-import { SOCIAL_LINKS } from './constants.ts';
-import { FOOTER_TRANSLATIONS } from './translations.ts';
+import { SOCIAL_LINKS } from '../constants.ts';
+import { FOOTER_TRANSLATIONS } from '../translations.ts';
 
 const t = useI18n(Astro.url, FOOTER_TRANSLATIONS);
 const currentYear = new Date().getFullYear();

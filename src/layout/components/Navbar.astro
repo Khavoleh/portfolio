@@ -3,11 +3,11 @@ import LogoIcon from '@assets/logo.svg';
 import { PAGE_URLS } from '@shared/constants';
 import { getLanguageUrl, useI18n } from '@shared/helpers';
 import type { NavLink } from '@shared/interfaces';
-import { NAVIGATION_LINKS } from './constants.ts';
-import BurgerIcon from './icons/burger.svg';
+import { NAVIGATION_LINKS } from '../constants.ts';
+import BurgerIcon from '../icons/burger.svg';
+import { NAVBAR_TRANSLATIONS } from '../translations.ts';
 import LanguageSelector from './LanguageSelector.astro';
 import ThemeSelector from './ThemeSelector.astro';
-import { NAVBAR_TRANSLATIONS } from './translations.ts';
 
 const t = useI18n(Astro.url, NAVBAR_TRANSLATIONS);
 const currentPath: string = Astro.url.pathname;

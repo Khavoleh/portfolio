@@ -6,7 +6,7 @@
     "baseUrl": ".",
     "paths": {
       "@shared/*": ["src/shared/*"],
-      "@layout/*": ["src/layout/*"],
+      "@layout": ["src/layout"],
       "@components/*": ["src/components/*"],
       "@assets/*": ["src/assets/*"]
     }
