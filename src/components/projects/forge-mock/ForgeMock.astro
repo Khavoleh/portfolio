@@ -4,9 +4,9 @@ import GitHubButton from '../components/GitHubButton.astro';
 import Section from '../components/Section.astro';
 import TechStack from '../components/TechStack.astro';
 import Title from '../components/Title.astro';
-import type { ProjectSection } from '../interfaces.ts';
-import { FORGE_MOCK_PROJECT_TRANSLATIONS } from '../translations.ts';
-import { FORGE_MOCK } from './constants.ts';
+import type { ProjectSection } from '../interfaces';
+import { FORGE_MOCK_PROJECT_TRANSLATIONS } from '../translations';
+import { FORGE_MOCK } from './constants';
 import ForgeMockIcon from './icons/forge-mock.svg';
 
 const t = useI18n(Astro.url, FORGE_MOCK_PROJECT_TRANSLATIONS);

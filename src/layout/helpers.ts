@@ -1,5 +1,5 @@
 import { DEFAULT_LANGUAGE } from '@shared/constants';
-import { LANGUAGES_CONFIG } from './constants.ts';
+import { LANGUAGES_CONFIG } from './constants';
 
 export const getCurrentLang = (url: URL): string => {
   const [, language] = url.pathname.split('/');

@@ -1,4 +1,4 @@
-import { SKILL_TYPES } from './skill-types.ts';
+import { SKILL_TYPES } from './skill-types';
 
 export const getStyleClasses = (type: string): string => {
   switch (type) {

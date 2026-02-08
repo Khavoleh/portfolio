@@ -2,14 +2,14 @@
 import { PAGE_URLS } from '@shared/constants';
 import { getLanguageUrl, useI18n } from '@shared/helpers';
 import type { SocialLink } from '@shared/interfaces';
-import { SOCIAL_LINKS } from '../constants.ts';
-import { FOOTER_TRANSLATIONS } from '../translations.ts';
+import { FOOTER_I18N } from './footer-i18n';
+import { SOCIAL_LINKS } from './social-links';
 
-const t = useI18n(Astro.url, FOOTER_TRANSLATIONS);
+const t = useI18n(Astro.url, FOOTER_I18N);
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="border-base-300 bg-base-100 border-t">
+<footer class="border-base-300 bg-base-200 border-t">
   <div class="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-4 p-4 md:flex-row lg:py-6">
     <span class="text-base-content/70 text-center text-sm md:text-left">
       © {currentYear}

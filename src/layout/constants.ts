@@ -1,26 +1,17 @@
-import GitHubIcon from '@assets/github.svg';
-import LinkedInIcon from '@assets/linkedin.svg';
-import { LANGUAGES, LANGUAGES_SHORT, PAGE_URLS, SOCIALS } from '@shared/constants';
-import type { NavLink, SocialLink } from '@shared/interfaces';
+import { LANGUAGES, LANGUAGES_SHORT, PAGE_URLS } from '@shared/constants';
+import type { NavLink } from '@shared/interfaces';
 import ComputerIcon from './icons/computer.svg';
 import FlagEnIcon from './icons/flag-en.svg';
 import FlagUkIcon from './icons/flag-uk.svg';
 import MoonIcon from './icons/moon.svg';
 import SunIcon from './icons/sun.svg';
-import TelegramIcon from './icons/telegram.svg';
-import type { Language, Theme } from './interfaces.ts';
+import type { Language, Theme } from './interfaces';
 
 export const NAVIGATION_LINKS: NavLink[] = [
   { href: PAGE_URLS.HOME, label: 'home' },
   { href: PAGE_URLS.EXPERIENCE, label: 'experience' },
   { href: PAGE_URLS.PROJECTS, label: 'projects' },
   { href: PAGE_URLS.CONTACTS, label: 'contacts' },
-];
-
-export const SOCIAL_LINKS: SocialLink[] = [
-  { href: SOCIALS.LINKEDIN, label: 'LinkedIn profile', icon: LinkedInIcon },
-  { href: SOCIALS.TELEGRAM, label: 'Telegram messenger', icon: TelegramIcon },
-  { href: SOCIALS.GITHUB, label: 'GitHub account', icon: GitHubIcon },
 ];
 
 const THEME_OPTIONS = {

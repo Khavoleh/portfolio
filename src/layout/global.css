@@ -93,7 +93,7 @@ body,
   outline: none;
   box-shadow:
     0 0 0 2px var(--color-base-100),
-    0 0 0 4px var(--color-primary);
+    0 0 0 4px var(--color-accent);
 }
 
 .focus-ring-inset {
@@ -105,7 +105,7 @@ body,
   outline: none;
   box-shadow:
     inset 0 0 0 2px var(--color-base-200),
-    inset 0 0 0 4px var(--color-primary);
+    inset 0 0 0 4px var(--color-accent);
 }
 
 .scrollbar-styled {

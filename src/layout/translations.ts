@@ -110,16 +110,3 @@ export const LANGUAGE_TRANSLATIONS: I18N = {
     change_language: 'Змінити мову',
   },
 };
-
-export const FOOTER_TRANSLATIONS: I18N = {
-  en: {
-    copyright: 'Oleh Khavar. All Rights Reserved.',
-    'privacy.policy': 'Privacy Policy',
-    'terms.and.conditions': 'Terms & Conditions',
-  },
-  uk: {
-    copyright: 'Олег Хавар. Усі права захищено.',
-    'privacy.policy': 'Політика конфіденційності',
-    'terms.and.conditions': 'Умови та положення',
-  },
-};

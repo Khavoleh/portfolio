@@ -6,7 +6,7 @@ import LightBulbIcon from './icons/light-bulb.svg';
 import SprintIcon from './icons/sprint.svg';
 import StudyIcon from './icons/study.svg';
 import TeamIcon from './icons/team.svg';
-import type { ExperienceItem } from './interfaces.ts';
+import type { ExperienceItem } from './interfaces';
 
 export const EXPERIENCE_DATA: ExperienceItem[] = [
   {
