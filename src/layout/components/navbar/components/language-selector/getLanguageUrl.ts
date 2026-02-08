@@ -1,4 +1,4 @@
-import { LANGUAGES_CONFIG } from './constants';
+import { LANGUAGES_CONFIG } from './languages-config';
 
 export const getLanguageUrl = (url: URL, targetLang: string): string => {
   const pathParts = url.pathname.split('/').filter(Boolean);

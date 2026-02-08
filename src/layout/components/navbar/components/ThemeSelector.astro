@@ -1,26 +1,15 @@
 ---
 import { useI18n } from '@shared/helpers';
-import { THEMES } from '../constants';
-import type { Theme } from '../interfaces';
-import { NAVBAR_TRANSLATIONS } from '../translations';
+import { THEMES } from '../../../constants';
+import type { Theme } from '../../../interfaces';
+import { NAVBAR_TRANSLATIONS } from '../../../translations';
 
-interface Props {
-  idSuffix: string;
-}
-
-const { idSuffix } = Astro.props;
 const t = useI18n(Astro.url, NAVBAR_TRANSLATIONS);
 ---
 
 <div class="dropdown dropdown-end">
-  <button
-    tabindex="0"
-    type="button"
-    class="btn btn-ghost btn-square focus-ring"
-    aria-label={t('toggle.theme')}
-    aria-haspopup="true"
-  >
-    {THEMES.map((theme: Theme) => <theme.icon id={`theme-icon-${theme.id}-${idSuffix}`} class="hidden h-6 w-6" />)}
+  <button type="button" class="btn btn-ghost btn-square focus-ring" aria-label={t('toggle.theme')} aria-haspopup="true">
+    {THEMES.map((theme: Theme) => <theme.icon id={`theme-icon-${theme.id}`} class="hidden h-6 w-6" />)}
   </button>
 
   <ul role="menu" class="dropdown-content menu rounded-box bg-base-200 z-50 mt-2 w-32 p-2 shadow-lg">

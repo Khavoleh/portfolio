@@ -37,27 +37,23 @@
   };
 
   const updateThemeIcon = (theme) => {
-    const suffixes = ['-mobile', '-desktop'];
+    const lightIcon = document.getElementById(`theme-icon-light`);
+    const darkIcon = document.getElementById(`theme-icon-dark`);
+    const systemIcon = document.getElementById(`theme-icon-system`);
 
-    suffixes.forEach((suffix) => {
-      const lightIcon = document.getElementById(`theme-icon-light${suffix}`);
-      const darkIcon = document.getElementById(`theme-icon-dark${suffix}`);
-      const systemIcon = document.getElementById(`theme-icon-system${suffix}`);
+    if (lightIcon && darkIcon && systemIcon) {
+      lightIcon.classList.add('hidden');
+      darkIcon.classList.add('hidden');
+      systemIcon.classList.add('hidden');
 
-      if (lightIcon && darkIcon && systemIcon) {
-        lightIcon.classList.add('hidden');
-        darkIcon.classList.add('hidden');
-        systemIcon.classList.add('hidden');
-
-        if (theme === THEME_OPTIONS.LIGHT) {
-          lightIcon.classList.remove('hidden');
-        } else if (theme === THEME_OPTIONS.DARK) {
-          darkIcon.classList.remove('hidden');
-        } else {
-          systemIcon.classList.remove('hidden');
-        }
+      if (theme === THEME_OPTIONS.LIGHT) {
+        lightIcon.classList.remove('hidden');
+      } else if (theme === THEME_OPTIONS.DARK) {
+        darkIcon.classList.remove('hidden');
+      } else {
+        systemIcon.classList.remove('hidden');
       }
-    });
+    }
   };
 
   const initThemeSelector = () => {

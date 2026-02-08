@@ -20,8 +20,8 @@
   --color-accent: oklch(60% 0.12 211);
   --color-accent-content: oklch(98% 0.01 211);
 
-  --color-neutral: oklch(28% 0.04 257);
-  --color-neutral-content: oklch(98% 0.01 247);
+  --color-neutral: oklch(94% 0.01 256);
+  --color-neutral-content: oklch(25% 0.03 256);
 
   --color-base-100: oklch(100% 0 0);
   --color-base-200: oklch(97% 0.01 256);
@@ -91,7 +91,5 @@ body,
 
 .focus-ring:focus-visible {
   outline: none;
-  box-shadow:
-    0 0 0 2px var(--color-base-100),
-    0 0 0 4px var(--color-accent);
+  box-shadow: 0 0 0 2px var(--color-accent);
 }

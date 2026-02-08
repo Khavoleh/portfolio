@@ -1,10 +1,9 @@
-import { DEFAULT_LANGUAGE } from '@shared/constants';
-import { LANGUAGES_CONFIG } from '../../constants';
+import { DEFAULT_LANGUAGE, LANGUAGES_SHORT } from '@shared/constants';
 
 export const getCurrentLanguage = (url: URL): string => {
   const [, language] = url.pathname.split('/');
 
-  const langCodes = LANGUAGES_CONFIG.map((l) => l.code);
+  const langCodes = [LANGUAGES_SHORT.EN, LANGUAGES_SHORT.UK];
   if (language && langCodes.includes(language)) {
     return language;
   }

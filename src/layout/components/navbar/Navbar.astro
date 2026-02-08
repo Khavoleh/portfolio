@@ -3,11 +3,11 @@ import LogoIcon from '@assets/logo.svg';
 import { PAGE_URLS } from '@shared/constants';
 import { getLanguageUrl, useI18n } from '@shared/helpers';
 import type { NavLink } from '@shared/interfaces';
-import { NAVIGATION_LINKS } from '../constants';
-import BurgerIcon from '../icons/burger.svg';
-import { NAVBAR_TRANSLATIONS } from '../translations';
-import LanguageSelector from './LanguageSelector.astro';
-import ThemeSelector from './ThemeSelector.astro';
+import { NAVIGATION_LINKS } from '../../constants';
+import BurgerIcon from '../../icons/burger.svg';
+import { NAVBAR_TRANSLATIONS } from '../../translations';
+import LanguageSelector from './components/language-selector/LanguageSelector.astro';
+import ThemeSelector from './components/ThemeSelector.astro';
 
 const t = useI18n(Astro.url, NAVBAR_TRANSLATIONS);
 const currentPath: string = Astro.url.pathname;
@@ -61,8 +61,8 @@ const currentPath: string = Astro.url.pathname;
   </div>
 
   <div class="navbar-end flex gap-4">
-    <LanguageSelector idSuffix="desktop" />
-    <ThemeSelector idSuffix="desktop" />
+    <LanguageSelector />
+    <ThemeSelector />
 
     <a
       href={getLanguageUrl(Astro.url, PAGE_URLS.HOME)}

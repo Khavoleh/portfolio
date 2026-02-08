@@ -1,13 +1,12 @@
-import { DEFAULT_LANGUAGE } from '@shared/constants';
+import { DEFAULT_LANGUAGE, LANGUAGES_SHORT } from '@shared/constants';
 import { describe, expect, it } from 'vitest';
-import { LANGUAGES_CONFIG } from '../../constants';
 import { getCurrentLanguage } from './getCurrentLanguage';
 
 describe('getCurrentLanguage', () => {
   it('returns the language if it is valid', () => {
-    for (const lang of LANGUAGES_CONFIG) {
-      const url = new URL(`https://www.khavol.com/${lang.code}/some-page`);
-      expect(getCurrentLanguage(url)).toBe(lang.code);
+    for (const lang of [LANGUAGES_SHORT.EN, LANGUAGES_SHORT.UK]) {
+      const url = new URL(`https://www.khavol.com/${lang}/some-page`);
+      expect(getCurrentLanguage(url)).toBe(lang);
     }
   });
 
