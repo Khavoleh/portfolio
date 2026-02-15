@@ -18,23 +18,17 @@ const currentPath: string = Astro.url.pathname;
     <label
       id="mobile-drawer-burger"
       for="mobile-drawer"
-      class="btn btn-ghost btn-square focus-ring drawer-button md:hidden"
+      class="btn btn-neutral btn-circle focus-ring drawer-button shadow md:hidden"
       aria-label={t('menu')}
       tabindex="0"
-      onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); setTimeout(() => document.getElementById('drawer-close-btn')?.focus(), 100); }"
-      onclick="setTimeout(() => document.getElementById('drawer-close-btn')?.focus(), 100);"
     >
       <BurgerIcon class="h-5 w-5" />
     </label>
 
-    <a
-      href={getLanguageUrl(Astro.url, PAGE_URLS.HOME)}
-      aria-label="Navigate to home page"
-      class="btn btn-ghost focus-ring hidden gap-2 px-2 md:flex"
-    >
+    <div class="hidden shrink-0 items-center gap-2 px-2 md:flex">
       <LogoIcon class="h-8" />
-      <span class="text-xl font-semibold">{t('name')}</span>
-    </a>
+      <p class="text-xl font-semibold">{t('name')}</p>
+    </div>
 
     <nav class="hidden md:flex">
       <ul class="menu menu-horizontal flex-nowrap gap-1 px-1 text-base">
@@ -64,13 +58,24 @@ const currentPath: string = Astro.url.pathname;
     <LanguageSelector />
     <ThemeSelector />
 
-    <a
-      href={getLanguageUrl(Astro.url, PAGE_URLS.HOME)}
-      aria-label="Navigate to home page"
-      class="btn btn-ghost focus-ring gap-2 px-2 md:hidden"
-    >
+    <div class="gap-2 md:hidden">
       <span class="hidden text-xl font-semibold md:inline">{t('name')}</span>
       <LogoIcon class="h-8" />
-    </a>
+    </div>
   </div>
 </header>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const btn = document.getElementById('mobile-drawer-burger');
+    if (!btn) return;
+
+    btn.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        btn.click();
+        setTimeout(() => document.getElementById('drawer-close-btn')?.focus(), 100);
+      }
+    });
+  });
+</script>

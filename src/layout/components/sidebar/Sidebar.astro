@@ -1,8 +1,9 @@
 ---
 import { getLanguageUrl, useI18n } from '@shared/helpers';
 import type { NavLink } from '@shared/interfaces';
-import { NAVIGATION_I18N } from './navigation-i18n';
-import { NAVIGATION_LINKS } from './navigation-links';
+import { NAVIGATION_I18N } from '../navigation-i18n';
+import { NAVIGATION_LINKS } from '../navigation-links';
+import CrossIcon from './icons/cross.svg';
 
 const t = useI18n(Astro.url, NAVIGATION_I18N);
 const currentPath: string = Astro.url.pathname;
@@ -16,19 +17,19 @@ const currentPath: string = Astro.url.pathname;
       <label
         id="drawer-close-btn"
         for="mobile-drawer"
-        class="btn btn-ghost btn-sm btn-circle focus-ring"
+        class="btn btn-circle btn-neutral btn-sm focus-ring shadow"
         aria-label={t('close')}
         tabindex="0"
-        onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); } if(event.key === 'Tab' && event.shiftKey) { event.preventDefault(); document.querySelector('#drawer-nav-list a:last-of-type')?.focus(); }"
       >
-        ✕
+        <div class="h-6 w-6">
+          <CrossIcon />
+        </div>
       </label>
     </div>
     <ul id="drawer-nav-list" class="space-y-1 text-lg">
       {
         NAVIGATION_LINKS.map((link: NavLink, index: number) => {
           const isActive: boolean = currentPath === getLanguageUrl(Astro.url, link.href);
-          const isLast: boolean = index === NAVIGATION_LINKS.length - 1;
 
           return (
             <li>
@@ -37,11 +38,6 @@ const currentPath: string = Astro.url.pathname;
                 class:list={['focus-ring', isActive && 'active text-primary']}
                 aria-label={`${t('navigate.to')} ${t(link.label)} ${t('page')}`}
                 aria-current={isActive ? 'page' : undefined}
-                onkeydown={
-                  isLast
-                    ? "if(event.key === 'Tab' && !event.shiftKey) { event.preventDefault(); document.getElementById('drawer-close-btn')?.focus(); }"
-                    : undefined
-                }
               >
                 {t(link.label)}
               </a>
@@ -52,3 +48,34 @@ const currentPath: string = Astro.url.pathname;
     </ul>
   </div>
 </div>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const closeBtn = document.getElementById('drawer-close-btn') as HTMLElement | null;
+    const navLinks = Array.from(
+      document.querySelectorAll<HTMLAnchorElement>('#drawer-nav-list a')
+    ) as HTMLAnchorElement[];
+
+    if (closeBtn) {
+      closeBtn.addEventListener('keydown', (event: KeyboardEvent) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          closeBtn.click();
+        } else if (event.key === 'Tab' && event.shiftKey) {
+          event.preventDefault();
+          navLinks[navLinks.length - 1]?.focus();
+        }
+      });
+    }
+
+    const lastLink = navLinks[navLinks.length - 1];
+    if (lastLink) {
+      lastLink.addEventListener('keydown', (event: KeyboardEvent) => {
+        if (event.key === 'Tab' && !event.shiftKey) {
+          event.preventDefault();
+          closeBtn?.focus();
+        }
+      });
+    }
+  });
+</script>

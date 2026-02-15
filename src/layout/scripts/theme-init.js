@@ -15,22 +15,29 @@
   };
 
   const applyTheme = (theme) => {
+    const root = document.documentElement;
+
     if (theme === THEME_OPTIONS.SYSTEM) {
       const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       if (isDark) {
-        document.documentElement.setAttribute('data-theme', 'portfolio-dark');
+        root.setAttribute('data-theme', 'portfolio-dark');
       } else {
-        document.documentElement.setAttribute('data-theme', 'portfolio-light');
+        root.setAttribute('data-theme', 'portfolio-light');
       }
     } else if (theme === THEME_OPTIONS.DARK) {
-      document.documentElement.setAttribute('data-theme', 'portfolio-dark');
+      root.setAttribute('data-theme', 'portfolio-dark');
     } else {
-      document.documentElement.setAttribute('data-theme', 'portfolio-light');
+      root.setAttribute('data-theme', 'portfolio-light');
     }
   };
 
   const setTheme = (theme) => {
+    const root = document.documentElement;
+    root.classList.add('switch-theme-transition');
+
     applyTheme(theme);
+
+    setTimeout(() => root.classList.remove('switch-theme-transition'), 3000);
     if (typeof localStorage !== 'undefined') {
       localStorage.setItem(LOCAL_STORAGE_KEY, theme);
     }

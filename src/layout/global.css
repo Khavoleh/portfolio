@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/complexity/noImportantStyles: use important for smooth theme change */
 @import 'tailwindcss';
 @plugin 'daisyui';
 
@@ -76,17 +77,17 @@
   --icon-color: var(--color-primary);
 }
 
-body,
-* {
+:root.switch-theme-transition,
+:root.switch-theme-transition * {
   transition:
     color var(--transition-slow),
     background var(--transition-slow),
-    border-color var(--transition-slow);
+    border-color var(--transition-slow) !important;
 }
 
 .focus-ring {
   outline: none;
-  transition: all var(--transition-fast) ease;
+  transition: all 0.3s ease;
 }
 
 .focus-ring:focus-visible {
