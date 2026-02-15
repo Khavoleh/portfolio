@@ -4,8 +4,8 @@ import { ClientRouter } from 'astro:transitions';
 import Analytics from '@vercel/analytics/astro';
 import SpeedInsights from '@vercel/speed-insights/astro';
 import Footer from './components/footer/Footer.astro';
-import DrawerSidebar from './components/navbar/DrawerSidebar.astro';
 import Navbar from './components/navbar/Navbar.astro';
+import Sidebar from './components/Sidebar.astro';
 import Seo from './components/seo/Seo.astro';
 import { getCurrentLanguage } from './helpers';
 import languageInitScript from './scripts/language-init.js?raw';
@@ -40,7 +40,7 @@ const { title, description, noindex } = Astro.props;
         </main>
         <Footer />
       </div>
-      <DrawerSidebar />
+      <Sidebar />
     </div>
   </body>
 </html>

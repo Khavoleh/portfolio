@@ -1,6 +1,6 @@
 import type { I18N } from '@shared/interfaces';
 
-export const NAVBAR_TRANSLATIONS: I18N = {
+export const NAVIGATION_I18N: I18N = {
   en: {
     name: 'Oleh Khavar',
     home: 'Home',
