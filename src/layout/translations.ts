@@ -11,10 +11,6 @@ export const NAVBAR_TRANSLATIONS: I18N = {
     close: 'Close menu',
     'navigate.to': 'Navigate to',
     page: 'page',
-    light: 'Light',
-    dark: 'Dark',
-    system: 'System',
-    'toggle.theme': 'Toggle theme',
   },
   uk: {
     name: 'Олег Хавар',
@@ -26,18 +22,5 @@ export const NAVBAR_TRANSLATIONS: I18N = {
     close: 'Закрити меню',
     'navigate.to': 'Перейти на',
     page: 'сторінку',
-    light: 'Світла',
-    dark: 'Темна',
-    system: 'Системна',
-    'toggle.theme': 'Змінити тему',
-  },
-};
-
-export const LANGUAGE_TRANSLATIONS: I18N = {
-  en: {
-    change_language: 'Change language',
-  },
-  uk: {
-    change_language: 'Змінити мову',
   },
 };

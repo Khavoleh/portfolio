@@ -7,7 +7,7 @@ import { NAVIGATION_LINKS } from '../../constants';
 import BurgerIcon from '../../icons/burger.svg';
 import { NAVBAR_TRANSLATIONS } from '../../translations';
 import LanguageSelector from './components/language-selector/LanguageSelector.astro';
-import ThemeSelector from './components/ThemeSelector.astro';
+import ThemeSelector from './components/theme-selector/ThemeSelector.astro';
 
 const t = useI18n(Astro.url, NAVBAR_TRANSLATIONS);
 const currentPath: string = Astro.url.pathname;
