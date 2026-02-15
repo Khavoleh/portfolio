@@ -2143,8 +2143,8 @@ packages:
     resolution: {integrity: sha512-mE00Gnza5EEB3Ds0HfMyllZzbBrmLOX3vfWoj9A9PEnTfratQ/BcaJOuMhnkhjXvb2+FkY3VuHqtAGpTPmglFQ==}
     engines: {node: '>=18'}
 
-  is-wsl@3.1.0:
-    resolution: {integrity: sha512-UcVfVfaK4Sc4m7X3dUSoHoozQGBEFeDC+zVo06t98xe8CzHSZZBekNXH+tu0NalHolcJ/QAGqS46Hef7QXBIMw==}
+  is-wsl@3.1.1:
+    resolution: {integrity: sha512-e6rvdUCiQCAuumZslxRJWR/Doq4VpPR82kqclvcS0efgt430SlGIk05vdCN58+VrzgtIcfNODjozVielycD4Sw==}
     engines: {node: '>=16'}
 
   isarray@1.0.0:
@@ -2374,8 +2374,8 @@ packages:
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
 
-  lru-cache@11.2.5:
-    resolution: {integrity: sha512-vFrFJkWtJvJnD5hg+hJvVE8Lh/TcMzKnTgCWmtBipwI5yLX/iX+5UB2tfuyODF5E7k9xEzMdYgGqaSb1c0c5Yw==}
+  lru-cache@11.2.6:
+    resolution: {integrity: sha512-ESL2CrkS/2wTPfuend7Zhkzo2u0daGJ/A2VucJOgQ/C48S/zB8MMeMHSGKYpXhIjbPxfuezITkaBH1wqv00DDQ==}
     engines: {node: 20 || >=22}
 
   magic-string@0.30.21:
@@ -2634,8 +2634,8 @@ packages:
     resolution: {integrity: sha512-9qny7Z9DsQU8Ou39ERsPU4OZQlSTP47ShQzuKZ6PRXpYLtIFgl/DEBYEXKlvcEa+9tHVcK8CF81Y2V72qaZhWA==}
     engines: {node: '>=18'}
 
-  npm@11.9.0:
-    resolution: {integrity: sha512-BBZoU926FCypj4b7V7ElinxsWcy4Kss88UG3ejFYmKyq7Uc5XnT34Me2nEhgCOaL5qY4HvGu5aI92C4OYd7NaA==}
+  npm@11.10.0:
+    resolution: {integrity: sha512-i8hE43iSIAMFuYVi8TxsEISdELM4fIza600aLjJ0ankGPLqd0oTPKMJqAcO/QWm307MbSlWGzJcNZ0lGMQgHPA==}
     engines: {node: ^20.17.0 || >=22.9.0}
     hasBin: true
     bundledDependencies:
@@ -2995,8 +2995,8 @@ packages:
     resolution: {integrity: sha512-Q5hMVBYur/eQNWDdbF4/Wqqr9Bjvtrw2kjGxxBbKLbx8bVCL8gcArjTy8zDUuLGQicftpMuU0riQNcAsbtOVsw==}
     engines: {node: '>=20'}
 
-  read-pkg@10.0.0:
-    resolution: {integrity: sha512-A70UlgfNdKI5NSvTTfHzLQj7NJRpJ4mT5tGafkllJ4wh71oYuGm/pzphHcmW4s35iox56KSK721AihodoXSc/A==}
+  read-pkg@10.1.0:
+    resolution: {integrity: sha512-I8g2lArQiP78ll51UeMZojewtYgIRCKCWqZEgOO8c/uefTI+XDXvCSXu3+YNUaTNvZzobrL5+SqHjBrByRRTdg==}
     engines: {node: '>=20'}
 
   read-pkg@9.0.1:
@@ -3367,8 +3367,8 @@ packages:
     resolution: {integrity: sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA==}
     engines: {node: '>=16'}
 
-  type-fest@5.4.3:
-    resolution: {integrity: sha512-AXSAQJu79WGc79/3e9/CR77I/KQgeY1AhNvcShIH4PTcGYyC4xv6H4R4AUOwkPS5799KlVDAu8zExeCrkGquiA==}
+  type-fest@5.4.4:
+    resolution: {integrity: sha512-JnTrzGu+zPV3aXIUhnyWJj4z/wigMsdYajGLIYakqyOW1nPllzXEJee0QQbHj+CTIQtXGlAjuK0UY+2xTyjVAw==}
     engines: {node: '>=20'}
 
   typescript-eslint@8.55.0:
@@ -3401,8 +3401,8 @@ packages:
     resolution: {integrity: sha512-VfQPToRA5FZs/qJxLIinmU59u0r7LXqoJkCzinq3ckNJp3vKEh7jTWN589YQ5+aoAC/TGRLyJLCPKcLQbM8r9g==}
     engines: {node: '>=18.17'}
 
-  undici@7.21.0:
-    resolution: {integrity: sha512-Hn2tCQpoDt1wv23a68Ctc8Cr/BHpUSfaPYrkajTXOS9IKpxVRx/X5m1K2YkbK2ipgZgxXSgsUinl3x+2YdSSfg==}
+  undici@7.22.0:
+    resolution: {integrity: sha512-RqslV2Us5BrllB+JeiZnK4peryVTndy9Dnqq62S3yYRRTj0tFQCwEniUy2167skdGOy3vqRzEvl1Dm4sV2ReDg==}
     engines: {node: '>=20.18.1'}
 
   unicode-emoji-modifier-base@1.0.0:
@@ -3417,11 +3417,15 @@ packages:
     resolution: {integrity: sha512-+QBBXBCvifc56fsbuxZQ6Sic3wqqc3WWaqxs58gvJrcOuN83HGTCwz3oS5phzU9LthRNE9VrJCFCLUgHeeFnfA==}
     engines: {node: '>=18'}
 
+  unicorn-magic@0.4.0:
+    resolution: {integrity: sha512-wH590V9VNgYH9g3lH9wWjTrUoKsjLF6sGLjhR4sH1LWpLmCOH0Zf7PukhDA8BiS7KHe4oPNkcTHqYkj7SOGUOw==}
+    engines: {node: '>=20'}
+
   unified@11.0.5:
     resolution: {integrity: sha512-xKvGhPWw3k84Qjh8bI3ZeJjqnyadK+GEFtazSfZv/rKeTkTjOJho6mFqh2SM96iIcZokxiOpg78GazTSg8+KHA==}
 
-  unifont@0.7.3:
-    resolution: {integrity: sha512-b0GtQzKCyuSHGsfj5vyN8st7muZ6VCI4XD4vFlr7Uy1rlWVYxC3npnfk8MyreHxJYrz1ooLDqDzFe9XqQTlAhA==}
+  unifont@0.7.4:
+    resolution: {integrity: sha512-oHeis4/xl42HUIeHuNZRGEvxj5AaIKR+bHPNegRq5LV1gdc3jundpONbjglKpihmJf+dswygdMJn3eftGIMemg==}
 
   unique-string@3.0.0:
     resolution: {integrity: sha512-VGXBUVwxKMBUznyffQweQABPRRW1vHZAbadFZud4pLFAqRGvv/96vafgjWFqzourzr8YonlQiPgH0YCJfawoGQ==}
@@ -3835,7 +3839,7 @@ snapshots:
       dlv: 1.1.3
       dset: 3.1.4
       is-docker: 3.0.0
-      is-wsl: 3.1.0
+      is-wsl: 3.1.1
       which-pm-runs: 1.1.0
     transitivePeerDependencies:
       - supports-color
@@ -4450,7 +4454,7 @@ snapshots:
       p-filter: 4.1.0
       semantic-release: 25.0.3(typescript@5.9.3)
       tinyglobby: 0.2.15
-      undici: 7.21.0
+      undici: 7.22.0
       url-join: 5.0.0
     transitivePeerDependencies:
       - supports-color
@@ -4466,9 +4470,9 @@ snapshots:
       lodash-es: 4.17.23
       nerf-dart: 1.0.0
       normalize-url: 8.1.1
-      npm: 11.9.0
+      npm: 11.10.0
       rc: 1.2.8
-      read-pkg: 10.0.0
+      read-pkg: 10.1.0
       registry-auth-token: 5.1.1
       semantic-release: 25.0.3(typescript@5.9.3)
       semver: 7.7.4
@@ -4893,7 +4897,7 @@ snapshots:
       tinyglobby: 0.2.15
       tsconfck: 3.1.6(typescript@5.9.3)
       ultrahtml: 1.6.0
-      unifont: 0.7.3
+      unifont: 0.7.4
       unist-util-visit: 5.1.0
       unstorage: 1.17.4
       vfile: 6.0.3
@@ -5676,7 +5680,7 @@ snapshots:
 
   hosted-git-info@9.0.2:
     dependencies:
-      lru-cache: 11.2.5
+      lru-cache: 11.2.6
 
   html-escaper@3.0.3: {}
 
@@ -5771,7 +5775,7 @@ snapshots:
 
   is-unicode-supported@2.1.0: {}
 
-  is-wsl@3.1.0:
+  is-wsl@3.1.1:
     dependencies:
       is-inside-container: 1.0.0
 
@@ -5954,7 +5958,7 @@ snapshots:
 
   lru-cache@10.4.3: {}
 
-  lru-cache@11.2.5: {}
+  lru-cache@11.2.6: {}
 
   magic-string@0.30.21:
     dependencies:
@@ -6391,7 +6395,7 @@ snapshots:
       path-key: 4.0.0
       unicorn-magic: 0.3.0
 
-  npm@11.9.0: {}
+  npm@11.10.0: {}
 
   nth-check@2.1.1:
     dependencies:
@@ -6614,16 +6618,16 @@ snapshots:
   read-package-up@12.0.0:
     dependencies:
       find-up-simple: 1.0.1
-      read-pkg: 10.0.0
-      type-fest: 5.4.3
+      read-pkg: 10.1.0
+      type-fest: 5.4.4
 
-  read-pkg@10.0.0:
+  read-pkg@10.1.0:
     dependencies:
       '@types/normalize-package-data': 2.4.4
       normalize-package-data: 8.0.0
       parse-json: 8.3.0
-      type-fest: 5.4.3
-      unicorn-magic: 0.3.0
+      type-fest: 5.4.4
+      unicorn-magic: 0.4.0
 
   read-pkg@9.0.1:
     dependencies:
@@ -7099,7 +7103,7 @@ snapshots:
 
   type-fest@4.41.0: {}
 
-  type-fest@5.4.3:
+  type-fest@5.4.4:
     dependencies:
       tagged-tag: 1.0.0
 
@@ -7127,13 +7131,15 @@ snapshots:
 
   undici@6.23.0: {}
 
-  undici@7.21.0: {}
+  undici@7.22.0: {}
 
   unicode-emoji-modifier-base@1.0.0: {}
 
   unicorn-magic@0.1.0: {}
 
   unicorn-magic@0.3.0: {}
+
+  unicorn-magic@0.4.0: {}
 
   unified@11.0.5:
     dependencies:
@@ -7145,7 +7151,7 @@ snapshots:
       trough: 2.2.0
       vfile: 6.0.3
 
-  unifont@0.7.3:
+  unifont@0.7.4:
     dependencies:
       css-tree: 3.1.0
       ofetch: 1.5.1
@@ -7207,7 +7213,7 @@ snapshots:
       chokidar: 5.0.0
       destr: 2.0.5
       h3: 1.15.5
-      lru-cache: 11.2.5
+      lru-cache: 11.2.6
       node-fetch-native: 1.6.7
       ofetch: 1.5.1
       ufo: 1.6.3
