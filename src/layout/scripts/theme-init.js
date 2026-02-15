@@ -37,7 +37,7 @@
 
     applyTheme(theme);
 
-    setTimeout(() => root.classList.remove('switch-theme-transition'), 3000);
+    setTimeout(() => root.classList.remove('switch-theme-transition'), 1000);
     if (typeof localStorage !== 'undefined') {
       localStorage.setItem(LOCAL_STORAGE_KEY, theme);
     }

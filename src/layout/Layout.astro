@@ -27,8 +27,8 @@ const { title, description, noindex } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <Seo title={title} description={description} noindex={noindex} />
     <ClientRouter />
-    <script is:inline set:html={themeInitScript} />
-    <script is:inline set:html={languageInitScript} />
+    <script set:html={themeInitScript} />
+    <script set:html={languageInitScript} />
   </head>
   <body class="bg-base-100 text-base-content transition-bg transition-colors">
     <div class="drawer">

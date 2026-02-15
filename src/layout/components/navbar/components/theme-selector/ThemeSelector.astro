@@ -16,7 +16,7 @@ const t = useI18n(Astro.url, THEME_I18N);
     {
       THEMES.map((theme: Theme) => (
         <li>
-          <button data-set-theme={theme.id}>
+          <button data-set-theme={theme.id} onclick="document.activeElement.blur()">
             <theme.icon class="h-5 w-5" />
             <span>{t(theme.id)}</span>
           </button>

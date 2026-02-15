@@ -2,11 +2,6 @@
 @import 'tailwindcss';
 @plugin 'daisyui';
 
-:root {
-  --transition-slow: 0.7s;
-  --transition-fast: 0.3s;
-}
-
 @plugin 'daisyui/theme' {
   name: 'portfolio-light';
   default: false;
@@ -79,10 +74,7 @@
 
 :root.switch-theme-transition,
 :root.switch-theme-transition * {
-  transition:
-    color var(--transition-slow),
-    background var(--transition-slow),
-    border-color var(--transition-slow) !important;
+  transition: all 0.5s ease-out !important;
 }
 
 .focus-ring {
