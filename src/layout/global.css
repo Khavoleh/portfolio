@@ -77,6 +77,11 @@
   transition: all 0.5s ease-out !important;
 }
 
+:root.no-transitions,
+:root.no-transitions * {
+  transition: none !important;
+}
+
 .focus-ring {
   outline: none;
   transition: all 0.3s ease;
