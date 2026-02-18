@@ -28,7 +28,7 @@ const currentPath: string = Astro.url.pathname;
     </div>
     <ul id="drawer-nav-list" class="space-y-1 text-lg">
       {
-        NAVIGATION_LINKS.map((link: NavLink, index: number) => {
+        NAVIGATION_LINKS.map((link: NavLink) => {
           const isActive: boolean = currentPath === getLanguageUrl(Astro.url, link.href);
 
           return (

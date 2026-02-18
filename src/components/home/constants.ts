@@ -1,4 +1,5 @@
-import type { Metric, Review } from '@shared/components';
+import type { Metric } from './components/metric/interfaces';
+import type { Review } from './components/review/interfaces';
 import mykola from './images/mykola-synhalevych.jpeg';
 import pavlo from './images/pavlo-demskyi.png';
 import valerii from './images/valerii-inshyn.jpeg';
