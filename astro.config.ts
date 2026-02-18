@@ -1,5 +1,5 @@
 import sitemap from '@astrojs/sitemap';
-import tailwind from '@tailwindcss/vite';
+import tailwindcss from '@tailwindcss/vite';
 import type { AstroUserConfig } from 'astro';
 import { defineConfig } from 'astro/config';
 
@@ -26,7 +26,7 @@ const config: AstroUserConfig = {
         cert: './localhost.pem',
       },
     },
-    plugins: [tailwind()],
+    plugins: [tailwindcss()],
   },
 };
 
