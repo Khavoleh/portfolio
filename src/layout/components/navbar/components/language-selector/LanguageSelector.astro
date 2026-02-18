@@ -32,3 +32,28 @@ const t = useI18n(Astro.url, LANGUAGE_TRANSLATIONS);
     }
   </ul>
 </div>
+
+<script>
+  const STORAGE_KEY = 'preferred-language';
+
+  const attachLanguageListeners = () => {
+    document.querySelectorAll('[data-language]').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const lang = (link as HTMLElement).dataset.language;
+
+        if (lang) {
+          localStorage.setItem(STORAGE_KEY, lang);
+
+          const href = (link as HTMLAnchorElement).href;
+
+          if (href) {
+            window.location.href = href;
+            e.preventDefault();
+          }
+        }
+      });
+    });
+  };
+
+  document.addEventListener('astro:page-load', attachLanguageListeners);
+</script>
