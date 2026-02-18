@@ -16,7 +16,7 @@ const t = useI18n(Astro.url, THEME_I18N);
     {
       THEMES.map((theme: Theme) => (
         <li>
-          <button data-set-theme={theme.id} onclick="document.activeElement.blur()">
+          <button data-set-theme={theme.id}>
             <theme.icon class="h-5 w-5" />
             <span>{t(theme.id)}</span>
           </button>
@@ -25,3 +25,15 @@ const t = useI18n(Astro.url, THEME_I18N);
     }
   </ul>
 </div>
+
+<script>
+  const attachThemeListeners = () => {
+    document.querySelectorAll('[data-set-theme]').forEach((btn) => {
+      btn.addEventListener('click', function (this: HTMLButtonElement) {
+        this.blur();
+      });
+    });
+  };
+
+  document.addEventListener('astro:page-load', attachThemeListeners);
+</script>
