@@ -1,0 +1,26 @@
+pre-commit:
+  commands:
+    gitleaks:
+      glob: '*.{js,ts,json,py,go,yml,md}'
+      run: gitleaks protect --redact --verbose
+
+pre-push:
+  parallel: true
+  commands:
+    lint:
+      run: pnpm lint
+    prettier:
+      run: pnpm prettier --check .
+    check-types:
+      run: pnpm astro check
+    build:
+      run: pnpm build
+    test:
+      run: pnpm test
+    branch-name:
+      run: |
+        branch_name=$(git symbolic-ref --short HEAD)
+        if ! echo "$branch_name" | grep -Eq '^[0-9]+/[a-z0-9-]+$'; then
+          echo "Branch name '$branch_name' does not match the required pattern: [id]/[task-name] (e.g., 100/configure-github)"
+          exit 1
+        fi

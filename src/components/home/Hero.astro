@@ -1,10 +1,10 @@
 ---
 import { Image } from 'astro:assets';
-import { useTranslations } from '@shared/helpers.ts';
-import { HERO_TRANSLATIONS } from './translations.ts';
+import { useI18n } from '@shared/helpers';
 import photo from './images/me.jpg';
+import { HERO_TRANSLATIONS } from './translations';
 
-const t = useTranslations(Astro.url, HERO_TRANSLATIONS);
+const t = useI18n(Astro.url, HERO_TRANSLATIONS);
 ---
 
 <section class="mb-16">

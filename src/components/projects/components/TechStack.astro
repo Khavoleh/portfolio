@@ -1,15 +1,15 @@
 ---
-import type { Skill } from '@shared/skill/interfaces.ts';
-import SkillBlock from '@shared/skill/SkillBlock.astro';
-import { useTranslations } from '@shared/helpers.ts';
-import { PROJECT_COMPONENTS_TRANSLATIONS } from '../translations.ts';
+import type { Skill } from '@shared/components';
+import { SkillBlock } from '@shared/components';
+import { useI18n } from '@shared/helpers';
+import { PROJECT_COMPONENTS_TRANSLATIONS } from '../translations';
 
 interface Props {
   skills: Skill[];
 }
 
 const { skills } = Astro.props;
-const t = useTranslations(Astro.url, PROJECT_COMPONENTS_TRANSLATIONS);
+const t = useI18n(Astro.url, PROJECT_COMPONENTS_TRANSLATIONS);
 ---
 
 <div class="mb-8">

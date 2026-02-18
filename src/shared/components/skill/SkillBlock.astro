@@ -1,0 +1,16 @@
+---
+import { getStyleClasses } from './getStyleClasses';
+import type { Skill } from './skill';
+
+interface Props {
+  skill: Skill;
+}
+
+const { skill } = Astro.props;
+
+const styleClasses: string = getStyleClasses(skill.type);
+---
+
+<div class={`badge badge-lg gap-2 ${styleClasses}`}>
+  <span class="text-sm font-semibold">{skill.name}</span>
+</div>

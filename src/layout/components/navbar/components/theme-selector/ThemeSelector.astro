@@ -1,0 +1,39 @@
+---
+import { useI18n } from '@shared/helpers';
+import type { Theme } from './theme';
+import { THEME_I18N } from './theme-i18n';
+import { THEMES } from './themes';
+
+const t = useI18n(Astro.url, THEME_I18N);
+---
+
+<div class="dropdown dropdown-end">
+  <button class="btn btn-neutral btn-circle focus-ring shadow" aria-label={t('toggle.theme')}>
+    {THEMES.map((theme: Theme) => <theme.icon id={`theme-icon-${theme.id}`} class="hidden h-6 w-6" />)}
+  </button>
+
+  <ul class="dropdown-content menu rounded-box bg-base-300 mt-2 p-2">
+    {
+      THEMES.map((theme: Theme) => (
+        <li>
+          <button data-set-theme={theme.id}>
+            <theme.icon class="h-5 w-5" />
+            <span>{t(theme.id)}</span>
+          </button>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<script>
+  const attachThemeListeners = () => {
+    document.querySelectorAll('[data-set-theme]').forEach((btn) => {
+      btn.addEventListener('click', function (this: HTMLButtonElement) {
+        this.blur();
+      });
+    });
+  };
+
+  document.addEventListener('astro:page-load', attachThemeListeners);
+</script>

@@ -1,7 +1,7 @@
-import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
-import tailwind from '@tailwindcss/vite';
+import tailwindcss from '@tailwindcss/vite';
 import type { AstroUserConfig } from 'astro';
+import { defineConfig } from 'astro/config';
 
 const config: AstroUserConfig = {
   site: 'https://www.khavol.com/',
@@ -20,7 +20,13 @@ const config: AstroUserConfig = {
     },
   },
   vite: {
-    plugins: [tailwind()],
+    server: {
+      https: {
+        key: './localhost-key.pem',
+        cert: './localhost.pem',
+      },
+    },
+    plugins: [tailwindcss()],
   },
 };
 

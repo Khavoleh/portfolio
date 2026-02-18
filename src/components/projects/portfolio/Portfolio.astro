@@ -1,15 +1,15 @@
 ---
 import LogoIcon from '@assets/logo.svg';
-import Title from '../components/Title.astro';
+import { useI18n } from '@shared/helpers';
+import GitHubButton from '../components/GitHubButton.astro';
 import Section from '../components/Section.astro';
 import TechStack from '../components/TechStack.astro';
-import GitHubButton from '../components/GitHubButton.astro';
-import type { ProjectSection } from '../interfaces.ts';
-import { PORTFOLIO, PERFORMANCE_METRICS } from './constants.ts';
-import { useTranslations } from '@shared/helpers.ts';
-import { PORTFOLIO_PROJECT_TRANSLATIONS } from '../translations.ts';
+import Title from '../components/Title.astro';
+import type { ProjectSection } from '../interfaces';
+import { PORTFOLIO_PROJECT_TRANSLATIONS } from '../translations';
+import { PERFORMANCE_METRICS, PORTFOLIO } from './constants';
 
-const t = useTranslations(Astro.url, PORTFOLIO_PROJECT_TRANSLATIONS);
+const t = useI18n(Astro.url, PORTFOLIO_PROJECT_TRANSLATIONS);
 ---
 
 <section class="card bg-base-200 border-base-300 mb-12 border p-8 shadow-2xl md:p-12">

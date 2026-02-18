@@ -1,12 +1,12 @@
 ---
-import type { ExperienceItem, ExperienceSection } from './interfaces.ts';
-import { EXPERIENCE_DATA } from './constants.ts';
-import type { Skill } from '@shared/skill/interfaces.ts';
-import SkillBlock from '@shared/skill/SkillBlock.astro';
-import { useTranslations } from '@shared/helpers.ts';
-import { EXPERIENCE_DATA_TRANSLATIONS } from './translations.ts';
+import type { Skill } from '@shared/components';
+import { SkillBlock } from '@shared/components';
+import { useI18n } from '@shared/helpers';
+import { EXPERIENCE_DATA } from './constants';
+import type { ExperienceItem, ExperienceSection } from './interfaces';
+import { EXPERIENCE_DATA_TRANSLATIONS } from './translations';
 
-const t = useTranslations(Astro.url, EXPERIENCE_DATA_TRANSLATIONS);
+const t = useI18n(Astro.url, EXPERIENCE_DATA_TRANSLATIONS);
 ---
 
 <div class="relative">

@@ -1,6 +1,6 @@
-import type { Translations } from '@shared/interfaces.ts';
+import type { I18N } from '@shared/interfaces';
 
-export const HERO_TRANSLATIONS: Translations = {
+export const HERO_TRANSLATIONS: I18N = {
   en: {
     'hero.image.alt': 'Oleh Khavar - Professional Headshot',
     'hero.name': 'Oleh Khavar',
@@ -19,7 +19,7 @@ export const HERO_TRANSLATIONS: Translations = {
   },
 };
 
-export const METRICS_TRANSLATIONS: Translations = {
+export const METRICS_TRANSLATIONS: I18N = {
   en: {
     'metrics.title': 'Impact & Expertise',
     'metrics.0.name': 'Years',
@@ -44,7 +44,7 @@ export const METRICS_TRANSLATIONS: Translations = {
   },
 };
 
-export const REVIEWS_TRANSLATIONS: Translations = {
+export const REVIEWS_TRANSLATIONS: I18N = {
   en: {
     'reviews.title': 'Professional Recommendations',
     'reviews.subtitle': 'What colleagues say about working with me',
@@ -95,7 +95,7 @@ export const REVIEWS_TRANSLATIONS: Translations = {
   },
 };
 
-export const GOAL_TRANSLATIONS: Translations = {
+export const GOAL_TRANSLATIONS: I18N = {
   en: {
     'goal.title': 'Selected Experience & Technical Focus',
     'goal.description':

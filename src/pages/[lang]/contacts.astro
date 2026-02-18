@@ -1,15 +1,15 @@
 ---
-import { getLanguageStaticPaths, useTranslations } from '@shared/helpers.ts';
-import Layout from '@layouts/Layout.astro';
+import CallToAction from '@components/contacts/CallToAction.astro';
 import ContactIntro from '@components/contacts/ContactIntro.astro';
 import DirectContact from '@components/contacts/DirectContact.astro';
 import SocialLinks from '@components/contacts/SocialLinks.astro';
-import CallToAction from '@components/contacts/CallToAction.astro';
-import { SEO_TRANSLATIONS } from '@layouts/translations.ts';
+import { Layout } from '@layout';
+import { getLanguageStaticPaths, useI18n } from '@shared/helpers';
+import { SEO_I18N } from '@shared/i18n';
 
 export const getStaticPaths = getLanguageStaticPaths;
 
-const t = useTranslations(Astro.url, SEO_TRANSLATIONS);
+const t = useI18n(Astro.url, SEO_I18N);
 ---
 
 <Layout title={t('contacts_title')} description={t('contacts_description')}>

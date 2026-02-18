@@ -1,10 +1,10 @@
 ---
-import { PAGE_URLS } from '@shared/constants.ts';
-import ViewCv from '@shared/view-cv/ViewCv.astro';
-import { getLanguageUrl, useTranslations } from '@shared/helpers.ts';
-import { CALL_TO_ACTION_TRANSLATIONS } from './translations.ts';
+import { ViewCv } from '@shared/components';
+import { PAGE_URLS } from '@shared/constants';
+import { getLanguageUrl, useI18n } from '@shared/helpers';
+import { CALL_TO_ACTION_TRANSLATIONS } from './translations';
 
-const t = useTranslations(Astro.url, CALL_TO_ACTION_TRANSLATIONS);
+const t = useI18n(Astro.url, CALL_TO_ACTION_TRANSLATIONS);
 ---
 
 <section class="mt-16 text-center">

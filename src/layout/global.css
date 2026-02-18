@@ -1,0 +1,93 @@
+/** biome-ignore-all lint/complexity/noImportantStyles: use important for smooth theme change */
+@import 'tailwindcss';
+@plugin 'daisyui';
+
+@plugin 'daisyui/theme' {
+  name: 'portfolio-light';
+  default: false;
+  color-scheme: light;
+
+  --color-primary: oklch(45% 0.19 277);
+  --color-primary-content: oklch(100% 0 0);
+
+  --color-secondary: oklch(50% 0.1 257);
+  --color-secondary-content: oklch(100% 0 0);
+
+  --color-accent: oklch(60% 0.12 211);
+  --color-accent-content: oklch(98% 0.01 211);
+
+  --color-neutral: oklch(94% 0.01 256);
+  --color-neutral-content: oklch(25% 0.03 256);
+
+  --color-base-100: oklch(100% 0 0);
+  --color-base-200: oklch(97% 0.01 256);
+  --color-base-300: oklch(93% 0.02 256);
+  --color-base-content: oklch(20% 0.04 256);
+
+  --color-info: oklch(65% 0.15 260);
+  --color-info-content: oklch(100% 0 0);
+  --color-success: oklch(60% 0.16 162);
+  --color-success-content: oklch(100% 0 0);
+  --color-warning: oklch(82% 0.15 80);
+  --color-warning-content: oklch(30% 0.08 60);
+  --color-error: oklch(55% 0.22 25);
+  --color-error-content: oklch(100% 0 0);
+}
+
+@plugin 'daisyui/theme' {
+  name: 'portfolio-dark';
+  default: true;
+  color-scheme: dark;
+
+  --color-primary: oklch(75% 0.14 277);
+  --color-primary-content: oklch(20% 0.04 277);
+
+  --color-secondary: oklch(65% 0.08 256);
+  --color-secondary-content: oklch(15% 0.04 256);
+
+  --color-accent: oklch(75% 0.14 211);
+  --color-accent-content: oklch(15% 0.04 211);
+
+  --color-base-100: oklch(14% 0.03 265);
+  --color-base-200: oklch(18% 0.03 265);
+  --color-base-300: oklch(22% 0.03 265);
+  --color-base-content: oklch(94% 0.02 256);
+
+  --color-neutral: oklch(25% 0.04 265);
+  --color-neutral-content: oklch(90% 0.02 256);
+
+  --color-info: oklch(70% 0.12 250);
+  --color-info-content: oklch(15% 0.05 250);
+  --color-success: oklch(70% 0.12 160);
+  --color-success-content: oklch(15% 0.05 160);
+  --color-warning: oklch(75% 0.15 85);
+  --color-warning-content: oklch(20% 0.05 85);
+  --color-error: oklch(65% 0.18 25);
+  --color-error-content: oklch(15% 0.05 25);
+}
+
+:root,
+[data-theme='portfolio-dark'],
+[data-theme='portfolio-light'] {
+  --icon-color: var(--color-primary);
+}
+
+:root.switch-theme-transition,
+:root.switch-theme-transition * {
+  transition: all 0.5s ease-out !important;
+}
+
+:root.no-transitions,
+:root.no-transitions * {
+  transition: none !important;
+}
+
+.focus-ring {
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.focus-ring:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-accent);
+}

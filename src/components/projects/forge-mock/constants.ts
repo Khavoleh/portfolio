@@ -1,9 +1,9 @@
-import type { ProjectItem } from '../interfaces.ts';
-import { SKILL_TYPES } from '@shared/skill/constants.ts';
-import TargetIcon from '../icons/target.svg';
+import { SKILL_TYPES } from '@shared/components';
+import BusinessIcon from '../icons/business.svg';
 import SettingsIcon from '../icons/settings.svg';
 import StarsIcon from '../icons/stars.svg';
-import BusinessIcon from '../icons/business.svg';
+import TargetIcon from '../icons/target.svg';
+import type { ProjectItem } from '../interfaces';
 
 export const FORGE_MOCK: ProjectItem = {
   title: 'forgeMock.title',

@@ -1,0 +1,59 @@
+---
+import { useI18n } from '@shared/helpers';
+import { getCurrentLanguage } from '../../../../getCurrentLanguage';
+import { getLanguageUrl } from './getLanguageUrl';
+import type { Language } from './language';
+import { LANGUAGE_TRANSLATIONS } from './language-i18n';
+import { LANGUAGES_CONFIG } from './languages-config';
+
+const currentLang = getCurrentLanguage(Astro.url);
+const t = useI18n(Astro.url, LANGUAGE_TRANSLATIONS);
+---
+
+<div class="dropdown dropdown-end">
+  <button class="btn btn-neutral btn-circle focus-ring shadow" aria-label={t('change.language')}>
+    {
+      LANGUAGES_CONFIG.map((lang: Language) => (
+        <lang.icon id={`language-icon-${lang.code}`} class:list={['h-6 w-6', { hidden: lang.code !== currentLang }]} />
+      ))
+    }
+  </button>
+
+  <ul class="dropdown-content menu rounded-box bg-base-300 mt-2 p-2">
+    {
+      LANGUAGES_CONFIG.map((lang: Language) => (
+        <li>
+          <a href={getLanguageUrl(Astro.url, lang.code)} data-language={lang.code}>
+            <lang.icon class="h-5 w-5" />
+            <span>{lang.name}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<script>
+  const STORAGE_KEY = 'preferred-language';
+
+  const attachLanguageListeners = () => {
+    document.querySelectorAll('[data-language]').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const lang = (link as HTMLElement).dataset.language;
+
+        if (lang) {
+          localStorage.setItem(STORAGE_KEY, lang);
+
+          const href = (link as HTMLAnchorElement).href;
+
+          if (href) {
+            window.location.href = href;
+            e.preventDefault();
+          }
+        }
+      });
+    });
+  };
+
+  document.addEventListener('astro:page-load', attachLanguageListeners);
+</script>

@@ -1,0 +1,80 @@
+---
+import LogoIcon from '@assets/logo.svg';
+import { getLanguageUrl, useI18n } from '@shared/helpers';
+import type { NavLink } from '@shared/interfaces';
+import { NAVIGATION_I18N } from '../navigation-i18n';
+import { NAVIGATION_LINKS } from '../navigation-links';
+import LanguageSelector from './components/language-selector/LanguageSelector.astro';
+import ThemeSelector from './components/theme-selector/ThemeSelector.astro';
+import BurgerIcon from './icons/burger.svg';
+
+const t = useI18n(Astro.url, NAVIGATION_I18N);
+const currentPath: string = Astro.url.pathname;
+---
+
+<header class="navbar border-base-300 bg-base-200 fixed start-0 top-0 z-100 border-b px-4">
+  <div class="navbar-start">
+    <label
+      id="mobile-drawer-burger"
+      for="mobile-drawer"
+      class="btn btn-neutral btn-circle focus-ring drawer-button shadow md:hidden"
+      aria-label={t('menu')}
+      tabindex="0"
+    >
+      <BurgerIcon class="h-5 w-5" />
+    </label>
+
+    <div class="hidden shrink-0 items-center gap-2 px-2 md:flex">
+      <LogoIcon class="h-8" />
+      <p class="text-base-content text-xl font-semibold">{t('name')}</p>
+    </div>
+
+    <nav class="hidden md:flex">
+      <ul class="menu menu-horizontal flex-nowrap gap-1 px-1 text-base">
+        {
+          NAVIGATION_LINKS.map((link: NavLink) => {
+            const isActive: boolean = currentPath === getLanguageUrl(Astro.url, link.href);
+
+            return (
+              <li>
+                <a
+                  href={getLanguageUrl(Astro.url, link.href)}
+                  class:list={['focus-ring px-4 py-2 whitespace-nowrap', isActive && 'active text-primary']}
+                  aria-label={`${t('navigate.to')} ${t(link.label)} ${t('page')}`}
+                  aria-current={isActive ? 'page' : undefined}
+                >
+                  {t(link.label)}
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </nav>
+  </div>
+
+  <div class="navbar-end flex gap-4">
+    <LanguageSelector />
+    <ThemeSelector />
+
+    <div class="gap-2 md:hidden">
+      <span class="hidden text-xl font-semibold md:inline">{t('name')}</span>
+      <LogoIcon class="h-8" />
+    </div>
+  </div>
+</header>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const btn = document.getElementById('mobile-drawer-burger');
+    if (!btn) return;
+
+    btn.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        btn.click();
+        setTimeout(() => document.getElementById('drawer-close-btn')?.focus(), 100);
+      }
+    });
+  });
+</script>

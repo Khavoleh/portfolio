@@ -1,6 +1,6 @@
-import type { Translations } from '@shared/interfaces.ts';
+import type { I18N } from '@shared/interfaces';
 
-export const EXPERIENCE_INTRO_TRANSLATIONS: Translations = {
+export const EXPERIENCE_INTRO_TRANSLATIONS: I18N = {
   en: {
     'intro.title.years': '3+ Years',
     'intro.title.subtitle': 'of End-to-End Development:',
@@ -17,7 +17,7 @@ export const EXPERIENCE_INTRO_TRANSLATIONS: Translations = {
   },
 };
 
-export const EXPERIENCE_DATA_TRANSLATIONS: Translations = {
+export const EXPERIENCE_DATA_TRANSLATIONS: I18N = {
   en: {
     'experience.0.role': 'Full-Stack .NET/Angular Developer',
     'experience.0.company': 'Lviv Polytechnic National University',
@@ -94,7 +94,7 @@ export const EXPERIENCE_DATA_TRANSLATIONS: Translations = {
   },
 };
 
-export const CALL_TO_ACTION_TRANSLATIONS: Translations = {
+export const CALL_TO_ACTION_TRANSLATIONS: I18N = {
   en: {
     'cta.title': 'Ready to see these principles in action in open source code?',
     'cta.button.projects': 'View Projects',
