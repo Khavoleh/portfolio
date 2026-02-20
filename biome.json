@@ -1,28 +1,12 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.3.14/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.0/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
     "useIgnoreFile": true
   },
   "files": {
-    "includes": [
-      "**",
-      "!**/dist",
-      "!**/.astro",
-      "!**/.git",
-      "!**/.svn",
-      "!**/.hg",
-      "!**/node_modules",
-      "!**/*.min.js",
-      "!**/pnpm-lock.yaml",
-      "!**/yarn.lock",
-      "!**/package-lock.json",
-      "!./public",
-      "!**/*md",
-      "!**/LICENSE",
-      "!**/*.pem"
-    ]
+    "includes": ["**/src/**"]
   },
   "formatter": {
     "enabled": false
