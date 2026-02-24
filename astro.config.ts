@@ -2,10 +2,12 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 import type { AstroUserConfig } from 'astro';
 import { defineConfig } from 'astro/config';
+import node from '@astrojs/node';
 
 const config: AstroUserConfig = {
-  site: 'https://www.khavol.com/',
+  site: 'https://www.khavol.com/en',
   integrations: [sitemap()],
+  adapter: node({ mode: 'standalone' }),
   experimental: {
     csp: {
       directives: [

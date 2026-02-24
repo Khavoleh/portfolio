@@ -8,7 +8,6 @@ import Navbar from './components/navbar/Navbar.astro';
 import Seo from './components/seo/Seo.astro';
 import Sidebar from './components/sidebar/Sidebar.astro';
 import { getCurrentLanguage } from './getCurrentLanguage';
-import languageInitScript from './scripts/language-init.js?raw';
 import removeTransitionsScript from './scripts/remove-transitions.js?raw';
 import themeInitScript from './scripts/theme-init.js?raw';
 
@@ -29,7 +28,6 @@ const { title, description, noindex } = Astro.props;
     <Seo title={title} description={description} noindex={noindex} />
     <ClientRouter />
     <script is:inline set:html={themeInitScript} />
-    <script is:inline set:html={languageInitScript} />
     <script is:inline set:html={removeTransitionsScript} />
   </head>
   <body class="bg-base-100 text-base-content transition-bg transition-colors">
