@@ -17,6 +17,8 @@ pre-push:
       run: pnpm build
     test:
       run: pnpm test
+    depcruise:
+      run: pnpm depcruise
     branch-name:
       run: |
         branch_name=$(git symbolic-ref --short HEAD)

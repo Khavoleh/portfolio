@@ -8,15 +8,32 @@ import Heading from '@components/terms-and-conditions/Heading.astro';
 import IntellectualPropertySection from '@components/terms-and-conditions/IntellectualPropertySection.astro';
 import LastUpdated from '@components/terms-and-conditions/LastUpdated.astro';
 import { Layout } from '@layout';
+import { Schema } from '@shared/components';
+import { SOCIALS } from '@shared/constants';
 import { getLanguageStaticPaths, useI18n } from '@shared/helpers';
-import { SEO_I18N } from '@shared/i18n';
+import { TERMS_AND_CONDITIONS_I18N } from '@shared/i18n';
+import type { WebPage } from 'schema-dts';
 
 export const getStaticPaths = getLanguageStaticPaths;
 
-const t = useI18n(Astro.url, SEO_I18N);
+const t = useI18n(Astro.url, TERMS_AND_CONDITIONS_I18N);
+
+const webJsonLd: WebPage = {
+  '@type': 'WebPage',
+  name: t('terms_name'),
+  publisher: {
+    '@type': 'Person',
+    name: t('name'),
+    contactPoint: {
+      '@type': 'ContactPoint',
+      email: SOCIALS.EMAIL,
+      availableLanguage: ['en-US', 'uk-UA'],
+    },
+  },
+};
 ---
 
-<Layout title={t('terms_title')} description={t('terms_description')}>
+<Layout title={t('title')} description={t('description')}>
   <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
     <div class="card bg-base-200 border-base-300 border p-8 shadow-lg">
       <Heading />
@@ -33,3 +50,5 @@ const t = useI18n(Astro.url, SEO_I18N);
     </div>
   </div>
 </Layout>
+
+<Schema jsonLd={webJsonLd} />

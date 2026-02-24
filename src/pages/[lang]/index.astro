@@ -4,15 +4,28 @@ import Hero from '@components/home/Hero.astro';
 import Metrics from '@components/home/Metrics.astro';
 import Reviews from '@components/home/Reviews.astro';
 import { Layout } from '@layout';
+import { Schema } from '@shared/components';
+import { SOCIALS } from '@shared/constants';
 import { getLanguageStaticPaths, useI18n } from '@shared/helpers';
-import { SEO_I18N } from '@shared/i18n';
+import { HOME_I18N } from '@shared/i18n';
+import type { Person } from 'schema-dts';
 
 export const getStaticPaths = getLanguageStaticPaths;
 
-const t = useI18n(Astro.url, SEO_I18N);
+const t = useI18n(Astro.url, HOME_I18N);
+
+const personJsonLd: Person = {
+  '@type': 'Person',
+  name: t('name'),
+  image: 'https://www.khavol.com/me.jpg',
+  jobTitle: t('job_title'),
+  knowsAbout: ['.NET', 'React', 'PostgreSQL', 'Cloud'],
+  url: `https://www.khavol.com/${t('language')}`,
+  sameAs: [SOCIALS.GITHUB, SOCIALS.LINKEDIN, SOCIALS.TELEGRAM],
+};
 ---
 
-<Layout title={t('home_title')} description={t('home_description')}>
+<Layout title={t('title')} description={t('description')}>
   <div class="mx-auto w-full max-w-6xl px-4 py-12">
     <Hero />
 
@@ -23,3 +36,5 @@ const t = useI18n(Astro.url, SEO_I18N);
     <Reviews />
   </div>
 </Layout>
+
+<Schema jsonLd={personJsonLd} />
