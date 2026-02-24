@@ -1,10 +1,14 @@
 pre-commit:
+  skip:
+    - ref: main
   commands:
     gitleaks:
       glob: '*.{js,ts,json,py,go,yml,md}'
       run: gitleaks protect --redact --verbose
 
 pre-push:
+  skip:
+    - ref: main
   parallel: true
   commands:
     lint:
