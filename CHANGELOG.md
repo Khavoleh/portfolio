@@ -1,3 +1,11 @@
+## [1.2.2](https://github.com/Khavoleh/portfolio/compare/v1.2.1...v1.2.2) (2026-02-24)
+
+
+### Bug Fixes
+
+* Replace adapter with Vercel ([5dd0ece](https://github.com/Khavoleh/portfolio/commit/5dd0ece14431d5eeee3fc6bf9967c843d6934d13))
+* Replace adapter with Vercel ([#88](https://github.com/Khavoleh/portfolio/issues/88)) ([0f190db](https://github.com/Khavoleh/portfolio/commit/0f190db6af6cb91ce1498111139e5ceea5392af0))
+
 ## [1.2.1](https://github.com/Khavoleh/portfolio/compare/v1.2.0...v1.2.1) (2026-02-24)
 
 
