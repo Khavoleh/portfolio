@@ -18,7 +18,7 @@ export const getStaticPaths = getLanguageStaticPaths;
 
 const t = useI18n(Astro.url, PRIVACY_POLICY_I18N);
 
-export const webJsonLd: WebPage = {
+const webJsonLd: WebPage = {
   '@type': 'WebPage',
   name: t('privacy_name'),
   publisher: {
