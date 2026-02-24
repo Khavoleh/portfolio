@@ -1,3 +1,12 @@
+## [1.2.1](https://github.com/Khavoleh/portfolio/compare/v1.2.0...v1.2.1) (2026-02-24)
+
+
+### Bug Fixes
+
+* Add index page with SSR redirect ([26a0518](https://github.com/Khavoleh/portfolio/commit/26a05187163153b57cc35213dea74749ee2310d8))
+* Add main branch to skipped branches ([f93acec](https://github.com/Khavoleh/portfolio/commit/f93acec2ba620657668ad101254a87a2b7e8432a))
+* Move many dependencies to the devDevependencies ([fd95f46](https://github.com/Khavoleh/portfolio/commit/fd95f467bd9ea5e6a12e68438429a27d1607e3ca))
+
 # [1.2.0](https://github.com/Khavoleh/portfolio/compare/v1.1.1...v1.2.0) (2026-02-24)
 
 
