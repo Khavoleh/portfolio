@@ -3,15 +3,29 @@ import ForgeMock from '@components/projects/forge-mock/ForgeMock.astro';
 import ProjectsIntro from '@components/projects/ProjectsIntro.astro';
 import Portfolio from '@components/projects/portfolio/Portfolio.astro';
 import { Layout } from '@layout';
+import { Schema } from '@shared/components';
 import { getLanguageStaticPaths, useI18n } from '@shared/helpers';
-import { SEO_I18N } from '@shared/i18n';
+import { PROJECTS_I18N } from '@shared/i18n';
+import type { WebPage } from 'schema-dts';
 
 export const getStaticPaths = getLanguageStaticPaths;
 
-const t = useI18n(Astro.url, SEO_I18N);
+const t = useI18n(Astro.url, PROJECTS_I18N);
+
+const webJsonLd: WebPage = {
+  '@type': 'WebPage',
+  name: t('name'),
+  mainEntity: [
+    {
+      '@type': 'CreativeWork',
+      name: t('portfolio_name'),
+      description: t('portfolio_description'),
+    },
+  ],
+};
 ---
 
-<Layout title={t('projects_title')} description={t('projects_description')}>
+<Layout title={t('title')} description={t('description')}>
   <div class="mx-auto w-full max-w-6xl px-4 py-12">
     <ProjectsIntro />
 
@@ -20,3 +34,5 @@ const t = useI18n(Astro.url, SEO_I18N);
     <ForgeMock />
   </div>
 </Layout>
+
+<Schema jsonLd={webJsonLd} />

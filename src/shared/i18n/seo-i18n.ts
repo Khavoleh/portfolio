@@ -2,10 +2,6 @@ import type { I18N } from '@shared/interfaces';
 
 export const SEO_I18N: I18N = {
   en: {
-    projects_title: 'Projects & Portfolio | Oleh Khavar',
-    projects_description:
-      'Browse through my portfolio of web development projects. See real-world applications built with .NET, React, Next.js, TypeScript, and modern frameworks.',
-
     contacts_title: 'Contacts | Oleh Khavar',
     contacts_description:
       'Contact me for collaboration opportunities, project inquiries, or just to connect. Find my email, LinkedIn, GitHub, and other social profiles.',
@@ -23,10 +19,6 @@ export const SEO_I18N: I18N = {
       'The page you are looking for could not be found. Return to the homepage or explore other sections of the portfolio.',
   },
   uk: {
-    projects_title: 'Проекти та Портфоліо | Олег Хавар',
-    projects_description:
-      'Перегляньте моє портфоліо веб-розробки проектів. Дивіться реальні додатки, створені за допомогою .NET, React, Next.js, TypeScript та сучасних фреймворків.',
-
     contacts_title: "Зв'яжіться зі мною | Олег Хавар",
     contacts_description:
       "Зв'яжіться зі мною для співпраці, запитів щодо проектів або просто для спілкування. Знайдіть мою електронну пошту, LinkedIn, GitHub та інші соціальні профілі.",
