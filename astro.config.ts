@@ -2,12 +2,12 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 import type { AstroUserConfig } from 'astro';
 import { defineConfig } from 'astro/config';
-import node from '@astrojs/node';
+import vercel from '@astrojs/vercel';
 
 const config: AstroUserConfig = {
   site: 'https://www.khavol.com/en',
   integrations: [sitemap()],
-  adapter: node({ mode: 'standalone' }),
+  adapter: vercel(),
   experimental: {
     csp: {
       directives: [
