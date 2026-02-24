@@ -34,7 +34,8 @@ const t = useI18n(Astro.url, LANGUAGE_TRANSLATIONS);
 </div>
 
 <script>
-  const STORAGE_KEY = 'preferred-language';
+  const COOKIE_NAME = 'preferred-language';
+  const COOKIE_MAX_AGE = 60 * 60 * 24 * 365; // 1 year
 
   const attachLanguageListeners = () => {
     document.querySelectorAll('[data-language]').forEach((link) => {
@@ -42,13 +43,13 @@ const t = useI18n(Astro.url, LANGUAGE_TRANSLATIONS);
         const lang = (link as HTMLElement).dataset.language;
 
         if (lang) {
-          localStorage.setItem(STORAGE_KEY, lang);
+          document.cookie = `${COOKIE_NAME}=${encodeURIComponent(lang)}; path=/; max-age=${COOKIE_MAX_AGE}; SameSite=Strict`;
 
           const href = (link as HTMLAnchorElement).href;
 
           if (href) {
-            window.location.href = href;
             e.preventDefault();
+            window.location.href = href;
           }
         }
       });
