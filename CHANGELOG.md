@@ -1,3 +1,20 @@
+## [1.2.2](https://github.com/Khavoleh/portfolio/compare/v1.2.1...v1.2.2) (2026-02-24)
+
+
+### Bug Fixes
+
+* Replace adapter with Vercel ([5dd0ece](https://github.com/Khavoleh/portfolio/commit/5dd0ece14431d5eeee3fc6bf9967c843d6934d13))
+* Replace adapter with Vercel ([#88](https://github.com/Khavoleh/portfolio/issues/88)) ([0f190db](https://github.com/Khavoleh/portfolio/commit/0f190db6af6cb91ce1498111139e5ceea5392af0))
+
+## [1.2.1](https://github.com/Khavoleh/portfolio/compare/v1.2.0...v1.2.1) (2026-02-24)
+
+
+### Bug Fixes
+
+* Add index page with SSR redirect ([26a0518](https://github.com/Khavoleh/portfolio/commit/26a05187163153b57cc35213dea74749ee2310d8))
+* Add main branch to skipped branches ([f93acec](https://github.com/Khavoleh/portfolio/commit/f93acec2ba620657668ad101254a87a2b7e8432a))
+* Move many dependencies to the devDevependencies ([fd95f46](https://github.com/Khavoleh/portfolio/commit/fd95f467bd9ea5e6a12e68438429a27d1607e3ca))
+
 # [1.2.0](https://github.com/Khavoleh/portfolio/compare/v1.1.1...v1.2.0) (2026-02-24)
 
 
