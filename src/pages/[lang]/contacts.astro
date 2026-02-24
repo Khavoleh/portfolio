@@ -4,6 +4,7 @@ import ContactIntro from '@components/contacts/ContactIntro.astro';
 import DirectContact from '@components/contacts/DirectContact.astro';
 import SocialLinks from '@components/contacts/SocialLinks.astro';
 import { Layout } from '@layout';
+import { Schema } from '@shared/components';
 import { SOCIALS } from '@shared/constants';
 import { getLanguageStaticPaths, useI18n } from '@shared/helpers';
 import { CONTACTS_I18N } from '@shared/i18n';
@@ -37,3 +38,5 @@ const personJsonLd: Person = {
     <CallToAction />
   </div>
 </Layout>
+
+<Schema jsonLd={personJsonLd} />
