@@ -4,12 +4,12 @@ import Joke from '@components/not-found/Joke.astro';
 import NotFound from '@components/not-found/NotFound.astro';
 import { Layout } from '@layout';
 import { useI18n } from '@shared/helpers';
-import { SEO_I18N } from '@shared/i18n';
+import { NOT_FOUND_I18N } from '@shared/i18n';
 
-const t = useI18n(Astro.url, SEO_I18N);
+const t = useI18n(Astro.url, NOT_FOUND_I18N);
 ---
 
-<Layout title={t('notfound_title')} description={t('notfound_description')} noindex={true}>
+<Layout title={t('title')} description={t('description')} noindex={true}>
   <div class="my-8 flex min-h-[70vh] flex-col items-center justify-center text-center">
     <NotFound />
 
