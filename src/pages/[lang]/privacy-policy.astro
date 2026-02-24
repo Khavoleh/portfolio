@@ -8,15 +8,32 @@ import Heading from '@components/privacy-policy/Heading.astro';
 import IntroSection from '@components/privacy-policy/IntroSection.astro';
 import LastUpdated from '@components/privacy-policy/LastUpdated.astro';
 import { Layout } from '@layout';
+import { Schema } from '@shared/components';
+import { SOCIALS } from '@shared/constants';
 import { getLanguageStaticPaths, useI18n } from '@shared/helpers';
-import { SEO_I18N } from '@shared/i18n';
+import { PRIVACY_POLICY_I18N } from '@shared/i18n';
+import type { WebPage } from 'schema-dts';
 
 export const getStaticPaths = getLanguageStaticPaths;
 
-const t = useI18n(Astro.url, SEO_I18N);
+const t = useI18n(Astro.url, PRIVACY_POLICY_I18N);
+
+const webJsonLd: WebPage = {
+  '@type': 'WebPage',
+  name: t('privacy_name'),
+  publisher: {
+    '@type': 'Person',
+    name: t('name'),
+    contactPoint: {
+      '@type': 'ContactPoint',
+      email: SOCIALS.EMAIL,
+      availableLanguage: ['en-US', 'uk-UA'],
+    },
+  },
+};
 ---
 
-<Layout title={t('privacy_title')} description={t('privacy_description')}>
+<Layout title={t('title')} description={t('description')}>
   <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
     <div class="card bg-base-200 border-base-300 border p-8 shadow-lg">
       <Heading />
@@ -33,3 +50,5 @@ const t = useI18n(Astro.url, SEO_I18N);
     </div>
   </div>
 </Layout>
+
+<Schema jsonLd={webJsonLd} />

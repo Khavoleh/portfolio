@@ -3,15 +3,40 @@ import CallToAction from '@components/experience/CallToAction.astro';
 import ExperienceIntro from '@components/experience/ExperienceIntro.astro';
 import TimelineCareer from '@components/experience/TimelineCareer.astro';
 import { Layout } from '@layout';
+import { Schema } from '@shared/components';
 import { getLanguageStaticPaths, useI18n } from '@shared/helpers';
-import { SEO_I18N } from '@shared/i18n';
+import { EXPERIENCE_I18N } from '@shared/i18n';
+import type { WebPage } from 'schema-dts';
 
 export const getStaticPaths = getLanguageStaticPaths;
 
-const t = useI18n(Astro.url, SEO_I18N);
+const t = useI18n(Astro.url, EXPERIENCE_I18N);
+
+const webJsonLd: WebPage = {
+  '@type': 'WebPage',
+  name: t('title'),
+  mainEntity: {
+    '@type': 'Person',
+    name: t('name'),
+    hasOccupation: [
+      {
+        '@type': 'Occupation',
+        name: t('job_title'),
+        responsibilities: [
+          t('responsibility_0'),
+          t('responsibility_1'),
+          t('responsibility_2'),
+          t('responsibility_3'),
+          t('responsibility_4'),
+          t('responsibility_5'),
+        ],
+      },
+    ],
+  },
+};
 ---
 
-<Layout title={t('experience_title')} description={t('experience_description')}>
+<Layout title={t('title')} description={t('description')}>
   <div class="mx-auto w-full max-w-6xl px-4 py-12">
     <ExperienceIntro />
 
@@ -20,3 +45,5 @@ const t = useI18n(Astro.url, SEO_I18N);
     <CallToAction />
   </div>
 </Layout>
+
+<Schema jsonLd={webJsonLd} />
