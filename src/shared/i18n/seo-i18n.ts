@@ -2,10 +2,6 @@ import type { I18N } from '@shared/interfaces';
 
 export const SEO_I18N: I18N = {
   en: {
-    home_title: 'Portfolio | Oleh Khavar',
-    home_description:
-      'Welcome to the portfolio of Oleh Khavar, a Full Stack Developer specializing in modern web technologies including .NET, React, Next.js, TypeScript, and cloud solutions. Explore my projects and experience.',
-
     experience_title: 'Professional Experience | Oleh Khavar',
     experience_description:
       'Discover my professional journey as a Full Stack Developer. Learn about my work experience, technical skills, and career progression in software development.',
@@ -31,10 +27,6 @@ export const SEO_I18N: I18N = {
       'The page you are looking for could not be found. Return to the homepage or explore other sections of the portfolio.',
   },
   uk: {
-    home_title: 'Портфоліо | Олег Хавар',
-    home_description:
-      'Ласкаво просимо до портфоліо Олега Хавара, Full Stack розробника, що спеціалізується на сучасних веб-технологіях, включаючи .NET, React, Next.js, TypeScript та хмарні рішення. Ознайомтеся з моїми проектами та досвідом.',
-
     experience_title: 'Професійний Досвід | Олег Хавар',
     experience_description:
       "Дізнайтеся про мій професійний шлях як Full Stack розробника. Ознайомтеся з моїм досвідом роботи, технічними навичками та кар'єрним зростанням у розробці програмного забезпечення.",
