@@ -5,12 +5,16 @@
   "timezone": "Europe/Kyiv",
   "packageRules": [
     {
-      "matchUpdateTypes": ["major", "minor", "patch", "pin", "digest"],
+      "matchPackageNames": ["vite"],
+      "enabled": false
+    },
+    {
+      "matchUpdateTypes": ["major", "minor", "patch", "pin", "digest", "lockFileMaintenance"],
       "groupName": "all dependencies",
       "groupSlug": "all-updates"
     }
   ],
-  "rangeStrategy": "bump",
+  "rangeStrategy": "pin",
   "semanticCommits": "enabled",
   "labels": ["dependencies"],
   "prConcurrentLimit": 3,
