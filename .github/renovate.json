@@ -11,7 +11,8 @@
     {
       "matchUpdateTypes": ["major", "minor", "patch", "pin", "digest", "lockFileMaintenance"],
       "groupName": "all dependencies",
-      "groupSlug": "all-updates"
+      "groupSlug": "all-updates",
+      "minimumReleaseAge": "3 days"
     }
   ],
   "rangeStrategy": "pin",
@@ -20,9 +21,5 @@
   "prConcurrentLimit": 3,
   "prCreation": "immediate",
   "ignoreTests": false,
-  "baseBranchPatterns": ["develop"],
-  "lockFileMaintenance": {
-    "enabled": true,
-    "schedule": ["before 9am on Saturday"]
-  }
+  "baseBranchPatterns": ["develop"]
 }
