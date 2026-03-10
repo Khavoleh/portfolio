@@ -9,14 +9,21 @@
       "enabled": false
     },
     {
-      "matchUpdateTypes": ["major", "minor", "patch", "pin", "digest", "lockFileMaintenance"],
-      "groupName": "all dependencies",
-      "groupSlug": "all-updates",
-      "minimumReleaseAge": "3 days"
+      "matchUpdateTypes": ["major"],
+      "groupName": "Major dependencies",
+      "groupSlug": "major-updates"
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest", "lockFileMaintenance"],
+      "groupName": "Auto updates",
+      "groupSlug": "auto-updates",
+      "automerge": true,
+      "automergeType": "pr"
     }
   ],
   "rangeStrategy": "pin",
   "semanticCommits": "enabled",
+  "minimumReleaseAge": "3 days",
   "labels": ["dependencies"],
   "prConcurrentLimit": 3,
   "prCreation": "immediate",
