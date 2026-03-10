@@ -1,3 +1,11 @@
+## [1.2.3](https://github.com/Khavoleh/portfolio/compare/v1.2.2...v1.2.3) (2026-03-10)
+
+
+### Bug Fixes
+
+* **deps:** update all dependencies ([fc3515c](https://github.com/Khavoleh/portfolio/commit/fc3515c63dd4288992e993cbff125926c5e9ab7c))
+* **deps:** update all dependencies ([#92](https://github.com/Khavoleh/portfolio/issues/92)) ([4e96c90](https://github.com/Khavoleh/portfolio/commit/4e96c90fbbe5a848fac4694c88b0c93350dd0e13))
+
 ## [1.2.2](https://github.com/Khavoleh/portfolio/compare/v1.2.1...v1.2.2) (2026-02-24)
 
 
