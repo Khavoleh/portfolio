@@ -8,7 +8,7 @@ const config: AstroUserConfig = {
   site: 'https://www.khavol.com/en',
   integrations: [sitemap()],
   adapter: vercel(),
-  experimental: {
+  security: {
     csp: {
       directives: [
         "default-src 'self'",
