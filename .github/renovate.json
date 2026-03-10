@@ -9,20 +9,24 @@
       "enabled": false
     },
     {
-      "matchUpdateTypes": ["major", "minor", "patch", "pin", "digest", "lockFileMaintenance"],
-      "groupName": "all dependencies",
-      "groupSlug": "all-updates"
+      "matchUpdateTypes": ["major"],
+      "groupName": "Major dependencies",
+      "groupSlug": "major-updates"
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest", "lockFileMaintenance"],
+      "groupName": "Auto updates",
+      "groupSlug": "auto-updates",
+      "automerge": true,
+      "automergeType": "pr"
     }
   ],
   "rangeStrategy": "pin",
   "semanticCommits": "enabled",
+  "minimumReleaseAge": "3 days",
   "labels": ["dependencies"],
   "prConcurrentLimit": 3,
   "prCreation": "immediate",
   "ignoreTests": false,
-  "baseBranchPatterns": ["develop"],
-  "lockFileMaintenance": {
-    "enabled": true,
-    "schedule": ["before 9am on Saturday"]
-  }
+  "baseBranchPatterns": ["develop"]
 }
