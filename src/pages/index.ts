@@ -8,7 +8,7 @@ function getCookie(request: Request, name: string): string | null {
   const parts = cookie.split(';').map((c) => c.trim());
 
   for (const p of parts) {
-    if (p.startsWith(name + '=')) return decodeURIComponent(p.substring(name.length + 1));
+    if (p.startsWith(`${name}=`)) return decodeURIComponent(p.substring(name.length + 1));
   }
 
   return null;
