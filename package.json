@@ -16,7 +16,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro build --config astro.config.development.ts && astro preview --config astro.config.development.ts",
+    "preview": "astro build --config astro.config.local.ts && astro preview --config astro.config.local.ts",
     "astro": "astro",
     "prettier": "prettier . --write",
     "lint": "biome check",
