@@ -16,7 +16,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "astro build --config astro.config.development.ts && astro preview --config astro.config.development.ts",
     "astro": "astro",
     "prettier": "prettier . --write",
     "lint": "biome check",
@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "0.9.7",
+    "@astrojs/node": "10.0.2",
     "@astrojs/sitemap": "3.7.1",
     "@biomejs/biome": "2.4.7",
     "@semantic-release/changelog": "6.0.3",

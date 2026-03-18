@@ -24,6 +24,9 @@ importers:
       '@astrojs/check':
         specifier: 0.9.7
         version: 0.9.7(prettier-plugin-astro@0.14.1)(prettier@3.8.1)(typescript@5.9.3)
+      '@astrojs/node':
+        specifier: ^10.0.2
+        version: 10.0.2(astro@6.0.4(@types/node@24.12.0)(@vercel/functions@3.4.3)(db0@0.3.4)(ioredis@5.10.0)(jiti@2.6.1)(lightningcss@1.31.1)(rollup@4.59.0)(terser@5.46.1)(typescript@5.9.3)(yaml@2.8.2))
       '@astrojs/sitemap':
         specifier: 3.7.1
         version: 3.7.1
@@ -122,6 +125,11 @@ packages:
 
   '@astrojs/markdown-remark@7.0.0':
     resolution: {integrity: sha512-jTAXHPy45L7o1ljH4jYV+ShtOHtyQUa1mGp3a5fJp1soX8lInuTJQ6ihmldHzVM4Q7QptU4SzIDIcKbBJO7sXQ==}
+
+  '@astrojs/node@10.0.2':
+    resolution: {integrity: sha512-utZCETOanWnrJWy6X6xFk+/wvOdZyPvgymV/wEN+SKRzEomg5q+VkkcsIv/6jkCHFvlXyjXRmPwt/oluT5cpcg==}
+    peerDependencies:
+      astro: ^6.0.0
 
   '@astrojs/prism@4.0.0':
     resolution: {integrity: sha512-NndtNPpxaGinRpRytljGBvYHpTOwHycSZ/c+lQi5cHvkqqrHKWdkPEhImlODBNmbuB+vyQUNUDXyjzt66CihJg==}
@@ -4854,6 +4862,9 @@ packages:
     resolution: {integrity: sha512-xRXBn0pPqQTVQiC8wyQrKs2MOlX24zQ0POGaj0kultvoOCstBQM5yvOhAVSUwOMjQtTvsPWoNCHfPGwaaQJhTw==}
     engines: {node: '>= 18'}
 
+  server-destroy@1.0.1:
+    resolution: {integrity: sha512-rb+9B5YBIEzYcD6x2VKidaa+cqYBJQKnU4oe4E3ANwRRN56yk/ua1YCJT1n21NTS8w6CcOclAKNP3PhdCXKYtQ==}
+
   setprototypeof@1.2.0:
     resolution: {integrity: sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==}
 
@@ -5969,6 +5980,15 @@ snapshots:
       unist-util-visit: 5.1.0
       unist-util-visit-parents: 6.0.2
       vfile: 6.0.3
+    transitivePeerDependencies:
+      - supports-color
+
+  '@astrojs/node@10.0.2(astro@6.0.4(@types/node@24.12.0)(@vercel/functions@3.4.3)(db0@0.3.4)(ioredis@5.10.0)(jiti@2.6.1)(lightningcss@1.31.1)(rollup@4.59.0)(terser@5.46.1)(typescript@5.9.3)(yaml@2.8.2))':
+    dependencies:
+      '@astrojs/internal-helpers': 0.8.0
+      astro: 6.0.4(@types/node@24.12.0)(@vercel/functions@3.4.3)(db0@0.3.4)(ioredis@5.10.0)(jiti@2.6.1)(lightningcss@1.31.1)(rollup@4.59.0)(terser@5.46.1)(typescript@5.9.3)(yaml@2.8.2)
+      send: 1.2.1
+      server-destroy: 1.0.1
     transitivePeerDependencies:
       - supports-color
 
@@ -8666,8 +8686,7 @@ snapshots:
   denque@2.1.0:
     optional: true
 
-  depd@2.0.0:
-    optional: true
+  depd@2.0.0: {}
 
   dependency-cruiser@17.3.9:
     dependencies:
@@ -8752,8 +8771,7 @@ snapshots:
   eastasianwidth@0.2.0:
     optional: true
 
-  ee-first@1.1.1:
-    optional: true
+  ee-first@1.1.1: {}
 
   electron-to-chromium@1.5.321:
     optional: true
@@ -8772,8 +8790,7 @@ snapshots:
 
   emojilib@2.4.0: {}
 
-  encodeurl@2.0.0:
-    optional: true
+  encodeurl@2.0.0: {}
 
   enhanced-resolve@5.20.0:
     dependencies:
@@ -8844,8 +8861,7 @@ snapshots:
 
   escalade@3.2.0: {}
 
-  escape-html@1.0.3:
-    optional: true
+  escape-html@1.0.3: {}
 
   escape-string-regexp@1.0.5: {}
 
@@ -8857,8 +8873,7 @@ snapshots:
     dependencies:
       '@types/estree': 1.0.8
 
-  etag@1.8.1:
-    optional: true
+  etag@1.8.1: {}
 
   event-target-shim@5.0.1:
     optional: true
@@ -8998,8 +9013,7 @@ snapshots:
   fraction.js@5.3.4:
     optional: true
 
-  fresh@2.0.0:
-    optional: true
+  fresh@2.0.0: {}
 
   from2@2.3.0:
     dependencies:
@@ -9263,7 +9277,6 @@ snapshots:
       setprototypeof: 1.2.0
       statuses: 2.0.2
       toidentifier: 1.0.1
-    optional: true
 
   http-proxy-agent@7.0.2:
     dependencies:
@@ -10057,13 +10070,11 @@ snapshots:
       braces: 3.0.3
       picomatch: 2.3.1
 
-  mime-db@1.54.0:
-    optional: true
+  mime-db@1.54.0: {}
 
   mime-types@3.0.2:
     dependencies:
       mime-db: 1.54.0
-    optional: true
 
   mime@4.1.0: {}
 
@@ -10459,7 +10470,6 @@ snapshots:
   on-finished@2.4.1:
     dependencies:
       ee-first: 1.1.1
-    optional: true
 
   onetime@5.1.2:
     dependencies:
@@ -10974,8 +10984,7 @@ snapshots:
       safe-buffer: 5.2.1
     optional: true
 
-  range-parser@1.2.1:
-    optional: true
+  range-parser@1.2.1: {}
 
   rc9@2.1.2:
     dependencies:
@@ -11322,7 +11331,6 @@ snapshots:
       statuses: 2.0.2
     transitivePeerDependencies:
       - supports-color
-    optional: true
 
   serialize-javascript@6.0.2:
     dependencies:
@@ -11347,8 +11355,9 @@ snapshots:
       - supports-color
     optional: true
 
-  setprototypeof@1.2.0:
-    optional: true
+  server-destroy@1.0.1: {}
+
+  setprototypeof@1.2.0: {}
 
   sharp@0.34.5:
     dependencies:
@@ -11493,8 +11502,7 @@ snapshots:
   standard-as-callback@2.1.0:
     optional: true
 
-  statuses@2.0.2:
-    optional: true
+  statuses@2.0.2: {}
 
   std-env@3.10.0:
     optional: true
@@ -11722,8 +11730,7 @@ snapshots:
     dependencies:
       is-number: 7.0.0
 
-  toidentifier@1.0.1:
-    optional: true
+  toidentifier@1.0.1: {}
 
   totalist@3.0.1:
     optional: true
