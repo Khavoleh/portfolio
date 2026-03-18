@@ -1,3 +1,11 @@
+## [1.2.5](https://github.com/Khavoleh/portfolio/compare/v1.2.4...v1.2.5) (2026-03-18)
+
+
+### Bug Fixes
+
+* **deps:** update auto updates ([83ffec0](https://github.com/Khavoleh/portfolio/commit/83ffec06bcd54222e22246aa7db1ffc2a859c9c1))
+* **deps:** update auto updates ([#105](https://github.com/Khavoleh/portfolio/issues/105)) ([0a2da80](https://github.com/Khavoleh/portfolio/commit/0a2da807f4770f697a2fd268c241668f7d4dcccb))
+
 ## [1.2.4](https://github.com/Khavoleh/portfolio/compare/v1.2.3...v1.2.4) (2026-03-15)
 
 
