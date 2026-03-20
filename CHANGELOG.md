@@ -1,3 +1,10 @@
+## [1.2.7](https://github.com/Khavoleh/portfolio/compare/v1.2.6...v1.2.7) (2026-03-20)
+
+
+### Bug Fixes
+
+* Fix text color ([b74f5b6](https://github.com/Khavoleh/portfolio/commit/b74f5b6653015e6ab21b74d167328daa9fd112fe))
+
 ## [1.2.6](https://github.com/Khavoleh/portfolio/compare/v1.2.5...v1.2.6) (2026-03-20)
 
 
