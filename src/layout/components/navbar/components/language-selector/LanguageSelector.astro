@@ -30,7 +30,7 @@ const t = useI18n(Astro.url, LANGUAGE_TRANSLATIONS);
         <li>
           <a href={getLanguageUrl(Astro.url, lang.code)} data-language={lang.code}>
             <lang.icon class="h-5 w-5" />
-            <span>{lang.name}</span>
+            <span class="text-base-content">{lang.name}</span>
           </a>
         </li>
       ))
