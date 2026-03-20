@@ -1,3 +1,13 @@
+## [1.2.6](https://github.com/Khavoleh/portfolio/compare/v1.2.5...v1.2.6) (2026-03-20)
+
+
+### Bug Fixes
+
+* Fix not working theme and language selector on mobile ([2f40123](https://github.com/Khavoleh/portfolio/commit/2f40123affb8407c6c2880ee97eb2b3d7802d6e2))
+* Refactor home page ([1a3a956](https://github.com/Khavoleh/portfolio/commit/1a3a9561cb6ac2d2326986d780c45ea53b92c33e))
+* Update all GitHub actions ([7a3fc5f](https://github.com/Khavoleh/portfolio/commit/7a3fc5f67a6078f794211f6f604c0448d7ed3adf))
+* Vulnerability fixes ([ae471d8](https://github.com/Khavoleh/portfolio/commit/ae471d864b1c19ad96f687aff3588f0c4f075263))
+
 ## [1.2.5](https://github.com/Khavoleh/portfolio/compare/v1.2.4...v1.2.5) (2026-03-18)
 
 
