@@ -39,7 +39,10 @@ const currentPath: string = Astro.url.pathname;
               <li>
                 <a
                   href={getLanguageUrl(Astro.url, link.href)}
-                  class:list={['focus-ring px-4 py-2 whitespace-nowrap', isActive && 'active text-primary']}
+                  class:list={[
+                    'text-base-content focus-ring px-4 py-2 whitespace-nowrap',
+                    isActive && 'active text-primary',
+                  ]}
                   aria-label={`${t('navigate.to')} ${t(link.label)} ${t('page')}`}
                   aria-current={isActive ? 'page' : undefined}
                 >

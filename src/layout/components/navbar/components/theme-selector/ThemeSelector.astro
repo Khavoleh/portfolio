@@ -23,7 +23,7 @@ const t = useI18n(Astro.url, THEME_I18N);
         <li>
           <button data-set-theme={theme.id}>
             <theme.icon class="h-5 w-5" />
-            <span>{t(theme.id)}</span>
+            <span class="text-base-content">{t(theme.id)}</span>
           </button>
         </li>
       ))
