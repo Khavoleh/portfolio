@@ -1,0 +1,29 @@
+name: Pull Request Tests
+
+permissions:
+  contents: read
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+    paths:
+      - '**/*.ts'
+      - 'pnpm-lock.yaml'
+      - 'package.json'
+
+jobs:
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+
+      - name: Setup
+        uses: ./.github/shared/setup
+
+      - name: Run tests
+        run: pnpm test
