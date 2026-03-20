@@ -1,16 +1,8 @@
-import type { Metric } from './components/metric/interfaces';
-import type { Review } from './components/review/interfaces';
 import mykola from './images/mykola-synhalevych.jpeg';
-import pavlo from './images/pavlo-demskyi.png';
+import pavlo from './images/pavlo-demskyi.jpeg';
 import valerii from './images/valerii-inshyn.jpeg';
 import viktoria from './images/viktoria-monastyrska.jpeg';
-
-export const METRICS: Metric[] = [
-  { value: '3+', name: 'metrics.0.name', description: 'metrics.0.description' },
-  { value: '5x', name: 'metrics.1.name', description: 'metrics.1.description' },
-  { value: '6', name: 'metrics.2.name', description: 'metrics.2.description' },
-  { value: '100%', name: 'metrics.3.name', description: 'metrics.3.description' },
-];
+import type { Review } from './review';
 
 export const REVIEWS: Review[] = [
   {

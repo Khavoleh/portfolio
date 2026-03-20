@@ -1,50 +1,6 @@
 import type { I18N } from '@shared/interfaces';
 
-export const HERO_TRANSLATIONS: I18N = {
-  en: {
-    'hero.image.alt': 'Oleh Khavar - Professional Headshot',
-    'hero.name': 'Oleh Khavar',
-    'hero.title': '<span class="text-primary">Full-Stack .NET Developer</span>',
-    'hero.subtitle': 'Building <span class="font-extrabold text-primary">Scalable Enterprise Systems</span>',
-    'hero.description':
-      'I transform complex business challenges into clean, maintainable <span class="font-semibold text-primary">architecture</span> using C#, ASP.NET, and modern front-end frameworks.',
-  },
-  uk: {
-    'hero.image.alt': 'Олег Хавар - Професійне фото',
-    'hero.name': 'Олег Хавар',
-    'hero.title': '<span class="text-primary">Full-Stack .NET розробник</span>',
-    'hero.subtitle': 'Створюю <span class="font-extrabold text-primary">масштабовані корпоративні системи</span>',
-    'hero.description':
-      'Я перетворюю складні бізнес-завдання на чітку, зручну в обслуговуванні <span class="font-semibold text-primary">архітектуру</span>, використовуючи C#, ASP.NET та сучасні фронт-енд фреймворки.',
-  },
-};
-
-export const METRICS_TRANSLATIONS: I18N = {
-  en: {
-    'metrics.title': 'Impact & Expertise',
-    'metrics.0.name': 'Years',
-    'metrics.0.description': 'Commercial Experience',
-    'metrics.1.name': 'Speed Boost',
-    'metrics.1.description': 'Performance Gain',
-    'metrics.2.name': 'Developers',
-    'metrics.2.description': 'Team Leadership',
-    'metrics.3.name': 'Full-Cycle',
-    'metrics.3.description': 'End-to-End Delivery',
-  },
-  uk: {
-    'metrics.title': 'Вплив та експертиза',
-    'metrics.0.name': 'Роки',
-    'metrics.0.description': 'Комерційний досвід',
-    'metrics.1.name': 'Прискорення',
-    'metrics.1.description': 'Приріст продуктивності',
-    'metrics.2.name': 'Розробників',
-    'metrics.2.description': 'Керівництво командою',
-    'metrics.3.name': 'Повний цикл',
-    'metrics.3.description': 'Комплексна розробка',
-  },
-};
-
-export const REVIEWS_TRANSLATIONS: I18N = {
+export const REVIEWS_I18N: I18N = {
   en: {
     'reviews.title': 'Professional Recommendations',
     'reviews.subtitle': 'What colleagues say about working with me',
@@ -92,22 +48,5 @@ export const REVIEWS_TRANSLATIONS: I18N = {
     'reviews.3.position': '.NET розробник',
     'reviews.3.text':
       'Співпраця з Олегом над складними, важливими проектами завжди була гладкою та продуктивною. Він підходить до проблем спокійно та методично, бере на себе повну відповідальність за свої завдання і залишається надійним навіть під тиском або під час термінових виробничих питань. Його чітка комунікація, професіоналізм та готовність до співпраці роблять його сильним інженером та чудовим колегою по команді.',
-  },
-};
-
-export const GOAL_TRANSLATIONS: I18N = {
-  en: {
-    'goal.title': 'Selected Experience & Technical Focus',
-    'goal.description':
-      'My expertise spans <span class="font-semibold text-primary">architecture design</span>, <span class="font-semibold text-primary">system optimization</span>, and <span class="font-semibold text-primary">team delivery</span>. Review the case studies below to see the process behind the code.',
-    'goal.button.experience': 'View Career Timeline',
-    'goal.button.projects': 'Explore Projects',
-  },
-  uk: {
-    'goal.title': 'Обраний досвід та технічний фокус',
-    'goal.description':
-      'Моя експертиза охоплює <span class="font-semibold text-primary">проєктування архітектури</span>, <span class="font-semibold text-primary">оптимізацію систем</span> та <span class="font-semibold text-primary">роботу в команді</span>. Ознайомтеся з наведеними нижче прикладами, щоб побачити процес, що стоїть за кодом.',
-    'goal.button.experience': 'Переглянути досвід',
-    'goal.button.projects': 'Дослідити проєкти',
   },
 };
