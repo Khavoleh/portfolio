@@ -1,11 +1,11 @@
 import type { AstroUserConfig } from 'astro';
 import { defineConfig } from 'astro/config';
-import vercel from '@astrojs/vercel';
+import node from '@astrojs/node';
 import { astroConfig } from './astro-config';
 
 const config: AstroUserConfig = {
   ...astroConfig,
-  adapter: vercel(),
+  adapter: node({ mode: 'standalone' }),
 };
 
 export default defineConfig(config);

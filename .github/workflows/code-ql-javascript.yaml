@@ -1,4 +1,4 @@
-name: CodeQL Analysis
+name: CodeQL JavaScript Analysis
 
 permissions:
   contents: read
@@ -9,18 +9,17 @@ on:
     branches:
       - main
       - develop
+    paths:
+      - '**/*.js'
+      - '**/*.mjs'
+      - '**/*.astro'
   schedule:
     - cron: '0 0 * * 0'
 
 jobs:
-  codeql:
-    name: 'Analyze code with CodeQL'
+  codeql-javascript:
+    name: Analyze JavaScript with CodeQL
     runs-on: ubuntu-latest
-
-    strategy:
-      fail-fast: false
-      matrix:
-        language: ['javascript', 'typescript', 'actions']
 
     steps:
       - name: Checkout code
@@ -29,7 +28,7 @@ jobs:
       - name: Initialize CodeQL
         uses: github/codeql-action/init@b1bff81932f5cdfc8695c7752dcee935dcd061c8 # v4
         with:
-          languages: ${{ matrix.language }}
+          languages: javascript
 
       - name: Autobuild
         uses: github/codeql-action/autobuild@b1bff81932f5cdfc8695c7752dcee935dcd061c8 # v4
@@ -37,4 +36,4 @@ jobs:
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@b1bff81932f5cdfc8695c7752dcee935dcd061c8 # v4
         with:
-          category: '/language:${{ matrix.language }}'
+          category: '/language:javascript'
