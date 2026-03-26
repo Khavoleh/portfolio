@@ -1,11 +1,27 @@
 import type { AstroUserConfig } from 'astro';
 import { defineConfig } from 'astro/config';
 import vercel from '@astrojs/vercel';
-import { astroConfig } from './astro-config';
+import sitemap from '@astrojs/sitemap';
+import { SHARED_ASTRO_CONFIG } from './shared-astro-config';
 
 const config: AstroUserConfig = {
-  ...astroConfig,
+  ...SHARED_ASTRO_CONFIG,
+  site: 'https://www.khavol.com/en',
+  integrations: [sitemap()],
   adapter: vercel(),
+  security: {
+    csp: {
+      directives: [
+        "default-src 'self'",
+        "img-src 'self' data:",
+        "font-src 'self'",
+        "connect-src 'self'",
+        "form-action 'self'",
+        "base-uri 'self'",
+        "object-src 'none'",
+      ],
+    },
+  },
 };
 
 export default defineConfig(config);

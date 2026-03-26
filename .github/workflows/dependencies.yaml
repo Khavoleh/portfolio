@@ -1,4 +1,4 @@
-name: Pull Request Lint
+name: Pull Request Dependencies Validation
 
 permissions:
   contents: read
@@ -10,16 +10,11 @@ on:
       - develop
     paths:
       - 'src/**'
-      - '**/*.json'
-      - '**/*.ts'
-      - '**/*.js'
-      - '**/*.mjs'
-      - '**/*.astro'
       - 'pnpm-lock.yaml'
       - 'package.json'
 jobs:
-  lint:
-    name: Lint Frontend
+  validate-dependencies:
+    name: Validate Dependencies
     runs-on: ubuntu-latest
 
     steps:
@@ -29,8 +24,5 @@ jobs:
       - name: Setup
         uses: ./.github/shared/setup
 
-      - name: Run Biome
-        run: pnpm lint
-
-      - name: Run Prettier
-        run: pnpm prettier --check .
+      - name: Run dependency checks
+        run: pnpm depcruise
