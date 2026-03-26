@@ -1,0 +1,19 @@
+---
+import { useI18n } from '@shared/helpers';
+import { getExperienceIntroText } from './helpers';
+import { EXPERIENCE_INTRO_I18N } from './i18n';
+
+const t = useI18n(Astro.url, EXPERIENCE_INTRO_I18N);
+const intro = getExperienceIntroText(t);
+---
+
+<section class="mb-16 text-center">
+  <h1 class="text-base-content mb-6 text-4xl leading-tight font-bold md:text-5xl lg:text-6xl">
+    <span class="text-primary">{intro.years}</span>
+    {intro.subtitle}
+    <br />
+    <span class="text-primary font-extrabold">{intro.highlight}</span>
+  </h1>
+
+  <p class="text-base-content mx-auto max-w-4xl text-lg leading-relaxed md:text-xl" set:html={intro.description} />
+</section>

@@ -1,0 +1,20 @@
+---
+import { ViewCv } from '@shared/components';
+import { useI18n } from '@shared/helpers';
+import { getProjectsUrl } from './helpers';
+import { CALL_TO_ACTION_I18N } from './i18n';
+
+const t = useI18n(Astro.url, CALL_TO_ACTION_I18N);
+---
+
+<section class="mt-16 text-center">
+  <h2 class="text-base-content mb-6 text-3xl font-bold">{t('cta.title')}</h2>
+
+  <div class="flex flex-col items-center justify-center gap-4 md:flex-row">
+    <ViewCv />
+
+    <a href={getProjectsUrl(Astro.url)} class="btn btn-outline btn-primary btn-lg focus-ring shadow-lg">
+      {t('cta.button.projects')}
+    </a>
+  </div>
+</section>

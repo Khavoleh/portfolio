@@ -1,23 +1,6 @@
 import type { I18N } from '@shared/interfaces';
 
-export const EXPERIENCE_INTRO_TRANSLATIONS: I18N = {
-  en: {
-    'intro.title.years': '3+ Years',
-    'intro.title.subtitle': 'of End-to-End Development:',
-    'intro.title.highlight': 'Architecture, Optimization, and Leadership',
-    'intro.description':
-      'I convert <span class="font-semibold text-primary">complex business requirements</span> into robust, high-performance .NET systems. Each role detailed below outlines the challenges, the <span class="font-semibold text-primary">architectural patterns chosen</span>, and the <span class="font-semibold text-primary">measurable results</span> of my work.',
-  },
-  uk: {
-    'intro.title.years': '3+ роки',
-    'intro.title.subtitle': 'комплексної розробки:',
-    'intro.title.highlight': 'Архітектура, оптимізація та лідерство',
-    'intro.description':
-      'Я перетворюю <span class="font-semibold text-primary">складні бізнес-вимоги</span> в надійні, високопродуктивні .NET системи. У кожній з наведених нижче ролей описано завдання, <span class="font-semibold text-primary">обрані архітектурні шаблони</span> та <span class="font-semibold text-primary">вимірювані результати</span> моєї роботи.',
-  },
-};
-
-export const EXPERIENCE_DATA_TRANSLATIONS: I18N = {
+export const EXPERIENCE_DATA_I18N: I18N = {
   en: {
     'experience.0.role': 'Full-Stack .NET/Angular Developer',
     'experience.0.company': 'Lviv Polytechnic National University',
@@ -91,16 +74,5 @@ export const EXPERIENCE_DATA_TRANSLATIONS: I18N = {
     'experience.2.section.0.title': 'Ознайомлення з архітектурою системи',
     'experience.2.section.0.details':
       'Я приєднався до команди, яка працює над масштабованою корпоративною системою, беручи участь у розробці сервера та поступово набуваючи відповідальності за архітектурні компоненти. Моя робота полягає у вивченні існуючих проектних рішень, покращенні зручності обслуговування та впровадженні нових функцій у рамках встановлених шаблонів.',
-  },
-};
-
-export const CALL_TO_ACTION_TRANSLATIONS: I18N = {
-  en: {
-    'cta.title': 'Ready to see these principles in action in open source code?',
-    'cta.button.projects': 'View Projects',
-  },
-  uk: {
-    'cta.title': 'Готові побачити ці принципи в дії у відкритому коді?',
-    'cta.button.projects': 'Переглянути проєкти',
   },
 };
