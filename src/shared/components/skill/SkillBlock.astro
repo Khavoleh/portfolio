@@ -11,8 +11,6 @@ const { skill } = Astro.props;
 
 const styleClasses: string = getStyleClasses(skill.type);
 const textClasses: string = getTextClasses(skill.type);
-
-console.log(textClasses);
 ---
 
 <div class={`badge badge-lg gap-2 ${styleClasses}`}>
