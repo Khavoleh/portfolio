@@ -1,12 +1,11 @@
 ---
-import type { Skill } from '@shared/components';
 import { SkillBlock } from '@shared/components';
 import { useI18n } from '@shared/helpers';
-import { EXPERIENCE_DATA } from './constants';
-import type { ExperienceItem, ExperienceSection } from './interfaces';
-import { EXPERIENCE_DATA_TRANSLATIONS } from './translations';
+import { EXPERIENCE_DATA } from './experience-data';
+import { EXPERIENCE_DATA_I18N } from './experience-data-i18n';
+import type { ExperienceItem } from './experience-item';
 
-const t = useI18n(Astro.url, EXPERIENCE_DATA_TRANSLATIONS);
+const t = useI18n(Astro.url, EXPERIENCE_DATA_I18N);
 ---
 
 <div class="relative">
@@ -31,7 +30,7 @@ const t = useI18n(Astro.url, EXPERIENCE_DATA_TRANSLATIONS);
                 </div>
 
                 <div class="flex flex-wrap justify-start gap-3 md:justify-end">
-                  {experience.skills.map((skill: Skill) => (
+                  {experience.skills.map((skill) => (
                     <SkillBlock skill={skill} />
                   ))}
                 </div>
@@ -39,7 +38,7 @@ const t = useI18n(Astro.url, EXPERIENCE_DATA_TRANSLATIONS);
             </div>
 
             <div class="space-y-6">
-              {experience.sections.map((section: ExperienceSection) => (
+              {experience.sections.map((section) => (
                 <div class="card bg-base-200 border-base-300 border p-6 shadow-lg">
                   <h3 class="text-base-content mb-3 flex items-center text-xl font-bold">
                     <section.icon class="mr-2 shrink-0 text-2xl" />

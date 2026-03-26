@@ -1,4 +1,5 @@
 import { SKILL_TYPES } from '@shared/components';
+import type { ExperienceItem } from './experience-item';
 import ArchitectureIcon from './icons/architecture.svg';
 import CiCdIcon from './icons/ci-cd.svg';
 import GrowUpIcon from './icons/grow-up.svg';
@@ -6,7 +7,6 @@ import LightBulbIcon from './icons/light-bulb.svg';
 import SprintIcon from './icons/sprint.svg';
 import StudyIcon from './icons/study.svg';
 import TeamIcon from './icons/team.svg';
-import type { ExperienceItem } from './interfaces';
 
 export const EXPERIENCE_DATA: ExperienceItem[] = [
   {

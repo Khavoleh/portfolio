@@ -1,7 +1,7 @@
 import type { Skill } from '@shared/components';
 import type { SvgComponent } from 'astro/types';
 
-export interface ExperienceSection {
+interface ExperienceSection {
   title: string;
   icon: SvgComponent;
   details: string;
