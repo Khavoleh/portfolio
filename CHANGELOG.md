@@ -1,3 +1,16 @@
+## [1.2.8](https://github.com/Khavoleh/portfolio/compare/v1.2.7...v1.2.8) (2026-03-26)
+
+
+### Bug Fixes
+
+* **deps:** update auto updates ([c68f395](https://github.com/Khavoleh/portfolio/commit/c68f3955f747d5f5982609fc1c1713f6a12eae8f))
+* **deps:** update auto updates ([#115](https://github.com/Khavoleh/portfolio/issues/115)) ([5c97dd7](https://github.com/Khavoleh/portfolio/commit/5c97dd738a8696f622d3a8450af12256d215eab6))
+* Refactor astro configs ([4a84776](https://github.com/Khavoleh/portfolio/commit/4a84776c0cb228f6c29d2fe3f082ac0ce7ac267d))
+* Refactor experience ([9e640cd](https://github.com/Khavoleh/portfolio/commit/9e640cd89e2158746b491a45b6eba52457f50ea1))
+* Remove accent colors from theme ([c130041](https://github.com/Khavoleh/portfolio/commit/c1300416ede63e7e27d3e9786980ba063fc2cee7))
+* Separate GitHub actions ([dabaf79](https://github.com/Khavoleh/portfolio/commit/dabaf794ea916ea1c1c22cdcebeff65f33ff1d30))
+* Update renovate configuration ([e9166a6](https://github.com/Khavoleh/portfolio/commit/e9166a66ccb554e7dcf839b5762071afcb1188ef))
+
 ## [1.2.7](https://github.com/Khavoleh/portfolio/compare/v1.2.6...v1.2.7) (2026-03-20)
 
 
