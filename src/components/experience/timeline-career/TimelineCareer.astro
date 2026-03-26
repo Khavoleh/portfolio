@@ -1,18 +1,16 @@
 ---
 import { SkillBlock } from '@shared/components';
 import { useI18n } from '@shared/helpers';
-import { EXPERIENCE_DATA } from './constants';
-import { getTranslatedExperienceData } from './helpers';
-import { EXPERIENCE_DATA_I18N } from './i18n';
-import type { ExperienceItem } from './types';
+import { EXPERIENCE_DATA } from './experience-data';
+import { EXPERIENCE_DATA_I18N } from './experience-data-i18n';
+import type { ExperienceItem } from './experience-item';
 
 const t = useI18n(Astro.url, EXPERIENCE_DATA_I18N);
-const translatedExperienceData: ExperienceItem[] = getTranslatedExperienceData(EXPERIENCE_DATA, t);
 ---
 
 <div class="relative">
   {
-    translatedExperienceData.map((experience: ExperienceItem) => (
+    EXPERIENCE_DATA.map((experience: ExperienceItem) => (
       <div class="relative">
         <div class="bg-primary/70 absolute top-20 bottom-0 left-8 w-0.5 md:left-1/2 md:-ml-px" />
 
@@ -25,10 +23,10 @@ const translatedExperienceData: ExperienceItem[] = getTranslatedExperienceData(E
             <div class="md:text-right">
               <div class="card bg-base-200 border-base-300 mb-6 border p-6 shadow-lg md:ml-auto md:max-w-lg">
                 <div class="mb-3">
-                  <h2 class="text-base-content mb-2 text-2xl font-bold">{experience.role}</h2>
-                  <p class="text-primary text-lg font-semibold">{experience.company}</p>
-                  <p class="text-base-content font-semibold">{experience.sector}</p>
-                  <p class="text-base-content/70 mt-1 text-sm">{experience.period}</p>
+                  <h2 class="text-base-content mb-2 text-2xl font-bold">{t(experience.role)}</h2>
+                  <p class="text-primary text-lg font-semibold">{t(experience.company)}</p>
+                  <p class="text-base-content font-semibold">{t(experience.sector)}</p>
+                  <p class="text-base-content/70 mt-1 text-sm">{t(experience.period)}</p>
                 </div>
 
                 <div class="flex flex-wrap justify-start gap-3 md:justify-end">
@@ -44,9 +42,9 @@ const translatedExperienceData: ExperienceItem[] = getTranslatedExperienceData(E
                 <div class="card bg-base-200 border-base-300 border p-6 shadow-lg">
                   <h3 class="text-base-content mb-3 flex items-center text-xl font-bold">
                     <section.icon class="mr-2 shrink-0 text-2xl" />
-                    {section.title}
+                    {t(section.title)}
                   </h3>
-                  <p class="text-base-content leading-relaxed font-medium">{section.details}</p>
+                  <p class="text-base-content leading-relaxed font-medium">{t(section.details)}</p>
                 </div>
               ))}
             </div>

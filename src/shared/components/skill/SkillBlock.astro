@@ -1,5 +1,6 @@
 ---
-import { getStyleClasses } from './getStyleClasses';
+import { getStyleClasses } from './helpers/getStyleClasses';
+import { getTextClasses } from './helpers/getTextClasses';
 import type { Skill } from './skill';
 
 interface Props {
@@ -9,8 +10,11 @@ interface Props {
 const { skill } = Astro.props;
 
 const styleClasses: string = getStyleClasses(skill.type);
+const textClasses: string = getTextClasses(skill.type);
+
+console.log(textClasses);
 ---
 
 <div class={`badge badge-lg gap-2 ${styleClasses}`}>
-  <span class="text-sm font-semibold">{skill.name}</span>
+  <span class={`text-sm font-semibold ${textClasses}`}>{skill.name}</span>
 </div>

@@ -1,7 +1,7 @@
 ---
 import { ViewCv } from '@shared/components';
-import { useI18n } from '@shared/helpers';
-import { getProjectsUrl } from './helpers';
+import { PAGE_URLS } from '@shared/constants';
+import { getLanguageUrl, useI18n } from '@shared/helpers';
 import { CALL_TO_ACTION_I18N } from './i18n';
 
 const t = useI18n(Astro.url, CALL_TO_ACTION_I18N);
@@ -13,7 +13,10 @@ const t = useI18n(Astro.url, CALL_TO_ACTION_I18N);
   <div class="flex flex-col items-center justify-center gap-4 md:flex-row">
     <ViewCv />
 
-    <a href={getProjectsUrl(Astro.url)} class="btn btn-outline btn-primary btn-lg focus-ring shadow-lg">
+    <a
+      href={getLanguageUrl(Astro.url, PAGE_URLS.PROJECTS)}
+      class="btn btn-outline btn-primary btn-lg focus-ring shadow-lg"
+    >
       {t('cta.button.projects')}
     </a>
   </div>

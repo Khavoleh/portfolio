@@ -28,12 +28,12 @@ export const EXPERIENCE_DATA_I18N: I18N = {
       'I performed a complete migration of visualizations from Power BI to native charting components while simultaneously optimizing the database structure. This involved redesigning data retrieval using optimized, native SQL queries, which drastically improved query execution speed and reduced server load. Through front-end rendering optimizations, we achieved an overall 5x+ increase in dashboard responsiveness and efficiency.',
     'experience.1.section.2.title': 'Leadership & Workflow Organization',
     'experience.1.section.2.details':
-      'I successfully led a team of up to 6 developers, ensuring clear organization of the workflow and strict adherence to project timelines. My responsibilities included writing detailed technical documentation and business requirements, which guaranteed the timely and high-quality delivery of the final product features.',
+      'I successfully led a team of up to 4 developers, ensuring clear organization of the workflow and strict adherence to project timelines. My responsibilities included writing detailed technical documentation and business requirements, which guaranteed the timely and high-quality delivery of the final product features.',
 
     'experience.2.role': '.NET Engineer',
     'experience.2.company': 'Blackthorn Vision',
     'experience.2.period': '12/2025 - Present',
-    'experience.2.sector': 'Third-Party Application Patch Management Platform',
+    'experience.2.sector': 'Application Patch Management Platform',
     'experience.2.section.0.title': 'System Architecture Familiarization',
     'experience.2.section.0.details':
       'I joined the team working on a scalable enterprise system, contributing to back-end development and gradually gaining ownership of architectural components. My focus includes understanding existing design decisions, improving maintainability, and implementing new features within established patterns.',
@@ -65,12 +65,12 @@ export const EXPERIENCE_DATA_I18N: I18N = {
       'Я виконав повну міграцію графіків з Power BI на власні компоненти діаграм, одночасно оптимізуючи структуру бази даних. Це передбачало перепроектування вилучення даних за допомогою оптимізованих власних SQL-запитів, що значно покращило швидкість виконання запитів і зменшило навантаження на сервер. Завдяки оптимізації рендеру інтерфейсу ми досягли загального збільшення швидкості реагування та ефективності інформаційної панелі в 5+ разів.',
     'experience.1.section.2.title': 'Лідерство та організація робочого процесу',
     'experience.1.section.2.details':
-      "Я успішно керував командою з 6 розробників, забезпечуючи чітку організацію робочого процесу та суворе дотримання термінів реалізації проектів. У мій обов'язок входило складання детальної технічної документації та бізнес-вимог, що гарантувало своєчасну та якісну реалізацію функціональних можливостей кінцевого продукту.",
+      "Я успішно керував командою з 4 розробників, забезпечуючи чітку організацію робочого процесу та суворе дотримання термінів реалізації проектів. У мій обов'язок входило складання детальної технічної документації та бізнес-вимог, що гарантувало своєчасну та якісну реалізацію функціональних можливостей кінцевого продукту.",
 
     'experience.2.role': '.NET Інженер',
     'experience.2.company': 'Blackthorn Vision',
     'experience.2.period': '12/2025 - Дотепер',
-    'experience.2.sector': 'Платформа управління оновленнями сторонніх додатків',
+    'experience.2.sector': 'Платформа управління оновленнями додатків',
     'experience.2.section.0.title': 'Ознайомлення з архітектурою системи',
     'experience.2.section.0.details':
       'Я приєднався до команди, яка працює над масштабованою корпоративною системою, беручи участь у розробці сервера та поступово набуваючи відповідальності за архітектурні компоненти. Моя робота полягає у вивченні існуючих проектних рішень, покращенні зручності обслуговування та впровадженні нових функцій у рамках встановлених шаблонів.',
