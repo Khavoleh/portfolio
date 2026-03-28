@@ -6,7 +6,7 @@ export const DATA_COLLECTION_SECTION_I18N: I18N = {
     privacy_collect_text1:
       'This website <strong>does not</strong> collect personal details such as your name, email address, or phone number. There are no account creation features or contact forms that store data.',
     privacy_collect_text2:
-      'However, we store certain preferences on your device for functional purposes and collect automated <strong>Usage Data</strong> via Vercel Web Analytics. This includes:',
+      'However, we store certain preferences on your device for functional purposes and collect automated <strong>Usage Data</strong> via Umami Analytics. This includes:',
     privacy_collect_technical:
       '<strong>Technical Data:</strong> Information such as browser type, operating system, device type, and approximate geographic location at country level.',
     privacy_collect_usage: '<strong>Usage Data:</strong> Pages visited, time spent on pages, and referring websites.',
@@ -18,7 +18,7 @@ export const DATA_COLLECTION_SECTION_I18N: I18N = {
     privacy_collect_text1:
       'Цей веб-сайт <strong>не збирає</strong> особисті дані, такі як ваше ім’я, адреса електронної пошти або номер телефону. На сайті немає функцій створення облікового запису або контактних форм, які зберігають дані.',
     privacy_collect_text2:
-      'Однак ми зберігаємо певні налаштування на вашому пристрої для функціональних цілей і збираємо автоматизовані <strong>дані про використання</strong> через Vercel Web Analytics. Це включає:',
+      'Однак ми зберігаємо певні налаштування на вашому пристрої для функціональних цілей і збираємо автоматизовані <strong>дані про використання</strong> через Umami Analytics. Це включає:',
     privacy_collect_technical:
       '<strong>Технічні дані:</strong> інформація, така як тип браузера, операційна система, тип пристрою та приблизне географічне розташування на рівні країни.',
     privacy_collect_usage:
