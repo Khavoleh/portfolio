@@ -6,33 +6,33 @@ import TargetIcon from '../../icons/target.svg';
 import type { ProjectItem } from '../../project-item';
 
 export const PORTFOLIO: ProjectItem = {
-  title: 'portfolio.title',
-  description: 'portfolio.description',
+  title: 'portfolio_title',
+  description: 'portfolio_description',
   sections: [
     {
-      title: 'portfolio.section.0.title',
+      title: 'portfolio_section_0_title',
       icon: TargetIcon,
-      details: ['portfolio.section.0.details.0'],
+      details: ['portfolio_section_0_details_0'],
     },
     {
-      title: 'portfolio.section.1.title',
+      title: 'portfolio_section_1_title',
       icon: SettingsIcon,
-      details: ['portfolio.section.1.details.0'],
+      details: ['portfolio_section_1_details_0'],
     },
     {
-      title: 'portfolio.section.2.title',
+      title: 'portfolio_section_2_title',
       icon: StarsIcon,
       details: [
-        'portfolio.section.2.details.0',
-        'portfolio.section.2.details.1',
-        'portfolio.section.2.details.2',
-        'portfolio.section.2.details.3',
+        'portfolio_section_2_details_0',
+        'portfolio_section_2_details_1',
+        'portfolio_section_2_details_2',
+        'portfolio_section_2_details_3',
       ],
     },
     {
-      title: 'portfolio.section.3.title',
+      title: 'portfolio_section_3_title',
       icon: BusinessIcon,
-      details: ['portfolio.section.3.details.0'],
+      details: ['portfolio_section_3_details_0'],
     },
   ],
   skills: [

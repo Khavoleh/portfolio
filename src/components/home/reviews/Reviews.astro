@@ -22,8 +22,8 @@ const shuffledReviews: Review[] = shuffleArray(translatedReviews);
 
 <section class="mt-12">
   <div class="mb-8 text-center">
-    <h2 class="text-base-content mb-4 text-3xl font-bold">{t('reviews.title')}</h2>
-    <p class="text-base-content mx-auto max-w-2xl text-lg">{t('reviews.subtitle')}</p>
+    <h2 class="text-base-content mb-4 text-3xl font-bold">{t('reviews_title')}</h2>
+    <p class="text-base-content mx-auto max-w-2xl text-lg">{t('reviews_subtitle')}</p>
   </div>
 
   <div class="mx-auto w-full max-w-4xl">
@@ -42,14 +42,14 @@ const shuffledReviews: Review[] = shuffleArray(translatedReviews);
                 <button
                   data-target={`review-${prevIndex}`}
                   class="btn btn-circle review-nav-btn focus-ring max-lg:bg-base-100/50 max-lg:hover:bg-base-100/80 lg:btn-secondary lg:btn-outline shadow-lg"
-                  aria-label={t('reviews.button.previous')}
+                  aria-label={t('reviews_button_previous')}
                 >
                   ❮
                 </button>
                 <button
                   data-target={`review-${nextIndex}`}
                   class="btn btn-circle review-nav-btn focus-ring max-lg:bg-base-100/50 max-lg:hover:bg-base-100/80 lg:btn-secondary lg:btn-outline shadow-lg"
-                  aria-label={t('reviews.button.next')}
+                  aria-label={t('reviews_button_next')}
                 >
                   ❯
                 </button>
@@ -68,7 +68,7 @@ const shuffledReviews: Review[] = shuffleArray(translatedReviews);
       rel="noopener noreferrer"
       class="link link-primary focus-ring inline-flex items-center gap-2 rounded font-semibold"
     >
-      {t('reviews.linkedin.link')}
+      {t('reviews_linkedin_link')}
       <LinkIcon class="h-4 w-4" />
     </a>
   </div>

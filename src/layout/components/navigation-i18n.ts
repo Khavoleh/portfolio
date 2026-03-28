@@ -9,7 +9,7 @@ export const NAVIGATION_I18N: I18N = {
     contacts: 'Contacts',
     menu: 'Menu',
     close: 'Close menu',
-    'navigate.to': 'Navigate to',
+    navigate_to: 'Navigate to',
     page: 'page',
   },
   uk: {
@@ -20,7 +20,7 @@ export const NAVIGATION_I18N: I18N = {
     contacts: 'Контакти',
     menu: 'Меню',
     close: 'Закрити меню',
-    'navigate.to': 'Перейти на',
+    navigate_to: 'Перейти на',
     page: 'сторінку',
   },
 };

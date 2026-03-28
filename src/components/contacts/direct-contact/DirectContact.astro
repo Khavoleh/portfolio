@@ -1,0 +1,48 @@
+---
+import { SOCIALS } from '@shared/constants';
+import { useI18n } from '@shared/helpers';
+import { DIRECT_CONTACT_I18N } from './direct-contact-i18n';
+import { getUkraineTimezone } from './get-ukraine-timezone';
+import EmailIcon from './icons/email.svg';
+import GeolocationIcon from './icons/geolocation.svg';
+import MessengerIcon from './icons/messenger.svg';
+
+const iconClasses = 'mb-4 h-12 w-12 text-primary';
+const contactInformationClasses =
+  'card bg-base-200 border-base-300 flex flex-col items-center border p-6 text-center shadow-lg transition-transform duration-200 hover:scale-105 w-64';
+const t = useI18n(Astro.url, DIRECT_CONTACT_I18N);
+---
+
+<section class="mb-16">
+  <h2 class="text-base-content mb-8 text-center text-3xl font-bold">{t('directContact_title')}</h2>
+
+  <div class="mx-auto flex flex-wrap justify-center gap-6">
+    <div class={contactInformationClasses}>
+      <EmailIcon class={iconClasses} />
+      <h3 class="text-base-content mb-2 text-xl font-semibold">{t('directContact_email_title')}</h3>
+      <a href=`mailto:${SOCIALS.EMAIL}` class="link link-primary focus-ring rounded transition-all duration-200">
+        {SOCIALS.EMAIL}
+      </a>
+    </div>
+
+    <div class={contactInformationClasses}>
+      <MessengerIcon class={iconClasses} />
+      <h3 class="text-base-content mb-2 text-xl font-semibold">Telegram</h3>
+      <a
+        href={SOCIALS.TELEGRAM}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="link link-primary focus-ring rounded transition-all duration-200"
+      >
+        @khavol
+      </a>
+    </div>
+
+    <div class={contactInformationClasses}>
+      <GeolocationIcon class={iconClasses} />
+      <h3 class="text-base-content mb-2 text-xl font-semibold">{t('directContact_location_title')}</h3>
+      <p class="text-base-content/80">{t('directContact_location_city')}</p>
+      <p class="text-base-content/70 text-sm">{getUkraineTimezone()}</p>
+    </div>
+  </div>
+</section>
