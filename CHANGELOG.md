@@ -1,3 +1,10 @@
+## [1.2.11](https://github.com/Khavoleh/portfolio/compare/v1.2.10...v1.2.11) (2026-03-28)
+
+
+### Bug Fixes
+
+* Fix CSP for umami ([b736410](https://github.com/Khavoleh/portfolio/commit/b736410ff37346c85494d15a97d4ff993e335bc4))
+
 ## [1.2.10](https://github.com/Khavoleh/portfolio/compare/v1.2.9...v1.2.10) (2026-03-28)
 
 
