@@ -7,9 +7,9 @@ const t = useI18n(Astro.url, CONTACT_SECTION_I18N);
 ---
 
 <section class="mb-8">
-  <h2 class="text-base-content mb-4 text-2xl font-semibold">{t('terms.contact.title')}</h2>
+  <h2 class="text-base-content mb-4 text-2xl font-semibold">{t('terms_contact_title')}</h2>
   <p class="text-base-content/80">
-    <span set:html={t('terms.contact.text')} />
+    <span set:html={t('terms_contact_text')} />
     <a
       href={`mailto:${SOCIALS.EMAIL}`}
       class="link link-primary focus-ring rounded font-semibold transition-all duration-200">{SOCIALS.EMAIL}</a

@@ -14,12 +14,12 @@ const t = useI18n(Astro.url, DIRECT_CONTACT_I18N);
 ---
 
 <section class="mb-16">
-  <h2 class="text-base-content mb-8 text-center text-3xl font-bold">{t('directContact.title')}</h2>
+  <h2 class="text-base-content mb-8 text-center text-3xl font-bold">{t('directContact_title')}</h2>
 
   <div class="mx-auto flex flex-wrap justify-center gap-6">
     <div class={contactInformationClasses}>
       <EmailIcon class={iconClasses} />
-      <h3 class="text-base-content mb-2 text-xl font-semibold">{t('directContact.email.title')}</h3>
+      <h3 class="text-base-content mb-2 text-xl font-semibold">{t('directContact_email_title')}</h3>
       <a href=`mailto:${SOCIALS.EMAIL}` class="link link-primary focus-ring rounded transition-all duration-200">
         {SOCIALS.EMAIL}
       </a>
@@ -40,8 +40,8 @@ const t = useI18n(Astro.url, DIRECT_CONTACT_I18N);
 
     <div class={contactInformationClasses}>
       <GeolocationIcon class={iconClasses} />
-      <h3 class="text-base-content mb-2 text-xl font-semibold">{t('directContact.location.title')}</h3>
-      <p class="text-base-content/80">{t('directContact.location.city')}</p>
+      <h3 class="text-base-content mb-2 text-xl font-semibold">{t('directContact_location_title')}</h3>
+      <p class="text-base-content/80">{t('directContact_location_city')}</p>
       <p class="text-base-content/70 text-sm">{getUkraineTimezone()}</p>
     </div>
   </div>

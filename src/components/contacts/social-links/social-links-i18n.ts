@@ -2,17 +2,17 @@ import type { I18N } from '@shared/interfaces';
 
 export const SOCIAL_LINKS_I18N: I18N = {
   en: {
-    'socialLinks.title': 'Professional Presence',
-    'socialLinks.description':
+    socialLinks_title: 'Professional Presence',
+    socialLinks_description:
       "LinkedIn for professional validation and endorsements, GitHub to review my projects' code, and Telegram for quick messaging.",
-    'socialLinks.aria.linkedin': 'Visit my LinkedIn',
-    'socialLinks.aria.github': 'Visit my GitHub',
+    socialLinks_aria_linkedin: 'Visit my LinkedIn',
+    socialLinks_aria_github: 'Visit my GitHub',
   },
   uk: {
-    'socialLinks.title': 'Професійна діяльність',
-    'socialLinks.description':
+    socialLinks_title: 'Професійна діяльність',
+    socialLinks_description:
       'LinkedIn для професійної оцінки та рекомендацій, GitHub для перегляду коду моїх проєктів та Telegram для швидкого обміну повідомленнями.',
-    'socialLinks.aria.linkedin': 'Відвідати мій LinkedIn',
-    'socialLinks.aria.github': 'Відвідати мій GitHub',
+    socialLinks_aria_linkedin: 'Відвідати мій LinkedIn',
+    socialLinks_aria_github: 'Відвідати мій GitHub',
   },
 };

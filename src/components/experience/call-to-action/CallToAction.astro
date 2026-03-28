@@ -8,7 +8,7 @@ const t = useI18n(Astro.url, CALL_TO_ACTION_I18N);
 ---
 
 <section class="mt-16 text-center">
-  <h2 class="text-base-content mb-6 text-3xl font-bold">{t('cta.title')}</h2>
+  <h2 class="text-base-content mb-6 text-3xl font-bold">{t('cta_title')}</h2>
 
   <div class="flex flex-col items-center justify-center gap-4 md:flex-row">
     <ViewCv />
@@ -17,7 +17,7 @@ const t = useI18n(Astro.url, CALL_TO_ACTION_I18N);
       href={getLanguageUrl(Astro.url, PAGE_URLS.PROJECTS)}
       class="btn btn-outline btn-primary btn-lg focus-ring shadow-lg"
     >
-      {t('cta.button.projects')}
+      {t('cta_button_projects')}
     </a>
   </div>
 </section>

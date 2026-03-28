@@ -8,9 +8,9 @@ const t = useI18n(Astro.url, CALL_TO_ACTION_I18N);
 ---
 
 <section class="text-center">
-  <h2 class="text-base-content mb-4 text-2xl font-bold">{t('cta.title')}</h2>
+  <h2 class="text-base-content mb-4 text-2xl font-bold">{t('cta_title')}</h2>
   <p class="text-base-content mx-auto mb-8 max-w-2xl leading-relaxed">
-    {t('cta.description')}
+    {t('cta_description')}
   </p>
 
   <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -20,7 +20,7 @@ const t = useI18n(Astro.url, CALL_TO_ACTION_I18N);
       href={getLanguageUrl(Astro.url, PAGE_URLS.EXPERIENCE)}
       class="btn btn-outline btn-primary btn-lg focus-ring shadow-lg"
     >
-      {t('cta.button.experience')}
+      {t('cta_button_experience')}
     </a>
   </div>
 </section>

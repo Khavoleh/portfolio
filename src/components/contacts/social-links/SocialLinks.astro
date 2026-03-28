@@ -8,7 +8,7 @@ const t = useI18n(Astro.url, SOCIAL_LINKS_I18N);
 ---
 
 <section class="mb-16">
-  <h2 class="text-base-content mb-8 text-center text-3xl font-bold">{t('socialLinks.title')}</h2>
+  <h2 class="text-base-content mb-8 text-center text-3xl font-bold">{t('socialLinks_title')}</h2>
 
   <div class="mx-auto flex max-w-2xl flex-wrap justify-center gap-6">
     {
@@ -29,6 +29,6 @@ const t = useI18n(Astro.url, SOCIAL_LINKS_I18N);
 
   <p
     class="text-base-content mx-auto mt-8 max-w-2xl text-center leading-relaxed"
-    set:html={t('socialLinks.description')}
+    set:html={t('socialLinks_description')}
   />
 </section>

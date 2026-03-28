@@ -6,31 +6,31 @@ import type { Review } from './review';
 
 export const REVIEWS: Review[] = [
   {
-    name: 'reviews.0.name',
-    position: 'reviews.0.position',
+    name: 'reviews_0_name',
+    position: 'reviews_0_position',
     company: 'Bliscore Software',
-    text: 'reviews.0.text',
+    text: 'reviews_0_text',
     image: viktoria,
   },
   {
-    name: 'reviews.1.name',
-    position: 'reviews.1.position',
+    name: 'reviews_1_name',
+    position: 'reviews_1_position',
     company: 'Bliscore Software',
-    text: 'reviews.1.text',
+    text: 'reviews_1_text',
     image: mykola,
   },
   {
-    name: 'reviews.2.name',
-    position: 'reviews.2.position',
+    name: 'reviews_2_name',
+    position: 'reviews_2_position',
     company: 'Bliscore Software',
-    text: 'reviews.2.text',
+    text: 'reviews_2_text',
     image: pavlo,
   },
   {
-    name: 'reviews.3.name',
-    position: 'reviews.3.position',
+    name: 'reviews_3_name',
+    position: 'reviews_3_position',
     company: 'Bliscore Software',
-    text: 'reviews.3.text',
+    text: 'reviews_3_text',
     image: valerii,
   },
 ];

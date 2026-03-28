@@ -2,9 +2,9 @@ import type { I18N } from '@shared/interfaces';
 
 export const HEADING_I18N: I18N = {
   en: {
-    'privacy.title': 'Privacy Policy',
+    privacy_title: 'Privacy Policy',
   },
   uk: {
-    'privacy.title': 'Політика конфіденційності',
+    privacy_title: 'Політика конфіденційності',
   },
 };
