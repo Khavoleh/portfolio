@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { getUkraineTimezone } from './helpers';
+import { getUkraineTimezone } from './get-ukraine-timezone';
 
 describe('getUkraineTimezone', () => {
   beforeEach(() => {
