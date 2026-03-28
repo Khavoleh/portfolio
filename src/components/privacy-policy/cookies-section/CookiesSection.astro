@@ -1,8 +1,8 @@
 ---
 import { useI18n } from '@shared/helpers';
-import { PRIVACY_POLICY_TRANSLATIONS } from './translations';
+import { COOKIES_SECTION_TRANSLATIONS } from './cookies-section-translations';
 
-const t = useI18n(Astro.url, PRIVACY_POLICY_TRANSLATIONS);
+const t = useI18n(Astro.url, COOKIES_SECTION_TRANSLATIONS);
 ---
 
 <section class="mb-8">
@@ -10,6 +10,7 @@ const t = useI18n(Astro.url, PRIVACY_POLICY_TRANSLATIONS);
   <p class="text-base-content/80 mb-4" set:html={t('privacy.cookies.text')} />
   <ul class="text-base-content/80 mb-4 list-inside list-disc space-y-2">
     <li set:html={t('privacy.cookies.local')} />
+    <li set:html={t('privacy.cookies.cookies')} />
     <li set:html={t('privacy.cookies.no_cookies')} />
     <li set:html={t('privacy.cookies.no_ip')} />
     <li set:html={t('privacy.cookies.no_cross')} />

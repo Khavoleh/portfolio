@@ -1,8 +1,8 @@
 ---
 import { useI18n } from '@shared/helpers';
-import { PRIVACY_POLICY_TRANSLATIONS } from './translations';
+import { HEADING_TRANSLATIONS } from './heading-translations';
 
-const t = useI18n(Astro.url, PRIVACY_POLICY_TRANSLATIONS);
+const t = useI18n(Astro.url, HEADING_TRANSLATIONS);
 ---
 
 <h1 class="text-base-content mb-8 text-4xl font-bold">{t('privacy.title')}</h1>
