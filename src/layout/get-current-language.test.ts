@@ -1,6 +1,6 @@
 import { DEFAULT_LANGUAGE, LANGUAGES_SHORT } from '@shared/constants';
 import { describe, expect, it } from 'vitest';
-import { getCurrentLanguage } from './getCurrentLanguage';
+import { getCurrentLanguage } from './get-current-language';
 
 describe('getCurrentLanguage', () => {
   it('returns the language if it is valid', () => {

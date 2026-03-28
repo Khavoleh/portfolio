@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { getLanguageUrl } from './getLanguageUrl';
+import { getLanguageUrl } from './get-language-url';
 
 describe('getLanguageUrl', () => {
   it('should construct URL with language prefix and path', () => {

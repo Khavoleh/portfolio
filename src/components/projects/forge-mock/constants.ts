@@ -3,7 +3,7 @@ import BusinessIcon from '../icons/business.svg';
 import SettingsIcon from '../icons/settings.svg';
 import StarsIcon from '../icons/stars.svg';
 import TargetIcon from '../icons/target.svg';
-import type { ProjectItem } from '../interfaces';
+import type { ProjectItem } from '../project-item';
 
 export const FORGE_MOCK: ProjectItem = {
   title: 'forgeMock.title',

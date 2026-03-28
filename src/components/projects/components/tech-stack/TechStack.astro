@@ -2,18 +2,18 @@
 import type { Skill } from '@shared/components';
 import { SkillBlock } from '@shared/components';
 import { useI18n } from '@shared/helpers';
-import { PROJECT_COMPONENTS_TRANSLATIONS } from '../translations';
+import { TECH_STACK_I18N } from './tech-stack-i18n';
 
 interface Props {
   skills: Skill[];
 }
 
 const { skills } = Astro.props;
-const t = useI18n(Astro.url, PROJECT_COMPONENTS_TRANSLATIONS);
+const t = useI18n(Astro.url, TECH_STACK_I18N);
 ---
 
 <div class="mb-8">
-  <h3 class="text-base-content mb-4 text-xl font-bold">{t('components.techStack.title')}</h3>
+  <h3 class="text-base-content mb-4 text-xl font-bold">{t('tech_stack')}</h3>
   <div class="flex flex-wrap justify-start gap-3">
     {skills.map((skill: Skill) => <SkillBlock skill={skill} />)}
   </div>

@@ -14,7 +14,7 @@
     "url": "https://github.com/Khavoleh/portfolio"
   },
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --config astro.config.local.ts",
     "build": "astro build",
     "preview": "astro build --config astro.config.local.ts && astro preview --config astro.config.local.ts",
     "astro": "astro",
@@ -23,17 +23,17 @@
     "test": "vitest run",
     "depcruise": "depcruise src",
     "prepare": "lefthook install",
-    "validate": "astro build && pnpm test && pnpm lint && pnpm prettier --check && pnpm depcruise"
+    "validate": "astro build && pnpm test && pnpm lint && pnpm prettier --check && pnpm astro-check && pnpm depcruise"
   },
   "dependencies": {
-    "@astrojs/vercel": "10.0.2",
+    "@astrojs/vercel": "10.0.3",
     "@vercel/analytics": "2.0.1",
     "@vercel/speed-insights": "2.0.0",
-    "astro": "6.0.8"
+    "astro": "6.1.1"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.8",
-    "@astrojs/node": "10.0.3",
+    "@astrojs/node": "10.0.4",
     "@astrojs/sitemap": "3.7.1",
     "@biomejs/biome": "2.4.9",
     "@semantic-release/changelog": "6.0.3",
@@ -47,7 +47,7 @@
     "prettier": "3.8.1",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "0.7.2",
-    "schema-dts": "1.1.5",
+    "schema-dts": "2.0.0",
     "semantic-release": "25.0.3",
     "sharp": "0.34.5",
     "tailwindcss": "4.2.2",
