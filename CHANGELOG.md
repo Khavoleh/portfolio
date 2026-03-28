@@ -1,3 +1,10 @@
+## [1.2.10](https://github.com/Khavoleh/portfolio/compare/v1.2.9...v1.2.10) (2026-03-28)
+
+
+### Bug Fixes
+
+* Fix 404 page background ([bc06343](https://github.com/Khavoleh/portfolio/commit/bc06343d0e9d79e0aa650787ca9ecc96284626fc))
+
 ## [1.2.9](https://github.com/Khavoleh/portfolio/compare/v1.2.8...v1.2.9) (2026-03-28)
 
 
