@@ -1,0 +1,8 @@
+---
+import { useI18n } from '@shared/helpers';
+import { HEADING_TRANSLATIONS } from './heading-translations';
+
+const t = useI18n(Astro.url, HEADING_TRANSLATIONS);
+---
+
+<h1 class="text-base-content mb-8 text-4xl font-bold">{t('terms.title')}</h1>
