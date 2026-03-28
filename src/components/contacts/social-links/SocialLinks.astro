@@ -2,9 +2,9 @@
 import { useI18n } from '@shared/helpers';
 import type { SocialLink } from '@shared/interfaces';
 import { SOCIAL_LINKS } from './social-links';
-import { SOCIAL_LINKS_TRANSLATIONS } from './social-links-translations';
+import { SOCIAL_LINKS_I18N } from './social-links-i18n';
 
-const t = useI18n(Astro.url, SOCIAL_LINKS_TRANSLATIONS);
+const t = useI18n(Astro.url, SOCIAL_LINKS_I18N);
 ---
 
 <section class="mb-16">

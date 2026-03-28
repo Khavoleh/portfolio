@@ -1,6 +1,6 @@
 import type { I18N } from '@shared/interfaces';
 
-export const INTRO_SECTION_TRANSLATIONS: I18N = {
+export const INTRO_SECTION_I18N: I18N = {
   en: {
     'privacy.intro.title': '1. Introduction',
     'privacy.intro.text':

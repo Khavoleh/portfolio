@@ -1,6 +1,6 @@
 import type { I18N } from '@shared/interfaces';
 
-export const GOVERNING_LAW_SECTION_TRANSLATIONS: I18N = {
+export const GOVERNING_LAW_SECTION_I18N: I18N = {
   en: {
     'terms.governing.title': '5. Governing Law',
     'terms.governing.text':

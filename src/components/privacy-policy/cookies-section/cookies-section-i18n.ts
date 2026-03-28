@@ -1,6 +1,6 @@
 import type { I18N } from '@shared/interfaces';
 
-export const COOKIES_SECTION_TRANSLATIONS: I18N = {
+export const COOKIES_SECTION_I18N: I18N = {
   en: {
     'privacy.cookies.title': '4. Cookies and Tracking',
     'privacy.cookies.text':

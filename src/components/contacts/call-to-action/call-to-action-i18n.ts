@@ -1,6 +1,6 @@
 import type { I18N } from '@shared/interfaces';
 
-export const CALL_TO_ACTION_TRANSLATIONS: I18N = {
+export const CALL_TO_ACTION_I18N: I18N = {
   en: {
     'cta.title': 'Quick Access',
     'cta.description':

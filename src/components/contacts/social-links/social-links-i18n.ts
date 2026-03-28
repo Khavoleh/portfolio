@@ -1,6 +1,6 @@
 import type { I18N } from '@shared/interfaces';
 
-export const SOCIAL_LINKS_TRANSLATIONS: I18N = {
+export const SOCIAL_LINKS_I18N: I18N = {
   en: {
     'socialLinks.title': 'Professional Presence',
     'socialLinks.description':

@@ -1,6 +1,6 @@
 import type { I18N } from '@shared/interfaces';
 
-export const DIRECT_CONTACT_TRANSLATIONS: I18N = {
+export const DIRECT_CONTACT_I18N: I18N = {
   en: {
     'directContact.title': 'Direct Contact Information',
     'directContact.email.title': 'Email',

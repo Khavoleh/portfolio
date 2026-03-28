@@ -1,7 +1,7 @@
 ---
 import { SOCIALS } from '@shared/constants';
 import { useI18n } from '@shared/helpers';
-import { DIRECT_CONTACT_TRANSLATIONS } from './direct-contact-translations';
+import { DIRECT_CONTACT_I18N } from './direct-contact-i18n';
 import { getUkraineTimezone } from './get-ukraine-timezone';
 import EmailIcon from './icons/email.svg';
 import GeolocationIcon from './icons/geolocation.svg';
@@ -10,7 +10,7 @@ import MessengerIcon from './icons/messenger.svg';
 const iconClasses = 'mb-4 h-12 w-12 text-primary';
 const contactInformationClasses =
   'card bg-base-200 border-base-300 flex flex-col items-center border p-6 text-center shadow-lg transition-transform duration-200 hover:scale-105 w-64';
-const t = useI18n(Astro.url, DIRECT_CONTACT_TRANSLATIONS);
+const t = useI18n(Astro.url, DIRECT_CONTACT_I18N);
 ---
 
 <section class="mb-16">

@@ -1,6 +1,6 @@
 import type { I18N } from '@shared/interfaces';
 
-export const EXTERNAL_LINKS_SECTION_TRANSLATIONS: I18N = {
+export const EXTERNAL_LINKS_SECTION_I18N: I18N = {
   en: {
     'terms.links.title': '4. Links to Other Websites (Project Demos)',
     'terms.links.text1':

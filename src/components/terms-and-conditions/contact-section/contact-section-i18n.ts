@@ -1,6 +1,6 @@
 import type { I18N } from '@shared/interfaces';
 
-export const CONTACT_SECTION_TRANSLATIONS: I18N = {
+export const CONTACT_SECTION_I18N: I18N = {
   en: {
     'terms.contact.title': '6. Contact',
     'terms.contact.text': 'If you have any questions about these Terms, please contact me via email at:',

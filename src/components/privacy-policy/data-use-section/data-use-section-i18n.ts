@@ -1,6 +1,6 @@
 import type { I18N } from '@shared/interfaces';
 
-export const DATA_USE_SECTION_TRANSLATIONS: I18N = {
+export const DATA_USE_SECTION_I18N: I18N = {
   en: {
     'privacy.use.title': '3. How We Use Your Information',
     'privacy.use.text': 'We collect this non-personal data solely for the following purposes:',

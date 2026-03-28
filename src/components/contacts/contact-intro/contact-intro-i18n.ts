@@ -1,6 +1,6 @@
 import type { I18N } from '@shared/interfaces';
 
-export const CONTACT_INTRO_TRANSLATIONS: I18N = {
+export const CONTACT_INTRO_I18N: I18N = {
   en: {
     'intro.title': "Let's Connect",
     'intro.description':

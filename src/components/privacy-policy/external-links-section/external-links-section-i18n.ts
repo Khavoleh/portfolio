@@ -1,6 +1,6 @@
 import type { I18N } from '@shared/interfaces';
 
-export const EXTERNAL_LINKS_SECTION_TRANSLATIONS: I18N = {
+export const EXTERNAL_LINKS_SECTION_I18N: I18N = {
   en: {
     'privacy.links.title': '5. Third-Party Links',
     'privacy.links.text':

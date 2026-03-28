@@ -1,6 +1,6 @@
 import type { I18N } from '@shared/interfaces';
 
-export const DATA_COLLECTION_SECTION_TRANSLATIONS: I18N = {
+export const DATA_COLLECTION_SECTION_I18N: I18N = {
   en: {
     'privacy.collect.title': '2. Information We Collect',
     'privacy.collect.text1':

@@ -1,6 +1,6 @@
 import type { I18N } from '@shared/interfaces';
 
-export const INTELLECTUAL_PROPERTY_SECTION_TRANSLATIONS: I18N = {
+export const INTELLECTUAL_PROPERTY_SECTION_I18N: I18N = {
   en: {
     'terms.intellectual.title': '2. Intellectual Property Rights',
     'terms.intellectual.text':

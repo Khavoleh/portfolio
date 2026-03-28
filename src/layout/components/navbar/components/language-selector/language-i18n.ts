@@ -1,6 +1,6 @@
 import type { I18N } from '@shared/interfaces';
 
-export const LANGUAGE_TRANSLATIONS: I18N = {
+export const LANGUAGE_I18N: I18N = {
   en: {
     'change.language': 'Change language',
   },

@@ -1,6 +1,6 @@
 import type { I18N } from '@shared/interfaces';
 
-export const ACCEPTANCE_SECTION_TRANSLATIONS: I18N = {
+export const ACCEPTANCE_SECTION_I18N: I18N = {
   en: {
     'terms.acceptance.title': '1. Acceptance of Terms',
     'terms.acceptance.text':

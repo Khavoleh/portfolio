@@ -1,6 +1,6 @@
 import type { I18N } from '@shared/interfaces';
 
-export const HEADING_TRANSLATIONS: I18N = {
+export const HEADING_I18N: I18N = {
   en: {
     'privacy.title': 'Privacy Policy',
   },

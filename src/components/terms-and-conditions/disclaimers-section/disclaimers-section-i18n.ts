@@ -1,6 +1,6 @@
 import type { I18N } from '@shared/interfaces';
 
-export const DISCLAIMERS_SECTION_TRANSLATIONS: I18N = {
+export const DISCLAIMERS_SECTION_I18N: I18N = {
   en: {
     'terms.disclaimers.title': '3. Disclaimers and Limitation of Liability',
     'terms.disclaimers.text':

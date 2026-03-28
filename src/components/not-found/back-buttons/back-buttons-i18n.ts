@@ -8,5 +8,5 @@ export const BACK_BUTTONS_I18N: I18N = {
   uk: {
     'back.home': 'На головну',
     'back.go': 'Повернутися',
-  }
+  },
 };

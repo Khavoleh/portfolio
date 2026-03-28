@@ -6,5 +6,5 @@ export const NOT_FOUND_I18N: I18N = {
   },
   uk: {
     'not-found.title': 'Ой! Ця сторінка загубилася у хмарі :(',
-  }
+  },
 };
