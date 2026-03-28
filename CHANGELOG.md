@@ -1,3 +1,5 @@
+## [1.2.14](https://github.com/Khavoleh/portfolio/compare/v1.2.13...v1.2.14) (2026-03-28)
+
 ## [1.2.13](https://github.com/Khavoleh/portfolio/compare/v1.2.12...v1.2.13) (2026-03-28)
 
 
