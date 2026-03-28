@@ -1,3 +1,10 @@
+## [1.2.13](https://github.com/Khavoleh/portfolio/compare/v1.2.12...v1.2.13) (2026-03-28)
+
+
+### Bug Fixes
+
+* Not accessible mobile drawer ([b3503b8](https://github.com/Khavoleh/portfolio/commit/b3503b889a0fefc427b9e31acee83404cab7916b))
+
 ## [1.2.12](https://github.com/Khavoleh/portfolio/compare/v1.2.11...v1.2.12) (2026-03-28)
 
 
