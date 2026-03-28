@@ -1,0 +1,21 @@
+---
+import { PAGE_URLS } from '@shared/constants';
+import { getLanguageUrl, useI18n } from '@shared/helpers';
+import { BACK_BUTTONS_I18N } from './back-buttons-i18n';
+import BackIcon from './icons/back.svg';
+import HomeIcon from './icons/home.svg';
+
+const t = useI18n(Astro.url, BACK_BUTTONS_I18N);
+---
+
+<section class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+  <a href={getLanguageUrl(Astro.url, PAGE_URLS.HOME)} class="btn btn-primary btn-lg focus-ring shadow-lg">
+    <HomeIcon class="mr-2 h-5 w-5" />
+    {t('back_home')}
+  </a>
+
+  <button onclick="window.history.back()" class="btn btn-lg btn-outline btn-primary focus-ring shadow-lg">
+    <BackIcon class="mr-2 h-5 w-5" />
+    {t('back_go')}
+  </button>
+</section>

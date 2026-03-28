@@ -10,10 +10,10 @@ import TeamIcon from './icons/team.svg';
 
 export const EXPERIENCE_DATA: ExperienceItem[] = [
   {
-    role: 'experience.2.role',
-    company: 'experience.2.company',
-    sector: 'experience.2.sector',
-    period: 'experience.2.period',
+    role: 'experience_2_role',
+    company: 'experience_2_company',
+    sector: 'experience_2_sector',
+    period: 'experience_2_period',
     skills: [
       { name: '.NET', type: SKILL_TYPES.BACK_END },
       { name: 'C#', type: SKILL_TYPES.BACK_END },
@@ -25,17 +25,17 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     ],
     sections: [
       {
-        title: 'experience.2.section.0.title',
+        title: 'experience_2_section_0_title',
         icon: StudyIcon,
-        details: 'experience.2.section.0.details',
+        details: 'experience_2_section_0_details',
       },
     ],
   },
   {
-    role: 'experience.1.role',
-    company: 'experience.1.company',
-    sector: 'experience.1.sector',
-    period: 'experience.1.period',
+    role: 'experience_1_role',
+    company: 'experience_1_company',
+    sector: 'experience_1_sector',
+    period: 'experience_1_period',
     skills: [
       { name: '.NET', type: SKILL_TYPES.BACK_END },
       { name: 'C#', type: SKILL_TYPES.BACK_END },
@@ -51,27 +51,27 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     ],
     sections: [
       {
-        title: 'experience.1.section.0.title',
+        title: 'experience_1_section_0_title',
         icon: ArchitectureIcon,
-        details: 'experience.1.section.0.details',
+        details: 'experience_1_section_0_details',
       },
       {
-        title: 'experience.1.section.1.title',
+        title: 'experience_1_section_1_title',
         icon: GrowUpIcon,
-        details: 'experience.1.section.1.details',
+        details: 'experience_1_section_1_details',
       },
       {
-        title: 'experience.1.section.2.title',
+        title: 'experience_1_section_2_title',
         icon: TeamIcon,
-        details: 'experience.1.section.2.details',
+        details: 'experience_1_section_2_details',
       },
     ],
   },
   {
-    role: 'experience.0.role',
-    company: 'experience.0.company',
-    sector: 'experience.0.sector',
-    period: 'experience.0.period',
+    role: 'experience_0_role',
+    company: 'experience_0_company',
+    sector: 'experience_0_sector',
+    period: 'experience_0_period',
     skills: [
       { name: '.NET', type: SKILL_TYPES.BACK_END },
       { name: 'C#', type: SKILL_TYPES.BACK_END },
@@ -87,19 +87,19 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     ],
     sections: [
       {
-        title: 'experience.0.section.0.title',
+        title: 'experience_0_section_0_title',
         icon: LightBulbIcon,
-        details: 'experience.0.section.0.details',
+        details: 'experience_0_section_0_details',
       },
       {
-        title: 'experience.0.section.1.title',
+        title: 'experience_0_section_1_title',
         icon: SprintIcon,
-        details: 'experience.0.section.1.details',
+        details: 'experience_0_section_1_details',
       },
       {
-        title: 'experience.0.section.2.title',
+        title: 'experience_0_section_2_title',
         icon: CiCdIcon,
-        details: 'experience.0.section.2.details',
+        details: 'experience_0_section_2_details',
       },
     ],
   },

@@ -21,13 +21,13 @@ const currentYear = new Date().getFullYear();
         href={getLanguageUrl(Astro.url, PAGE_URLS.PRIVACY_POLICY)}
         class="focus-ring text-base-content/70 hover:text-base-content rounded"
       >
-        {t('privacy.policy')}
+        {t('privacy_policy')}
       </a>
       <a
         href={getLanguageUrl(Astro.url, PAGE_URLS.TERMS_AND_CONDITIONS)}
         class="focus-ring text-base-content/70 hover:text-base-content rounded"
       >
-        {t('terms.and.conditions')}
+        {t('terms_and_conditions')}
       </a>
     </nav>
 
@@ -37,7 +37,7 @@ const currentYear = new Date().getFullYear();
           <a
             href={link.href}
             class="focus-ring text-base-content/70 hover:text-base-content rounded"
-            aria-label={`${t('navigate.to')} ${link.label}`}
+            aria-label={`${t('navigate_to')} ${link.label}`}
             target="_blank"
             rel="noopener noreferrer"
           >

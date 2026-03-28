@@ -5,12 +5,12 @@ export const THEME_I18N: I18N = {
     light: 'Light',
     dark: 'Dark',
     system: 'System',
-    'toggle.theme': 'Toggle theme',
+    toggle_theme: 'Toggle theme',
   },
   uk: {
     light: 'Світла',
     dark: 'Темна',
     system: 'Системна',
-    'toggle.theme': 'Змінити тему',
+    toggle_theme: 'Змінити тему',
   },
 };

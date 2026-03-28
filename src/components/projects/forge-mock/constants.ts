@@ -6,33 +6,33 @@ import TargetIcon from '../icons/target.svg';
 import type { ProjectItem } from '../project-item';
 
 export const FORGE_MOCK: ProjectItem = {
-  title: 'forgeMock.title',
-  description: 'forgeMock.description',
+  title: 'forgeMock_title',
+  description: 'forgeMock_description',
   sections: [
     {
-      title: 'forgeMock.section.0.title',
+      title: 'forgeMock_section_0_title',
       icon: TargetIcon,
-      details: ['forgeMock.section.0.details.0'],
+      details: ['forgeMock_section_0_details_0'],
     },
     {
-      title: 'forgeMock.section.1.title',
+      title: 'forgeMock_section_1_title',
       icon: SettingsIcon,
-      details: ['forgeMock.section.1.details.0'],
+      details: ['forgeMock_section_1_details_0'],
     },
     {
-      title: 'forgeMock.section.2.title',
+      title: 'forgeMock_section_2_title',
       icon: StarsIcon,
       details: [
-        'forgeMock.section.2.details.0',
-        'forgeMock.section.2.details.1',
-        'forgeMock.section.2.details.2',
-        'forgeMock.section.2.details.3',
+        'forgeMock_section_2_details_0',
+        'forgeMock_section_2_details_1',
+        'forgeMock_section_2_details_2',
+        'forgeMock_section_2_details_3',
       ],
     },
     {
-      title: 'forgeMock.section.3.title',
+      title: 'forgeMock_section_3_title',
       icon: BusinessIcon,
-      details: ['forgeMock.section.3.details.0'],
+      details: ['forgeMock_section_3_details_0'],
     },
   ],
   skills: [

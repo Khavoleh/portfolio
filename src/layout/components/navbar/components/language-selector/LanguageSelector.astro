@@ -3,11 +3,11 @@ import { useI18n } from '@shared/helpers';
 import { getCurrentLanguage } from '../../../../get-current-language';
 import { getLanguageUrl } from './get-language-url';
 import type { Language } from './language';
-import { LANGUAGE_TRANSLATIONS } from './language-i18n';
+import { LANGUAGE_I18N } from './language-i18n';
 import { LANGUAGES_CONFIG } from './languages-config';
 
 const currentLang = getCurrentLanguage(Astro.url);
-const t = useI18n(Astro.url, LANGUAGE_TRANSLATIONS);
+const t = useI18n(Astro.url, LANGUAGE_I18N);
 ---
 
 <div class="dropdown dropdown-end">
@@ -15,7 +15,7 @@ const t = useI18n(Astro.url, LANGUAGE_TRANSLATIONS);
     tabindex="0"
     role="button"
     class="btn btn-neutral btn-circle focus-ring shadow"
-    aria-label={t('change.language')}
+    aria-label={t('change_language')}
   >
     {
       LANGUAGES_CONFIG.map((lang: Language) => (
