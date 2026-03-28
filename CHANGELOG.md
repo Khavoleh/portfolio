@@ -1,3 +1,11 @@
+## [1.2.9](https://github.com/Khavoleh/portfolio/compare/v1.2.8...v1.2.9) (2026-03-28)
+
+
+### Bug Fixes
+
+* Refactor Projects page ([b4133ed](https://github.com/Khavoleh/portfolio/commit/b4133edb4dac9c9416a3390e9aaa841448e41bb4))
+* Rename all helpers to kebab case ([772dd8d](https://github.com/Khavoleh/portfolio/commit/772dd8dd45c93e9f268c74909df263a550a97354))
+
 ## [1.2.8](https://github.com/Khavoleh/portfolio/compare/v1.2.7...v1.2.8) (2026-03-26)
 
 
