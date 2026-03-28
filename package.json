@@ -14,7 +14,7 @@
     "url": "https://github.com/Khavoleh/portfolio"
   },
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --config astro.config.local.ts",
     "build": "astro build",
     "preview": "astro build --config astro.config.local.ts && astro preview --config astro.config.local.ts",
     "astro": "astro",

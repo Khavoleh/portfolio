@@ -1,9 +1,9 @@
 import { SKILL_TYPES } from '@shared/components';
-import BusinessIcon from '../icons/business.svg';
-import SettingsIcon from '../icons/settings.svg';
-import StarsIcon from '../icons/stars.svg';
-import TargetIcon from '../icons/target.svg';
-import type { ProjectItem } from '../interfaces';
+import BusinessIcon from '../../icons/business.svg';
+import SettingsIcon from '../../icons/settings.svg';
+import StarsIcon from '../../icons/stars.svg';
+import TargetIcon from '../../icons/target.svg';
+import type { ProjectItem } from '../../project-item';
 
 export const PORTFOLIO: ProjectItem = {
   title: 'portfolio.title',
@@ -44,10 +44,3 @@ export const PORTFOLIO: ProjectItem = {
     { name: 'Vercel', type: SKILL_TYPES.DEV_OPS },
   ],
 };
-
-export const PERFORMANCE_METRICS: string[] = [
-  'portfolio.performance.metrics.0',
-  'portfolio.performance.metrics.1',
-  'portfolio.performance.metrics.2',
-  'portfolio.performance.metrics.3',
-];
