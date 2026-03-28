@@ -11,6 +11,9 @@ const config: AstroUserConfig = {
   adapter: vercel(),
   security: {
     csp: {
+      scriptDirective: {
+        resources: ["'self'", 'https://cloud.umami.is'],
+      },
       directives: [
         "default-src 'self'",
         "img-src 'self' data:",
