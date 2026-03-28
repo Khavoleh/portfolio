@@ -15,7 +15,7 @@ const config: AstroUserConfig = {
         "default-src 'self'",
         "img-src 'self' data:",
         "font-src 'self'",
-        "connect-src 'self'",
+        "connect-src 'self' https://api-gateway.umami.dev https://cloud.umami.is",
         "form-action 'self'",
         "base-uri 'self'",
         "object-src 'none'",
