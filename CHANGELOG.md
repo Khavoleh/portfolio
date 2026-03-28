@@ -1,3 +1,11 @@
+## [1.2.12](https://github.com/Khavoleh/portfolio/compare/v1.2.11...v1.2.12) (2026-03-28)
+
+
+### Bug Fixes
+
+* Add script directive with Umami scripts ([1705911](https://github.com/Khavoleh/portfolio/commit/170591151f3932c9ae75703cf09945b60a18613b))
+* Add script directive with Umami scripts ([#129](https://github.com/Khavoleh/portfolio/issues/129)) ([f7f5260](https://github.com/Khavoleh/portfolio/commit/f7f5260e32eb58524f8c43dd01b2cfd360633d28))
+
 ## [1.2.11](https://github.com/Khavoleh/portfolio/compare/v1.2.10...v1.2.11) (2026-03-28)
 
 
