@@ -1,7 +1,7 @@
 import type { AstroUserConfig } from 'astro';
 import { defineConfig } from 'astro/config';
 import node from '@astrojs/node';
-import { SHARED_ASTRO_CONFIG } from '@shared/constants';
+import { SHARED_ASTRO_CONFIG } from './src/shared/constants';
 
 const config: AstroUserConfig = {
   ...SHARED_ASTRO_CONFIG,
