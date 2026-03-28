@@ -1,6 +1,6 @@
 import type { I18N } from '@shared/interfaces';
 import { describe, expect, it } from 'vitest';
-import { useI18n } from './useI18n';
+import { useI18n } from './use-i18n';
 
 const MOCK_I18N: I18N = {
   en: {

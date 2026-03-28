@@ -1,7 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:best-practices"],
-  "schedule": ["at any time"],
   "packageRules": [
     {
       "matchUpdateTypes": ["major"]
@@ -14,7 +13,6 @@
   ],
   "rangeStrategy": "pin",
   "semanticCommits": "enabled",
-  "minimumReleaseAge": "3 days",
   "labels": ["dependencies"],
   "prConcurrentLimit": 10,
   "prCreation": "immediate",
