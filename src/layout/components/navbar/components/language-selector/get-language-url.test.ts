@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { getLanguageUrl } from './getLanguageUrl';
+import { getLanguageUrl } from './get-language-url';
 import { LANGUAGES_CONFIG } from './languages-config';
 
 describe('getLanguageUrl', () => {

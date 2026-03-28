@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { getLanguageStaticPaths } from './getLanguageStaticPaths';
+import { getLanguageStaticPaths } from './get-language-static-paths';
 
 describe('getLanguageStaticPaths', () => {
   it('should return static paths for all supported languages', () => {
