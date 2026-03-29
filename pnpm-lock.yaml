@@ -22,8 +22,8 @@ importers:
         specifier: 10.0.4
         version: 10.0.4(astro@6.1.1(@types/node@24.12.0)(@vercel/functions@3.4.3)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.59.1)(typescript@5.9.3)(yaml@2.8.3))
       '@astrojs/sitemap':
-        specifier: 3.7.1
-        version: 3.7.1
+        specifier: 3.7.2
+        version: 3.7.2
       '@biomejs/biome':
         specifier: 2.4.9
         version: 2.4.9
@@ -129,8 +129,8 @@ packages:
     resolution: {integrity: sha512-nksZQVjlferuWzhPsBpQ1JE5XuKAf1id1/9Hj4a9KG4+ofrlzxUUwX4YGQF/SuDiuiGKEnzopGOt38F3AnVWsQ==}
     engines: {node: '>=22.12.0'}
 
-  '@astrojs/sitemap@3.7.1':
-    resolution: {integrity: sha512-IzQqdTeskaMX+QDZCzMuJIp8A8C1vgzMBp/NmHNnadepHYNHcxQdGLQZYfkbd2EbRXUfOS+UDIKx8sKg0oWVdw==}
+  '@astrojs/sitemap@3.7.2':
+    resolution: {integrity: sha512-PqkzkcZTb5ICiyIR8VoKbIAP/laNRXi5tw616N1Ckk+40oNB8Can1AzVV56lrbC5GKSZFCyJYUVYqVivMisvpA==}
 
   '@astrojs/telemetry@3.3.0':
     resolution: {integrity: sha512-UFBgfeldP06qu6khs/yY+q1cDAaArM2/7AEIqQ9Cuvf7B1hNLq0xDrZkct+QoIGyjq56y8IaE2I3CTvG99mlhQ==}
@@ -3898,7 +3898,7 @@ snapshots:
     dependencies:
       prismjs: 1.30.0
 
-  '@astrojs/sitemap@3.7.1':
+  '@astrojs/sitemap@3.7.2':
     dependencies:
       sitemap: 9.0.1
       stream-replace-string: 2.0.0
