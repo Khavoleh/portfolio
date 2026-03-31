@@ -16,7 +16,10 @@ const currentYear = new Date().getFullYear();
       {t('copyright')}
     </span>
 
-    <nav class="flex flex-wrap items-center justify-center gap-4 text-sm font-medium md:gap-6">
+    <nav
+      class="flex flex-wrap items-center justify-center gap-4 text-sm font-medium md:gap-6"
+      aria-label={t('legal_links')}
+    >
       <a
         href={getLanguageUrl(Astro.url, PAGE_URLS.PRIVACY_POLICY)}
         class="focus-ring text-base-content/70 hover:text-base-content rounded"
@@ -31,7 +34,7 @@ const currentYear = new Date().getFullYear();
       </a>
     </nav>
 
-    <nav class="flex justify-center gap-5">
+    <nav class="flex justify-center gap-5" aria-label={t('social_links')}>
       {
         SOCIAL_LINKS.map((link: SocialLink) => (
           <a

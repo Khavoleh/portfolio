@@ -26,3 +26,7 @@ pnpm-debug.log*
 
 # certificates
 *.pem
+
+#e2e tests
+/playwright-report
+/test-results

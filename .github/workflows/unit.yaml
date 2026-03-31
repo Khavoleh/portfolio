@@ -1,4 +1,4 @@
-name: Pull Request Tests
+name: Pull Request Unit Tests
 
 permissions:
   contents: read
@@ -15,7 +15,7 @@ on:
 
 jobs:
   test:
-    name: Run Tests
+    name: Run Unit Tests
     runs-on: ubuntu-latest
 
     steps:
@@ -25,5 +25,5 @@ jobs:
       - name: Setup
         uses: ./.github/shared/setup
 
-      - name: Run tests
-        run: pnpm test
+      - name: Run unit tests
+        run: pnpm unit

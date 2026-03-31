@@ -19,8 +19,10 @@ pre-push:
       run: pnpm astro check
     build:
       run: pnpm build
-    test:
-      run: pnpm test
+    unit:
+      run: pnpm unit
+    e2e:
+      run: pnpm e2e
     depcruise:
       run: pnpm depcruise
     branch-name:
