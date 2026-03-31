@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "type": "module",
-  "version": "1.2.14",
+  "version": "1.2.15",
   "pnpm": {
     "onlyBuiltDependencies": [
       "esbuild",

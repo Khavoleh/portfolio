@@ -1,3 +1,10 @@
+## [1.2.15](https://github.com/Khavoleh/portfolio/compare/v1.2.14...v1.2.15) (2026-03-31)
+
+
+### Bug Fixes
+
+* Fix strong updated date ([8c90d09](https://github.com/Khavoleh/portfolio/commit/8c90d09eec733bfe689f7be560a59ce790fb2035))
+
 ## [1.2.14](https://github.com/Khavoleh/portfolio/compare/v1.2.13...v1.2.14) (2026-03-28)
 
 ## [1.2.13](https://github.com/Khavoleh/portfolio/compare/v1.2.12...v1.2.13) (2026-03-28)
