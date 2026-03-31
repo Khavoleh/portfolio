@@ -4,14 +4,8 @@ permissions:
   contents: read
 
 on:
-  pull_request:
-    branches:
-      - main
-      - develop
-    paths:
-      - 'src/**'
-      - 'pnpm-lock.yaml'
-      - 'package.json'
+  schedule:
+    - cron: '0 8 * * *'
 
 jobs:
   e2e:
@@ -29,4 +23,6 @@ jobs:
         run: pnpm exec playwright install --with-deps
 
       - name: Run E2E tests
+        env:
+          PLAYWRIGHT_BASE_URL: ${{ vars.PLAYWRIGHT_BASE_URL }}
         run: pnpm e2e
