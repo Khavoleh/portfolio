@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "type": "module",
-  "version": "1.2.7",
+  "version": "1.2.15",
   "pnpm": {
     "onlyBuiltDependencies": [
       "esbuild",
@@ -20,10 +20,11 @@
     "astro": "astro",
     "prettier": "prettier . --write",
     "lint": "biome check",
-    "test": "vitest run",
+    "unit": "vitest run",
+    "e2e": "playwright test",
     "depcruise": "depcruise src",
     "prepare": "lefthook install",
-    "validate": "astro build && pnpm test && pnpm lint && pnpm prettier --check && pnpm astro-check && pnpm depcruise"
+    "validate": "astro build && pnpm unit && pnpm e2e && pnpm lint && pnpm prettier --check && pnpm astro-check && pnpm depcruise"
   },
   "dependencies": {
     "@astrojs/vercel": "10.0.3",
@@ -33,7 +34,9 @@
     "@astrojs/check": "0.9.8",
     "@astrojs/node": "10.0.4",
     "@astrojs/sitemap": "3.7.2",
+    "@axe-core/playwright": "4.11.1",
     "@biomejs/biome": "2.4.9",
+    "@playwright/test": "1.58.2",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
     "@semantic-release/github": "12.0.6",

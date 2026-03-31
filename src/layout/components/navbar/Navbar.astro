@@ -29,7 +29,7 @@ const currentPath: string = Astro.url.pathname;
       <p class="text-base-content text-xl font-semibold">{t('name')}</p>
     </div>
 
-    <nav class="hidden md:flex">
+    <nav class="hidden md:flex" aria-label={t('menu')}>
       <ul class="menu menu-horizontal flex-nowrap gap-1 px-1 text-base">
         {
           NAVIGATION_LINKS.map((link: NavLink) => {
