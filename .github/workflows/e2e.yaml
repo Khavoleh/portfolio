@@ -8,6 +8,10 @@ on:
     branches:
       - main
       - develop
+    paths:
+      - 'src/**'
+      - 'pnpm-lock.yaml'
+      - 'package.json'
   schedule:
     - cron: '0 8 * * *'
 

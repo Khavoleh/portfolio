@@ -17,8 +17,6 @@ pre-push:
       run: pnpm prettier --check .
     check-types:
       run: pnpm astro check
-    build:
-      run: pnpm build
     unit:
       run: pnpm unit
     e2e:
