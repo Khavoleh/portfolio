@@ -19,7 +19,7 @@ const selectTheme = async (page: Page, themeId: 'dark' | 'light') => {
 };
 
 test('theme selector changes theme to dark and light', async ({ page }) => {
-  await page.goto(`/${LANGUAGES_SHORT.EN}${PAGE_URLS.HOME}`, { waitUntil: 'domcontentloaded' });
+  await page.goto(`/${LANGUAGES_SHORT.EN}${PAGE_URLS.HOME}`, { waitUntil: 'load' });
 
   await selectTheme(page, 'dark');
   await selectTheme(page, 'light');
