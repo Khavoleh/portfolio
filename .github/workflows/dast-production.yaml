@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - name: Nuclei Scan
-        uses: projectdiscovery/nuclei-action@main
+        uses: projectdiscovery/nuclei-action@51a9aa9ebd4ec21ccc43d8618d2b747926cd63dd # main
         with:
           target: https://www.khavol.com
           flags: '-severity low,medium,high,critical'
