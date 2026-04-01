@@ -29,7 +29,7 @@ jobs:
         run: pnpm run preview &
 
       - name: Nuclei Scan (Local)
-        uses: projectdiscovery/nuclei-action@51a9aa9ebd4ec21ccc43d8618d2b747926cd63dd # main
+        uses: projectdiscovery/nuclei-action@v3
         with:
           target: http://localhost:4321
           flags: '-severity low,medium,high,critical'
