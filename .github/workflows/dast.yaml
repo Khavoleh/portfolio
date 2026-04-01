@@ -1,0 +1,35 @@
+name: Nuclei DAST Scan
+
+permissions:
+  contents: read
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+    paths:
+      - 'src/**'
+      - 'pnpm-lock.yaml'
+      - 'package.json'
+
+jobs:
+  dast:
+    name: Run Nuclei DAST Scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+
+      - name: Setup
+        uses: ./.github/shared/setup
+
+      - name: Start Astro Preview
+        run: pnpm run preview
+
+      - name: Nuclei Scan (Local)
+        uses: projectdiscovery/nuclei-action@main
+        with:
+          target: http://localhost:4321
+          flags: '-severity low,medium,high,critical'
