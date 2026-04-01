@@ -10,6 +10,11 @@ const config: AstroUserConfig = {
   integrations: [sitemap()],
   adapter: vercel(),
   security: {
+    checkOrigin: true,
+    allowedDomains: [
+      { hostname: 'www.khavol.com', protocol: 'https' },
+      { hostname: 'khavol.com', protocol: 'https' },
+    ],
     csp: {
       scriptDirective: {
         resources: ["'self'", 'https://cloud.umami.is'],
@@ -22,6 +27,8 @@ const config: AstroUserConfig = {
         "form-action 'self'",
         "base-uri 'self'",
         "object-src 'none'",
+        "frame-ancestors 'none'",
+        'upgrade-insecure-requests',
       ],
     },
   },

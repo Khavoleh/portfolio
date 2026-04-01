@@ -1,5 +1,5 @@
-import { expect, test } from '@playwright/test';
 import type { Page } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 import { LANGUAGES_SHORT, PAGE_URLS } from '@shared/constants';
 
 const THEME_TOGGLE_LABEL = 'Toggle theme';

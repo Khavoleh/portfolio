@@ -1,4 +1,4 @@
-name: E2E Tests
+name: Nuclei DAST Scan
 
 permissions:
   contents: read
@@ -10,13 +10,12 @@ on:
       - develop
     paths:
       - 'src/**'
-      - 'playwright.config.ts'
       - 'pnpm-lock.yaml'
       - 'package.json'
 
 jobs:
-  e2e:
-    name: Run E2E Tests
+  dast:
+    name: Run Nuclei DAST Scan
     runs-on: ubuntu-latest
 
     steps:
@@ -26,8 +25,10 @@ jobs:
       - name: Setup
         uses: ./.github/shared/setup
 
-      - name: Install Playwright browsers
-        run: pnpm exec playwright install --with-deps
+      - name: Start Astro Preview
+        run: pnpm run preview &
 
-      - name: Run E2E tests
-        run: pnpm e2e
+      - name: Nuclei Scan (Local)
+        uses: projectdiscovery/nuclei-action@cc153d0541e1adf8a42bbe31c0a4fb2376147538 # v3
+        with:
+          args: '-u http://localhost:4321 -severity low,medium,high,critical'

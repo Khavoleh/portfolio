@@ -1,0 +1,27 @@
+name: Nuclei DAST Production Scan
+
+permissions:
+  contents: read
+
+on:
+  schedule:
+    - cron: '0 8 * * *'
+
+jobs:
+  dast:
+    name: Run Nuclei DAST Production Scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Nuclei Scan
+        uses: projectdiscovery/nuclei-action@cc153d0541e1adf8a42bbe31c0a4fb2376147538 # v3
+        with:
+          args: '-u https://www.khavol.com -severity low,medium,high,critical'
+
+      - name: Upload Production Artifacts
+        if: always()
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
+        with:
+          name: nuclei-production-report
+          path: nuclei-results.sarif
+          retention-days: 7

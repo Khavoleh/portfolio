@@ -10,6 +10,7 @@ on:
       - develop
     paths:
       - '**/*.ts'
+      - 'vitest.config.ts'
       - 'pnpm-lock.yaml'
       - 'package.json'
 

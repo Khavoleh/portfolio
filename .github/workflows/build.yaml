@@ -8,6 +8,16 @@ on:
     branches:
       - main
       - develop
+    paths:
+      - 'src/**'
+      - '**/*.json'
+      - '**/*.ts'
+      - '**/*.js'
+      - '**/*.mjs'
+      - '**/*.astro'
+      - 'astro.config.json'
+      - 'pnpm-lock.yaml'
+      - 'package.json'
 
 jobs:
   build:

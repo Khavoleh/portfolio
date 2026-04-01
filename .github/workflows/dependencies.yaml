@@ -10,8 +10,10 @@ on:
       - develop
     paths:
       - 'src/**'
+      - '.dependency-cruiser.mjs'
       - 'pnpm-lock.yaml'
       - 'package.json'
+
 jobs:
   validate-dependencies:
     name: Validate Dependencies

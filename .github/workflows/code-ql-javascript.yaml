@@ -12,7 +12,6 @@ on:
     paths:
       - '**/*.js'
       - '**/*.mjs'
-      - '**/*.astro'
   schedule:
     - cron: '0 0 * * 0'
 
