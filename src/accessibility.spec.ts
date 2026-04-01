@@ -1,6 +1,6 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
-import { PAGE_URLS, LANGUAGES_SHORT } from '@shared/constants';
+import { LANGUAGES_SHORT, PAGE_URLS } from '@shared/constants';
 
 const supportedLanguages = [LANGUAGES_SHORT.EN, LANGUAGES_SHORT.UK] as const;
 const localizedPagePaths = [
