@@ -31,5 +31,4 @@ jobs:
       - name: Nuclei Scan (Local)
         uses: projectdiscovery/nuclei-action@cc153d0541e1adf8a42bbe31c0a4fb2376147538 # v3
         with:
-          target: http://localhost:4321
-          flags: '-severity low,medium,high,critical'
+          args: '-u http://localhost:4321 -severity low,medium,high,critical'
