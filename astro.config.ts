@@ -27,8 +27,6 @@ const config: AstroUserConfig = {
         "form-action 'self'",
         "base-uri 'self'",
         "object-src 'none'",
-        "frame-ancestors 'none'",
-        'upgrade-insecure-requests',
       ],
     },
   },

@@ -19,6 +19,18 @@ export default defineConfig({
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
+    {
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
+    },
+    {
+      name: 'Mobile Chrome',
+      use: { ...devices['Pixel 10'] },
+    },
+    {
+      name: 'Mobile Safari',
+      use: { ...devices['iPhone 17'] },
+    },
   ],
   webServer: process.env.PLAYWRIGHT_BASE_URL
     ? undefined

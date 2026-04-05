@@ -18,7 +18,7 @@ export const METRICS_I18N: I18N = {
     metrics_0_description: 'Комерційний досвід',
     metrics_1_name: 'Прискорення',
     metrics_1_description: 'Приріст продуктивності',
-    metrics_2_name: 'Розробників',
+    metrics_2_name: 'Розробники',
     metrics_2_description: 'Керівництво командою',
     metrics_3_name: 'Повний цикл',
     metrics_3_description: 'Комплексна розробка',
