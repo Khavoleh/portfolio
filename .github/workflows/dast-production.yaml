@@ -4,6 +4,7 @@ permissions:
   contents: read
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 8 * * *'
 
@@ -23,5 +24,5 @@ jobs:
         uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
         with:
           name: nuclei-production-report
-          path: nuclei-results.sarif
+          path: results.txt
           retention-days: 7
