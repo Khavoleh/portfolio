@@ -4,13 +4,13 @@ import { defineConfig } from 'vitest/config';
 export default defineConfig({
   test: {
     globals: true,
-    include: ['src/**/*.test.ts'],
+    include: ['src/**/*.unit.ts'],
   },
   resolve: {
     alias: {
       '@shared': resolve(__dirname, './src/shared'),
-      '@layout': resolve(__dirname, './src/layouts'),
-      '@components': resolve(__dirname, './src/components'),
+      '@widgets': resolve(__dirname, './src/widgets'),
+      '@features': resolve(__dirname, './src/features'),
       '@assets': resolve(__dirname, './src/assets'),
     },
   },

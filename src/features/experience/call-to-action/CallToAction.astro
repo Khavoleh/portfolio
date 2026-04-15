@@ -1,0 +1,21 @@
+---
+import { ButtonLink } from '@shared/components';
+import { PAGE_URLS } from '@shared/constants';
+import { getLanguageUrl, useI18n } from '@shared/helpers';
+import { ViewCv } from '@widgets/view-cv';
+import { CALL_TO_ACTION_I18N } from './call-to-action-i18n';
+
+const t = useI18n(Astro.url, CALL_TO_ACTION_I18N);
+---
+
+<section class="mt-16 text-center">
+  <h2 class="text-base-content mb-6 text-3xl font-bold">{t('cta_title')}</h2>
+
+  <div class="flex flex-col items-center justify-center gap-4 md:flex-row">
+    <ViewCv />
+
+    <ButtonLink href={getLanguageUrl(Astro.url, PAGE_URLS.PROJECTS)} outline>
+      {t('cta_button_projects')}
+    </ButtonLink>
+  </div>
+</section>

@@ -1,0 +1,28 @@
+---
+interface Props {
+  href: string;
+  style?: 'primary' | 'secondary';
+  outline?: boolean;
+  target?: '_blank' | '_self' | '_parent' | '_top';
+  rel?: string;
+  class?: string;
+}
+
+const { href, style = 'primary', outline = false, target, rel, class: className = '' } = Astro.props;
+
+const buttonClass = [
+  'btn',
+  style === 'primary' ? 'btn-primary' : 'btn-secondary',
+  'btn-lg',
+  'focus-ring',
+  'shadow-lg',
+  outline && 'btn-outline',
+  className,
+]
+  .filter(Boolean)
+  .join(' ');
+---
+
+<a href={href} target={target} rel={rel} class={buttonClass}>
+  <slot />
+</a>
