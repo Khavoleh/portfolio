@@ -94,18 +94,8 @@ export default {
       severity: 'error',
     },
     {
-      name: 'layout-imports-restriction',
-      comment: 'In @layout you can import only @layout, @shared and @assets',
-      from: { path: '^src/layout/.+' },
-      to: {
-        path: '^(?!src/layout|src/assets|src/shared/[^/]+/index\\.ts).+',
-        pathNot: '^src/shared/[^/]+/index\\.ts$',
-      },
-      severity: 'error',
-    },
-    {
       name: 'pages-imports-restriction',
-      comment: 'In @pages you can import only @pages, @layout, @components, @shared and @assets',
+      comment: 'In @pages you can import only @pages, @components, @shared and @assets',
       from: { path: '^src/pages' },
       to: {
         path: '^(?!src/pages|src/assets|src/layout/[^/]+/index\\.ts|src/components/[^/]+/index\\.ts|src/shared/[^/]+/index\\.ts).+',

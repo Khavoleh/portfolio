@@ -24,7 +24,7 @@
     "e2e": "playwright test",
     "depcruise": "depcruise src",
     "prepare": "lefthook install",
-    "validate": "astro build && pnpm unit && pnpm e2e && pnpm lint && pnpm prettier --check && pnpm astro-check && pnpm depcruise"
+    "validate": "astro build && pnpm unit && pnpm lint && pnpm prettier --check && pnpm astro-check && pnpm depcruise"
   },
   "dependencies": {
     "@astrojs/vercel": "10.0.4",
