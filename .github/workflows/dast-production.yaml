@@ -18,11 +18,3 @@ jobs:
         uses: projectdiscovery/nuclei-action@cc153d0541e1adf8a42bbe31c0a4fb2376147538 # v3
         with:
           args: '-u https://www.khavol.com -severity low,medium,high,critical'
-
-      - name: Upload Production Artifacts
-        if: always()
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
-        with:
-          name: nuclei-production-report
-          path: results.txt
-          retention-days: 7
