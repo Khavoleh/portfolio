@@ -5,7 +5,7 @@
   "compilerOptions": {
     "paths": {
       "@shared/*": ["./src/shared/*"],
-      "@components/*": ["./src/components/*"],
+      "@features/*": ["./src/features/*"],
       "@assets/*": ["./src/assets/*"]
     }
   }
