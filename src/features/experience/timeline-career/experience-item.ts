@@ -1,4 +1,4 @@
-import type { Skill } from '@shared/components';
+import type { Skill } from '@widgets/skill';
 import type { SvgComponent } from 'astro/types';
 
 interface ExperienceSection {

@@ -1,4 +1,4 @@
-import { SKILL_TYPES } from '@shared/components';
+import { SKILL_TYPES } from '@widgets/skill';
 import type { ExperienceItem } from './experience-item';
 import ArchitectureIcon from './icons/architecture.svg';
 import CiCdIcon from './icons/ci-cd.svg';

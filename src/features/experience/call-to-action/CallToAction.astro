@@ -1,7 +1,8 @@
 ---
-import { ViewCv } from '@shared/components';
+import { ButtonLink } from '@shared/components';
 import { PAGE_URLS } from '@shared/constants';
 import { getLanguageUrl, useI18n } from '@shared/helpers';
+import { ViewCv } from '@widgets/view-cv';
 import { CALL_TO_ACTION_I18N } from './call-to-action-i18n';
 
 const t = useI18n(Astro.url, CALL_TO_ACTION_I18N);
@@ -13,11 +14,8 @@ const t = useI18n(Astro.url, CALL_TO_ACTION_I18N);
   <div class="flex flex-col items-center justify-center gap-4 md:flex-row">
     <ViewCv />
 
-    <a
-      href={getLanguageUrl(Astro.url, PAGE_URLS.PROJECTS)}
-      class="btn btn-outline btn-primary btn-lg focus-ring shadow-lg"
-    >
+    <ButtonLink href={getLanguageUrl(Astro.url, PAGE_URLS.PROJECTS)} outline>
       {t('cta_button_projects')}
-    </a>
+    </ButtonLink>
   </div>
 </section>

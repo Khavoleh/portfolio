@@ -84,22 +84,32 @@ export default {
       severity: 'error',
     },
     {
+      name: 'widgets-imports-restriction',
+      comment: 'In @widgets you can import only @widgets, @shared and @assets',
+      from: { path: '^src/widgets/.+' },
+      to: {
+        path: '^(?!src/widgets|src/assets|src/shared/[^/]+/index\\.ts).+',
+        pathNot: '^src/shared/[^/]+/index\\.ts$',
+      },
+      severity: 'error',
+    },
+    {
       name: 'features-imports-restriction',
-      comment: 'In @features you can import only @features, @shared and @assets',
+      comment: 'In @features you can import only @features, @widgets, @shared and @assets',
       from: { path: '^src/features/.+' },
       to: {
-        path: '^(?!src/features|src/assets|src/shared/[^/]+/index\\.ts).+',
+        path: '^(?!src/features|src/widgets|src/assets|src/shared/[^/]+/index\\.ts).+',
         pathNot: '^src/shared/[^/]+/index\\.ts$',
       },
       severity: 'error',
     },
     {
       name: 'pages-imports-restriction',
-      comment: 'In @pages you can import only @pages, @features, @shared and @assets',
+      comment: 'In @pages you can import only @pages, @features, @widgets, @shared and @assets',
       from: { path: '^src/pages' },
       to: {
-        path: '^(?!src/pages|src/assets|src/features/[^/]+/index\\.ts|src/shared/[^/]+/index\\.ts).+',
-        pathNot: '^(src/features/[^/]+/index\\.ts|src/shared/[^/]+/index\\.ts)$',
+        path: '^(?!src/pages|src/assets|src/features/[^/]+/index\\.ts|src/widgets/[^/]+/index\\.ts|src/shared/[^/]+/index\\.ts).+',
+        pathNot: '^(src/features/[^/]+/index\\.ts|src/widgets/[^/]+/index\\.ts|src/shared/[^/]+/index\\.ts)$',
       },
       severity: 'error',
     },
