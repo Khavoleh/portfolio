@@ -20,7 +20,11 @@ const t = useI18n(Astro.url, DIRECT_CONTACT_I18N);
     <div class={contactInformationClasses}>
       <EmailIcon class={iconClasses} />
       <h3 class="text-base-content mb-2 text-xl font-semibold">{t('directContact_email_title')}</h3>
-      <a href=`mailto:${SOCIALS.EMAIL}` class="link link-primary focus-ring rounded transition-all duration-200" tabindex="0">
+      <a
+        href=`mailto:${SOCIALS.EMAIL}`
+        class="link link-primary focus-ring rounded transition-all duration-200"
+        tabindex="0"
+      >
         {SOCIALS.EMAIL}
       </a>
     </div>
