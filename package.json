@@ -27,30 +27,30 @@
     "validate": "astro build && pnpm unit && pnpm lint && pnpm prettier --check && pnpm astro-check && pnpm depcruise"
   },
   "dependencies": {
-    "@astrojs/vercel": "10.0.4",
-    "astro": "6.1.5"
+    "@astrojs/vercel": "10.0.5",
+    "astro": "6.1.9"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.8",
-    "@astrojs/node": "10.0.4",
+    "@astrojs/node": "10.0.6",
     "@astrojs/sitemap": "3.7.2",
-    "@axe-core/playwright": "4.11.1",
-    "@biomejs/biome": "2.4.11",
+    "@axe-core/playwright": "4.11.2",
+    "@biomejs/biome": "2.4.13",
     "@playwright/test": "1.59.1",
     "@semantic-release/git": "10.0.1",
     "@semantic-release/github": "12.0.6",
-    "@tailwindcss/vite": "4.2.2",
+    "@tailwindcss/vite": "4.2.4",
     "daisyui": "5.5.19",
     "dependency-cruiser": "17.3.10",
     "globals": "17.5.0",
-    "lefthook": "2.1.5",
-    "prettier": "3.8.2",
+    "lefthook": "2.1.6",
+    "prettier": "3.8.3",
     "prettier-plugin-astro": "0.14.1",
-    "prettier-plugin-tailwindcss": "0.7.2",
+    "prettier-plugin-tailwindcss": "0.7.3",
     "schema-dts": "2.0.0",
     "semantic-release": "25.0.3",
     "sharp": "0.34.5",
-    "tailwindcss": "4.2.2",
-    "vitest": "4.1.4"
+    "tailwindcss": "4.2.4",
+    "vitest": "4.1.5"
   }
 }

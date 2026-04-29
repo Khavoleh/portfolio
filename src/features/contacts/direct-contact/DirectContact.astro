@@ -20,7 +20,11 @@ const t = useI18n(Astro.url, DIRECT_CONTACT_I18N);
     <div class={contactInformationClasses}>
       <EmailIcon class={iconClasses} />
       <h3 class="text-base-content mb-2 text-xl font-semibold">{t('directContact_email_title')}</h3>
-      <a href=`mailto:${SOCIALS.EMAIL}` class="link link-primary focus-ring rounded transition-all duration-200">
+      <a
+        href=`mailto:${SOCIALS.EMAIL}`
+        class="link link-primary focus-ring rounded transition-all duration-200"
+        tabindex="0"
+      >
         {SOCIALS.EMAIL}
       </a>
     </div>
@@ -33,6 +37,7 @@ const t = useI18n(Astro.url, DIRECT_CONTACT_I18N);
         target="_blank"
         rel="noopener noreferrer"
         class="link link-primary focus-ring rounded transition-all duration-200"
+        tabindex="0"
       >
         @khavol
       </a>
@@ -42,7 +47,24 @@ const t = useI18n(Astro.url, DIRECT_CONTACT_I18N);
       <GeolocationIcon class={iconClasses} />
       <h3 class="text-base-content mb-2 text-xl font-semibold">{t('directContact_location_title')}</h3>
       <p class="text-base-content/80">{t('directContact_location_city')}</p>
-      <p class="text-base-content/70 text-sm">{getUkraineTimezone()}</p>
+      <p id="ukraine-timezone" class="text-base-content/70 text-sm">
+        {getUkraineTimezone()}
+      </p>
     </div>
   </div>
 </section>
+
+<script>
+  import { getUkraineTimezone } from './get-ukraine-timezone';
+
+  const updateTimezone = () => {
+    const tzElement = document.getElementById('ukraine-timezone');
+    if (tzElement) {
+      tzElement.textContent = getUkraineTimezone();
+    }
+  };
+
+  updateTimezone();
+
+  document.addEventListener('astro:page-load', updateTimezone);
+</script>

@@ -28,7 +28,7 @@ const t = useI18n(Astro.url, LANGUAGE_I18N);
     {
       LANGUAGES_CONFIG.map((lang: Language) => (
         <li>
-          <a href={getLanguageUrl(Astro.url, lang.code)} data-language={lang.code}>
+          <a href={getLanguageUrl(Astro.url, lang.code)} data-language={lang.code} tabindex="0">
             <lang.icon class="h-5 w-5" />
             <span class="text-base-content">{lang.name}</span>
           </a>
