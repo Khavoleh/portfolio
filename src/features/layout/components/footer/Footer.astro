@@ -23,12 +23,14 @@ const currentYear = new Date().getFullYear();
       <a
         href={getLanguageUrl(Astro.url, PAGE_URLS.PRIVACY_POLICY)}
         class="focus-ring text-base-content/70 hover:text-base-content rounded"
+        tabindex="0"
       >
         {t('privacy_policy')}
       </a>
       <a
         href={getLanguageUrl(Astro.url, PAGE_URLS.TERMS_AND_CONDITIONS)}
         class="focus-ring text-base-content/70 hover:text-base-content rounded"
+        tabindex="0"
       >
         {t('terms_and_conditions')}
       </a>
@@ -43,6 +45,7 @@ const currentYear = new Date().getFullYear();
             aria-label={`${t('navigate_to')} ${link.label}`}
             target="_blank"
             rel="noopener noreferrer"
+            tabindex="0"
           >
             <link.icon class="h-6 w-6" />
           </a>
