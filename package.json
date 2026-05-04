@@ -42,7 +42,7 @@
     "@tailwindcss/vite": "4.2.4",
     "daisyui": "5.5.19",
     "dependency-cruiser": "17.3.10",
-    "globals": "17.5.0",
+    "globals": "17.6.0",
     "lefthook": "2.1.6",
     "prettier": "3.8.3",
     "prettier-plugin-astro": "0.14.1",
