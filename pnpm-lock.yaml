@@ -10,17 +10,17 @@ importers:
     dependencies:
       '@astrojs/vercel':
         specifier: 10.0.6
-        version: 10.0.6(astro@6.2.2(@types/node@24.12.2)(@vercel/functions@3.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)(yaml@2.8.4))(rollup@4.60.2)
+        version: 10.0.6(astro@6.3.1(@types/node@24.12.2)(@vercel/functions@3.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)(yaml@2.8.4))(rollup@4.60.2)
       astro:
-        specifier: 6.2.2
-        version: 6.2.2(@types/node@24.12.2)(@vercel/functions@3.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)(yaml@2.8.4)
+        specifier: 6.3.1
+        version: 6.3.1(@types/node@24.12.2)(@vercel/functions@3.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)(yaml@2.8.4)
     devDependencies:
       '@astrojs/check':
         specifier: 0.9.9
         version: 0.9.9(prettier-plugin-astro@0.14.1)(prettier@3.8.3)(typescript@5.9.3)
       '@astrojs/node':
-        specifier: 10.0.6
-        version: 10.0.6(astro@6.2.2(@types/node@24.12.2)(@vercel/functions@3.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)(yaml@2.8.4))
+        specifier: 10.1.0
+        version: 10.1.0(astro@6.3.1(@types/node@24.12.2)(@vercel/functions@3.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)(yaml@2.8.4))
       '@astrojs/sitemap':
         specifier: 3.7.2
         version: 3.7.2
@@ -123,10 +123,10 @@ packages:
   '@astrojs/markdown-remark@7.1.1':
     resolution: {integrity: sha512-C6e9BnLGlbdv6bV8MYGeHpHxsUHrCrB4OuRLqi5LI7oiBVcBcqfUN06zpwFQdHgV48QCCrMmLpyqBr7VqC+swA==}
 
-  '@astrojs/node@10.0.6':
-    resolution: {integrity: sha512-e8JmaP4sGxqvdei14kmBzhAqgd5/L5MTExW3Hks5DOt9LDvGzlsFZwnXVXzWPVjW/PErl7t9uLg7xWhCqfkSrA==}
+  '@astrojs/node@10.1.0':
+    resolution: {integrity: sha512-4/2oqUTQ71UQ8+xX249T4l/d0/YkC5ssOVl4R2yQO7Wg4mOnvsq9Z9iaTkWAyElg3lqZq7XRNCEXCmDNiYcW1A==}
     peerDependencies:
-      astro: ^6.0.0
+      astro: ^6.3.0
 
   '@astrojs/prism@4.0.1':
     resolution: {integrity: sha512-nksZQVjlferuWzhPsBpQ1JE5XuKAf1id1/9Hj4a9KG4+ofrlzxUUwX4YGQF/SuDiuiGKEnzopGOt38F3AnVWsQ==}
@@ -135,8 +135,8 @@ packages:
   '@astrojs/sitemap@3.7.2':
     resolution: {integrity: sha512-PqkzkcZTb5ICiyIR8VoKbIAP/laNRXi5tw616N1Ckk+40oNB8Can1AzVV56lrbC5GKSZFCyJYUVYqVivMisvpA==}
 
-  '@astrojs/telemetry@3.3.1':
-    resolution: {integrity: sha512-7fcIxXS9J4ls5tr8b3ww9rbAIz2+HrhNJYZdkAhhB4za/I5IZ/60g+Bs8q7zwG0tOIZfNB4JWhVJ1Qkl/OrNCw==}
+  '@astrojs/telemetry@3.3.2':
+    resolution: {integrity: sha512-j8DNruA8ors99Al39RYZPJK4DC1bKkoNm93mAMuBhY9TCNC4R8n1q7ovFnJ5qhGh5Lsh7pa1gpQVpYpsJPeTHQ==}
     engines: {node: 18.20.8 || ^20.3.0 || >=22.0.0}
 
   '@astrojs/vercel@10.0.6':
@@ -1252,8 +1252,8 @@ packages:
     resolution: {integrity: sha512-Izi8RQcffqCeNVgFigKli1ssklIbpHnCYc6AknXGYoB6grJqyeby7jv12JUQgmTAnIDnbck1uxksT4dzN3PWBA==}
     engines: {node: '>=12'}
 
-  astro@6.2.2:
-    resolution: {integrity: sha512-zkne2lZU+iTZPBK8F4gbMfrw5f11bT4VXiBxcdFHcPvYyH+Hox7V1sZu97RDpvwmHi+wQ0efKv89KY5744a0jQ==}
+  astro@6.3.1:
+    resolution: {integrity: sha512-atz6dmkE3Gu24bDgb7g2RE/BYnKqPYIHd6hTUM1UXvu/i7qNZOKLAqEHvgYpv9PQVcgWsXpk4/OOXZ0E/FzvSQ==}
     engines: {node: '>=22.12.0', npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -1546,9 +1546,6 @@ packages:
   dir-glob@3.0.1:
     resolution: {integrity: sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==}
     engines: {node: '>=8'}
-
-  dlv@1.1.3:
-    resolution: {integrity: sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==}
 
   dom-serializer@2.0.0:
     resolution: {integrity: sha512-wIkAryiqt/nV5EQKqQpo3SToSOV9J0DnbJqwK7Wv/Trc92zIAYZ4FlMu+JPFW1DfGFt81ZTCGgDEabffXeLyJg==}
@@ -3931,10 +3928,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/node@10.0.6(astro@6.2.2(@types/node@24.12.2)(@vercel/functions@3.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)(yaml@2.8.4))':
+  '@astrojs/node@10.1.0(astro@6.3.1(@types/node@24.12.2)(@vercel/functions@3.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)(yaml@2.8.4))':
     dependencies:
       '@astrojs/internal-helpers': 0.9.0
-      astro: 6.2.2(@types/node@24.12.2)(@vercel/functions@3.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)(yaml@2.8.4)
+      astro: 6.3.1(@types/node@24.12.2)(@vercel/functions@3.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)(yaml@2.8.4)
       send: 1.2.1
       server-destroy: 1.0.1
     transitivePeerDependencies:
@@ -3950,23 +3947,22 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 4.4.2
 
-  '@astrojs/telemetry@3.3.1':
+  '@astrojs/telemetry@3.3.2':
     dependencies:
       ci-info: 4.4.0
-      dlv: 1.1.3
       dset: 3.1.4
       is-docker: 4.0.0
       is-wsl: 3.1.1
       which-pm-runs: 1.1.0
 
-  '@astrojs/vercel@10.0.6(astro@6.2.2(@types/node@24.12.2)(@vercel/functions@3.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)(yaml@2.8.4))(rollup@4.60.2)':
+  '@astrojs/vercel@10.0.6(astro@6.3.1(@types/node@24.12.2)(@vercel/functions@3.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)(yaml@2.8.4))(rollup@4.60.2)':
     dependencies:
       '@astrojs/internal-helpers': 0.9.0
       '@vercel/analytics': 1.6.1
       '@vercel/functions': 3.5.0
       '@vercel/nft': 1.5.0(rollup@4.60.2)
       '@vercel/routing-utils': 5.3.3
-      astro: 6.2.2(@types/node@24.12.2)(@vercel/functions@3.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)(yaml@2.8.4)
+      astro: 6.3.1(@types/node@24.12.2)(@vercel/functions@3.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)(yaml@2.8.4)
       esbuild: 0.27.7
       tinyglobby: 0.2.16
     transitivePeerDependencies:
@@ -4929,12 +4925,12 @@ snapshots:
 
   assertion-error@2.0.1: {}
 
-  astro@6.2.2(@types/node@24.12.2)(@vercel/functions@3.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)(yaml@2.8.4):
+  astro@6.3.1(@types/node@24.12.2)(@vercel/functions@3.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.2)(yaml@2.8.4):
     dependencies:
       '@astrojs/compiler': 4.0.0
       '@astrojs/internal-helpers': 0.9.0
       '@astrojs/markdown-remark': 7.1.1
-      '@astrojs/telemetry': 3.3.1
+      '@astrojs/telemetry': 3.3.2
       '@capsizecss/unpack': 4.0.0
       '@clack/prompts': 1.3.0
       '@oslojs/encoding': 1.1.0
@@ -5292,8 +5288,6 @@ snapshots:
   dir-glob@3.0.1:
     dependencies:
       path-type: 4.0.0
-
-  dlv@1.1.3: {}
 
   dom-serializer@2.0.0:
     dependencies:
