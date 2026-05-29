@@ -21,12 +21,12 @@
   },
   "dependencies": {
     "@astrojs/vercel": "10.0.7",
-    "astro": "6.3.7"
+    "astro": "6.3.8"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.9",
     "@astrojs/node": "10.1.1",
-    "@astrojs/sitemap": "3.7.2",
+    "@astrojs/sitemap": "3.7.3",
     "@axe-core/playwright": "4.11.3",
     "@biomejs/biome": "2.4.15",
     "@playwright/test": "1.60.0",
