@@ -47,11 +47,11 @@ const updateThemeIcon = (theme) => {
 
 const attachThemeListeners = () => {
   document.querySelectorAll('[data-set-theme]').forEach((button) => {
-    const clone = button.cloneNode(true);
-    button.replaceWith(clone);
+    if (button.dataset.themeBound === 'true') return;
+    button.dataset.themeBound = 'true';
 
-    clone.addEventListener('click', () => {
-      const theme = clone.dataset.setTheme;
+    button.addEventListener('click', () => {
+      const theme = button.dataset.setTheme;
       if (theme) {
         setTheme(theme);
         updateThemeIcon(theme);

@@ -1,11 +1,11 @@
 ---
 import './global.css';
 import { ClientRouter } from 'astro:transitions';
+import { getLanguageFromUrl } from '@shared/helpers';
 import Footer from './components/footer/Footer.astro';
 import Navbar from './components/navbar/Navbar.astro';
 import Seo from './components/seo/Seo.astro';
 import Sidebar from './components/sidebar/Sidebar.astro';
-import { getCurrentLanguage } from './get-current-language';
 import removeTransitionsScript from './scripts/remove-transitions.js?raw';
 import themeInitScript from './scripts/theme-init.js?raw';
 
@@ -18,10 +18,10 @@ export interface Props {
 const { title, description, noindex } = Astro.props;
 ---
 
-<html lang={getCurrentLanguage(Astro.url)}>
+<html lang={getLanguageFromUrl(Astro.url)}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <Seo title={title} description={description} noindex={noindex} />
     <ClientRouter />

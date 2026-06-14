@@ -18,12 +18,16 @@ export async function GET({ request }: { request: Request }) {
   const preferred = getCookie(request, 'preferred-language');
   const accept = request.headers.get('accept-language') || '';
 
-  const lang = preferred && ['en', 'uk'].includes(preferred) ? preferred : accept.startsWith('uk') ? 'uk' : 'en';
+  const prefersUkrainian = accept.split(',').some((part) => part.trim().toLowerCase().startsWith('uk'));
+  const lang = preferred && ['en', 'uk'].includes(preferred) ? preferred : prefersUkrainian ? 'uk' : 'en';
 
   return new Response(null, {
-    status: 301,
+    // 302 (not 301): the target depends on a cookie/header that can change,
+    // so the redirect must not be cached permanently by the browser.
+    status: 302,
     headers: {
       Location: `/${lang}/`,
+      'Cache-Control': 'no-store',
     },
   });
 }

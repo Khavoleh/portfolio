@@ -98,6 +98,15 @@ describe('useI18n', () => {
 
       expect(t('greeting')).toBe('Hello');
     });
+
+    it('should default to English for Object.prototype keys in the URL', () => {
+      for (const fakeLang of ['constructor', 'toString', 'valueOf', '__proto__']) {
+        const url = new URL(`https://www.khavol.com/${fakeLang}/`);
+        const t = useI18n(url, MOCK_I18N);
+
+        expect(t('greeting')).toBe('Hello');
+      }
+    });
   });
 
   describe('Edge cases', () => {

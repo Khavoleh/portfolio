@@ -1,12 +1,11 @@
 ---
-import { useI18n } from '@shared/helpers';
-import { getCurrentLanguage } from '../../../../get-current-language';
+import { getLanguageFromUrl, useI18n } from '@shared/helpers';
 import { getLanguageUrl } from './get-language-url';
 import type { Language } from './language';
 import { LANGUAGE_I18N } from './language-i18n';
 import { LANGUAGES_CONFIG } from './languages-config';
 
-const currentLang = getCurrentLanguage(Astro.url);
+const currentLang = getLanguageFromUrl(Astro.url);
 const t = useI18n(Astro.url, LANGUAGE_I18N);
 ---
 
@@ -48,7 +47,7 @@ const t = useI18n(Astro.url, LANGUAGE_I18N);
         const lang = (link as HTMLElement).dataset.language;
 
         if (lang) {
-          document.cookie = `${COOKIE_NAME}=${encodeURIComponent(lang)}; path=/; max-age=${COOKIE_MAX_AGE}; SameSite=Strict`;
+          document.cookie = `${COOKIE_NAME}=${encodeURIComponent(lang)}; path=/; max-age=${COOKIE_MAX_AGE}; SameSite=Lax`;
 
           const href = (link as HTMLAnchorElement).href;
 

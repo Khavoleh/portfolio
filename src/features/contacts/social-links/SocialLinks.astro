@@ -18,7 +18,7 @@ const t = useI18n(Astro.url, SOCIAL_LINKS_I18N);
           target="_blank"
           rel="noopener noreferrer"
           class="card bg-base-200 border-base-300 focus-ring flex flex-col items-center border p-8 shadow-lg transition-all duration-200 hover:scale-105 hover:shadow-xl"
-          aria-label={t(`socialLinks.aria.${link.label.toLowerCase()}`)}
+          aria-label={link.ariaKey ? t(link.ariaKey) : undefined}
           tabindex="0"
         >
           <link.icon class="text-primary mb-4 h-16 w-16" />
