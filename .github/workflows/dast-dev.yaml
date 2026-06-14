@@ -1,4 +1,4 @@
-name: Nuclei DAST Production Scan
+name: Nuclei DAST Dev Scan
 
 permissions:
   contents: read
@@ -10,7 +10,7 @@ on:
 
 jobs:
   dast:
-    name: Run Nuclei DAST Production Scan
+    name: Run Nuclei DAST Dev Scan
     runs-on: ubuntu-latest
 
     steps:
