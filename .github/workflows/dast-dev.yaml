@@ -1,4 +1,4 @@
-name: Nuclei DAST Production Scan
+name: Nuclei DAST Dev Scan
 
 permissions:
   contents: read
@@ -10,11 +10,11 @@ on:
 
 jobs:
   dast:
-    name: Run Nuclei DAST Production Scan
+    name: Run Nuclei DAST Dev Scan
     runs-on: ubuntu-latest
 
     steps:
       - name: Nuclei Scan
         uses: projectdiscovery/nuclei-action@cc153d0541e1adf8a42bbe31c0a4fb2376147538 # v3.1.1
         with:
-          args: '-u https://www.khavol.com -severity low,medium,high,critical'
+          args: '-u ${{ vars.DEV_URL }} -severity low,medium,high,critical -H "x-vercel-protection-bypass: ${{ secrets.VERCEL_PROTECTION_BYPASS }}"'

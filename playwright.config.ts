@@ -13,6 +13,11 @@ export default defineConfig({
   use: {
     baseURL,
     trace: 'on-first-retry',
+    extraHTTPHeaders: process.env.VERCEL_PROTECTION_BYPASS
+      ? {
+          'x-vercel-protection-bypass': process.env.VERCEL_PROTECTION_BYPASS,
+        }
+      : undefined,
   },
   projects: [
     {
