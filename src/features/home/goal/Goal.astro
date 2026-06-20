@@ -16,7 +16,7 @@ const t = useI18n(Astro.url, GOAL_I18N);
       {t('goal_button_experience')}
     </ButtonLink>
 
-    <ButtonLink href={getLanguageUrl(Astro.url, PAGE_URLS.PROJECTS)} outline>
+    <ButtonLink href={getLanguageUrl(Astro.url, PAGE_URLS.PROJECTS)} style="secondary" outline>
       {t('goal_button_projects')}
     </ButtonLink>
   </div>

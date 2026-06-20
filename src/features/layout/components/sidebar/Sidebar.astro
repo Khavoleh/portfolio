@@ -35,7 +35,7 @@ const currentPath: string = Astro.url.pathname;
             <li>
               <a
                 href={getLanguageUrl(Astro.url, link.href)}
-                class:list={['focus-ring', isActive && 'active text-primary']}
+                class:list={['focus-ring', isActive && 'active']}
                 aria-label={`${t('navigate_to')} ${t(link.label)} ${t('page')}`}
                 aria-current={isActive ? 'page' : undefined}
               >

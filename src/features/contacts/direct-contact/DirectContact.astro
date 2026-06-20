@@ -7,7 +7,7 @@ import EmailIcon from './icons/email.svg';
 import GeolocationIcon from './icons/geolocation.svg';
 import MessengerIcon from './icons/messenger.svg';
 
-const iconClasses = 'mb-4 h-12 w-12 text-primary';
+const iconClasses = 'mb-4 h-12 w-12 text-base-content icon-muted';
 const contactInformationClasses =
   'card bg-base-200 border-base-300 flex flex-col items-center border p-6 text-center shadow-lg transition-transform duration-200 hover:scale-105 w-64';
 const t = useI18n(Astro.url, DIRECT_CONTACT_I18N);
@@ -47,7 +47,7 @@ const t = useI18n(Astro.url, DIRECT_CONTACT_I18N);
       <GeolocationIcon class={iconClasses} />
       <h3 class="text-base-content mb-2 text-xl font-semibold">{t('directContact_location_title')}</h3>
       <p class="text-base-content/80">{t('directContact_location_city')}</p>
-      <p id="ukraine-timezone" class="text-base-content/70 text-sm">
+      <p id="ukraine-timezone" class="text-base-content/80 text-sm">
         {getUkraineTimezone()}
       </p>
     </div>

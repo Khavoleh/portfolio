@@ -1,11 +1,12 @@
 ---
 import { useI18n } from '@shared/helpers';
-import { SkillBlock } from '@widgets/skill';
+import { groupSkillsByType, SKILL_TYPES_I18N, SkillBlock } from '@widgets/skill';
 import { EXPERIENCE_DATA } from './experience-data';
 import { EXPERIENCE_DATA_I18N } from './experience-data-i18n';
 import type { ExperienceItem } from './experience-item';
 
 const t = useI18n(Astro.url, EXPERIENCE_DATA_I18N);
+const tSkillType = useI18n(Astro.url, SKILL_TYPES_I18N);
 ---
 
 <div class="relative">
@@ -24,14 +25,21 @@ const t = useI18n(Astro.url, EXPERIENCE_DATA_I18N);
               <div class="card bg-base-200 border-base-300 mb-6 border p-6 shadow-lg md:ml-auto md:max-w-lg">
                 <div class="mb-3">
                   <h2 class="text-base-content mb-2 text-2xl font-bold">{t(experience.role)}</h2>
-                  <p class="text-primary text-lg font-semibold">{t(experience.company)}</p>
+                  <p class="text-base-content text-lg font-semibold">{t(experience.company)}</p>
                   <p class="text-base-content font-semibold">{t(experience.sector)}</p>
-                  <p class="text-base-content/70 mt-1 text-sm">{t(experience.period)}</p>
+                  <p class="text-base-content/80 mt-1 text-sm">{t(experience.period)}</p>
                 </div>
 
-                <div class="flex flex-wrap justify-start gap-3 md:justify-end">
-                  {experience.skills.map((skill) => (
-                    <SkillBlock skill={skill} />
+                <div class="space-y-3">
+                  {groupSkillsByType(experience.skills).map((group) => (
+                    <div class="flex flex-wrap items-center gap-3">
+                      <span class="text-base-content/60 text-xs font-semibold tracking-wide uppercase">
+                        {tSkillType(group.type)}
+                      </span>
+                      {group.skills.map((skill) => (
+                        <SkillBlock skill={skill} />
+                      ))}
+                    </div>
                   ))}
                 </div>
               </div>

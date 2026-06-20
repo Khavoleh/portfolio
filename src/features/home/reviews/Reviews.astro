@@ -38,17 +38,17 @@ const shuffledReviews: Review[] = shuffleArray(translatedReviews);
               <div class="w-full px-2 lg:px-14">
                 <ReviewCard review={review} />
               </div>
-              <div class="absolute top-1/2 right-2 left-2 flex -translate-y-1/2 transform justify-between lg:right-0 lg:left-0">
+              <div class="absolute top-1/2 right-2 left-2 flex -translate-y-1/2 transform justify-between lg:right-1 lg:left-1">
                 <button
                   data-target={`review-${prevIndex}`}
-                  class="btn btn-circle review-nav-btn focus-ring max-lg:bg-base-100/50 max-lg:hover:bg-base-100/80 lg:btn-secondary lg:btn-outline shadow-lg"
+                  class="btn btn-circle review-nav-btn focus-ring max-lg:bg-base-100/50 max-lg:hover:bg-base-100/80 lg:btn-secondary lg:btn-outline shadow"
                   aria-label={t('reviews_button_previous')}
                 >
                   ❮
                 </button>
                 <button
                   data-target={`review-${nextIndex}`}
-                  class="btn btn-circle review-nav-btn focus-ring max-lg:bg-base-100/50 max-lg:hover:bg-base-100/80 lg:btn-secondary lg:btn-outline shadow-lg"
+                  class="btn btn-circle review-nav-btn focus-ring max-lg:bg-base-100/50 max-lg:hover:bg-base-100/80 lg:btn-secondary lg:btn-outline shadow"
                   aria-label={t('reviews_button_next')}
                 >
                   ❯
@@ -70,7 +70,7 @@ const shuffledReviews: Review[] = shuffleArray(translatedReviews);
       tabindex="0"
     >
       {t('reviews_linkedin_link')}
-      <LinkIcon class="h-4 w-4" />
+      <LinkIcon class="icon-muted h-4 w-4" />
     </a>
   </div>
 </section>

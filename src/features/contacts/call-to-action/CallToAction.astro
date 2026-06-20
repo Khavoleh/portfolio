@@ -17,7 +17,7 @@ const t = useI18n(Astro.url, CALL_TO_ACTION_I18N);
   <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
     <ViewCv />
 
-    <ButtonLink href={getLanguageUrl(Astro.url, PAGE_URLS.EXPERIENCE)} outline>
+    <ButtonLink href={getLanguageUrl(Astro.url, PAGE_URLS.EXPERIENCE)} style="secondary" outline>
       {t('cta_button_experience')}
     </ButtonLink>
   </div>

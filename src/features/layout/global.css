@@ -9,19 +9,20 @@
 
   --color-primary: oklch(47.58% 0.127 289.2);
   --color-primary-content: oklch(97.96% 0.006 84.57);
+  --color-primary-text: oklch(47.58% 0.127 289.2);
 
   --color-secondary: oklch(54% 0.073 291.56);
   --color-secondary-content: oklch(97.96% 0.006 84.57);
 
-  --color-accent: oklch(71.37% 0.108 50.15);
+  --color-accent: oklch(54% 0.108 50.15);
   --color-accent-content: oklch(28.08% 0.017 305.41);
 
-  --color-neutral: oklch(29.72% 0.059 292.17);
-  --color-neutral-content: oklch(97.96% 0.006 84.57);
+  --color-neutral: oklch(89.17% 0.032 299.63);
+  --color-neutral-content: oklch(28.08% 0.017 305.41);
 
   --color-base-100: oklch(97.96% 0.006 84.57);
-  --color-base-200: oklch(93.82% 0.019 299.06);
-  --color-base-300: oklch(89.17% 0.032 299.63);
+  --color-base-200: oklch(96.8% 0.014 299.06);
+  --color-base-300: oklch(95.3% 0.024 299.63);
   --color-base-content: oklch(28.08% 0.017 305.41);
 
   --color-info: oklch(54.61% 0.215 262.88);
@@ -32,8 +33,6 @@
   --color-warning-content: oklch(28.73% 0.06 77.24);
   --color-error: oklch(57.71% 0.215 27.33);
   --color-error-content: oklch(100% 0 0);
-
-  --violet-link: oklch(47.58% 0.127 289.2);
 }
 
 @plugin 'daisyui/theme' {
@@ -43,6 +42,7 @@
 
   --color-primary: oklch(54.25% 0.158 288.32);
   --color-primary-content: oklch(100% 0 0);
+  --color-primary-text: oklch(73.98% 0.116 291.81);
 
   --color-secondary: oklch(63.37% 0.076 292.17);
   --color-secondary-content: oklch(20.58% 0.026 294.61);
@@ -55,7 +55,7 @@
   --color-base-300: oklch(29.02% 0.045 292.53);
   --color-base-content: oklch(95.58% 0.009 84.57);
 
-  --color-neutral: oklch(24.83% 0.034 293.98);
+  --color-neutral: oklch(29.02% 0.045 292.53);
   --color-neutral-content: oklch(95.58% 0.009 84.57);
 
   --color-info: oklch(71.37% 0.143 254.62);
@@ -66,14 +66,14 @@
   --color-warning-content: oklch(28.57% 0.064 53.81);
   --color-error: oklch(71.06% 0.166 22.22);
   --color-error-content: oklch(23.61% 0.076 25.23);
-
-  --violet-link: oklch(73.98% 0.116 291.81);
 }
 
 :root,
 [data-theme='portfolio-dark'],
 [data-theme='portfolio-light'] {
-  --icon-color: var(--color-primary);
+  --icon-color-primary: var(--color-primary-text);
+  --icon-color: var(--color-base-content);
+  --icon-opacity: 0.8;
 }
 
 :root.switch-theme-transition,
@@ -93,14 +93,65 @@
 
 .focus-ring:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px var(--color-accent);
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--color-primary) 55%, transparent);
 }
 
 .link-violet {
-  color: var(--violet-link);
+  color: var(--color-primary-text);
 }
 
 .link-violet:hover {
-  color: var(--violet-link);
+  color: var(--color-primary-text);
   opacity: 0.8;
+}
+
+[fill='var(--icon-color)'],
+[stroke='var(--icon-color)'] {
+  opacity: var(--icon-opacity);
+  transition: opacity 0.2s ease;
+}
+
+a:hover [fill='var(--icon-color)'],
+a:hover [stroke='var(--icon-color)'],
+button:hover [fill='var(--icon-color)'],
+button:hover [stroke='var(--icon-color)'],
+label:hover [fill='var(--icon-color)'],
+label:hover [stroke='var(--icon-color)'],
+[fill='var(--icon-color)']:hover,
+[stroke='var(--icon-color)']:hover {
+  --icon-opacity: 1;
+}
+
+.btn [fill='var(--icon-color)'],
+.btn [stroke='var(--icon-color)'] {
+  --icon-opacity: 1;
+}
+
+footer [fill='var(--icon-color)'],
+footer [stroke='var(--icon-color)'] {
+  --icon-opacity: 0.6;
+}
+
+.icon-muted {
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.icon-muted:hover,
+a:hover .icon-muted,
+button:hover .icon-muted {
+  opacity: 1;
+}
+
+#drawer-nav-list a {
+  color: var(--color-primary-text);
+  opacity: 0.6;
+  background: none !important;
+  transition: opacity 0.2s ease;
+}
+
+#drawer-nav-list a:hover,
+#drawer-nav-list a.active {
+  opacity: 1;
+  background: none !important;
 }
