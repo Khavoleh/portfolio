@@ -10,17 +10,17 @@ importers:
     dependencies:
       '@astrojs/vercel':
         specifier: 10.0.8
-        version: 10.0.8(astro@6.4.7(@types/node@24.13.2)(@vercel/functions@3.7.1)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.62.0)(yaml@2.9.0))(rollup@4.62.0)
+        version: 10.0.8(astro@6.4.8(@types/node@24.13.2)(@vercel/functions@3.7.1)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.62.0)(yaml@2.9.0))(rollup@4.62.0)
       astro:
-        specifier: 6.4.7
-        version: 6.4.7(@types/node@24.13.2)(@vercel/functions@3.7.1)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.62.0)(yaml@2.9.0)
+        specifier: 6.4.8
+        version: 6.4.8(@types/node@24.13.2)(@vercel/functions@3.7.1)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.62.0)(yaml@2.9.0)
     devDependencies:
       '@astrojs/check':
         specifier: 0.9.9
         version: 0.9.9(prettier-plugin-astro@0.14.1)(prettier@3.8.4)(typescript@6.0.3)
       '@astrojs/node':
         specifier: 10.1.4
-        version: 10.1.4(astro@6.4.7(@types/node@24.13.2)(@vercel/functions@3.7.1)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.62.0)(yaml@2.9.0))
+        version: 10.1.4(astro@6.4.8(@types/node@24.13.2)(@vercel/functions@3.7.1)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.62.0)(yaml@2.9.0))
       '@astrojs/sitemap':
         specifier: 3.7.3
         version: 3.7.3
@@ -1270,8 +1270,8 @@ packages:
     resolution: {integrity: sha512-Izi8RQcffqCeNVgFigKli1ssklIbpHnCYc6AknXGYoB6grJqyeby7jv12JUQgmTAnIDnbck1uxksT4dzN3PWBA==}
     engines: {node: '>=12'}
 
-  astro@6.4.7:
-    resolution: {integrity: sha512-5vsXx0H52u23Jpshs9tM81D03Tb3Oh2Vt2Zo0bpqjXN+njkAWjFyGjTfmWJLAcrCQd9Q+iWB1eqfhR1sZJEaUA==}
+  astro@6.4.8:
+    resolution: {integrity: sha512-KK5lX90uU9EeVaTjINyj3sy9/NFXVa59aowaqbWBDDKLXZh4rr7GwIaCFYVetE22MJtsCNFerQXn0vlCLmpP/Q==}
     engines: {node: '>=22.12.0', npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -3986,10 +3986,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/node@10.1.4(astro@6.4.7(@types/node@24.13.2)(@vercel/functions@3.7.1)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.62.0)(yaml@2.9.0))':
+  '@astrojs/node@10.1.4(astro@6.4.8(@types/node@24.13.2)(@vercel/functions@3.7.1)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.62.0)(yaml@2.9.0))':
     dependencies:
       '@astrojs/internal-helpers': 0.10.0
-      astro: 6.4.7(@types/node@24.13.2)(@vercel/functions@3.7.1)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.62.0)(yaml@2.9.0)
+      astro: 6.4.8(@types/node@24.13.2)(@vercel/functions@3.7.1)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.62.0)(yaml@2.9.0)
       send: 1.2.1
       server-destroy: 1.0.1
     transitivePeerDependencies:
@@ -4013,14 +4013,14 @@ snapshots:
       is-wsl: 3.1.1
       which-pm-runs: 1.1.0
 
-  '@astrojs/vercel@10.0.8(astro@6.4.7(@types/node@24.13.2)(@vercel/functions@3.7.1)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.62.0)(yaml@2.9.0))(rollup@4.62.0)':
+  '@astrojs/vercel@10.0.8(astro@6.4.8(@types/node@24.13.2)(@vercel/functions@3.7.1)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.62.0)(yaml@2.9.0))(rollup@4.62.0)':
     dependencies:
       '@astrojs/internal-helpers': 0.10.0
       '@vercel/analytics': 1.6.1
       '@vercel/functions': 3.7.1
       '@vercel/nft': 1.10.2(rollup@4.62.0)
       '@vercel/routing-utils': 5.3.3
-      astro: 6.4.7(@types/node@24.13.2)(@vercel/functions@3.7.1)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.62.0)(yaml@2.9.0)
+      astro: 6.4.8(@types/node@24.13.2)(@vercel/functions@3.7.1)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.62.0)(yaml@2.9.0)
       esbuild: 0.27.7
       tinyglobby: 0.2.17
     transitivePeerDependencies:
@@ -5000,7 +5000,7 @@ snapshots:
 
   assertion-error@2.0.1: {}
 
-  astro@6.4.7(@types/node@24.13.2)(@vercel/functions@3.7.1)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.62.0)(yaml@2.9.0):
+  astro@6.4.8(@types/node@24.13.2)(@vercel/functions@3.7.1)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.62.0)(yaml@2.9.0):
     dependencies:
       '@astrojs/compiler': 4.0.0
       '@astrojs/internal-helpers': 0.10.0
