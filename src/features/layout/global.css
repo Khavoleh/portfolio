@@ -127,11 +127,6 @@ label:hover [stroke='var(--icon-color)'],
   --icon-opacity: 1;
 }
 
-footer [fill='var(--icon-color)'],
-footer [stroke='var(--icon-color)'] {
-  --icon-opacity: 0.6;
-}
-
 .icon-muted {
   opacity: 0.8;
   transition: opacity 0.2s ease;
@@ -141,17 +136,4 @@ footer [stroke='var(--icon-color)'] {
 a:hover .icon-muted,
 button:hover .icon-muted {
   opacity: 1;
-}
-
-#drawer-nav-list a {
-  color: var(--color-primary-text);
-  opacity: 0.6;
-  background: none !important;
-  transition: opacity 0.2s ease;
-}
-
-#drawer-nav-list a:hover,
-#drawer-nav-list a.active {
-  opacity: 1;
-  background: none !important;
 }
