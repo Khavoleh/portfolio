@@ -1,5 +1,6 @@
 ---
 import type { SvgComponent } from 'astro/types';
+import Card from './Card.astro';
 
 interface Props {
   Icon: SvgComponent;
@@ -10,7 +11,7 @@ interface Props {
 const { Icon, title, details } = Astro.props;
 ---
 
-<div class="card bg-base-200 border-base-300 border p-6 shadow-lg">
+<Card>
   <h3 class="text-base-content mb-3 flex items-center text-xl font-bold">
     <Icon class="mr-3 shrink-0" />
     {title}
@@ -27,4 +28,4 @@ const { Icon, title, details } = Astro.props;
       </ul>
     )
   }
-</div>
+</Card>

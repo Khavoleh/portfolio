@@ -1,9 +1,8 @@
 ---
 import LogoIcon from '@assets/logo.svg';
+import { Card, Heading, IconCard, Prose, SectionHeader } from '@shared/components';
 import { useI18n } from '@shared/helpers';
 import GitHubButton from '../components/github-button/GitHubButton.astro';
-import Section from '../components/Section.astro';
-import Title from '../components/Title.astro';
 import TechStack from '../components/tech-stack/TechStack.astro';
 import type { ProjectSection } from '../project-item';
 import { PERFORMANCE_METRICS } from './constants/performance-metrics';
@@ -13,19 +12,19 @@ import { PORTFOLIO_PROJECT_I18N } from './portfolio-project-i18n';
 const t = useI18n(Astro.url, PORTFOLIO_PROJECT_I18N);
 ---
 
-<section class="card bg-base-200 border-base-300 mb-12 border p-8 shadow-2xl md:p-12">
-  <Title title={t(PORTFOLIO.title)} description={t(PORTFOLIO.description)} Icon={LogoIcon} />
+<Card as="section" padding="xl" shadow="2xl" class="mb-12">
+  <SectionHeader title={t(PORTFOLIO.title)} description={t(PORTFOLIO.description)} Icon={LogoIcon} />
 
   <div class="mb-8 grid gap-8 md:grid-cols-2">
     {
       PORTFOLIO.sections.map((section: ProjectSection) => (
-        <Section Icon={section.icon} title={t(section.title)} details={section.details.map((d) => t(d))} />
+        <IconCard Icon={section.icon} title={t(section.title)} details={section.details.map((d) => t(d))} />
       ))
     }
   </div>
 
   <div class="mb-8">
-    <h3 class="text-base-content mb-4 text-center text-xl font-bold">{t('portfolio_performance_title')}</h3>
+    <Heading level={3} center class="mb-4">{t('portfolio_performance_title')}</Heading>
     <div class="p-6">
       <div class="grid grid-cols-2 gap-6 md:grid-cols-4">
         {
@@ -37,13 +36,13 @@ const t = useI18n(Astro.url, PORTFOLIO_PROJECT_I18N);
           ))
         }
       </div>
-      <p class="text-base-content/80 mt-4 text-center text-sm italic">
+      <Prose muted size="sm" center class="mt-4 italic">
         {t('portfolio_performance_note')}
-      </p>
+      </Prose>
     </div>
   </div>
 
   <TechStack skills={PORTFOLIO.skills} />
 
   <GitHubButton url="https://github.com/Khavoleh/portfolio" />
-</section>
+</Card>

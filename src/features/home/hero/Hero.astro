@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import { Heading, Prose } from '@shared/components';
 import { useI18n } from '@shared/helpers';
 import { HERO_I18N } from './hero-i18n';
 import photo from './images/me.jpg';
@@ -15,8 +16,8 @@ const t = useI18n(Astro.url, HERO_I18N);
           <Image src={photo} alt={t('hero_image_alt')} width={192} height={192} class="rounded-full" />
         </div>
       </div>
-      <h1 class="text-accent text-3xl font-bold md:text-center">{t('hero_name')}</h1>
-      <p class="text-base-content/80 text-xl font-medium md:text-center">{t('hero_title')}</p>
+      <Heading level={1} size="3xl" color="accent" class="md:text-center">{t('hero_name')}</Heading>
+      <Prose muted size="xl" leading="normal" class="font-medium md:text-center">{t('hero_title')}</Prose>
     </div>
 
     <div class="divider divider-horizontal hidden lg:flex"></div>
@@ -25,7 +26,7 @@ const t = useI18n(Astro.url, HERO_I18N);
       <h2 class="text-base-content mb-6 text-2xl leading-tight font-bold md:text-3xl lg:text-4xl">
         {t('hero_subtitle')}
       </h2>
-      <p class="text-base-content leading-relaxe text-xl" set:html={t('hero_description')} />
+      <Prose size="xl" html={t('hero_description')} />
     </div>
   </div>
 </section>

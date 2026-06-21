@@ -1,4 +1,5 @@
 ---
+import { Heading } from '@shared/components';
 import { useI18n } from '@shared/helpers';
 import { NOT_FOUND_I18N } from './not-found-i18n';
 
@@ -6,13 +7,9 @@ const t = useI18n(Astro.url, NOT_FOUND_I18N);
 ---
 
 <section class="bg-base-100 text-center">
-  <h1
-    class="animate-bounce-slow text-base-content mb-8 text-[8rem] leading-none font-extrabold md:text-[16rem] lg:text-[20rem] xl:text-[24rem]"
-  >
-    404
-  </h1>
+  <Heading level={1} size="display" weight="extrabold" center class="animate-bounce-slow mb-8">404</Heading>
 
-  <h2 class="text-base-content mb-6 text-3xl font-bold md:text-4xl">{t('not_found_title')}</h2>
+  <Heading level={2} size="3xl" center class="mb-6 md:text-4xl">{t('not_found_title')}</Heading>
 </section>
 
 <style>

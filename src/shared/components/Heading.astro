@@ -1,0 +1,53 @@
+---
+type Level = 1 | 2 | 3 | 4;
+type Size = 'xl' | '2xl' | '3xl' | '4xl' | 'hero' | 'display';
+type Weight = 'semibold' | 'bold' | 'extrabold';
+type Color = 'base' | 'accent';
+
+interface Props {
+  level?: Level;
+  size?: Size;
+  weight?: Weight;
+  color?: Color;
+  center?: boolean;
+  class?: string;
+}
+
+const { level = 2, size, weight = 'bold', color = 'base', center = false, class: className = '' } = Astro.props;
+
+const SIZE_CLASSES: Record<Size, string> = {
+  xl: 'text-xl',
+  '2xl': 'text-2xl',
+  '3xl': 'text-3xl',
+  '4xl': 'text-4xl',
+  hero: 'text-4xl leading-tight md:text-5xl lg:text-6xl',
+  display: 'text-[8rem] leading-none md:text-[16rem] lg:text-[20rem] xl:text-[24rem]',
+};
+
+const DEFAULT_SIZE: Record<Level, Size> = { 1: '4xl', 2: '2xl', 3: 'xl', 4: 'xl' };
+
+const WEIGHT_CLASSES: Record<Weight, string> = {
+  semibold: 'font-semibold',
+  bold: 'font-bold',
+  extrabold: 'font-extrabold',
+};
+
+const COLOR_CLASSES: Record<Color, string> = {
+  base: 'text-base-content',
+  accent: 'text-accent',
+};
+
+const classes = [
+  COLOR_CLASSES[color],
+  SIZE_CLASSES[size ?? DEFAULT_SIZE[level]],
+  WEIGHT_CLASSES[weight],
+  center && 'text-center',
+  className,
+]
+  .filter(Boolean)
+  .join(' ');
+
+const Tag = `h${level}` as 'h1' | 'h2' | 'h3' | 'h4';
+---
+
+<Tag class={classes}><slot /></Tag>

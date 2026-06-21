@@ -1,0 +1,58 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+type Variant = 'primary' | 'secondary';
+type Size = 'md' | 'lg';
+
+interface Props extends Omit<HTMLAttributes<'a'>, 'size'> {
+  href?: string;
+  variant?: Variant;
+  size?: Size;
+  outline?: boolean;
+  type?: 'button' | 'submit' | 'reset';
+}
+
+const {
+  href,
+  variant = 'primary',
+  size = 'lg',
+  outline = false,
+  type = 'button',
+  class: className = '',
+  ...rest
+} = Astro.props;
+
+const VARIANT_CLASSES: Record<Variant, string> = {
+  primary: 'btn-primary',
+  secondary: 'btn-secondary',
+};
+
+const SIZE_CLASSES: Record<Size, string> = {
+  md: 'btn-md',
+  lg: 'btn-lg',
+};
+
+const classes = [
+  'btn',
+  VARIANT_CLASSES[variant],
+  SIZE_CLASSES[size],
+  outline && 'btn-outline',
+  'focus-ring',
+  'shadow-lg',
+  className,
+]
+  .filter(Boolean)
+  .join(' ');
+---
+
+{
+  href ? (
+    <a href={href} class={classes} tabindex="0" {...rest}>
+      <slot />
+    </a>
+  ) : (
+    <button type={type} class={classes} {...rest}>
+      <slot />
+    </button>
+  )
+}

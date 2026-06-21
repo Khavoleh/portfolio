@@ -1,13 +1,9 @@
 ---
+import { PageIntro } from '@shared/components';
 import { useI18n } from '@shared/helpers';
 import { CONTACT_INTRO_I18N } from './contact-intro-i18n';
 
 const t = useI18n(Astro.url, CONTACT_INTRO_I18N);
 ---
 
-<section class="mb-12 text-center">
-  <h1 class="mb-6 text-4xl text-base font-bold md:text-5xl lg:text-6xl">
-    {t('intro_title')}
-  </h1>
-  <p class="text-base-content mx-auto max-w-3xl text-lg leading-relaxed md:text-xl" set:html={t('intro_description')} />
-</section>
+<PageIntro title={t('intro_title')} descriptionHtml={t('intro_description')} narrow />

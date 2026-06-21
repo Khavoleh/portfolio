@@ -1,2 +1,11 @@
-export { default as ButtonLink } from './ButtonLink.astro';
+export { default as Button } from './Button.astro';
+export { default as Card } from './Card.astro';
+export { default as EmailLink } from './EmailLink.astro';
+export { default as Heading } from './Heading.astro';
+export { default as IconCard } from './IconCard.astro';
+export { default as PageIntro } from './PageIntro.astro';
+export { default as Prose } from './Prose.astro';
+export { default as ProseList } from './ProseList.astro';
 export { default as Schema } from './Schema.astro';
+export { default as SectionHeader } from './SectionHeader.astro';
+export { default as TextSection } from './TextSection.astro';

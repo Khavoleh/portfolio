@@ -1,5 +1,6 @@
 ---
 import type { SvgComponent } from 'astro/types';
+import Prose from './Prose.astro';
 
 interface Props {
   Icon: SvgComponent;
@@ -15,5 +16,5 @@ const { Icon, title, description } = Astro.props;
     <Icon class="mr-3 h-8 w-8 shrink-0 md:h-10 md:w-10" />
     {title}
   </h2>
-  <p class="text-base-content text-lg leading-relaxed">{description}</p>
+  <Prose size="lg">{description}</Prose>
 </div>
