@@ -27,7 +27,7 @@
     "@astrojs/check": "0.9.9",
     "@astrojs/node": "10.1.4",
     "@astrojs/sitemap": "3.7.3",
-    "@axe-core/playwright": "4.11.3",
+    "@axe-core/playwright": "4.12.1",
     "@biomejs/biome": "2.5.1",
     "@playwright/test": "1.61.0",
     "@semantic-release/git": "10.0.1",
