@@ -75,7 +75,7 @@ Boundaries enforced by `.dependency-cruiser.mjs` (`pnpm depcruise`, run on pre-p
 - `src/features/` — e.g. `home`, `experience`, `contacts`, `projects`, `terms-and-conditions`, `privacy-policy`, `layout`, `not-found`.
 - `src/widgets/` — e.g. `skill`, `view-cv`.
 - `src/shared/` — `components`, `helpers`, `constants`, `i18n`, `interfaces`. Nothing imports into `src/shared` from outside except `@assets`. Cross-boundary imports must target `src/<layer>/<slice>/index.ts`.
-- Slice = `Component.astro` + barrel `index.ts` (`export { default } from './Component.astro'`) + optional `*-i18n.ts`, `*.ts`, `helpers/`, `icons/`; tests colocated (`*.unit.ts`, `*.e2e.ts`).
+- Slice = `Component.astro` + barrel `index.ts` (`export { default } from './Component.astro'`) + optional `*-i18n.ts`, `*.ts`, `helpers/`, `icons/`; tests colocated (`*.unit.ts`, `*.e2e.ts`). **`index.ts` exists only at the slice root (features/widgets) and at each shared category root — never inside any sub-folder.**
 
 ### i18n
 

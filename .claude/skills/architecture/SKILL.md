@@ -21,39 +21,76 @@ pages → features → widgets → shared
 ## Hard rules
 
 1. **Downward imports only.** Never import a higher layer from a lower one; never reach sideways into another slice's internals.
-2. **Cross-slice/cross-layer imports go through a slice's public barrel (`index.ts`)** — never a deep internal path. The barrel is the slice's public API; everything else is private.
+2. **Cross-slice/cross-layer imports go through the slice's public barrel (`index.ts`)** — never a deep internal path. The barrel is the public API; everything else is private.
 3. **No circular dependencies.**
 4. Prefer path aliases over long relative `../../..` chains.
 
-## Modular slice structure
+## Where `index.ts` lives — the exact rule
 
-This per-item barrel structure applies to **layers built from business-logic slices** (features, widgets, and any layer above shared) — each slice is a self-contained folder with its own `index.ts`. Keep everything a slice owns **inside it, maximally modular**, behind one public barrel:
+`index.ts` exists at **exactly two levels**, nowhere else:
 
-- `Component.*` — the UI/entry.
-- `index.ts` — the public API (barrel); the only thing other slices import.
-- `*-i18n.ts` — translations for this slice's copy.
-- `*.ts` — local types, data, and constants used only here.
-- `helpers/` — local helper functions (each in its own file, ideally with a colocated unit test).
-- `icons/` — local assets used only by this slice.
-- `*.unit.ts` / `*.e2e.ts` — tests colocated with what they cover.
+| Location | Purpose |
+|---|---|
+| `src/features/<slice>/index.ts` | Public API for a feature slice |
+| `src/widgets/<slice>/index.ts` | Public API for a widget slice |
+| `src/shared/<category>/index.ts` | Public API for a shared category (components, helpers, constants, …) |
 
-**A folder only earns its own `index.ts` when something outside its single immediate parent file needs to import it** — i.e. it's re-exported from its feature/widget's own top-level barrel, or two or more sibling slices import it directly. That's what makes it a "slice" with a public API in the first place.
+**Never add `index.ts` to any inner/nested folder.** Sub-components and sub-folders inside a slice are private implementation details imported with direct relative paths by their one parent file.
 
-A component folder nested inside a slice and used **only** by that slice's own parent component — no other file ever imports it — is a **private internal**, not a slice: leave it as a plain folder (component file, optional colocated test/i18n) and import it with a direct relative path from that one parent. This holds **no matter how deep the nesting is**: do not add a barrel at every level "for consistency" — a barrel is for crossing a boundary, and a folder with exactly one consumer never crosses one. Only add the barrel the moment a second consumer (a sibling slice, or the feature's own public barrel) needs the same folder.
+## Feature / widget slice structure
 
-**Plain component exporting** — the leaf/shared layer, and any other layer that just hosts standalone components, helpers, or constants with no business logic — does **not** get one folder + barrel per item. Instead each category (e.g. components, helpers, constants) is a single flat folder holding the individual files side by side, with **one barrel `index.ts`** that re-exports all of them by name.
+Each slice is a self-contained folder at the layer root. Everything inside stays private behind the single top-level barrel:
 
-Only give an item its own subfolder here when it needs more than one file (e.g. an implementation file plus its colocated test). Even then there's no nested `index.ts`; the category-level barrel exports it directly.
+```
+src/features/contacts/
+  Contacts.*             ← root component (entry point for the slice)
+  index.ts               ← barrel: export { default } from './Contacts'
+  contacts-i18n.ts       ← slice-local translations
+  direct-contact/        ← sub-component folder — NO index.ts here
+    DirectContact.*
+    direct-contact-i18n.ts
+    helpers.ts
+    helpers.unit.ts
+    icons/
+```
 
-**Don't create a category folder for a single occupant.** A category folder (`helpers/`, `constants/`, `icons/`, etc.) exists to hold multiple files side by side. If a slice or shared area only has one constant, one helper, or one component to expose, skip the folder — place that one file directly at the slice's/shared area's top level (still exported from the existing barrel) instead of wrapping it in a folder that contains nothing else. Add the category folder only once a second item shows up to share it with.
+`Contacts.*` imports its sub-component via a direct relative path:
+```ts
+import DirectContact from './direct-contact/DirectContact';
+```
+
+Nothing outside `src/features/contacts/` ever imports from inside it — only through `index.ts`.
+
+## Shared category structure
+
+Each category in `src/shared/` is a flat folder with one `index.ts` that re-exports everything by name. Items that need more than one file (e.g. implementation + test) get their own sub-folder, but that sub-folder has **no** `index.ts`; the category barrel exports it directly.
+
+```
+src/shared/components/
+  Button.*
+  Card.*
+  use-hook/              ← sub-folder for multi-file items — NO index.ts here
+    use-hook.ts
+    use-hook.unit.ts
+  index.ts               ← re-exports everything
+```
+
+```ts
+// src/shared/components/index.ts
+export { default as Button } from './Button';
+export { default as Card } from './Card';
+export { useHook } from './use-hook/use-hook';
+```
+
+**Don't create a category folder for a single occupant.** Add the category folder only once a second item appears; until then place the single file directly at the slice/shared root.
 
 ## Push down on shared access
 
-When **two or more** slices need the same thing (component, helper, constant, type, icon, copy), **don't duplicate and don't sideways-import** — move it **down** to the lowest layer that fits:
+When **two or more** slices need the same thing (component, helper, constant, type, icon, copy), **don't duplicate and don't sideways-import** — move it down to the lowest layer that fits:
 
-- pure / no business logic → **shared**;
-- reused and carries business logic → **widget**;
-- still specific to one feature's sub-parts → keep in that feature but lift to its top level.
+- pure / no business logic → **shared**
+- reused and carries business logic → **widget**
+- still specific to one feature's sub-parts → keep in that feature but lift to its top level
 
 Promote only what's actually shared; keep single-use code local.
 
@@ -65,16 +102,9 @@ Run the project's dependency-boundary linter after changing imports or moving fi
 
 ## In this repo (portfolio)
 
-- Enforced by `.dependency-cruiser.mjs` (`pnpm depcruise`, run on pre-push and in `pnpm validate`); violations fail CI.
-- Aliases (`tsconfig.json` + `vitest.config.ts`): `@shared/*`, `@widgets/*`, `@features/*`, `@assets/*`.
-- Cross-boundary targets allowed by depcruise: only `src/<layer>/<slice>/index.ts`. E.g. `import { useI18n } from '@shared/helpers'` ✅ — `'@shared/helpers/use-i18n/use-i18n'` ❌.
-- `src/shared` must not be imported into from outside except `@assets`.
-- Examples: features `home`/`experience`/`contacts`/`projects`; widgets `skill`/`view-cv`; shared `components`/`helpers`/`constants`/`i18n`/`interfaces`. Slice barrel: `export { default } from './Component.astro'`.
-- Real slice layout, e.g. `src/features/contacts/direct-contact/`: `DirectContact.astro`, `direct-contact-i18n.ts`, `get-ukraine-timezone.ts`, `get-ukraine-timezone.unit.ts`, `icons/`, `index.ts`.
-- Real plain-export layout, e.g. `src/shared/components/`: flat `Button.astro`, `Card.astro`, … plus one `index.ts`:
-  ```ts
-  export { default as Button } from './Button.astro';
-  export { default as Card } from './Card.astro';
-  ```
-  Same pattern for `src/shared/helpers/` (e.g. `use-i18n/use-i18n.ts`, re-exported from `src/shared/helpers/index.ts`) and `src/shared/constants/`, `src/shared/i18n/`, `src/shared/interfaces/`.
-- Keep deps in the correct `package.json` section — no `devDependencies` in shipped `src`. Branch names must match `[id]/[task-name]`.
+- **Linter:** `.dependency-cruiser.mjs` (`pnpm depcruise`, run on pre-push and in `pnpm validate`); violations fail CI.
+- **Aliases:** `@shared/*`, `@widgets/*`, `@features/*`, `@assets/*` (configured in `tsconfig.json` + `vitest.config.ts`).
+- **Allowed cross-boundary targets:** only `src/<layer>/<slice>/index.ts`. `import { useI18n } from '@shared/helpers'` ✅ — `'@shared/helpers/use-i18n/use-i18n'` ❌
+- **`src/shared` import constraint:** nothing imports into it from outside except `@assets`.
+- **Existing slices:** features `home`/`experience`/`contacts`/`projects`/`layout`/`not-found`; widgets `skill`/`view-cv`; shared categories `components`/`helpers`/`constants`/`i18n`/`interfaces`.
+- **File extension:** `.astro` for components, `.ts` for logic/i18n/helpers.
