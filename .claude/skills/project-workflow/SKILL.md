@@ -1,6 +1,6 @@
 ---
 name: project-workflow
-description: Handle GitHub workflow — branches, commits, pull requests, and issues/tasks (including labels/tags) — following the project's naming, commit-message, and release conventions and automation. Use when branching, committing, opening PRs, or creating/triaging issues.
+description: Handle all GitHub operations for this portfolio repo — branches, commits, PRs, and issues — using GitHub MCP tools exclusively, following the `[id]/task-name` branch convention, Conventional Commits (drives semantic-release versioning), PR base = `develop`, and a required approval gate before filing any issue. Use this skill when: creating a branch, writing a commit message, opening or updating a PR, drafting or filing an issue, assigning labels, or wiring `Closes #N` in a PR body. Also trigger when wondering about the right commit type (feat/fix/chore/docs/refactor) and its version impact, or whether something belongs in `develop` vs `main`. Examples: "create a branch for this task", "open a PR for my changes", "file a GitHub issue for the redesign", "what commit type should this be?".
 ---
 
 # Project workflow
@@ -28,14 +28,44 @@ Work with GitHub in line with the repo's conventions and automation. Don't fight
 
 ## Issues / tasks (with labels & tags)
 
-- Create issues with a clear, action-oriented title and a body covering context, acceptance criteria, and links.
-- **Always apply labels/tags.** Pick from the repo's existing label set (don't invent new ones unless asked) — typically a *type* (`feat`/`fix`/`chore`/`docs`/`bug`/`enhancement`), and where relevant a *scope/area*, *priority*, and *status*. List the repo's labels before assigning if unsure.
-- Tie work together: reference related issues/PRs, set milestone/assignee when relevant, and close issues from PRs via `Closes #N`.
-- Keep the issue title's prefix consistent with the branch id (`[id]/[task-name]`) so the task ↔ branch ↔ PR chain is traceable.
+### Approval gate — always required
+
+Before creating any issue, draft the full issue content (title + body) and **present it to the user for approval**. Do not call any MCP tool until the user explicitly confirms. If the user requests changes, revise and show the draft again before proceeding.
+
+### Issue structure
+
+Every issue body must follow this template:
+
+```markdown
+## Overview
+
+<One concise paragraph: what this issue is about and why it matters.>
+
+## Purpose
+
+<Why this work needs to happen — the problem it solves or the value it adds.>
+
+## Acceptance Criteria
+
+- [ ] <Criterion 1 — specific, verifiable, written in present tense>
+- [ ] <Criterion 2>
+- [ ] <…>
+
+## Notes
+
+<Optional: constraints, related issues/PRs (`#N`), design links, open questions. Omit section if empty.>
+```
+
+Guidelines:
+
+- Title: action-oriented, matches the branch id prefix (`[id]/task-name`) so task ↔ branch ↔ PR is traceable.
+- Acceptance criteria: each item is independently verifiable and unambiguous. Aim for 3–7 items.
+- **Always apply labels.** Fetch the current label set via the GitHub MCP before assigning — don't invent labels. Assign at minimum a _type_ label (`Front-End`/`DevOps`/`Organisation`/`Bug`) and an _area_ label when one matches the touched slice.
+- Reference related issues/PRs and close them from the PR body via `Closes #N`.
 
 ## Tooling
 
-- Prefer the `gh` CLI or GitHub MCP tools (load deferred ones via tool-search, e.g. `+github ...`) for PRs and issues, including label management.
+- Use **GitHub MCP tools exclusively** for all GitHub operations (issues, PRs, labels, branches). Load deferred tools via `ToolSearch` with `+github <action>` before calling. Do **not** use the `gh` CLI.
 
 ---
 
@@ -46,4 +76,4 @@ Work with GitHub in line with the repo's conventions and automation. Don't fight
 - **Releases:** `semantic-release` on push to `main` derives the version from commit types — `feat:` → minor, `fix:` → patch, `feat!:`/`BREAKING CHANGE:` → major; `chore:`/`docs:`/`refactor:`/`test:`/`ci:`/`style:` → no release.
 - **PR base = `develop`.**
 - CI on PRs: build, unit, e2e (Playwright), lint, type-check, CodeQL, DAST. Pre-commit runs `gitleaks` (note `localhost*.pem` are committed dev certs). Pre-push runs lint, prettier --check, astro check, unit, depcruise.
-- **Labels:** list current ones with `gh label list` before assigning; map the commit type to the matching label and add an area label for the touched feature/widget when one exists.
+- **Labels:** fetch with `mcp__github__list_issues` or a label-list MCP call before assigning; map commit type → label and add an area label for the touched feature/widget.

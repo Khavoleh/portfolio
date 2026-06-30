@@ -1,6 +1,6 @@
 ---
 name: architecture
-description: Enforce Feature-Sliced Design layer boundaries, import rules, and modular slice structure when adding files, adding imports, or moving code. Use before introducing any new import, creating a component, or relocating modules.
+description: Enforce Feature-Sliced Design (FSD) layer rules — downward-only imports, barrel-only cross-slice access, and strict `index.ts` placement — in this Astro portfolio codebase. Use this skill the moment any of these questions arise: "Where does this new file go?", "Can I import X from Y?", "Should this be a feature, widget, or shared?", "Does this slice need a barrel?", or "How do I move this without breaking depcruise?" Always use it before creating a component, helper, constant, icon, or i18n file — don't guess the layer. Also trigger on refactors that cross slice boundaries or when `pnpm depcruise` is failing. Examples: adding a new `src/features/projects/` slice, lifting a helper to shared, creating a sub-component inside an existing feature.
 ---
 
 # Architecture
@@ -29,10 +29,10 @@ pages → features → widgets → shared
 
 `index.ts` exists at **exactly two levels**, nowhere else:
 
-| Location | Purpose |
-|---|---|
-| `src/features/<slice>/index.ts` | Public API for a feature slice |
-| `src/widgets/<slice>/index.ts` | Public API for a widget slice |
+| Location                         | Purpose                                                              |
+| -------------------------------- | -------------------------------------------------------------------- |
+| `src/features/<slice>/index.ts`  | Public API for a feature slice                                       |
+| `src/widgets/<slice>/index.ts`   | Public API for a widget slice                                        |
 | `src/shared/<category>/index.ts` | Public API for a shared category (components, helpers, constants, …) |
 
 **Never add `index.ts` to any inner/nested folder.** Sub-components and sub-folders inside a slice are private implementation details imported with direct relative paths by their one parent file.
@@ -55,6 +55,7 @@ src/features/contacts/
 ```
 
 `Contacts.*` imports its sub-component via a direct relative path:
+
 ```ts
 import DirectContact from './direct-contact/DirectContact';
 ```

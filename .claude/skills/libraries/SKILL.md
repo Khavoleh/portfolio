@@ -1,6 +1,6 @@
 ---
 name: libraries
-description: Choose the right library for a task and use the project's existing dependencies correctly — what each is for, when to reach for it, and when to avoid adding a new one. Use before adding a dependency or when picking a tool for a job.
+description: Pick the right dependency and use existing ones correctly in this deliberately minimal Astro portfolio (only 2 runtime deps: `astro` + `@astrojs/vercel`). Use this skill before running `pnpm add`, when deciding "is there already something that does X?", or when choosing between tools already in the project. Trigger on any of these: "install X", "add a package for Y", "how do I handle animations / icons / dates / forms / image optimization", "which test runner / linter / formatter should I use?", "can I use Z library here?". Also use it when an existing dep might already solve the problem — this skill has the full catalog. Examples: "add a date picker", "install framer-motion", "do we have an icon library?", "should this go in devDependencies?".
 ---
 
 # Libraries — what to use, and when

@@ -1,6 +1,6 @@
 ---
 name: testing-strategy
-description: Decide what to test and at which level, then write and run tests following the project's unit and end-to-end / accessibility conventions, locations, and commands. Use when adding tests, fixing failures, or verifying a change.
+description: Decide where to test, what to test, and how to run tests in this Astro + Vitest + Playwright portfolio. Use this skill when: writing a new test, a test is failing, deciding whether a helper or component needs a unit test, adding accessibility checks, running the a11y e2e suite, or verifying a change before calling it done. Trigger on: "write a test for X", "does this need a test?", "my vitest test is failing", "playwright is broken", "add accessibility coverage", "check a11y on this page", "run the tests". Also use it when adding a pure helper (ships with a unit test) or a new page section (a11y e2e at minimum). Examples: "test the get-language helper", "add axe checks for the /uk/home route", "my unit test for the timezone util is broken", "what's the test command?".
 ---
 
 # Testing strategy

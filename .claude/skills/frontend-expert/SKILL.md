@@ -1,6 +1,6 @@
 ---
 name: frontend-expert
-description: Build or change UI so it matches the project's design system, theming, internationalization, and accessibility conventions. Use whenever creating/editing components, styles, layouts, or any user-facing markup or copy.
+description: Build and modify UI for this Astro 6 + Tailwind CSS 4 + daisyUI 5 bilingual (EN/UK) portfolio so everything stays consistent with the design system, theming, i18n, and accessibility conventions. Use this skill whenever: writing or editing a `.astro` component, adding or changing Tailwind classes, touching daisyUI tokens or theme variables in `global.css`, adding or renaming an i18n key (both `en` and `uk` must be defined), designing a new page section or layout, making an element interactive, or after an accessibility complaint. Also use it when unsure whether to reuse a shared primitive or create a new component — the default is always reuse first. Examples: "add a testimonials section", "style this card with dark-mode support", "translate this button label", "fix the contrast on the nav link".
 ---
 
 # Frontend expert
@@ -23,7 +23,7 @@ Produce UI that looks and behaves like the rest of the app — consistent, theme
 ## Internationalization (i18n)
 
 - **No hard-coded user-facing strings.** Route every string through the translation layer with a stable key.
-- **Key parity:** every supported language defines the **same set of keys**. Add/rename/remove a key in *every* language at once.
+- **Key parity:** every supported language defines the **same set of keys**. Add/rename/remove a key in _every_ language at once.
 - Don't rely on the lookup's fallback (other language → default → raw key) — a missing translation renders wrong text, not an error. Fill every key, and translate meaningfully (no placeholder source-language text).
 - Placement by scope: component-local copy beside the component; cross-page/shared copy in the shared i18n area, exported from its barrel.
 

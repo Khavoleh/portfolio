@@ -1,6 +1,6 @@
 ---
 name: specification
-description: Maintain and consult per-feature specs colocated in each feature slice. Use before working on a feature (read its spec first) and whenever the user supplies feature details the spec doesn't yet capture (update it as part of the same change).
+description: Read, write, and keep up-to-date lightweight per-feature specs (markdown files colocated inside each `src/features/<slice>/` directory) for this portfolio. Always use this skill before touching any existing feature — check whether a spec exists and read it first to recover intent and constraints. Also use it whenever the user describes requirements, flows, acceptance criteria, or any detail that isn't already in the spec — fold those details into the spec as part of the same change. Trigger on: "add a feature for X", "how does the Y section work?", "I want the contacts page to do Z", "what are the requirements for this?", "document this feature", or any multi-step feature discussion. Examples: "spec out the projects feature", "add carousel behavior to the home spec", "what does the contacts spec say about timezones?".
 ---
 
 # Per-feature specs
@@ -21,7 +21,7 @@ When applicable, every spec uses these six sections, **in this order**:
 1. **Purpose** — what this feature is, for whom, and how it's used. Detailed enough that someone unfamiliar with the feature understands its role without reading the code.
 2. **Data model** — a Mermaid **ERD** (`erDiagram`) of the entities/types this feature owns or operates on, with their relations and a short description per field. Only include if the feature has a real data shape of its own.
 3. **Sequence diagram** — for each main flow: a one-line description of what it shows, **then** its Mermaid **sequence diagram** (`sequenceDiagram`) — description first, diagram after, never the reverse. Only include if the feature has a flow beyond "render static markup."
-4. **Implementation nuances** — only what's genuinely non-obvious for *this* feature: behavior a reader would get wrong by guessing, or a constraint not visible from the surrounding code. Don't restate architectural, theming, or i18n conventions that already apply project-wide. Don't invent a nuance just to fill the section.
+4. **Implementation nuances** — only what's genuinely non-obvious for _this_ feature: behavior a reader would get wrong by guessing, or a constraint not visible from the surrounding code. Don't restate architectural, theming, or i18n conventions that already apply project-wide. Don't invent a nuance just to fill the section.
 5. **Validation rules** — field-level validation, allowed values, required/optional, access/role constraints. Only include if the feature actually accepts input and enforces something on it.
 6. **Dependencies** — only **other features** this one relies on, and **third-party/external services** (a paid/external API, SaaS, CDN, env var tied to an external account, etc.). Never list shared/widget-layer modules, internal helpers/constants/types, or framework lifecycle hooks — those are ordinary architecture, not a dependency worth calling out. Only include if there's real cross-feature reliance or an external service involved.
 
