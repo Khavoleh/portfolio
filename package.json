@@ -37,7 +37,7 @@
     "dependency-cruiser": "17.4.3",
     "globals": "17.7.0",
     "lefthook": "2.1.9",
-    "prettier": "3.8.5",
+    "prettier": "3.9.0",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "0.8.0",
     "schema-dts": "2.0.0",
