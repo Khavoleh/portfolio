@@ -1,6 +1,6 @@
 ---
 type Level = 1 | 2 | 3 | 4;
-type Size = 'xl' | '2xl' | '3xl' | '4xl' | 'hero' | 'display';
+type Size = 'xl' | '2xl' | '3xl' | '4xl';
 type Weight = 'semibold' | 'bold' | 'extrabold';
 type Color = 'base' | 'accent';
 
@@ -20,8 +20,6 @@ const SIZE_CLASSES: Record<Size, string> = {
   '2xl': 'text-2xl',
   '3xl': 'text-3xl',
   '4xl': 'text-4xl',
-  hero: 'text-4xl leading-tight md:text-5xl lg:text-6xl',
-  display: 'text-[8rem] leading-none md:text-[16rem] lg:text-[20rem] xl:text-[24rem]',
 };
 
 const DEFAULT_SIZE: Record<Level, Size> = { 1: '4xl', 2: '2xl', 3: 'xl', 4: 'xl' };

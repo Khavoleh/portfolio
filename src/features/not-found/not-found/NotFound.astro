@@ -7,7 +7,13 @@ const t = useI18n(Astro.url, NOT_FOUND_I18N);
 ---
 
 <section class="bg-base-100 text-center">
-  <Heading level={1} size="display" weight="extrabold" center class="animate-bounce-slow mb-8">404</Heading>
+  <Heading
+    level={1}
+    weight="extrabold"
+    center
+    class="animate-bounce-slow mb-8 text-[8rem] leading-none md:text-[16rem] lg:text-[20rem] xl:text-[24rem]"
+    >404
+  </Heading>
 
   <Heading level={2} size="3xl" center class="mb-6 md:text-4xl">{t('not_found_title')}</Heading>
 </section>
