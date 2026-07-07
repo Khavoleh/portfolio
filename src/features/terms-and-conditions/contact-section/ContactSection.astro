@@ -1,4 +1,5 @@
 ---
+import { EmailLink, Prose, TextSection } from '@shared/components';
 import { SOCIALS } from '@shared/constants';
 import { useI18n } from '@shared/helpers';
 import { CONTACT_SECTION_I18N } from './contact-section-i18n';
@@ -6,13 +7,9 @@ import { CONTACT_SECTION_I18N } from './contact-section-i18n';
 const t = useI18n(Astro.url, CONTACT_SECTION_I18N);
 ---
 
-<section class="mb-8">
-  <h2 class="text-base-content mb-4 text-2xl font-semibold">{t('terms_contact_title')}</h2>
-  <p class="text-base-content/80">
+<TextSection title={t('terms_contact_title')}>
+  <Prose muted leading="normal">
     <span set:html={t('terms_contact_text')} />
-    <a
-      href={`mailto:${SOCIALS.EMAIL}`}
-      class="link link-primary focus-ring rounded font-semibold transition-all duration-200">{SOCIALS.EMAIL}</a
-    >
-  </p>
-</section>
+    <EmailLink email={SOCIALS.EMAIL} class="font-semibold" />
+  </Prose>
+</TextSection>

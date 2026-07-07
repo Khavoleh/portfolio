@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import { Heading, Prose } from '@shared/components';
 import { useI18n } from '@shared/helpers';
 import { HERO_I18N } from './hero-i18n';
 import photo from './images/me.jpg';
@@ -11,21 +12,21 @@ const t = useI18n(Astro.url, HERO_I18N);
   <div class="flex flex-col items-center justify-center gap-12 lg:flex-row lg:items-center lg:gap-16">
     <div class="flex flex-col items-center text-center lg:pr-8">
       <div class="avatar mb-4">
-        <div class="ring-primary ring-offset-base-100 w-48 rounded-full ring ring-offset-2">
+        <div class="ring-accent ring-offset-base-100 w-48 rounded-full ring ring-offset-2">
           <Image src={photo} alt={t('hero_image_alt')} width={192} height={192} class="rounded-full" />
         </div>
       </div>
-      <h1 class="text-base-content text-3xl font-bold md:text-center">{t('hero_name')}</h1>
-      <p class="text-primary text-xl font-medium md:text-center">{t('hero_title')}</p>
+      <Heading level={1} size="3xl" color="accent" class="md:text-center">{t('hero_name')}</Heading>
+      <Prose muted size="xl" leading="normal" class="font-medium md:text-center">{t('hero_title')}</Prose>
     </div>
 
     <div class="divider divider-horizontal hidden lg:flex"></div>
 
     <div class="max-w-2xl flex-1 text-center lg:pl-8 lg:text-left">
-      <h2 class="text-primary mb-6 text-2xl leading-tight font-bold md:text-3xl lg:text-4xl">
+      <h2 class="text-base-content mb-6 text-2xl leading-tight font-bold md:text-3xl lg:text-4xl">
         {t('hero_subtitle')}
       </h2>
-      <p class="text-base-content leading-relaxe text-xl" set:html={t('hero_description')} />
+      <Prose size="xl" html={t('hero_description')} />
     </div>
   </div>
 </section>

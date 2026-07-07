@@ -1,4 +1,5 @@
 ---
+import { Card, EmailLink, Heading } from '@shared/components';
 import { SOCIALS } from '@shared/constants';
 import { useI18n } from '@shared/helpers';
 import { DIRECT_CONTACT_I18N } from './direct-contact-i18n';
@@ -7,50 +8,43 @@ import EmailIcon from './icons/email.svg';
 import GeolocationIcon from './icons/geolocation.svg';
 import MessengerIcon from './icons/messenger.svg';
 
-const iconClasses = 'mb-4 h-12 w-12 text-primary';
-const contactInformationClasses =
-  'card bg-base-200 border-base-300 flex flex-col items-center border p-6 text-center shadow-lg transition-transform duration-200 hover:scale-105 w-64';
+const iconClasses = 'mb-4 h-12 w-12 text-base-content icon-muted';
+const cardClasses = 'flex w-64 flex-col items-center text-center';
 const t = useI18n(Astro.url, DIRECT_CONTACT_I18N);
 ---
 
 <section class="mb-16">
-  <h2 class="text-base-content mb-8 text-center text-3xl font-bold">{t('directContact_title')}</h2>
+  <Heading level={2} size="3xl" center class="mb-8">{t('directContact_title')}</Heading>
 
   <div class="mx-auto flex flex-wrap justify-center gap-6">
-    <div class={contactInformationClasses}>
+    <Card hover="scale" class={cardClasses}>
       <EmailIcon class={iconClasses} />
-      <h3 class="text-base-content mb-2 text-xl font-semibold">{t('directContact_email_title')}</h3>
-      <a
-        href=`mailto:${SOCIALS.EMAIL}`
-        class="link link-primary focus-ring rounded transition-all duration-200"
-        tabindex="0"
-      >
-        {SOCIALS.EMAIL}
-      </a>
-    </div>
+      <Heading level={3} weight="semibold" class="mb-2">{t('directContact_email_title')}</Heading>
+      <EmailLink email={SOCIALS.EMAIL} />
+    </Card>
 
-    <div class={contactInformationClasses}>
+    <Card hover="scale" class={cardClasses}>
       <MessengerIcon class={iconClasses} />
-      <h3 class="text-base-content mb-2 text-xl font-semibold">Telegram</h3>
+      <Heading level={3} weight="semibold" class="mb-2">Telegram</Heading>
       <a
         href={SOCIALS.TELEGRAM}
         target="_blank"
         rel="noopener noreferrer"
-        class="link link-primary focus-ring rounded transition-all duration-200"
+        class="link link-violet focus-ring rounded transition-all duration-200"
         tabindex="0"
       >
         @khavol
       </a>
-    </div>
+    </Card>
 
-    <div class={contactInformationClasses}>
+    <Card hover="scale" class={cardClasses}>
       <GeolocationIcon class={iconClasses} />
-      <h3 class="text-base-content mb-2 text-xl font-semibold">{t('directContact_location_title')}</h3>
+      <Heading level={3} weight="semibold" class="mb-2">{t('directContact_location_title')}</Heading>
       <p class="text-base-content/80">{t('directContact_location_city')}</p>
-      <p id="ukraine-timezone" class="text-base-content/70 text-sm">
+      <p id="ukraine-timezone" class="text-base-content/80 text-sm">
         {getUkraineTimezone()}
       </p>
-    </div>
+    </Card>
   </div>
 </section>
 

@@ -1,4 +1,5 @@
 ---
+import { Heading, Prose } from '@shared/components';
 import { useI18n } from '@shared/helpers';
 import type { SocialLink } from '@shared/interfaces';
 import { SOCIAL_LINKS } from './social-links';
@@ -8,7 +9,7 @@ const t = useI18n(Astro.url, SOCIAL_LINKS_I18N);
 ---
 
 <section class="mb-16">
-  <h2 class="text-base-content mb-8 text-center text-3xl font-bold">{t('socialLinks_title')}</h2>
+  <Heading level={2} size="3xl" center class="mb-8">{t('socialLinks_title')}</Heading>
 
   <div class="mx-auto flex max-w-2xl flex-wrap justify-center gap-6">
     {
@@ -21,15 +22,12 @@ const t = useI18n(Astro.url, SOCIAL_LINKS_I18N);
           aria-label={link.ariaKey ? t(link.ariaKey) : undefined}
           tabindex="0"
         >
-          <link.icon class="text-primary mb-4 h-16 w-16" />
+          <link.icon class="text-base-content icon-muted mb-4 h-16 w-16" />
           <span class="text-base-content text-lg font-semibold">{link.label}</span>
         </a>
       ))
     }
   </div>
 
-  <p
-    class="text-base-content mx-auto mt-8 max-w-2xl text-center leading-relaxed"
-    set:html={t('socialLinks_description')}
-  />
+  <Prose center html={t('socialLinks_description')} class="mx-auto mt-8 max-w-2xl" />
 </section>

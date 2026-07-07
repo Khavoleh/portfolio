@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import { Card } from '@shared/components';
 import type { Review } from '../review';
 
 interface Props {
@@ -9,7 +10,7 @@ interface Props {
 const { review } = Astro.props;
 ---
 
-<div class="card bg-base-200 border-base-300 h-full border shadow-md transition-shadow duration-200 hover:shadow-xl">
+<Card padding="none" shadow="md" hover="shadow" class="h-full">
   <div class="card-body p-6">
     <div class="mb-4 flex items-start gap-4">
       <div class="avatar">
@@ -19,7 +20,7 @@ const { review } = Astro.props;
       </div>
 
       <div class="flex-1">
-        <h3 class="text-base-content text-lg font-bold">{review.name}</h3>
+        <h3 class="text-accent text-lg font-bold">{review.name}</h3>
         <p class="text-base-content/80 text-sm">
           {review.position}
         </p>
@@ -33,4 +34,4 @@ const { review } = Astro.props;
       </p>
     </div>
   </div>
-</div>
+</Card>

@@ -1,18 +1,20 @@
 ---
+import { Prose, ProseList, TextSection } from '@shared/components';
 import { useI18n } from '@shared/helpers';
 import { COOKIES_SECTION_I18N } from './cookies-section-i18n';
 
 const t = useI18n(Astro.url, COOKIES_SECTION_I18N);
 ---
 
-<section class="mb-8">
-  <h2 class="text-base-content mb-4 text-2xl font-semibold">{t('privacy_cookies_title')}</h2>
-  <p class="text-base-content/80 mb-4" set:html={t('privacy_cookies_text')} />
-  <ul class="text-base-content/80 mb-4 list-inside list-disc space-y-2">
-    <li set:html={t('privacy_cookies_local')} />
-    <li set:html={t('privacy_cookies_cookies')} />
-    <li set:html={t('privacy_cookies_no_cookies')} />
-    <li set:html={t('privacy_cookies_no_ip')} />
-    <li set:html={t('privacy_cookies_no_cross')} />
-  </ul>
-</section>
+<TextSection title={t('privacy_cookies_title')}>
+  <Prose muted leading="normal" html={t('privacy_cookies_text')} class="mb-4" />
+  <ProseList
+    items={[
+      t('privacy_cookies_local'),
+      t('privacy_cookies_cookies'),
+      t('privacy_cookies_no_cookies'),
+      t('privacy_cookies_no_ip'),
+      t('privacy_cookies_no_cross'),
+    ]}
+  />
+</TextSection>

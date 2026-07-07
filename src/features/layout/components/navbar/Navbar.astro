@@ -39,10 +39,7 @@ const currentPath: string = Astro.url.pathname;
               <li>
                 <a
                   href={getLanguageUrl(Astro.url, link.href)}
-                  class:list={[
-                    'text-base-content focus-ring px-4 py-2 whitespace-nowrap',
-                    isActive && 'active text-primary',
-                  ]}
+                  class:list={['nav-link focus-ring px-4 py-2 whitespace-nowrap', isActive && 'active']}
                   aria-label={`${t('navigate_to')} ${t(link.label)} ${t('page')}`}
                   aria-current={isActive ? 'page' : undefined}
                   tabindex="0"
@@ -62,7 +59,7 @@ const currentPath: string = Astro.url.pathname;
     <ThemeSelector />
 
     <div class="gap-2 md:hidden">
-      <span class="hidden text-xl font-semibold md:inline">{t('name')}</span>
+      <span class="text-base-content hidden text-xl font-semibold md:inline">{t('name')}</span>
       <LogoIcon class="h-8" />
     </div>
   </div>
@@ -82,3 +79,25 @@ const currentPath: string = Astro.url.pathname;
     });
   });
 </script>
+
+<style>
+  .nav-link {
+    color: var(--color-base-content);
+    opacity: 0.6;
+    background: none !important;
+    transition:
+      opacity 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .nav-link:hover {
+    opacity: 1;
+    background: none !important;
+  }
+
+  .nav-link.active {
+    color: var(--color-primary-text);
+    opacity: 1;
+    background: none !important;
+  }
+</style>
