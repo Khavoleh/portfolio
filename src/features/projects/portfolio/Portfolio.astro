@@ -1,8 +1,10 @@
 ---
 import LogoIcon from '@assets/logo.svg';
-import { Card, Heading, IconCard, Prose, SectionHeader } from '@shared/components';
+import { Card, Heading, Prose } from '@shared/components';
 import { useI18n } from '@shared/helpers';
 import GitHubButton from '../components/github-button/GitHubButton.astro';
+import IconCard from '../components/icon-card/IconCard.astro';
+import SectionHeader from '../components/section-header/SectionHeader.astro';
 import TechStack from '../components/tech-stack/TechStack.astro';
 import type { ProjectSection } from '../project-item';
 import { PERFORMANCE_METRICS } from './constants/performance-metrics';
@@ -30,7 +32,7 @@ const t = useI18n(Astro.url, PORTFOLIO_PROJECT_I18N);
         {
           PERFORMANCE_METRICS.map((metric: string) => (
             <div class="text-center">
-              <p class="text-success mb-2 text-4xl font-bold">100</p>
+              <p class="text-success mb-2 font-mono text-4xl font-bold">100</p>
               <p class="text-base-content/80 text-sm font-semibold">{t(metric)}</p>
             </div>
           ))

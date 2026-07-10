@@ -2,6 +2,92 @@
 @import 'tailwindcss';
 @plugin 'daisyui';
 
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/inter/inter-latin-normal.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/inter/inter-cyrillic-normal.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/inter/inter-latin-italic.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/inter/inter-cyrillic-italic.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/lora/lora-latin.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/lora/lora-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/jetbrains-mono/jetbrains-mono-latin.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/jetbrains-mono/jetbrains-mono-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-heading: 'Lora', ui-serif, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
 @plugin 'daisyui/theme' {
   name: 'portfolio-light';
   default: false;
@@ -14,16 +100,16 @@
   --color-secondary: oklch(54% 0.073 291.56);
   --color-secondary-content: oklch(97.96% 0.006 84.57);
 
-  --color-accent: oklch(54% 0.108 50.15);
+  --color-accent: oklch(46% 0.108 50.15);
   --color-accent-content: oklch(28.08% 0.017 305.41);
 
-  --color-neutral: oklch(89.17% 0.032 299.63);
-  --color-neutral-content: oklch(28.08% 0.017 305.41);
+  --color-neutral: oklch(89.17% 0.035 291);
+  --color-neutral-content: oklch(28.08% 0.02 291);
 
-  --color-base-100: oklch(97.96% 0.006 84.57);
-  --color-base-200: oklch(96.8% 0.014 299.06);
-  --color-base-300: oklch(95.3% 0.024 299.63);
-  --color-base-content: oklch(28.08% 0.017 305.41);
+  --color-base-100: oklch(96.5% 0.016 291);
+  --color-base-200: oklch(93.5% 0.022 291);
+  --color-base-300: oklch(89.5% 0.03 291);
+  --color-base-content: oklch(15% 0.018 291);
 
   --color-info: oklch(54.61% 0.215 262.88);
   --color-info-content: oklch(100% 0 0);
@@ -72,6 +158,7 @@
 [data-theme='portfolio-dark'],
 [data-theme='portfolio-light'] {
   --icon-color-primary: var(--color-primary-text);
+  --icon-color-accent: var(--color-accent);
   --icon-color: var(--color-base-content);
   --icon-opacity: 0.8;
 }
@@ -93,6 +180,7 @@
 
 .focus-ring:focus-visible {
   outline: none;
+  opacity: 1 !important;
   box-shadow: 0 0 0 3px color-mix(in oklch, var(--color-primary) 55%, transparent);
 }
 
@@ -134,6 +222,20 @@ label:hover [stroke='var(--icon-color)'],
 
 .icon-muted:hover,
 a:hover .icon-muted,
-button:hover .icon-muted {
+button:hover .icon-muted,
+.card:hover .icon-muted {
   opacity: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+.badge {
+  font-family: var(--font-mono);
 }

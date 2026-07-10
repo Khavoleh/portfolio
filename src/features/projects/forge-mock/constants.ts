@@ -1,4 +1,3 @@
-import { SKILL_TYPES } from '@widgets/skill';
 import BusinessIcon from '../icons/business.svg';
 import SettingsIcon from '../icons/settings.svg';
 import StarsIcon from '../icons/stars.svg';
@@ -36,16 +35,16 @@ export const FORGE_MOCK: ProjectItem = {
     },
   ],
   skills: [
-    { name: '.NET', type: SKILL_TYPES.BACK_END },
-    { name: 'ASP.NET Web API', type: SKILL_TYPES.BACK_END },
-    { name: 'EF Core', type: SKILL_TYPES.BACK_END },
-    { name: 'Next.js', type: SKILL_TYPES.FRONT_END },
-    { name: 'TypeScript', type: SKILL_TYPES.FRONT_END },
-    { name: 'React Query', type: SKILL_TYPES.FRONT_END },
-    { name: 'React Aria', type: SKILL_TYPES.FRONT_END },
-    { name: 'PostgreSQL', type: SKILL_TYPES.DATABASE },
-    { name: 'GitHub', type: SKILL_TYPES.DEV_OPS },
-    { name: 'Docker', type: SKILL_TYPES.DEV_OPS },
-    { name: 'Grafana', type: SKILL_TYPES.DEV_OPS },
+    '.NET',
+    'ASP.NET Web API',
+    'EF Core',
+    'Next.js',
+    'TypeScript',
+    'React Query',
+    'React Aria',
+    'PostgreSQL',
+    'GitHub',
+    'Docker',
+    'Grafana',
   ],
 };

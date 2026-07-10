@@ -1,5 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="25 19 150 150" fill="none">
   <title>Logo</title>
-  <path fill="var(--icon-color-primary)" fill-rule="evenodd" d="M100 26a74 74 0 1 1 0 148 74 74 0 1 1 0-148m0 8a66 66 0 1 0 0 132 66 66 0 1 0 0-132"/>
-  <path fill="var(--icon-color-primary)" d="m100 18 5 7-5 7-5-7Zm0 150 5 7-5 7-5-7Zm-82-68 7-5 7 5-7 5Zm164 0-7-5-7 5 7 5ZM63 50h12q5 2 5 10v80q0 8-5 10H63q-5-2-5-10V60q0-8 5-10Zm17 38q10 2 21-6 12-10 20-25 2-7 10-7h14q-10 30-42 50H80Zm0 24q10-2 21 6 12 10 20 25 2 7 10 7h14q-10-30-42-50H80Z"/>
+  <circle cx="100" cy="94" r="75" fill="var(--color-base-200)"/>
+  <path fill="#ac9dee" transform="translate(13 0) skewX(-9)" d="M63 50h12q5 2 5 10v80q0 8-5 10H63q-5-2-5-10V60q0-8 5-10Zm17 38q10 2 21-6 12-10 20-25 2-7 10-7h14q-10 30-42 50H80Zm0 24q10-2 21 6 12 10 20 25 2 7 10 7h14q-10-30-42-50H80Z"/>
+  <circle cx="135" cy="55" r="17" fill="#e6a47c"/>
 </svg>

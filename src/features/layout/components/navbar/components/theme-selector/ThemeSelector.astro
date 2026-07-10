@@ -11,7 +11,7 @@ const t = useI18n(Astro.url, THEME_I18N);
   <button
     tabindex="0"
     role="button"
-    class="btn btn-neutral btn-circle focus-ring shadow"
+    class="btn btn-ghost btn-circle focus-ring shadow-none"
     aria-label={t('toggle_theme')}
   >
     {THEMES.map((theme: Theme) => <theme.icon id={`theme-icon-${theme.id}`} class="hidden h-6 w-6" />)}

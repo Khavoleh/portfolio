@@ -1,13 +1,12 @@
 ---
 import { Card, Heading } from '@shared/components';
 import { useI18n } from '@shared/helpers';
-import { groupSkillsByType, SKILL_TYPES_I18N, SkillBlock } from '@widgets/skill';
+import { SkillBlock } from '@widgets/skill';
 import { EXPERIENCE_DATA } from './experience-data';
 import { EXPERIENCE_DATA_I18N } from './experience-data-i18n';
 import type { ExperienceItem } from './experience-item';
 
 const t = useI18n(Astro.url, EXPERIENCE_DATA_I18N);
-const tSkillType = useI18n(Astro.url, SKILL_TYPES_I18N);
 ---
 
 <div class="relative">
@@ -33,16 +32,9 @@ const tSkillType = useI18n(Astro.url, SKILL_TYPES_I18N);
                   <p class="text-base-content/80 mt-1 text-sm">{t(experience.period)}</p>
                 </div>
 
-                <div class="space-y-3">
-                  {groupSkillsByType(experience.skills).map((group) => (
-                    <div class="flex flex-wrap items-center gap-3">
-                      <span class="text-base-content/80 text-xs font-semibold tracking-wide uppercase">
-                        {tSkillType(group.type)}
-                      </span>
-                      {group.skills.map((skill) => (
-                        <SkillBlock skill={skill} />
-                      ))}
-                    </div>
+                <div class="flex flex-wrap items-center gap-3">
+                  {experience.skills.map((skill) => (
+                    <SkillBlock skill={skill} />
                   ))}
                 </div>
               </Card>
