@@ -1,4 +1,3 @@
-import { SKILL_TYPES } from '@widgets/skill';
 import type { ExperienceItem } from './experience-item';
 import ArchitectureIcon from './icons/architecture.svg';
 import CiCdIcon from './icons/ci-cd.svg';
@@ -14,15 +13,7 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     company: 'experience_2_company',
     sector: 'experience_2_sector',
     period: 'experience_2_period',
-    skills: [
-      { name: '.NET', type: SKILL_TYPES.BACK_END },
-      { name: 'C#', type: SKILL_TYPES.BACK_END },
-      { name: 'ASP.NET Web API', type: SKILL_TYPES.BACK_END },
-      { name: 'EF Core', type: SKILL_TYPES.BACK_END },
-      { name: 'MongoDB', type: SKILL_TYPES.DATABASE },
-      { name: 'Azure Cloud', type: SKILL_TYPES.DEV_OPS },
-      { name: 'Docker', type: SKILL_TYPES.DEV_OPS },
-    ],
+    skills: ['.NET', 'C#', 'ASP.NET Web API', 'EF Core', 'MongoDB', 'Azure Cloud', 'Docker'],
     sections: [
       {
         title: 'experience_2_section_0_title',
@@ -37,17 +28,17 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     sector: 'experience_1_sector',
     period: 'experience_1_period',
     skills: [
-      { name: '.NET', type: SKILL_TYPES.BACK_END },
-      { name: 'C#', type: SKILL_TYPES.BACK_END },
-      { name: 'ASP.NET Web API', type: SKILL_TYPES.BACK_END },
-      { name: 'EF Core', type: SKILL_TYPES.BACK_END },
-      { name: 'React', type: SKILL_TYPES.FRONT_END },
-      { name: 'Next.js', type: SKILL_TYPES.FRONT_END },
-      { name: 'JavaScript', type: SKILL_TYPES.FRONT_END },
-      { name: 'React Query', type: SKILL_TYPES.FRONT_END },
-      { name: 'Kendo UI', type: SKILL_TYPES.FRONT_END },
-      { name: 'MS SQL Server', type: SKILL_TYPES.DATABASE },
-      { name: 'Azure DevOps', type: SKILL_TYPES.DEV_OPS },
+      '.NET',
+      'C#',
+      'ASP.NET Web API',
+      'EF Core',
+      'React',
+      'Next.js',
+      'JavaScript',
+      'React Query',
+      'Kendo UI',
+      'MS SQL Server',
+      'Azure DevOps',
     ],
     sections: [
       {
@@ -73,17 +64,17 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     sector: 'experience_0_sector',
     period: 'experience_0_period',
     skills: [
-      { name: '.NET', type: SKILL_TYPES.BACK_END },
-      { name: 'C#', type: SKILL_TYPES.BACK_END },
-      { name: 'ASP.NET Web API', type: SKILL_TYPES.BACK_END },
-      { name: 'Dapper', type: SKILL_TYPES.BACK_END },
-      { name: 'Angular', type: SKILL_TYPES.FRONT_END },
-      { name: 'TypeScript', type: SKILL_TYPES.FRONT_END },
-      { name: 'Angular Material', type: SKILL_TYPES.FRONT_END },
-      { name: 'MS SQL Server', type: SKILL_TYPES.DATABASE },
-      { name: 'Azure DevOps', type: SKILL_TYPES.DEV_OPS },
-      { name: 'Azure Pipelines', type: SKILL_TYPES.DEV_OPS },
-      { name: 'Docker', type: SKILL_TYPES.DEV_OPS },
+      '.NET',
+      'C#',
+      'ASP.NET Web API',
+      'Dapper',
+      'Angular',
+      'TypeScript',
+      'Angular Material',
+      'MS SQL Server',
+      'Azure DevOps',
+      'Azure Pipelines',
+      'Docker',
     ],
     sections: [
       {

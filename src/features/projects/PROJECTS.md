@@ -9,20 +9,16 @@ Shows visitors an in-depth case-study view of two showcased projects — this **
 ```mermaid
 erDiagram
     ProjectItem ||--|{ ProjectSection : "has many"
-    ProjectItem ||--|{ Skill : "has many"
 
     ProjectItem {
       string title "i18n key"
       string description "i18n key"
+      string[] skills "raw display labels, not i18n"
     }
     ProjectSection {
       string title "i18n key"
       SvgComponent icon "one of 4 shared section icons"
       string[] details "i18n keys, ordered bullets"
-    }
-    Skill {
-      string name "raw display label, not i18n"
-      SkillType type "BACK_END | FRONT_END | DATABASE | DEV_OPS, from @widgets/skill"
     }
 ```
 
@@ -32,3 +28,4 @@ erDiagram
 - Both projects reuse the same 4 section icons (`target`, `settings`, `stars`, `business` in `projects/icons/`) — the icon-per-section mapping is just authoring convention (goal → target, approach → settings, features → stars, value → business), not enforced by any type or schema.
 - `GitHubButton`'s `url` prop is hardcoded inline per project (`Portfolio.astro` → `github.com/Khavoleh/portfolio`, `ForgeMock.astro` → `github.com/forge-mock`) rather than sourced from `forge-mock/constants.ts` or a shared constant — easy to miss when the repo URL changes.
 - Forge Mock's i18n copy explicitly frames it as a partially-built POC ("initial development and architectural setup were completed... establishing a framework for future feature implementation"); several "Key Architectural Objectives" bullets describe planned, not shipped, functionality.
+- `TechStack` renders all skills flat with no category grouping/labels — every `SkillBlock` is a plain neutral badge, uniform across all skills.

@@ -1,35 +1,20 @@
 ---
 import { Heading } from '@shared/components';
 import { useI18n } from '@shared/helpers';
-import type { Skill } from '@widgets/skill';
-import { groupSkillsByType, SKILL_TYPES_I18N, SkillBlock } from '@widgets/skill';
+import { SkillBlock } from '@widgets/skill';
 import { TECH_STACK_I18N } from './tech-stack-i18n';
 
 interface Props {
-  skills: Skill[];
+  skills: string[];
 }
 
 const { skills } = Astro.props;
 const t = useI18n(Astro.url, TECH_STACK_I18N);
-const tSkillType = useI18n(Astro.url, SKILL_TYPES_I18N);
 ---
 
 <div class="mb-8">
   <Heading level={3} class="mb-4">{t('tech_stack')}</Heading>
-  <div class="space-y-4">
-    {
-      groupSkillsByType(skills).map((group) => (
-        <div>
-          <p class="text-base-content/60 mb-2 text-xs font-semibold tracking-wide uppercase">
-            {tSkillType(group.type)}
-          </p>
-          <div class="flex flex-wrap justify-start gap-3">
-            {group.skills.map((skill: Skill) => (
-              <SkillBlock skill={skill} />
-            ))}
-          </div>
-        </div>
-      ))
-    }
+  <div class="flex flex-wrap justify-start gap-3">
+    {skills.map((skill: string) => <SkillBlock skill={skill} />)}
   </div>
 </div>

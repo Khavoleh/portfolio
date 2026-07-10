@@ -1,13 +1,11 @@
 ---
-import type { Skill } from './skill';
-
 interface Props {
-  skill: Skill;
+  skill: string;
 }
 
 const { skill } = Astro.props;
 ---
 
-<div class="badge badge-lg badge-base gap-2">
-  <span class="text-sm font-semibold">{skill.name}</span>
+<div class="badge badge-lg badge-neutral gap-2">
+  <span class="text-sm font-semibold">{skill}</span>
 </div>
