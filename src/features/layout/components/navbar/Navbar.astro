@@ -39,7 +39,7 @@ const currentPath: string = Astro.url.pathname;
               <li>
                 <a
                   href={getLanguageUrl(Astro.url, link.href)}
-                  class:list={['nav-link focus-ring px-4 py-2 whitespace-nowrap', isActive && 'active']}
+                  class:list={['nav-link focus-ring px-4 py-2 whitespace-nowrap shadow-none', isActive && 'active']}
                   aria-label={`${t('navigate_to')} ${t(link.label)} ${t('page')}`}
                   aria-current={isActive ? 'page' : undefined}
                   tabindex="0"
@@ -85,9 +85,6 @@ const currentPath: string = Astro.url.pathname;
     color: var(--color-base-content);
     opacity: 0.6;
     background: none !important;
-    transition:
-      opacity 0.2s ease,
-      color 0.2s ease;
   }
 
   .nav-link:hover {
