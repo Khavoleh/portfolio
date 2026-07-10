@@ -16,14 +16,24 @@ export interface Props {
 }
 
 const { title, description, noindex } = Astro.props;
+const language = getLanguageFromUrl(Astro.url);
+const fontScript = language === 'uk' ? 'cyrillic' : 'latin';
 ---
 
-<html lang={getLanguageFromUrl(Astro.url)}>
+<html lang={language}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <Seo title={title} description={description} noindex={noindex} />
+    <link
+      rel="preload"
+      href={`/fonts/inter/inter-${fontScript}-normal.woff2`}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="preload" href={`/fonts/lora/lora-${fontScript}.woff2`} as="font" type="font/woff2" crossorigin />
     <ClientRouter />
     <script is:inline set:html={themeInitScript} />
     <script is:inline set:html={removeTransitionsScript} />

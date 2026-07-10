@@ -11,7 +11,7 @@ const { metric } = Astro.props;
 
 <Card padding="none" hover="scale">
   <div class="card-body items-center p-6 text-center">
-    <div class="text-base-content mb-2 text-4xl font-bold">{metric.value}</div>
+    <div class="text-base-content mb-2 font-mono text-4xl font-bold">{metric.value}</div>
     <div class="text-base-content mb-1 text-sm font-semibold">{metric.name}</div>
     <div class="text-base-content/80 text-sm">{metric.description}</div>
   </div>
