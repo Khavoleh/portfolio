@@ -12,6 +12,7 @@ const t = useI18n(Astro.url, CONTACT_SECTION_I18N);
 <TextSection title={t('terms_contact_title')}>
   <Prose muted leading="normal">
     <span set:html={t('terms_contact_text')} />
+    {' '}
     <EmailLink email={SOCIALS.EMAIL} class="font-semibold" />
   </Prose>
 </TextSection>

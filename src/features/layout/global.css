@@ -135,6 +135,7 @@ label:hover [stroke='var(--icon-color)'],
 
 .icon-muted:hover,
 a:hover .icon-muted,
-button:hover .icon-muted {
+button:hover .icon-muted,
+.card:hover .icon-muted {
   opacity: 1;
 }

@@ -44,6 +44,7 @@ const shuffledReviews: Review[] = shuffleArray(translatedReviews);
                   data-target={`review-${prevIndex}`}
                   class="btn btn-circle review-nav-btn focus-ring max-lg:bg-base-100/50 max-lg:hover:bg-base-100/80 lg:btn-secondary lg:btn-outline shadow"
                   aria-label={t('reviews_button_previous')}
+                  tabindex="0"
                 >
                   ❮
                 </button>
@@ -51,6 +52,7 @@ const shuffledReviews: Review[] = shuffleArray(translatedReviews);
                   data-target={`review-${nextIndex}`}
                   class="btn btn-circle review-nav-btn focus-ring max-lg:bg-base-100/50 max-lg:hover:bg-base-100/80 lg:btn-secondary lg:btn-outline shadow"
                   aria-label={t('reviews_button_next')}
+                  tabindex="0"
                 >
                   ❯
                 </button>

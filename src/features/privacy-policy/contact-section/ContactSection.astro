@@ -13,6 +13,7 @@ const t = useI18n(Astro.url, CONTACT_SECTION_I18N);
   <Prose muted leading="normal" html={t('privacy_contact_text1')} class="mb-4" />
   <Prose muted leading="normal">
     <span set:html={t('privacy_contact_text2')} />
+    {' '}
     <EmailLink email={SOCIALS.EMAIL} class="font-semibold" />
   </Prose>
 </TextSection>
