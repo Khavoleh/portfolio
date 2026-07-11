@@ -1,0 +1,14 @@
+---
+interface Props {
+  email: string;
+  class?: string;
+}
+
+const { email, class: className = '' } = Astro.props;
+
+const classes = ['link link-violet focus-ring rounded transition-all duration-200', className]
+  .filter(Boolean)
+  .join(' ');
+---
+
+<a href={`mailto:${email}`} class={classes} tabindex="0">{email}</a>

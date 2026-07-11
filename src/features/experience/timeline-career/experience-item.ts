@@ -1,4 +1,3 @@
-import type { Skill } from '@widgets/skill';
 import type { SvgComponent } from 'astro/types';
 
 interface ExperienceSection {
@@ -12,6 +11,6 @@ export interface ExperienceItem {
   company: string;
   sector: string;
   period: string;
-  skills: Skill[];
+  skills: string[];
   sections: ExperienceSection[];
 }

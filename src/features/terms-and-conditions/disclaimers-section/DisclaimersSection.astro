@@ -1,15 +1,14 @@
 ---
+import { Prose } from '@shared/components';
 import { useI18n } from '@shared/helpers';
+import { ProseList } from '@widgets/prose-list';
+import { TextSection } from '@widgets/text-section';
 import { DISCLAIMERS_SECTION_I18N } from './disclaimers-section-i18n';
 
 const t = useI18n(Astro.url, DISCLAIMERS_SECTION_I18N);
 ---
 
-<section class="mb-8">
-  <h2 class="text-base-content mb-4 text-2xl font-semibold">{t('terms_disclaimers_title')}</h2>
-  <p class="text-base-content/80 mb-4" set:html={t('terms_disclaimers_text')} />
-  <ul class="text-base-content/80 mb-4 list-inside list-disc space-y-2">
-    <li set:html={t('terms_disclaimers_informational')} />
-    <li set:html={t('terms_disclaimers_no_guarantee')} />
-  </ul>
-</section>
+<TextSection title={t('terms_disclaimers_title')}>
+  <Prose muted leading="normal" html={t('terms_disclaimers_text')} class="mb-4" />
+  <ProseList items={[t('terms_disclaimers_informational'), t('terms_disclaimers_no_guarantee')]} />
+</TextSection>

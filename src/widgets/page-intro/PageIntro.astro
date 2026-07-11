@@ -1,0 +1,29 @@
+---
+import { Heading, Prose } from '@shared/components';
+
+interface Props {
+  title: string;
+  description?: string;
+  descriptionHtml?: string;
+  narrow?: boolean;
+  class?: string;
+}
+
+const { title, description, descriptionHtml, narrow = false, class: className = 'mb-12' } = Astro.props;
+
+const leadClass = ['mx-auto md:text-xl', narrow ? 'max-w-3xl' : 'max-w-4xl'].join(' ');
+---
+
+<section class:list={['text-center', className]}>
+  <Heading level={1} class="mb-6 leading-tight md:text-5xl lg:text-6xl">{title}</Heading>
+
+  {
+    descriptionHtml ? (
+      <Prose size="lg" html={descriptionHtml} class={leadClass} />
+    ) : description ? (
+      <Prose size="lg" class={leadClass}>
+        {description}
+      </Prose>
+    ) : null
+  }
+</section>

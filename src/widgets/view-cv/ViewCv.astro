@@ -1,11 +1,11 @@
 ---
-import { ButtonLink } from '@shared/components';
+import { Button } from '@shared/components';
 import { useI18n } from '@shared/helpers';
 import { VIEW_CV_I18N } from './view_cv_i18n';
 
 const t = useI18n(Astro.url, VIEW_CV_I18N);
 ---
 
-<ButtonLink href="/Oleh Khavar CV.pdf" target="_blank">
+<Button href="/Oleh Khavar CV.pdf" target="_blank">
   {t('title')}
-</ButtonLink>
+</Button>

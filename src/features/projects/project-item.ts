@@ -1,4 +1,3 @@
-import type { Skill } from '@widgets/skill';
 import type { SvgComponent } from 'astro/types';
 
 export interface ProjectSection {
@@ -11,5 +10,5 @@ export interface ProjectItem {
   title: string;
   description: string;
   sections: ProjectSection[];
-  skills: Skill[];
+  skills: string[];
 }

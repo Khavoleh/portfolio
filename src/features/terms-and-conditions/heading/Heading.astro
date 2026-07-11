@@ -1,8 +1,9 @@
 ---
+import { Heading } from '@shared/components';
 import { useI18n } from '@shared/helpers';
 import { HEADING_I18N } from './heading-i18n';
 
 const t = useI18n(Astro.url, HEADING_I18N);
 ---
 
-<h1 class="text-base-content mb-8 text-4xl font-bold">{t('terms_title')}</h1>
+<Heading level={1} class="mb-8">{t('terms_title')}</Heading>

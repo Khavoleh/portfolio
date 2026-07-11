@@ -1,0 +1,15 @@
+---
+import { Heading } from '@shared/components';
+
+interface Props {
+  title: string;
+  class?: string;
+}
+
+const { title, class: className = 'mb-8' } = Astro.props;
+---
+
+<section class={className}>
+  <Heading level={2} weight="semibold" class="mb-4">{title}</Heading>
+  <slot />
+</section>

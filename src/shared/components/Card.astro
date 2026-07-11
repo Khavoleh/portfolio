@@ -1,0 +1,55 @@
+---
+type As = 'div' | 'section' | 'article';
+type Padding = 'none' | 'sm' | 'md' | 'lg' | 'xl';
+type Shadow = 'md' | 'lg' | 'xl' | '2xl';
+type Hover = 'none' | 'shadow' | 'scale';
+
+interface Props {
+  as?: As;
+  padding?: Padding;
+  shadow?: Shadow;
+  hover?: Hover;
+  class?: string;
+}
+
+const {
+  as: Component = 'div',
+  padding = 'md',
+  shadow = 'lg',
+  hover = 'none',
+  class: className = '',
+}: Props = Astro.props;
+
+const PADDING_CLASSES: Record<Padding, string> = {
+  none: '',
+  sm: 'p-4',
+  md: 'p-6',
+  lg: 'p-8',
+  xl: 'p-8 md:p-12',
+};
+
+const SHADOW_CLASSES: Record<Shadow, string> = {
+  md: 'shadow-md',
+  lg: 'shadow-lg',
+  xl: 'shadow-xl',
+  '2xl': 'shadow-2xl',
+};
+
+const HOVER_CLASSES: Record<Hover, string> = {
+  none: '',
+  shadow: 'transition-shadow duration-200 hover:shadow-xl',
+  scale: 'transition-transform duration-200 hover:scale-105',
+};
+
+const classes = [
+  'card bg-base-200 border-base-300 border',
+  PADDING_CLASSES[padding],
+  SHADOW_CLASSES[shadow],
+  HOVER_CLASSES[hover],
+  className,
+]
+  .filter(Boolean)
+  .join(' ');
+---
+
+<Component class={classes}><slot /></Component>

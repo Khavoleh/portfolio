@@ -1,11 +1,12 @@
 ---
+import { Prose } from '@shared/components';
 import { useI18n } from '@shared/helpers';
+import { TextSection } from '@widgets/text-section';
 import { ACCEPTANCE_SECTION_I18N } from './acceptance-section-i18n';
 
 const t = useI18n(Astro.url, ACCEPTANCE_SECTION_I18N);
 ---
 
-<section class="mb-8">
-  <h2 class="text-base-content mb-4 text-2xl font-semibold">{t('terms_acceptance_title')}</h2>
-  <p class="text-base-content/80 mb-4" set:html={t('terms_acceptance_text')} />
-</section>
+<TextSection title={t('terms_acceptance_title')}>
+  <Prose muted leading="normal" html={t('terms_acceptance_text')} class="mb-4" />
+</TextSection>

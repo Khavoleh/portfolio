@@ -1,0 +1,31 @@
+---
+import { Card } from '@shared/components';
+import type { SvgComponent } from 'astro/types';
+
+interface Props {
+  Icon: SvgComponent;
+  title: string;
+  details: string[];
+}
+
+const { Icon, title, details } = Astro.props;
+---
+
+<Card>
+  <h3 class="text-base-content mb-3 flex items-center text-xl font-bold">
+    <Icon class="mr-3 shrink-0" />
+    {title}
+  </h3>
+
+  {
+    details.length === 1 ? (
+      <p class="text-base-content leading-relaxed">{details[0]}</p>
+    ) : (
+      <ul class="text-base-content marker:text-base-content list-inside list-disc space-y-1 leading-relaxed">
+        {details.map((detail: string) => (
+          <li>{detail}</li>
+        ))}
+      </ul>
+    )
+  }
+</Card>

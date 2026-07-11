@@ -1,5 +1,5 @@
 ---
-import { ButtonLink } from '@shared/components';
+import { Button, Heading, Prose } from '@shared/components';
 import { PAGE_URLS } from '@shared/constants';
 import { getLanguageUrl, useI18n } from '@shared/helpers';
 import { GOAL_I18N } from './goal-i18n';
@@ -8,16 +8,16 @@ const t = useI18n(Astro.url, GOAL_I18N);
 ---
 
 <section class="text-center">
-  <h2 class="text-base-content mb-4 text-3xl font-bold">{t('goal_title')}</h2>
-  <p class="text-base-content mx-auto mb-8 max-w-3xl text-lg leading-relaxed" set:html={t('goal_description')} />
+  <Heading level={2} size="3xl" center class="mb-4">{t('goal_title')}</Heading>
+  <Prose size="lg" center html={t('goal_description')} class="mx-auto mb-8 max-w-3xl" />
 
   <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
-    <ButtonLink href={getLanguageUrl(Astro.url, PAGE_URLS.EXPERIENCE)}>
+    <Button href={getLanguageUrl(Astro.url, PAGE_URLS.EXPERIENCE)}>
       {t('goal_button_experience')}
-    </ButtonLink>
+    </Button>
 
-    <ButtonLink href={getLanguageUrl(Astro.url, PAGE_URLS.PROJECTS)} outline>
+    <Button href={getLanguageUrl(Astro.url, PAGE_URLS.PROJECTS)} variant="secondary" outline>
       {t('goal_button_projects')}
-    </ButtonLink>
+    </Button>
   </div>
 </section>

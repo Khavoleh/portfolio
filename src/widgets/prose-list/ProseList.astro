@@ -1,0 +1,14 @@
+---
+interface Props {
+  items: string[];
+  class?: string;
+}
+
+const { items, class: className = 'mb-4' } = Astro.props;
+
+const classes = ['text-base-content/80 list-inside list-disc space-y-2', className].filter(Boolean).join(' ');
+---
+
+<ul class={classes}>
+  {items.map((item: string) => <li set:html={item} />)}
+</ul>

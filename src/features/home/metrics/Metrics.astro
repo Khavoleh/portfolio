@@ -1,4 +1,5 @@
 ---
+import { Heading } from '@shared/components';
 import { useI18n } from '@shared/helpers';
 import MetricBlock from './components/MetricBlock.astro';
 import type { Metric } from './metric';
@@ -15,7 +16,7 @@ const translatedMetrics: Metric[] = METRICS.map((metric) => ({
 ---
 
 <section class="mb-12">
-  <h2 class="text-base-content mb-8 text-center text-2xl font-bold">{t('metrics_title')}</h2>
+  <Heading level={2} center class="mb-8">{t('metrics_title')}</Heading>
 
   <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4">
     {translatedMetrics.map((metric: Metric) => <MetricBlock metric={metric} />)}

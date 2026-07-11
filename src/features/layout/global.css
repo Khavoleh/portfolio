@@ -2,32 +2,122 @@
 @import 'tailwindcss';
 @plugin 'daisyui';
 
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/inter/inter-latin-normal.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/inter/inter-cyrillic-normal.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/inter/inter-latin-italic.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/inter/inter-cyrillic-italic.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/lora/lora-latin.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/lora/lora-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/jetbrains-mono/jetbrains-mono-latin.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/jetbrains-mono/jetbrains-mono-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-heading: 'Lora', ui-serif, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
 @plugin 'daisyui/theme' {
   name: 'portfolio-light';
   default: false;
   color-scheme: light;
 
-  --color-primary: oklch(45% 0.19 277);
-  --color-primary-content: oklch(100% 0 0);
+  --color-primary: oklch(47.58% 0.127 289.2);
+  --color-primary-content: oklch(97.96% 0.006 84.57);
+  --color-primary-text: oklch(47.58% 0.127 289.2);
 
-  --color-secondary: oklch(50% 0.1 257);
-  --color-secondary-content: oklch(100% 0 0);
+  --color-secondary: oklch(54% 0.073 291.56);
+  --color-secondary-content: oklch(97.96% 0.006 84.57);
 
-  --color-neutral: oklch(94% 0.01 256);
-  --color-neutral-content: oklch(25% 0.03 256);
+  --color-accent: oklch(46% 0.108 50.15);
+  --color-accent-content: oklch(28.08% 0.017 305.41);
 
-  --color-base-100: oklch(98% 0.005 256);
-  --color-base-200: oklch(95% 0.015 256);
-  --color-base-300: oklch(91% 0.025 256);
-  --color-base-content: oklch(20% 0.04 256);
+  --color-neutral: oklch(89.17% 0.035 291);
+  --color-neutral-content: oklch(28.08% 0.02 291);
 
-  --color-info: oklch(65% 0.15 260);
+  --color-base-100: oklch(96.5% 0.016 291);
+  --color-base-200: oklch(93.5% 0.022 291);
+  --color-base-300: oklch(89.5% 0.03 291);
+  --color-base-content: oklch(15% 0.018 291);
+
+  --color-info: oklch(54.61% 0.215 262.88);
   --color-info-content: oklch(100% 0 0);
-  --color-success: oklch(60% 0.16 162);
+  --color-success: oklch(52.73% 0.137 150.07);
   --color-success-content: oklch(100% 0 0);
-  --color-warning: oklch(82% 0.15 80);
-  --color-warning-content: oklch(30% 0.08 60);
-  --color-error: oklch(55% 0.22 25);
+  --color-warning: oklch(76.86% 0.165 70.08);
+  --color-warning-content: oklch(28.73% 0.06 77.24);
+  --color-error: oklch(57.71% 0.215 27.33);
   --color-error-content: oklch(100% 0 0);
 }
 
@@ -36,34 +126,41 @@
   default: true;
   color-scheme: dark;
 
-  --color-primary: oklch(75% 0.14 277);
-  --color-primary-content: oklch(20% 0.04 277);
+  --color-primary: oklch(54.25% 0.158 288.32);
+  --color-primary-content: oklch(100% 0 0);
+  --color-primary-text: oklch(73.98% 0.116 291.81);
 
-  --color-secondary: oklch(65% 0.08 256);
-  --color-secondary-content: oklch(15% 0.04 256);
+  --color-secondary: oklch(63.37% 0.076 292.17);
+  --color-secondary-content: oklch(20.58% 0.026 294.61);
 
-  --color-base-100: oklch(14% 0.03 265);
-  --color-base-200: oklch(18% 0.03 265);
-  --color-base-300: oklch(22% 0.03 265);
-  --color-base-content: oklch(94% 0.02 256);
+  --color-accent: oklch(77.27% 0.095 52.07);
+  --color-accent-content: oklch(20.58% 0.026 294.61);
 
-  --color-neutral: oklch(25% 0.04 265);
-  --color-neutral-content: oklch(90% 0.02 256);
+  --color-base-100: oklch(20.58% 0.026 294.61);
+  --color-base-200: oklch(24.83% 0.034 293.98);
+  --color-base-300: oklch(29.02% 0.045 292.53);
+  --color-base-content: oklch(95.58% 0.009 84.57);
 
-  --color-info: oklch(70% 0.12 250);
-  --color-info-content: oklch(15% 0.05 250);
-  --color-success: oklch(70% 0.12 160);
-  --color-success-content: oklch(15% 0.05 160);
-  --color-warning: oklch(75% 0.15 85);
-  --color-warning-content: oklch(20% 0.05 85);
-  --color-error: oklch(65% 0.18 25);
-  --color-error-content: oklch(15% 0.05 25);
+  --color-neutral: oklch(29.02% 0.045 292.53);
+  --color-neutral-content: oklch(95.58% 0.009 84.57);
+
+  --color-info: oklch(71.37% 0.143 254.62);
+  --color-info-content: oklch(21.64% 0.047 255.95);
+  --color-success: oklch(80.03% 0.182 151.71);
+  --color-success-content: oklch(26.64% 0.063 152.93);
+  --color-warning: oklch(83.69% 0.164 84.43);
+  --color-warning-content: oklch(28.57% 0.064 53.81);
+  --color-error: oklch(71.06% 0.166 22.22);
+  --color-error-content: oklch(23.61% 0.076 25.23);
 }
 
 :root,
 [data-theme='portfolio-dark'],
 [data-theme='portfolio-light'] {
-  --icon-color: var(--color-primary);
+  --icon-color-primary: var(--color-primary-text);
+  --icon-color-accent: var(--color-accent);
+  --icon-color: var(--color-base-content);
+  --icon-opacity: 0.8;
 }
 
 :root.switch-theme-transition,
@@ -83,5 +180,62 @@
 
 .focus-ring:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px var(--color-accent);
+  opacity: 1 !important;
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--color-primary) 55%, transparent);
+}
+
+.link-violet {
+  color: var(--color-primary-text);
+}
+
+.link-violet:hover {
+  color: var(--color-primary-text);
+  opacity: 0.8;
+}
+
+[fill='var(--icon-color)'],
+[stroke='var(--icon-color)'] {
+  opacity: var(--icon-opacity);
+  transition: opacity 0.2s ease;
+}
+
+a:hover [fill='var(--icon-color)'],
+a:hover [stroke='var(--icon-color)'],
+button:hover [fill='var(--icon-color)'],
+button:hover [stroke='var(--icon-color)'],
+label:hover [fill='var(--icon-color)'],
+label:hover [stroke='var(--icon-color)'],
+[fill='var(--icon-color)']:hover,
+[stroke='var(--icon-color)']:hover {
+  --icon-opacity: 1;
+}
+
+.btn [fill='var(--icon-color)'],
+.btn [stroke='var(--icon-color)'] {
+  --icon-opacity: 1;
+}
+
+.icon-muted {
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.icon-muted:hover,
+a:hover .icon-muted,
+button:hover .icon-muted,
+.card:hover .icon-muted {
+  opacity: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+.badge {
+  font-family: var(--font-mono);
 }

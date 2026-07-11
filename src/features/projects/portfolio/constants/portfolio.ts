@@ -1,4 +1,3 @@
-import { SKILL_TYPES } from '@widgets/skill';
 import BusinessIcon from '../../icons/business.svg';
 import SettingsIcon from '../../icons/settings.svg';
 import StarsIcon from '../../icons/stars.svg';
@@ -35,12 +34,5 @@ export const PORTFOLIO: ProjectItem = {
       details: ['portfolio_section_3_details_0'],
     },
   ],
-  skills: [
-    { name: 'Astro', type: SKILL_TYPES.FRONT_END },
-    { name: 'TypeScript', type: SKILL_TYPES.FRONT_END },
-    { name: 'Tailwind CSS', type: SKILL_TYPES.FRONT_END },
-    { name: 'DaisyUI', type: SKILL_TYPES.FRONT_END },
-    { name: 'GitHub', type: SKILL_TYPES.DEV_OPS },
-    { name: 'Vercel', type: SKILL_TYPES.DEV_OPS },
-  ],
+  skills: ['Astro', 'TypeScript', 'Tailwind CSS', 'DaisyUI', 'GitHub', 'Cloudflare'],
 };

@@ -1,5 +1,5 @@
 ---
-import { ButtonLink } from '@shared/components';
+import { Button, Heading } from '@shared/components';
 import { PAGE_URLS } from '@shared/constants';
 import { getLanguageUrl, useI18n } from '@shared/helpers';
 import { ViewCv } from '@widgets/view-cv';
@@ -9,13 +9,13 @@ const t = useI18n(Astro.url, CALL_TO_ACTION_I18N);
 ---
 
 <section class="mt-16 text-center">
-  <h2 class="text-base-content mb-6 text-3xl font-bold">{t('cta_title')}</h2>
+  <Heading level={2} size="3xl" center class="mb-6">{t('cta_title')}</Heading>
 
   <div class="flex flex-col items-center justify-center gap-4 md:flex-row">
     <ViewCv />
 
-    <ButtonLink href={getLanguageUrl(Astro.url, PAGE_URLS.PROJECTS)} outline>
+    <Button href={getLanguageUrl(Astro.url, PAGE_URLS.PROJECTS)} variant="secondary" outline>
       {t('cta_button_projects')}
-    </ButtonLink>
+    </Button>
   </div>
 </section>

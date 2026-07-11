@@ -1,0 +1,41 @@
+---
+type Size = 'sm' | 'base' | 'lg' | 'xl';
+
+interface Props {
+  muted?: boolean;
+  size?: Size;
+  center?: boolean;
+  leading?: 'normal' | 'relaxed';
+  html?: string;
+  class?: string;
+}
+
+const { muted = false, size = 'base', center = false, leading = 'relaxed', html, class: className = '' } = Astro.props;
+
+const SIZE_CLASSES: Record<Size, string> = {
+  sm: 'text-sm',
+  base: '',
+  lg: 'text-lg',
+  xl: 'text-xl',
+};
+
+const classes = [
+  muted ? 'text-base-content/80' : 'text-base-content',
+  SIZE_CLASSES[size],
+  leading === 'relaxed' && 'leading-relaxed',
+  center && 'text-center',
+  className,
+]
+  .filter(Boolean)
+  .join(' ');
+---
+
+{
+  html ? (
+    <p class={classes} set:html={html} />
+  ) : (
+    <p class={classes}>
+      <slot />
+    </p>
+  )
+}

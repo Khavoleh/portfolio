@@ -60,25 +60,28 @@ describe('getUkraineTimezone', () => {
   });
 
   describe('DST transition boundaries', () => {
-    // In 2026, last Sunday of March is March 29
-    it('should return UTC+2 (EET) just before DST starts (March 29, 2026 at 02:59)', () => {
-      vi.setSystemTime(new Date(2026, 2, 29, 2, 59, 0)); // March 29, 2026 02:59
+    // Ukraine switches at 01:00 UTC. Instants are anchored in UTC so the
+    // assertions are independent of the test runner's local timezone.
+
+    // In 2026, DST starts on the last Sunday of March (March 29) at 01:00 UTC.
+    it('should return UTC+2 (EET) just before DST starts (2026-03-29 00:59 UTC)', () => {
+      vi.setSystemTime(new Date('2026-03-29T00:59:00Z'));
       expect(getUkraineTimezone()).toBe('UTC+2 (EET)');
     });
 
-    it('should return UTC+3 (EEST) right after DST starts (March 29, 2026 at 03:00)', () => {
-      vi.setSystemTime(new Date(2026, 2, 29, 3, 0, 0)); // March 29, 2026 03:00
+    it('should return UTC+3 (EEST) right after DST starts (2026-03-29 01:00 UTC)', () => {
+      vi.setSystemTime(new Date('2026-03-29T01:00:00Z'));
       expect(getUkraineTimezone()).toBe('UTC+3 (EEST)');
     });
 
-    // In 2026, last Sunday of October is October 25
-    it('should return UTC+3 (EEST) just before DST ends (October 25, 2026 at 03:59)', () => {
-      vi.setSystemTime(new Date(2026, 9, 25, 3, 59, 0)); // October 25, 2026 03:59
+    // In 2026, DST ends on the last Sunday of October (October 25) at 01:00 UTC.
+    it('should return UTC+3 (EEST) just before DST ends (2026-10-25 00:59 UTC)', () => {
+      vi.setSystemTime(new Date('2026-10-25T00:59:00Z'));
       expect(getUkraineTimezone()).toBe('UTC+3 (EEST)');
     });
 
-    it('should return UTC+2 (EET) right after DST ends (October 25, 2026 at 04:00)', () => {
-      vi.setSystemTime(new Date(2026, 9, 25, 4, 0, 0)); // October 25, 2026 04:00
+    it('should return UTC+2 (EET) right after DST ends (2026-10-25 01:00 UTC)', () => {
+      vi.setSystemTime(new Date('2026-10-25T01:00:00Z'));
       expect(getUkraineTimezone()).toBe('UTC+2 (EET)');
     });
   });

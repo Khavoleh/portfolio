@@ -1,20 +1,13 @@
+// Derives Ukraine's current UTC offset from the IANA tz database (Europe/Kyiv)
+// instead of hand-rolling DST math. This is correct regardless of the host's
+// own timezone (e.g. UTC on serverless) and stays valid if DST rules ever change.
 export const getUkraineTimezone = (): 'UTC+3 (EEST)' | 'UTC+2 (EET)' => {
-  const now = new Date();
-  const year = now.getFullYear();
+  const offset = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'Europe/Kyiv',
+    timeZoneName: 'shortOffset',
+  })
+    .formatToParts(new Date())
+    .find((part) => part.type === 'timeZoneName')?.value;
 
-  // Find the last Sunday of March
-  const marchLastDay = new Date(year, 2, 31); // March 31
-  const marchLastSunday = new Date(marchLastDay);
-  marchLastSunday.setDate(31 - marchLastDay.getDay());
-  marchLastSunday.setHours(3, 0, 0, 0);
-
-  // Find the last Sunday of October
-  const octoberLastDay = new Date(year, 9, 31); // October 31
-  const octoberLastSunday = new Date(octoberLastDay);
-  octoberLastSunday.setDate(31 - octoberLastDay.getDay());
-  octoberLastSunday.setHours(4, 0, 0, 0);
-
-  const isDST = now >= marchLastSunday && now < octoberLastSunday;
-
-  return isDST ? 'UTC+3 (EEST)' : 'UTC+2 (EET)';
+  return offset === 'GMT+3' ? 'UTC+3 (EEST)' : 'UTC+2 (EET)';
 };

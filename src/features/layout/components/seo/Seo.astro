@@ -1,7 +1,6 @@
 ---
-import { DEFAULT_LANGUAGE } from '@shared/constants';
-import { useI18n } from '@shared/helpers';
-import { getCurrentLanguage } from '../../get-current-language';
+import { DEFAULT_LANGUAGE, SUPPORTED_LANGUAGES } from '@shared/constants';
+import { getLanguageFromUrl, useI18n } from '@shared/helpers';
 import { BASE_SEO_I18N } from './base-seo-i18n';
 
 export interface Props {
@@ -14,7 +13,7 @@ const { title, description, noindex = false } = Astro.props;
 
 const t = useI18n(Astro.url, BASE_SEO_I18N);
 
-const currentLang = getCurrentLanguage(Astro.url);
+const currentLang = getLanguageFromUrl(Astro.url);
 const siteName = t('site_name');
 const author = t('author_name');
 const twitterHandle = '@Khavol';
@@ -23,12 +22,26 @@ const imageURL = new URL('/og.png', Astro.url).href;
 const imageAlt = t('logo_alt');
 
 const robotsContent = [noindex ? 'noindex' : 'index', 'follow'].join(', ');
+
+const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
+const hasLangPrefix = SUPPORTED_LANGUAGES.includes(pathSegments[0]);
+const restSegments = hasLangPrefix ? pathSegments.slice(1) : pathSegments;
+const restPath = restSegments.length > 0 ? `/${restSegments.join('/')}/` : '/';
+
+const languageAlternates = SUPPORTED_LANGUAGES.map((lang) => ({
+  lang,
+  href: new URL(`/${lang}${restPath}`, Astro.url.origin).href,
+}));
+const defaultAlternateHref = new URL(`/${DEFAULT_LANGUAGE}${restPath}`, Astro.url.origin).href;
 ---
 
 <title>{title}</title>
 <meta name="description" content={description} />
 <meta name="author" content={author} />
 <link rel="canonical" href={Astro.url.href} />
+
+{languageAlternates.map(({ lang, href }) => <link rel="alternate" hreflang={lang} href={href} />)}
+<link rel="alternate" hreflang="x-default" href={defaultAlternateHref} />
 
 <meta name="robots" content={robotsContent} />
 
@@ -40,6 +53,7 @@ const robotsContent = [noindex ? 'noindex' : 'index', 'follow'].join(', ');
 <meta property="og:image:alt" content={imageAlt} />
 <meta property="og:site_name" content={siteName} />
 <meta property="og:locale" content={currentLang === DEFAULT_LANGUAGE ? 'en_US' : 'uk_UA'} />
+<meta property="og:locale:alternate" content={currentLang === DEFAULT_LANGUAGE ? 'uk_UA' : 'en_US'} />
 
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={Astro.url.href} />

@@ -10,7 +10,7 @@ export const PORTFOLIO_PROJECT_I18N: I18N = {
       'A portfolio that practices what I preach: optimal performance, accessibility, and modern development practices. The site needed to load instantly, work perfectly for all users, and demonstrate expertise in contemporary front-end tooling.',
     portfolio_section_1_title: 'Technical Approach',
     portfolio_section_1_details_0:
-      'Built with Astro for low-count client-side JavaScript. Utilized Vercel for hosting and Continuous Delivery with automatic deployments. Styled with Tailwind CSS and DaisyUI components for rapid, consistent UI development with minimal JavaScript.',
+      'Built with Astro for low-count client-side JavaScript. Utilized Cloudflare Workers for hosting and Continuous Delivery with automatic deployments. Styled with Tailwind CSS and DaisyUI components for rapid, consistent UI development with minimal JavaScript.',
     portfolio_section_2_title: 'Key Features',
     portfolio_section_2_details_0: 'Dark/light mode switch with system preference detection',
     portfolio_section_2_details_1: 'Component-driven architecture with reusable blocks',
@@ -34,7 +34,7 @@ export const PORTFOLIO_PROJECT_I18N: I18N = {
       'Портфоліо, яке втілює те, про що я говорю: оптимальна продуктивність, доступність та сучасні практики розробки. Сайт мав миттєво завантажуватися, бездоганно працювати для всіх користувачів та демонструвати досвід у використанні сучасних інструментів фронтенд-розробки.',
     portfolio_section_1_title: 'Технічний підхід',
     portfolio_section_1_details_0:
-      'Створено за допомогою Astro для JavaScript з малою кількістю клієнтського коду. Використано Vercel для хостингу та безперервної доставки з автоматичним розгортанням. Стилізовано за допомогою Tailwind CSS та компонентів DaisyUI для швидкої та послідовної розробки інтерфейсу користувача з мінімальним використанням JavaScript.',
+      'Створено за допомогою Astro для JavaScript з малою кількістю клієнтського коду. Використано Cloudflare Workers для хостингу та безперервної доставки з автоматичним розгортанням. Стилізовано за допомогою Tailwind CSS та компонентів DaisyUI для швидкої та послідовної розробки інтерфейсу користувача з мінімальним використанням JavaScript.',
     portfolio_section_2_title: 'Ключові функції',
     portfolio_section_2_details_0: 'Перемикач темної/світлої теми з визначенням системних налаштувань',
     portfolio_section_2_details_1: 'Компонентна архітектура з повторно використовуваними блоками',
