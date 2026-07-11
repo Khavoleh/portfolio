@@ -9,7 +9,7 @@ The **primary goal** of this portfolio is to serve as a clear and structured rep
 | **Backend**       | C# / .NET, ASP.NET Web API, Fast Endpoints, Entity Framework, Wolverine  |
 | **Frontend**      | Angular, Next.js, React, TypeScript, JavaScript                          |
 | **Database**      | MS SQL Server, PostgreSQL, MongoDB                                       |
-| **DevOps/Tools**  | Docker, Git, GitHub Actions, Azure Pipelines, Vercel                     |
+| **DevOps/Tools**  | Docker, Git, GitHub Actions, Azure Pipelines, Cloudflare                 |
 | **Architecture**  | System Architecture Design, Performance Optimization, Team Leadership    |
 
 ## Local Development

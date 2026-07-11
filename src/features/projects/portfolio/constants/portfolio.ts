@@ -34,5 +34,5 @@ export const PORTFOLIO: ProjectItem = {
       details: ['portfolio_section_3_details_0'],
     },
   ],
-  skills: ['Astro', 'TypeScript', 'Tailwind CSS', 'DaisyUI', 'GitHub', 'Vercel'],
+  skills: ['Astro', 'TypeScript', 'Tailwind CSS', 'DaisyUI', 'GitHub', 'Cloudflare'],
 };

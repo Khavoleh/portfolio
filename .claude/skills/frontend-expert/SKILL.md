@@ -39,7 +39,7 @@ Run lint, format-check, and type-check; for visual/a11y/i18n changes run the e2e
 
 ## In this repo (portfolio)
 
-- Stack: **Astro 6 + Tailwind CSS 4 + daisyUI 5**, bilingual **EN/UK**, Vercel prod.
+- Stack: **Astro 6 + Tailwind CSS 4 + daisyUI 5**, bilingual **EN/UK**, Cloudflare prod.
 - **Tokens:** daisyUI semantic tokens only (`bg-base-100/200/300`, `text-base-content`, `primary`/`primary-content`, `secondary`, `accent`, `neutral`, `info`/`success`/`warning`/`error`). Themes `portfolio-light`/`portfolio-dark` (**dark default**) as OKLCH `@plugin 'daisyui/theme'` blocks in `src/features/layout/global.css`; wiring in `Layout.astro` (`theme-init.js`, `remove-transitions.js`).
 - **Class order** enforced by Biome `useSortedClasses` (**error**, incl. `.astro`); run `pnpm lint`. Formatting via `pnpm prettier` (`prettier-plugin-tailwindcss`).
 - **Slice:** `Component.astro` + barrel `index.ts` (`export { default } from './Component.astro'`) + optional `*-i18n.ts`, `*.ts`, `helpers/`, `icons/`. Reuse `src/shared/components/` (Button, Card, IconCard, Heading, SectionHeader, PageIntro, TextSection, Prose, ProseList, EmailLink, Schema).
