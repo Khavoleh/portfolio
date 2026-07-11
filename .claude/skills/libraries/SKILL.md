@@ -27,7 +27,7 @@ Prefer the tools already in the project; add a dependency only when it clearly e
 
 Runtime deps are deliberately minimal — **only `astro` + `@astrojs/cloudflare`**. Everything else is build/dev tooling.
 
-- **Framework:** `astro` (v6) — pages, components (`.astro`), routing, SSG + the one SSR redirect.
+- **Framework:** `astro` (v7) — pages, components (`.astro`), routing, SSG + the one SSR redirect.
 - **Adapters:** `@astrojs/cloudflare` (prod build, `astro.config.ts`); `@astrojs/node` (local dev/preview, `astro.config.local.ts`).
 - **Styling:** `tailwindcss` v4 + `@tailwindcss/vite` + `daisyui` v5 (themes/components). Use daisyUI semantic tokens (see `frontend-expert`).
 - **SEO:** `@astrojs/sitemap` (sitemap), `schema-dts` (typed JSON-LD via `Schema.astro`).
