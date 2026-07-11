@@ -13,6 +13,7 @@ const config: AstroUserConfig = {
     checkOrigin: true,
     allowedDomains: [
       { hostname: 'www.khavol.com', protocol: 'https' },
+      { hostname: 'dev.khavol.com', protocol: 'https' },
       { hostname: 'khavol.com', protocol: 'https' },
     ],
     csp: {
