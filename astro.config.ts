@@ -8,7 +8,7 @@ const config: AstroUserConfig = {
   ...SHARED_ASTRO_CONFIG,
   site: 'https://www.khavol.com/en',
   integrations: [sitemap()],
-  adapter: cloudflare(),
+  adapter: cloudflare({ prerenderEnvironment: 'node' }),
   security: {
     checkOrigin: true,
     allowedDomains: [
