@@ -44,7 +44,7 @@ Rules:
 
 ## This project (portfolio)
 
-Personal portfolio for Oleh Khavar: **Astro 6 + Tailwind CSS 4 + daisyUI 5**, deployed to **Cloudflare Pages**, bilingual (EN/UK). Package manager **pnpm**.
+Personal portfolio for Oleh Khavar: **Astro 6 + Tailwind CSS 4 + daisyUI 5**, deployed to **Cloudflare Workers**, bilingual (EN/UK). Package manager **pnpm**.
 
 ### Commands
 
