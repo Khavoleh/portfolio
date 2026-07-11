@@ -1,6 +1,6 @@
 ---
 name: libraries
-description: Pick the right dependency and use existing ones correctly in this deliberately minimal Astro portfolio (only 2 runtime deps: `astro` + `@astrojs/vercel`). Use this skill before running `pnpm add`, when deciding "is there already something that does X?", or when choosing between tools already in the project. Trigger on any of these: "install X", "add a package for Y", "how do I handle animations / icons / dates / forms / image optimization", "which test runner / linter / formatter should I use?", "can I use Z library here?". Also use it when an existing dep might already solve the problem — this skill has the full catalog. Examples: "add a date picker", "install framer-motion", "do we have an icon library?", "should this go in devDependencies?".
+description: Pick the right dependency and use existing ones correctly in this deliberately minimal Astro portfolio (only 2 runtime deps: `astro` + `@astrojs/cloudflare`). Use this skill before running `pnpm add`, when deciding "is there already something that does X?", or when choosing between tools already in the project. Trigger on any of these: "install X", "add a package for Y", "how do I handle animations / icons / dates / forms / image optimization", "which test runner / linter / formatter should I use?", "can I use Z library here?". Also use it when an existing dep might already solve the problem — this skill has the full catalog. Examples: "add a date picker", "install framer-motion", "do we have an icon library?", "should this go in devDependencies?".
 ---
 
 # Libraries — what to use, and when
@@ -25,10 +25,10 @@ Prefer the tools already in the project; add a dependency only when it clearly e
 
 ## In this repo (portfolio)
 
-Runtime deps are deliberately minimal — **only `astro` + `@astrojs/vercel`**. Everything else is build/dev tooling.
+Runtime deps are deliberately minimal — **only `astro` + `@astrojs/cloudflare`**. Everything else is build/dev tooling.
 
 - **Framework:** `astro` (v6) — pages, components (`.astro`), routing, SSG + the one SSR redirect.
-- **Adapters:** `@astrojs/vercel` (prod build, `astro.config.ts`); `@astrojs/node` (local dev/preview, `astro.config.local.ts`).
+- **Adapters:** `@astrojs/cloudflare` (prod build, `astro.config.ts`); `@astrojs/node` (local dev/preview, `astro.config.local.ts`).
 - **Styling:** `tailwindcss` v4 + `@tailwindcss/vite` + `daisyui` v5 (themes/components). Use daisyUI semantic tokens (see `frontend-expert`).
 - **SEO:** `@astrojs/sitemap` (sitemap), `schema-dts` (typed JSON-LD via `Schema.astro`).
 - **Images:** `sharp` (Astro image optimization).

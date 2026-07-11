@@ -44,13 +44,13 @@ Rules:
 
 ## This project (portfolio)
 
-Personal portfolio for Oleh Khavar: **Astro 6 + Tailwind CSS 4 + daisyUI 5**, deployed to **Vercel**, bilingual (EN/UK). Package manager **pnpm**.
+Personal portfolio for Oleh Khavar: **Astro 6 + Tailwind CSS 4 + daisyUI 5**, deployed to **Cloudflare Pages**, bilingual (EN/UK). Package manager **pnpm**.
 
 ### Commands
 
 ```bash
 pnpm dev        # dev server via astro.config.local.ts (HTTPS, node adapter, localhost certs)
-pnpm build      # production build via astro.config.ts (Vercel adapter)
+pnpm build      # production build via astro.config.ts (Cloudflare adapter)
 pnpm preview    # build + preview with the local config
 pnpm lint       # biome check (lint only — formatting is disabled in biome)
 pnpm prettier   # prettier . --write (formatting is owned by prettier, not biome)
@@ -65,7 +65,7 @@ Consult the most specific project skill under `.claude/skills/` for a task: `fro
 
 - Single unit test: `pnpm vitest run src/path/file.unit.ts` (or `-t "name"`).
 - Single e2e: `pnpm e2e src/accessibility.e2e.ts --project=chromium`.
-- Two Astro configs share `SHARED_ASTRO_CONFIG` (`src/shared/constants/shared-astro-config.ts`): `astro.config.ts` = production/Vercel; `astro.config.local.ts` = local dev (node adapter + HTTPS). Changing shared config affects both.
+- Two Astro configs share `SHARED_ASTRO_CONFIG` (`src/shared/constants/shared-astro-config.ts`): `astro.config.ts` = production/Cloudflare; `astro.config.local.ts` = local dev (node adapter + HTTPS). Changing shared config affects both.
 
 ### Layers in `src/`
 

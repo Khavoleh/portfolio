@@ -1,6 +1,6 @@
 import type { AstroUserConfig } from 'astro';
 import { defineConfig } from 'astro/config';
-import vercel from '@astrojs/vercel';
+import cloudflare from '@astrojs/cloudflare';
 import sitemap from '@astrojs/sitemap';
 import { SHARED_ASTRO_CONFIG } from './src/shared/constants';
 
@@ -8,7 +8,7 @@ const config: AstroUserConfig = {
   ...SHARED_ASTRO_CONFIG,
   site: 'https://www.khavol.com/en',
   integrations: [sitemap()],
-  adapter: vercel(),
+  adapter: cloudflare(),
   security: {
     checkOrigin: true,
     allowedDomains: [
