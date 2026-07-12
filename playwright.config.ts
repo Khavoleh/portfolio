@@ -13,11 +13,13 @@ export default defineConfig({
   use: {
     baseURL,
     trace: 'on-first-retry',
-    extraHTTPHeaders: process.env.VERCEL_PROTECTION_BYPASS
-      ? {
-          'x-vercel-protection-bypass': process.env.VERCEL_PROTECTION_BYPASS,
-        }
-      : undefined,
+    extraHTTPHeaders:
+      process.env.CF_ACCESS_CLIENT_ID && process.env.CF_ACCESS_CLIENT_SECRET
+        ? {
+            'CF-Access-Client-Id': process.env.CF_ACCESS_CLIENT_ID,
+            'CF-Access-Client-Secret': process.env.CF_ACCESS_CLIENT_SECRET,
+          }
+        : undefined,
   },
   projects: [
     {
