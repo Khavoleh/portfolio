@@ -24,7 +24,36 @@ Work with GitHub in line with the repo's conventions and automation. Don't fight
 
 ## Pull requests
 
-- Target the correct base branch. Title in Conventional-Commit style; body summarizes what + why + test results. Let CI run; fix failures rather than bypassing.
+- Target the correct base branch (`develop` in this repo). Let CI run; fix failures rather than bypassing.
+- **Title:** Conventional-Commit style (`type: concise summary`), matching the branch id prefix so branch ↔ PR ↔ release stay traceable. The type drives the eventual version bump.
+
+### PR body template — always use this
+
+```markdown
+## Purpose
+
+<One or two sentences: why this PR exists — the problem it solves or the value it adds.>
+
+## Changes
+
+- <Done work item 1 — what was actually built/changed, present tense>
+- <Done work item 2>
+- <…>
+
+## Testing
+
+- <How it was verified — commands run and their result, e.g. `pnpm validate` passing, new e2e specs, manual checks. Omit section if genuinely nothing to report.>
+
+## Related
+
+<`Closes #N` for issues this PR resolves; links to related PRs/issues. Omit section if none.>
+```
+
+Guidelines:
+
+- **Purpose** and **Changes** are mandatory; **Testing** and **Related** are included whenever there's anything to report (usually there is).
+- Keep **Changes** a scannable bullet list of finished work, not a narrative — one bullet per meaningful unit of change.
+- Reference and close issues from the body via `Closes #N` so the merge auto-closes them.
 
 ## Issues / tasks (with labels & tags)
 
