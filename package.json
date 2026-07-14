@@ -41,7 +41,7 @@
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "0.8.0",
     "schema-dts": "2.0.0",
-    "semantic-release": "25.0.5",
+    "semantic-release": "25.0.6",
     "sharp": "0.35.3",
     "tailwindcss": "4.3.2",
     "vitest": "4.1.10",
