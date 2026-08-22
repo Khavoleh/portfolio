@@ -20,12 +20,12 @@
     "validate": "astro build && pnpm unit && pnpm lint && pnpm prettier --check && pnpm astro-check && pnpm depcruise"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "14.2.1",
-    "astro": "7.2.2"
+    "@astrojs/cloudflare": "14.2.3",
+    "astro": "7.2.4"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
-    "@astrojs/node": "11.1.2",
+    "@astrojs/node": "11.1.4",
     "@astrojs/sitemap": "3.7.3",
     "@axe-core/playwright": "4.12.1",
     "@biomejs/biome": "2.5.9",
