@@ -20,8 +20,8 @@
     "validate": "astro build && pnpm unit && pnpm lint && pnpm prettier --check && pnpm astro-check && pnpm depcruise"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "14.2.3",
-    "astro": "7.2.4"
+    "@astrojs/cloudflare": "14.2.4",
+    "astro": "7.2.6"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
